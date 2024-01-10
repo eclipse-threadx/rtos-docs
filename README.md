@@ -6,7 +6,7 @@ Eclipse ThreadX provides an EAL4+ Common Criteria security certified environment
 
 ## Eclipse ThreadX resources
 
-[Eclipse ThreadX repositories](https://github.com/azure-rtos/)
+[Eclipse ThreadX repositories](https://github.com/eclipse-threadx/)
 
 Documentation for components:
 
