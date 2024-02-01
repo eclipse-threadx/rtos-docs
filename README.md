@@ -157,7 +157,7 @@ Eclipse ThreadX works on most popular 32/64-bit microprocessors, out-of-the-box,
 
 - **NXP**: i.MX RT10xx and RT116x/7x series crossover MCUs, LPC5500 series
 
-- **Renesas**: SH, HS, V850, RX, RZ, Synergy
+- **Renesas**: SH, HS, V850, RA, RX, RZ, Synergy 
 
 - **Silicon Labs**: EFM32
 
