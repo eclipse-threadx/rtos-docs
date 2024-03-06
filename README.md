@@ -91,10 +91,6 @@ Eclipse ThreadX is easy to install, learn, use, debug, verify, certify, and main
 - Comprehensive and advanced feature set.
 - Quality documentation.
 
-### One Simple License
-
-There is no cost to use and test the source code and no cost for production licenses when deployed to pre-licensed devices, all other devices need a license.
-
 ### Full, highest-quality source code
 
 Throughout the years, Eclipse ThreadX source code has set the bar in quality and ease of understanding. In addition, the convention of having one function per file provides for easy source navigation.
