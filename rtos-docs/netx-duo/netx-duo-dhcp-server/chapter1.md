@@ -1,10 +1,6 @@
 ---
 title: Chapter 1 - Introduction to NetX Duo DHCP Server
-<<<<<<< HEAD
-description: In NetX Duo, the application's IP address is one of the supplied parameters to the *nx_ip_create* service call.
-=======
 description: In NetX Duo, the application’s IP address is one of the supplied parameters to the nx_ip_create service call.
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 ---
 
 # Chapter 1 - Introduction to NetX Duo DHCP server
