@@ -31,12 +31,13 @@ NetX Duo addons
   - [Ch. 2 - Installation and use of NetX Duo Crypto](../netx/netx-crypto/chapter2.md)
   - [Ch. 3 - Functional components of NetX Duo Crypto](../netx/netx-crypto/chapter3.md)
   - [Ch. 4 - NetX Duo Crypto API description](../netx/netx-crypto/chapter4.md)
+  - [App. A - Azure RTOS NetX Crypto CAVS test](netx-duo-crypto/appendix-a.md)
 
 - NetX Duo DHCP client user guide
   - [Ch. 1 - Introduction to the NetX Duo DHCP client](netx-duo-dhcp-client/chapter1.md)
   - [Ch. 2 - Installation and use of NetX Duo DHCP client](netx-duo-dhcp-client/chapter2.md)
   - [Ch. 3 - Description of NetX Duo DHCP client services](netx-duo-dhcp-client/chapter3.md)
-  - [App. A - Description of the Restore state feature for NetX Duo DHCP client services](netx-duo-dhcp-client/appendixA.md)
+  - [App. A - Description of the Restore state feature for NetX Duo DHCP client services](netx-duo-dhcp-client/appendix-a.md)
 
 - NetX Duo DHCP server user guide
   - [Ch. 1 - Introduction to NetX Duo DHCP server](netx-duo-dhcp-server/chapter1.md)
