@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo Secure is available at [https://github.com/azure-rtos/netx](https://github.com/azure-rtos/netx). The package includes source files, include files, and a PDF file that contains this document, as follows:
+NetX Duo Secure is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes source files, include files, and a PDF file that contains this document, as follows:
 
 - **nx_secure_dtls_api.h** Public API header file for NetX Duo Secure DTLS
 - **nx_secure_dtls_user.h** User defines header file for NetX Duo Secure DTLS

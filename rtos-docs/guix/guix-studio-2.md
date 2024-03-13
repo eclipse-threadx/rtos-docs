@@ -8,7 +8,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-You can obtain the GUIX Studio app from the [Microsoft App Store](https://microsoft.com/store/apps) by searching for GUIX Studio, or by going directly to [the GUIX Studio page](https://www.microsoft.com/p/azure-rtos-guix-studio/9pbm1k1r7q0f?activetab=pivot:overviewtab). Then do the following.
+You can obtain the GUIX Studio app from the [Microsoft App Store](https://microsoft.com/store/apps) by searching for GUIX Studio. Then do the following.
 
 1. From the GUIX Studio page in the App Store, click the **Get** or **Install** button to download GUIX Studio.
 

@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-SNMP Agent for NetX Duo is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes four source files, one include file, and a PDF file that contains this document, as follows:
+SNMP Agent for NetX Duo is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes four source files, one include file, and a PDF file that contains this document, as follows:
 
 - **nxd_snmp.h** Header file for SNMP for NetX Duo
 - **demo_snmp_helper.h** Header file for SNMP MIB data

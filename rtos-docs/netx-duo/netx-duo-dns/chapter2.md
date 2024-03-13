@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo DNS Client is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
+NetX Duo DNS Client is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_dns.h** Header file for NetX Duo DNS Client
 - **nxd_dns.c** C Source file for NetX Duo DNS Client

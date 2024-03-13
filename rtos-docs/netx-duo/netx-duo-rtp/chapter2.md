@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo RTP Sender is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes one source file and one header file, as follows:
+NetX Duo RTP Sender is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes one source file and one header file, as follows:
 
 - **nx_rtp_sender.h** Header file for NetX Duo RTP Sender
 - **nx_rtp_sender.c** C Source file for NetX Duo RTP Sender

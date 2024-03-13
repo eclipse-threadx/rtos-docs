@@ -34,7 +34,7 @@ ThreadX SMP user guide
 - [App. D - ASCII Character Codes](./threadx-smp/appendix-d.md)
 - [App. E - ThreadX SMP MISRA C compliance](./appendix-e.md)
 
-[ThreadX repository](https://github.com/azure-rtos/threadx)
+[ThreadX repository](https://github.comeclipse-threadx/threadx)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

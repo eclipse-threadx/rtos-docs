@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-MQTT Client for NetX Duo is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files, one include file, and a file that contains this document, as follows:
+MQTT Client for NetX Duo is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes two source files, one include file, and a file that contains this document, as follows:
 
 - **nxd_mqtt_client.h** Header file for MQTT Client for NetX Duo
 - **nxd_mqtt_client.c** C Source file for MQTT Client for NetX Duo

@@ -14,8 +14,7 @@ This chapter displays the **tx_trace.h** file.
 /*                                                                        */
 /*       This software is licensed under the Eclipse Foundation Software License   */
 /*       Terms for Eclipse Foundation Eclipse ThreadX. Full text of the license can be  */
-/*       found in the LICENSE file at https://aka.ms/AzureRTOS_EULA       */
-/*       and in the root directory of this software.                      */
+/*       found in the LICENSE file in the root directory of this software.  */
 /*                                                                        */
 /**************************************************************************/
 

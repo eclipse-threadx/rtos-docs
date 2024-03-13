@@ -9,7 +9,7 @@ This chapter contains a description how to install, set up, and use the NetX Duo
 
 ## NetX Duo NAT Installation
 
-NetX Duo NAT is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The NetX Duo NAT package includes one source file and one header file, a demonstration application file, and a PDF file for this document, as follows:
+NetX Duo NAT is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The NetX Duo NAT package includes one source file and one header file, a demonstration application file, and a PDF file for this document, as follows:
 
 - **nx_nat.c** C Source file for NetX Duo NAT
 - **nx_nat.h** C Header file for NetX Duo NAT

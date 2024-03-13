@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-SNTP for NetX Duo is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
+SNTP for NetX Duo is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_sntp_client.c** SNTP Client C source file  
 - **nxd_sntp_client.h** SNTP Client Header file  

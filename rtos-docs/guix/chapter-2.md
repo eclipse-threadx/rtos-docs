@@ -43,7 +43,7 @@ and thread protection inside GUIX.
 
 ## Product Distribution
 
-GUIX can be obtained from our public source code repository at <https://github.com/azure-rtos/guix/>.
+GUIX can be obtained from our public source code repository at <https://github.com/eclipse-threadx/guix/>.
 
 The following is a list of the important files common to most product distributions:
 
@@ -60,7 +60,7 @@ The following is a list of the important files common to most product distributi
 GUIX is installed by cloning the GitHub repository to your local machine. The following is typical syntax for creating a clone of the GUIX repository on your PC:
 
 ```c
-    git clone https://github.com/azure-rtos/guix
+    git clone https://github.com/eclipse-threadx/guix
 ```
 
 Alternatively you can download a copy of the repository using the download button on the GitHub main page.

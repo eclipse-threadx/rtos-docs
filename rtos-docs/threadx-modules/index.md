@@ -8,7 +8,7 @@ ThreadX Modules user guide
 - [Ch. 5 - Module Manager APIs](chapter5.md)
 - [Appendix - Port-specific examples](appendix.md) 
 
-- [ThreadX repository](https://github.com/azure-rtos/threadx)
+- [ThreadX repository](https://github.comeclipse-threadx/threadx)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

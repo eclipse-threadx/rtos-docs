@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-AutoIP can be obtained from our public source code repository at [https://github.com/azure-rtos/netx/](https://github.com/azure-rtos/netx/). The package includes three source files, one include files, and a PDF file that contains this document, as follows:
+AutoIP can be obtained from our public source code repository at [https://github.com/eclipse-threadx/netxduo/](https://github.com/eclipse-threadx/netxduo/). The package includes three source files, one include files, and a PDF file that contains this document, as follows:
 
 - **nx_auto_ip.h**: Header file for NetX Duo AutoIP
 - **nx_auto_ip.c**: C Source file for NetX Duo AutoIP

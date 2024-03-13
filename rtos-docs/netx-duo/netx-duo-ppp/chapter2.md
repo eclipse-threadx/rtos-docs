@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-The NetX Duo Point-to-Point Protocol (PPP) package is available at <https://github.com/azure-rtos/netxduo>. The package includes the following files:
+The NetX Duo Point-to-Point Protocol (PPP) package is available at <https://github.comeclipse-threadx/netxduo>. The package includes the following files:
 
 - **nx_ppp.h**: Header file for PPP for NetX Duo
 - **nx_ppp.c**: C Source file for PPP for NetX Duo

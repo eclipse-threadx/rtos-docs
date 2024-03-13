@@ -25,7 +25,7 @@ In addition, NetX Duo requires the use of two ThreadX timer objects and one Thre
 
 ## Product Distribution
 
-NetX Duo can be obtained from our public source code repository at <https://github.com/azure-rtos/netxduo/>.
+NetX Duo can be obtained from our public source code repository at <https://github.comeclipse-threadx/netxduo/>.
 
 The following is a list of several important files in the repository:
 
@@ -46,7 +46,7 @@ Binary version of the NetX Duo C library that is distributed with the standard p
 NetX Duo is installed by cloning the GitHub repository to your local machine. The following is typical syntax for creating a clone of the NetX Duo repository on your PC:
 
 ```c
-    git clone https://github.com/azure-rtos/netxduo
+    git clone https://github.comeclipse-threadx/netxduo
 ```
 
 Alternatively you can download a copy of the repository using the download button on the GitHub main page.

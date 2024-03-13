@@ -167,7 +167,7 @@ NetX Duo addons
   - [Ch. 4 - Description of NetX Duo Secure services](netx-duo-secure-tls/chapter4.md)
   - [App. A - NetX Duo Secure return/error codes](netx-duo-secure-tls/appendix-a.md)
 
-[NetX Duo repository](https://github.com/azure-rtos/netxduo)
+[NetX Duo repository](https://github.comeclipse-threadx/netxduo)
 
 
 [Eclipse ThreadX components](../../README.md)

@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo can be obtained from our public source code repository at [https://github.com/azure-rtos/netxduo/](https://github.com/azure-rtos/netxduo/).
+NetX Duo can be obtained from our public source code repository at [https://github.comeclipse-threadx/netxduo/](https://github.comeclipse-threadx/netxduo/).
 
 **nxd_dhcpv6_server.h** NetX DuoDHCPv6Server header file
 

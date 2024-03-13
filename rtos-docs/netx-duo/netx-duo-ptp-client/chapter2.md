@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo can be obtained from the public source code repository at https://github.com/azure-rtos/netxduo/tree/master/addons/ptp.
+NetX Duo can be obtained from the public source code repository at https://github.comeclipse-threadx/netxduo/tree/master/addons/ptp.
 
 ***nxd_ptp_client.h*** Header file for PTP client for NetX Duo
 ***nxd_ptp_client.c*** C Source file for PTP client for NetX Duo

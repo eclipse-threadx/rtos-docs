@@ -309,7 +309,7 @@ NetX Duo provides the following additional services.
 
 ### Azure IoT Middleware
 
-NetX Duo includes [Azure IoT Middleware for Eclipse ThreadX](https://github.com/azure-rtos/netxduo/blob/master/addons/azure_iot/docs/README.md), a platform-specific library that acts as a binding layer between Eclipse ThreadX and the Azure SDK for Embedded C to facilitate connectivity to Azure IoT services. The goals of Azure IoT Middleware are the following.
+NetX Duo includes [Azure IoT Middleware for Eclipse ThreadX](https://github.comeclipse-threadx/netxduo/blob/master/addons/azure_iot/docs/README.md), a platform-specific library that acts as a binding layer between Eclipse ThreadX and the Azure SDK for Embedded C to facilitate connectivity to Azure IoT services. The goals of Azure IoT Middleware are the following.
 
 - Provide the smart client interfaces (IoTHub_Client, DeviceProvisioning_Client) that developers need for their applications.
 - Orchestrate the interaction between the Embedded C SDK and the platform.
