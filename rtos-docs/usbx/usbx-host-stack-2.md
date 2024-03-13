@@ -30,7 +30,7 @@ USBX also relies on ThreadX semaphores, mutexes, and threads for multiple thread
 
 ### Product Distribution
 
-USBX can be obtained from our public source code repository at <https://github.comeclipse-threadx/usbx/>.
+USBX can be obtained from our public source code repository at <https://github.com/eclipse-threadx/usbx/>.
 
 The following is a list of several important files in the repository:
 
@@ -46,7 +46,7 @@ All filenames are in lower-case. This naming convention makes it easier to conve
 USBX is installed by cloning the GitHub repository to your local machine. The following is typical syntax for creating a clone of the USBX repository on your PC:
 
 ```powershell
-    git clone https://github.comeclipse-threadx/usbx
+    git clone https://github.com/eclipse-threadx/usbx
 ```
 
 Alternatively you can download a copy of the repository using the download button on the GitHub main page.

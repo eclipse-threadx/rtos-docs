@@ -116,5 +116,5 @@ ThreadX supports most popular embedded development tools, including IAR's Embedd
 
 ## Adaptation layer for ThreadX
 
-You can ease application migration issues to Eclipse ThreadX by using ThreadX [adaption layers](https://github.comeclipse-threadx/threadx/tree/master/utility/rtos_compatibility_layers) for various legacy RTOS APIs (FreeRTOS, POSIX, OSEK, etc.)
+You can ease application migration issues to Eclipse ThreadX by using ThreadX [adaption layers](https://github.com/eclipse-threadx/threadx/tree/master/utility/rtos_compatibility_layers) for various legacy RTOS APIs (FreeRTOS, POSIX, OSEK, etc.)
 

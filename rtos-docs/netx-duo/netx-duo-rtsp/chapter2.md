@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo RTSP Server is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes one source file and one header file, as follows:
+NetX Duo RTSP Server is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes one source file and one header file, as follows:
 
 - **nx_rtsp_server.h** Header file for NetX Duo RTSP Server
 - **nx_rtsp_server.c** C Source file for NetX Duo RTSP Server

@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## NetX Duo SMTP Client Installation
 
-The NetX Duo SMTP Client is available at [https://github.comeclipse-threadx/netxduo](https://github.comeclipse-threadx/netxduo). The package includes the following files:
+The NetX Duo SMTP Client is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes the following files:
 
 - **nxd_smtp_client.c** C Source file for NetX Duo SMTP Client API
 - **nxd_smtp_client.h** C Header file for NetX Duo SMTP Client API
