@@ -72,9 +72,9 @@ NetX Duo addons
   - [Ch. 3 - Description of FTP services](netx-duo-ftp/chapter3.md)
 
 - NetX Duo HTTP user guide
-  - [Chapter 1 - Introduction to NetX Duo HTTP](netx-duo-http/chapter1.md)
-  - [Chapter 2 - Installation and Use of NetX Duo HTTP](netx-duo-http/chapter2.md)
-  - [Chapter 3 - Description of NetX HTTP Services](netx-duo-http/chapter3.md)
+  - [Chapter 1 - Introduction to NetX Duo HTTP](netx-duo-http/Chapter1.md)
+  - [Chapter 2 - Installation and Use of NetX Duo HTTP](netx-duo-http/Chapter2.md)
+  - [Chapter 3 - Description of NetX HTTP Services](netx-duo-http/Chapter3.md)
 
 - NetX Duo Iperf user guide
   - [Chapter 1 - Introduction to NetX Duo Iperf](netx-duo-iperf/chapter1.md)
