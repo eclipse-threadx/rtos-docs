@@ -27,10 +27,10 @@ NetX Duo addons
   - [Ch. 3 - NetX Duo BSD Services](netx-duo-bsd/chapter3.md)
 
 - NetX Duo Crypto user guide
-  - [Ch. 1 - Introduction to NetX Duo Crypto](../netx/netx-crypto/chapter1.md)
-  - [Ch. 2 - Installation and use of NetX Duo Crypto](../netx/netx-crypto/chapter2.md)
-  - [Ch. 3 - Functional components of NetX Duo Crypto](../netx/netx-crypto/chapter3.md)
-  - [Ch. 4 - NetX Duo Crypto API description](../netx/netx-crypto/chapter4.md)
+  - [Ch. 1 - Introduction to NetX Duo Crypto](netx-duo-crypto/chapter1.md)
+  - [Ch. 2 - Installation and use of NetX Duo Crypto](netx-duo-crypto/chapter2.md)
+  - [Ch. 3 - Functional components of NetX Duo Crypto](netx-duo-crypto/chapter3.md)
+  - [Ch. 4 - NetX Duo Crypto API description](netx-duo-crypto/chapter4.md)
   - [App. A - Azure RTOS NetX Crypto CAVS test](netx-duo-crypto/appendix-a.md)
 
 - NetX Duo DHCP client user guide
