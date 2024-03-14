@@ -30,7 +30,7 @@ In function ***_tx_initialize_low_level***, the first-available RAM address is s
 
 ## Product Distribution
 
-ThreadX can be obtained from our public source code repository at <https://github.com/azure-rtos/threadx/>.
+ThreadX can be obtained from our public source code repository at <https://github.com/eclipse-threadx/threadx/>.
 
 The following is a list of several important files in the repository.
 
@@ -49,7 +49,7 @@ The following is a list of several important files in the repository.
 ThreadX is installed by cloning the GitHub repository to your local machine. The following is typical syntax for creating a clone of the ThreadX repository on your PC.
 
 ```shell
-    git clone https://github.com/azure-rtos/threadx
+    git clone https://github.com/eclipse-threadx/threadx
 ```
 
 Alternatively you can download a copy of the repository using the download button on the GitHub main page.

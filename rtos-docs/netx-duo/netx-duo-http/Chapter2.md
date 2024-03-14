@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo can be obtained from our public source code repository at [https://github.com/azure-rtos/netxduo/](https://github.com/azure-rtos/netxduo/).
+NetX Duo can be obtained from our public source code repository at [https://github.com/eclipse-threadx/netxduo/](https://github.com/eclipse-threadx/netxduo/).
 
  - **nxd_http_client.h** Header file for HTTP Client for NetX Duo
  - **nxd_http_server.h** Header file for HTTP Server for NetX Duo

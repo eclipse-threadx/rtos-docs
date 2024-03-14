@@ -33,7 +33,7 @@ For date/time stamping to function properly, FileX relies on ThreadX timer facil
 
 ## Product Distribution
 
-FileX can be obtained from our public source code repository at <https://github.com/azure-rtos/filex/>.
+FileX can be obtained from our public source code repository at <https://github.com/eclipse-threadx/filex/>.
 
 The following is a list of several important files in the repository:
 
@@ -49,7 +49,7 @@ The following is a list of several important files in the repository:
 FileX is installed by cloning the GitHub repository to your local machine. The following is typical syntax for creating a clone of the FileX repository on your PC:
 
 ```c
-    git clone https://github.com/azure-rtos/filex
+    git clone https://github.com/eclipse-threadx/filex
 ```
 
 Alternatively you can download a copy of the repository using the download button on the GitHub main page.

@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo can be obtained from our public source code repository at <https://github.com/azure-rtos/netxduo>. The package includes the following files:
+NetX Duo can be obtained from our public source code repository at <https://github.com/eclipse-threadx/netxduo>. The package includes the following files:
 
 - **nxd_dhcp_client.h**: Header file for NetX Duo DHCP
 - **nxd_dhcp_client.c**: C Source file for DHCP NetX Duo

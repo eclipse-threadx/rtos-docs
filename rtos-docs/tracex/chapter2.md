@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-You can obtain the TraceX app from the [Microsoft App Store](https://microsoft.com/store/apps) by searching for TraceX, or by going directly to [the TraceX page](https://www.microsoft.com/p/azure-rtos-tracex/9nf1lfd5xxg3?activetab=pivot:overviewtab). Then do the following.
+You can obtain the TraceX app from the [Microsoft App Store](https://microsoft.com/store/apps) by searching for TraceX. Then do the following.
 
 1. From the TraceX page in the App Store, click the **Get** or **Install** button to install TraceX.
 

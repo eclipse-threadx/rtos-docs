@@ -15,7 +15,7 @@ FileX user guide
 - [App. C - FileX data types](appendix-c.md)
 - [App. D - ASCII character codes](appendix-d.md)
 
-[FileX repository](https://github.com/azure-rtos/filex)
+[FileX repository](https://github.com/eclipse-threadx/filex)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

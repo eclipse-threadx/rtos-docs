@@ -37,7 +37,7 @@ GUIX Studio User Guide
 - [Ch. 10 - Simple Example Project](guix-studio-10.md)
 - [Ch. 11 - Resource Project File](guix-studio-11.md)
 
-[GUIX repository](https://github.com/azure-rtos/guix)
+[GUIX repository](https://github.com/eclipse-threadx/guix)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

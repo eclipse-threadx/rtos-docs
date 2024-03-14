@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-The NetX Duo Telnet package is available at <https://github.com/azure-rtos/netxduo>. The package includes the following files:
+The NetX Duo Telnet package is available at <https://github.com/eclipse-threadx/netxduo>. The package includes the following files:
 
 - **nxd_telnet_client.h**: Header file for Telnet Client for NetX Duo
 - **nxd_telnet_client.c**: C Source file for Telnet Client for NetX Duo

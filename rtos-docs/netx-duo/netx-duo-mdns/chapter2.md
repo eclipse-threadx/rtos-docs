@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo mDNS is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
+NetX Duo mDNS is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_mdns.h** Header file for NetX Duo mDNS module
 - **nxd_mdns.c** C Source file for NetX Duo mDNS module
