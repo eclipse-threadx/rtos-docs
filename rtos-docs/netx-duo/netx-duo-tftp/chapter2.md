@@ -11,7 +11,6 @@ This chapter contains a description of various issues related to installation, s
 
 NetX Duo can be obtained from our public source code repository at https://github.com/eclipse-threadx/netxduo/. The package includes the following files:
 
-
 - **nxd_tftp_client.h** Header file for NetX Duo TFTP Client
 
 - **nxd_tftp_client.c** C Source file for NetX Duo TFTP Client
@@ -38,11 +37,7 @@ To run a TFTP application, the application code must include *nxd_tftp_client.h*
 
 ## Small Example System
 
-<<<<<<< HEAD
-An example of how easy it is to use NetX Duo TFTP is described in Figure 1.1 that appears below. In this example, the TFTP include file *nxd_tftp_client.h* and *nxd_tftp_server.h* are brought in at line 19 and 20. Next, the TFTP Server is created in "*tx_application_define*" at line 179. 
-=======
 An example of how easy it is to use NetX Duo TFTP is described below. In this example, the TFTP include file *nxd_tftp_client.h* and *nxd_tftp_server.h* are brought in at line 19 and 20. Next, the TFTP Server is created in “*tx_application_define*” at line 179. 
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 
 > **Note:** The TFTP Server control block "*server*" was defined as a global variable at line 45 previously. This demo chooses to use IPv4 for its TFTP communication in line 14. After successful creation, the TFTP Server is started at line 304. At line 411 the TFTP Client is created. And finally, the Client writes the file at line 450 and reads the file back at line 485.
 
@@ -610,7 +605,6 @@ UINT        iface_index;
 ## Configuration Options
 
 There are several configuration options for building NetX Duo TFTP. The following list describes each in detail. Unless otherwise specified, these options are found in *nxd_tftp_client.h* and *nxd_tftp_server.h*.
-
 
 - **NX_DISABLE_ERROR_CHECKING** Defined, this option removes the basic TFTP error checking. It is typically used after the application has been debugged.
 
