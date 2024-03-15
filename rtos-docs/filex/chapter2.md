@@ -117,12 +117,11 @@ The following list describes each configuration option in detail:
 |FX_NO_LOCAL_PATH|Removes local path logic from FileX, resulting in smaller code size.|
 |FX_NO_TIMER|Eliminates the ThreadX timer setup to update the FileX system time and date. Doing so causes default time and date to be placed on all file operations.|
 |FX_UPDATE_RATE_IN_SECONDS    |Specifies rate at which system time in FileX is adjusted. By default, value is 10, specifying that the FileX system time is updated every 10 seconds.|
-|FX_ENABLE_EXFAT| When defined, the logic for handling exFAT file system is enabled in FileX. By default this symbol is not defined.| 
 |FX_UPDATE_RATE_IN_TICKS| Specifies the same rate as ***FX_UPDATE_RATE_IN_SECONDS*** (see above), except in terms of the underlying ThreadX timer frequency. The default is 1000, which assumes a 10ms ThreadX timer rate and a 10 second interval.|
 |FX_SINGLE_THREAD|Eliminates ThreadX protection logic from the FileX source. It should be used if FileX is being used only from one thread or if FileX is being used without ThreadX.|
 |FX_DRIVER_USE_64BIT_LBA|When defined, enables 64-bit sector addresses used in I/O driver. By default this option is not defined.|
 |FX_ENABLE_FAULT_TOLERANT| When defined, enables FileX Fault Tolerant Module. Enabling Fault Tolerant automatically defines the symbol ***FX_FAULT_TOLERANT*** and ***FX_FAULT_TOLERANT_DATA***. By default this option is not defined.|
-|FX_FAULT_TOLERANT_BOOT_INDEX|Defines byte offset in the boot sector where the cluster for the fault tolerant log is. By default this value is 116. This field takes 4 bytes. Bytes 116 through 119 are chosen because they are marked as reserved by FAT 12/16/32/exFAT specification.|
+|FX_FAULT_TOLERANT_BOOT_INDEX|Defines byte offset in the boot sector where the cluster for the fault tolerant log is. By default this value is 116. This field takes 4 bytes. Bytes 116 through 119 are chosen because they are marked as reserved by FAT 12/16/32 specification.|
 |FX_FAULT_TOLERANT_MINIMAL_CLUSTER|This symbol is deprecated. It is no longer being used by FileX Fault Tolerant.|
 |FX_STANDALONE_ENABLE|Defined, enables FileX to be used in standalone mode (without Eclipse ThreadX). By default this symbol is not defined.|
 

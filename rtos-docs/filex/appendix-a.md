@@ -26,13 +26,6 @@ UINT    fx_media_check(FX_MEDIA *media_ptr, UCHAR *scratch_memory_ptr,
 
 UINT    fx_media_close(FX_MEDIA *media_ptr);
 UINT    fx_media_close_notify_set(FX_MEDIA *media_ptr, VOID (*media_close_notify)(FX_MEDIA *media));
-UINT    fx_media_exFAT_format(FX_MEDIA *media_ptr, VOID (*driver)(FX_MEDIA *media), 
-                              VOID *driver_info_ptr, UCHAR *memory_ptr, 
-                              UINT memory_size, CHAR *volume_name,
-                              UINT number_of_fats, ULONG64 hidden_sectors,
-                              ULONG64 total_sectors, UINT bytes_per_sector,
-                              UINT sectors_per_cluster, UINT volume_serial_number,
-                              UINT boundary_unit);
 UINT    fx_media_extended_space_available(FX_MEDIA *media_ptr, ULONG64 *available_bytes_ptr);
 UINT    fx_media_flush(FX_MEDIA *media_ptr);
 UINT    fx_media_format(FX_MEDIA *media_ptr, VOID (*driver)(FX_MEDIA *media), 
