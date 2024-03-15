@@ -9,7 +9,7 @@ FileX is a complete FAT format media and file management system for deeply embed
 
 ## FileX Unique Features
 
-FileX supports an unlimited number of media devices at the same time, including RAM disks, FLASH managers, and actual physical devices. It supports 12-, 16-, and 32-bit File Allocation Table (FAT) formats, and also supports Extended File Allocation Table (exFAT), contiguous file allocation, and is highly optimized for both size and performance. FileX also includes fault tolerant support, media open/ close, and file write callback functions.
+FileX supports an unlimited number of media devices at the same time, including RAM disks, FLASH managers, and actual physical devices. It supports 12-, 16-, and 32-bit File Allocation Table (FAT) formats, and also supports contiguous file allocation, and is highly optimized for both size and performance. FileX also includes fault tolerant support, media open/ close, and file write callback functions.
 
 Designed to meet the growing need for FLASH devices, FileX uses the same design and coding methods as ThreadX. Like all Eclipse Foundation products, FileX is distributed with full ANSI C source code, and it has no run-time royalties.
 
@@ -29,7 +29,6 @@ Designed to meet the growing need for FLASH devices, FileX uses the same design 
 - Endian neutral
 - Easy-to-implement FileX I/O drivers
 - 12-, 16-, and 32-bit FAT support
-- exFAT support
 - Long filename support
 - Internal FAT entry cache
 - Unicode name support
@@ -101,7 +100,7 @@ As FileX updates file or directory, log entries are created. After the update op
 
 In case the file system update operation was interrupted, next time the media is mounted by FileX, the Fault Tolerant Module analyzes the log entries. The information in the log entries allows FileX to back out partial changes already applied to the file system (in case the failure happens during the early stage of the file update operation), or if the log entries contain re-do information, FileX is able to apply the changes required to finish the prior operation.
 
-This fault tolerant feature is available to all FAT file systems supported by FileX, including FAT12, FAT16, FAT32, and exFAT. By default fault tolerant is not enabled in FileX. To enable the fault tolerant feature, FileX must be built with the symbol **FX_ENABLE_FAULT_TOLERANT** and **FX_FAULT_TOLERANT** defined. At run time, the application starts fault tolerant service by calling **_fx_fault_tolerant_enable_**.
+This fault tolerant feature is available to all FAT file systems supported by FileX, including FAT12, FAT16, and FAT32. By default fault tolerant is not enabled in FileX. To enable the fault tolerant feature, FileX must be built with the symbol **FX_ENABLE_FAULT_TOLERANT** and **FX_FAULT_TOLERANT** defined. At run time, the application starts fault tolerant service by calling **_fx_fault_tolerant_enable_**.
 After the service starts, all file and directory write operations go through the Fault Tolerant Module.
 
 As fault tolerant service starts, it first detects whether or not the media is protected under the Fault Tolerant Module. If it is not, FileX assumes integrity of the file system, and starts protection by allocating free blocks from the file system to be used for logging and caching. If the Fault Tolerant Module logs are found on the file system, it analyzes the log entries. FileX reverts the prior operation or redoes the prior operation, depending on the content of the log entries. The file system becomes available after all the prior log entries are processed. This ensures that FIleX starts from a known good state.
