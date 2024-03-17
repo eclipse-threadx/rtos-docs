@@ -19,13 +19,13 @@ The FileX Fault Tolerant Module works by journaling steps required to update a f
 
 ## Use of the Fault Tolerant Module
 
-The FileX Fault Tolerant feature is available to all FAT file systems supported by FileX, including FAT12, FAT16, FAT32, and exFAT. To enable the fault tolerant feature, FileX must be built with the symbol **FX_ENABLE_FAULT_TOLERANT** defined. At run time, application starts fault tolerant service by calling ***fx_fault_tolerant_enable*** immediately after the call to ***fx_media_open***. After fault tolerant is enabled, all file write operations to the designated media are protected. By default the fault tolerant module is not enabled.
+The FileX Fault Tolerant feature is available to all FAT file systems supported by FileX, including FAT12, FAT16, and FAT32. To enable the fault tolerant feature, FileX must be built with the symbol **FX_ENABLE_FAULT_TOLERANT** defined. At run time, application starts fault tolerant service by calling ***fx_fault_tolerant_enable*** immediately after the call to ***fx_media_open***. After fault tolerant is enabled, all file write operations to the designated media are protected. By default the fault tolerant module is not enabled.
 
 > **Important:** *Application needs to make sure the file system is not being accessed prior to ***fx_fault_tolerant_enable*** being called. If application writes data to the file system prior to fault tolerant enable, the write operation could corrupt the media if prior write operations were not completed, and the file system was not restored using fault tolerant log entries.*
 
 ## FileX Fault Tolerant Module Log
 
-The FileX fault tolerant log takes up one logical cluster in flash. The index to the starting cluster number of that cluster is recorded in the boot sector of the media, with an offset specified by the symbol **FX_FAULT_TOLERANT_BOOT_INDEX**. By default this symbol is defined to be 116. This location is chosen because it is marked as reserved in FAT12/ 16/32 and exFAT specification.
+The FileX fault tolerant log takes up one logical cluster in flash. The index to the starting cluster number of that cluster is recorded in the boot sector of the media, with an offset specified by the symbol **FX_FAULT_TOLERANT_BOOT_INDEX**. By default this symbol is defined to be 116. This location is chosen because it is marked as reserved in FAT12/16/32 specification.
 
 Figure 5, "Log Structure Layout," shows the general layout of the log structure. The log structure contains three sections: Log Header, FAT Chain, and Log Entries.
 

@@ -5,13 +5,13 @@ description: FileX is a high-performance, file allocation table (FAT)-compatible
 
 # Overview of FileX
 
-FileX embedded file system is Eclipse ThreadX's advanced, industrial grade solution for Eclipse Foundation FAT file formats, designed specifically for deeply embedded, real-time, and IoT applications. FileX supports all of Eclipse Foundation's file formats, including FAT12, FAT16, FAT32, and exFAT. FileX also offers optional fault tolerance and FLASH wear leveling via an add-on product called [LevelX](../levelx/index.md). All of this combined with a small footprint, fast execution, and superior ease-of-use, make FileX the ideal choice for the most demanding embedded IoT applications.
+FileX embedded file system is Eclipse ThreadX's advanced, industrial grade solution for Eclipse Foundation FAT file formats, designed specifically for deeply embedded, real-time, and IoT applications. FileX supports all of Eclipse Foundation's file formats, including FAT12, FAT16, and FAT32. FileX also offers optional fault tolerance and FLASH wear leveling via an add-on product called [LevelX](../levelx/index.md). All of this combined with a small footprint, fast execution, and superior ease-of-use, make FileX the ideal choice for the most demanding embedded IoT applications.
 
 ## API protocols
 
 ### Media Services
 
-- FAT 12/16/32 and exFAT support
+- FAT 12/16/32 support
 - Minimal 6KB FLASH, 2.5KB RAM
 - Complete media access services
 - Unlimited number of media instance
@@ -70,7 +70,7 @@ FileX embedded file system is Eclipse ThreadX's advanced, industrial grade solut
 
 FileX is advanced technology, including the following.
 
-- FAT 12/16/32 and exFAT support
+- FAT 12/16/32 support
 - Multiple partition support
 - Automatic scaling
 - Endian neutral
