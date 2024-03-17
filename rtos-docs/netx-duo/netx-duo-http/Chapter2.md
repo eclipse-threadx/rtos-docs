@@ -11,14 +11,14 @@ This chapter contains a description of various issues related to installation, s
 
 NetX Duo can be obtained from our public source code repository at [https://github.com/eclipse-threadx/netxduo/](https://github.com/eclipse-threadx/netxduo/).
 
- - **nxd_http_client.h** Header file for HTTP Client for NetX Duo
- - **nxd_http_server.h** Header file for HTTP Server for NetX Duo
- - **nxd_http_client.c** C Source file for HTTP Client for NetX Duo
- - **nxd_http_server.c** C Source file for HTTP Server for NetX Duo
- - **nx_md5.c** MD5 digest algorithms
- - **filex_stub.h** Stub file if FileX is not present
- - **nxd_http.pdf** Description of HTTP for NetX Duo
- - **demo_netxduo_http.c** NetX Duo HTTP demonstration
+- **nxd_http_client.h** Header file for HTTP Client for NetX Duo
+- **nxd_http_server.h** Header file for HTTP Server for NetX Duo
+- **nxd_http_client.c** C Source file for HTTP Client for NetX Duo
+- **nxd_http_server.c** C Source file for HTTP Server for NetX Duo
+- **nx_md5.c** MD5 digest algorithms
+- **filex_stub.h** Stub file if FileX is not present
+- **nxd_http.pdf** Description of HTTP for NetX Duo
+- **demo_netxduo_http.c** NetX Duo HTTP demonstration
 
 ## HTTP Installation
 
@@ -34,11 +34,7 @@ Using HTTP for NetX Duo is easy. Basically, the application code must include *n
 
 ## Small Example System
 
-<<<<<<< HEAD
-An example of how easy it is to use NetX Duo HTTP is described in Figure 1.1 that appears below. This example works with the 'duo' services available in NetX Duo HTTP placement of #define USE_DUO  on line 23. Otherwise it uses the legacy NetX HTTP equivalent (limited to IPv4 only). Developers are encouraged to migrate existing applications to using the NetX Duo HTTP services.
-=======
 An example of how easy it is to use NetX Duo HTTP is described below. This example works with the ‘duo’ services available in NetX Duo HTTP placement of #define USE_DUO  on line 23. Otherwise it uses the legacy NetX HTTP equivalent (limited to IPv4 only). Developers are encouraged to migrate existing applications to using the NetX Duo HTTP services.
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 
 To specify IPv6 communication, the application defines IPTYPE to IPv6 in line 24.
 
@@ -525,28 +521,28 @@ The HTTP Client thread's first task is create and format the FileX media (lines 
 
 There are several configuration options for building HTTP for NetX Duo. Following is a list of all options, where each is described in detail. The default values are listed, but can be redefined prior to inclusion of *nxd_http_client.h* and *nxd_http_server.h*:
 
- - **NX_DISABLE_ERROR_CHECKING** Defined, this option removes the basic HTTP error checking. It is typically used after the application has been debugged
- - **NX_HTTP_SERVER_PRIORITY** The priority of the HTTP Server thread. By default, this value is defined as 16 to specify priority 16.
- - **NX_HTTP_NO_FILEX**	Defined, this option provides a stub for FileX dependencies. The HTTP Client will function without any change if this option is defined. The HTTP Server will need to either be modified or the user will have to create a handful of FileX services in order to function properly.
- - **NX_HTTP_TYPE_OF_SERVICE** Type of service required for the HTTP TCP requests. By default, this value is defined as NX_IP_NORMAL to indicate normal IP packet service.
-  - **NX_HTTP_SERVER_THREAD_TIME_SLICE** The number of timer ticks the Server thread is allowed to run before yielding to threads of the same priority. The default value is 2.
- - **NX_HTTP_FRAGMENT_OPTION** Fragment enable for HTTP TCP requests. By default, this value is NX_DONT_FRAGMENT to disable HTTP TCP fragmenting.
- - **NX_HTTP_SERVER_WINDOW_SIZE**	Server socket window size. By default, this value is 2048 bytes
- - **NX_HTTP_TIME_TO_LIVE**	Specifies the number of routers this packet can pass before it is discarded. The default value is set to 0x80.
- - **NX_HTTP_SERVER_TIMEOUT**	Specifies the number of ThreadX ticks that internal services will suspend for. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
- - **NX_HTTP_SERVER_TIMEOUT_ACCEPT** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_server_socket_accept* calls. The default value is set to (10 * NX_IP_PERIODIC_RATE).
- - **NX_HTTP_SERVER_TIMEOUT_DISCONNECT** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_disconnect* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
- - **NX_HTTP_SERVER_TIMEOUT_RECEIVE** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_receive* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
- - **NX_HTTP_SERVER_TIMEOUT_SEND** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_send* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
- - **NX_HTTP_MAX_HEADER_FIELD** Specifies the maximum size of the HTTP header field. The default value is 256.
- - **NX_HTTP_MULTIPART_ENABLE** If defined, enables HTTP Server to support multipart HTTP requests.
- - **NX_HTTP_SERVER_MAX_PENDING**	Specifies the number of connections that can be queued for the HTTP Server. The default value is set to 5.
- - **NX_HTTP_MAX_RESOURCE**	Specifies the number of bytes allowed in a client supplied *resource name*. The default value is set to 40.
- - **NX_HTTP_MAX_NAME**	Specifies the number of bytes allowed in a client supplied *username*. The default value is set to 20.
- - **NX_HTTP_MAX_PASSWORD**	Specifies the number of bytes allowed in a client supplied *password*. The default value is set to 20.
- - **NX_HTTP_SERVER_MIN_PACKET_SIZE** Specifies the minimum size of the packets in the pool specified at Server creation. The minimum size is needed to ensure the complete HTTP header can be contained in one packet. The default value is set to 600.
- - **NX_HTTP_CLIENT_MIN_PACKET_SIZE** Specifies the minimum size of the packets in the pool specified at Client creation. The minimum size is needed to ensure the complete HTTP header can be contained in one packet. The default value is set to 300.
- - **NX_HTTP_SERVER_RETRY_SECONDS** Set the Server socket retransmission timeout in seconds. The default value is set to 2.
- - **NX_HTTP_SERVER_ RETRY_MAX** This sets the maximum number of retransmissions on Server socket. The default value is set to 10.
- - **NX_HTTP_SERVER_ RETRY_SHIFT** This value is used to set the next retransmission timeout. The current timeout is multiplied by the number of retransmissions thus far, shifted by the value of the socket timeout shift. The default value is set to 1 for doubling the timeout.
- - **NX_HTTP_SERVER_TRANSMIT_QUEUE_DEPTH** This specifies the maximum number of packets that can be enqueued on the Server socket retransmission queue. If the number of packets enqueued reaches this number, no more packets can be sent until one or more enqueued packets are released. The default value is set to 20.
+- **NX_DISABLE_ERROR_CHECKING** Defined, this option removes the basic HTTP error checking. It is typically used after the application has been debugged
+- **NX_HTTP_SERVER_PRIORITY** The priority of the HTTP Server thread. By default, this value is defined as 16 to specify priority 16.
+- **NX_HTTP_NO_FILEX**	Defined, this option provides a stub for FileX dependencies. The HTTP Client will function without any change if this option is defined. The HTTP Server will need to either be modified or the user will have to create a handful of FileX services in order to function properly.
+- **NX_HTTP_TYPE_OF_SERVICE** Type of service required for the HTTP TCP requests. By default, this value is defined as NX_IP_NORMAL to indicate normal IP packet service.
+- **NX_HTTP_SERVER_THREAD_TIME_SLICE** The number of timer ticks the Server thread is allowed to run before yielding to threads of the same priority. The default value is 2.
+- **NX_HTTP_FRAGMENT_OPTION** Fragment enable for HTTP TCP requests. By default, this value is NX_DONT_FRAGMENT to disable HTTP TCP fragmenting.
+- **NX_HTTP_SERVER_WINDOW_SIZE**	Server socket window size. By default, this value is 2048 bytes
+- **NX_HTTP_TIME_TO_LIVE**	Specifies the number of routers this packet can pass before it is discarded. The default value is set to 0x80.
+- **NX_HTTP_SERVER_TIMEOUT**	Specifies the number of ThreadX ticks that internal services will suspend for. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
+- **NX_HTTP_SERVER_TIMEOUT_ACCEPT** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_server_socket_accept* calls. The default value is set to (10 * NX_IP_PERIODIC_RATE).
+- **NX_HTTP_SERVER_TIMEOUT_DISCONNECT** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_disconnect* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
+- **NX_HTTP_SERVER_TIMEOUT_RECEIVE** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_receive* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
+- **NX_HTTP_SERVER_TIMEOUT_SEND** Specifies the number of ThreadX ticks that internal services will suspend for in internal *nx_tcp_socket_send* calls. The default value is set to 10 seconds (10 * NX_IP_PERIODIC_RATE).
+- **NX_HTTP_MAX_HEADER_FIELD** Specifies the maximum size of the HTTP header field. The default value is 256.
+- **NX_HTTP_MULTIPART_ENABLE** If defined, enables HTTP Server to support multipart HTTP requests.
+- **NX_HTTP_SERVER_MAX_PENDING**	Specifies the number of connections that can be queued for the HTTP Server. The default value is set to 5.
+- **NX_HTTP_MAX_RESOURCE**	Specifies the number of bytes allowed in a client supplied *resource name*. The default value is set to 40.
+- **NX_HTTP_MAX_NAME**	Specifies the number of bytes allowed in a client supplied *username*. The default value is set to 20.
+- **NX_HTTP_MAX_PASSWORD**	Specifies the number of bytes allowed in a client supplied *password*. The default value is set to 20.
+- **NX_HTTP_SERVER_MIN_PACKET_SIZE** Specifies the minimum size of the packets in the pool specified at Server creation. The minimum size is needed to ensure the complete HTTP header can be contained in one packet. The default value is set to 600.
+- **NX_HTTP_CLIENT_MIN_PACKET_SIZE** Specifies the minimum size of the packets in the pool specified at Client creation. The minimum size is needed to ensure the complete HTTP header can be contained in one packet. The default value is set to 300.
+- **NX_HTTP_SERVER_RETRY_SECONDS** Set the Server socket retransmission timeout in seconds. The default value is set to 2.
+- **NX_HTTP_SERVER_ RETRY_MAX** This sets the maximum number of retransmissions on Server socket. The default value is set to 10.
+- **NX_HTTP_SERVER_ RETRY_SHIFT** This value is used to set the next retransmission timeout. The current timeout is multiplied by the number of retransmissions thus far, shifted by the value of the socket timeout shift. The default value is set to 1 for doubling the timeout.
+- **NX_HTTP_SERVER_TRANSMIT_QUEUE_DEPTH** This specifies the maximum number of packets that can be enqueued on the Server socket retransmission queue. If the number of packets enqueued reaches this number, no more packets can be sent until one or more enqueued packets are released. The default value is set to 20.
