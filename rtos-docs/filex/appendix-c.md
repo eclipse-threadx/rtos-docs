@@ -32,12 +32,6 @@ typedef struct FX_DIR_ENTRY_STRUCT
     ULONG       fx_dir_entry_last_search_byte_offset;
     ULONG64     fx_dir_entry_next_log_sector;
 
-    #ifdef FX_ENABLE_EXFAT
-        CHAR        fx_dir_entry_dont_use_fat;
-        UCHAR       fx_dir_entry_type;
-        ULONG64     fx_dir_entry_available_file_size;
-        ULONG       fx_dir_entry_secondary_count;
-    #endif
 
 } FX_DIR_ENTRY;
 ```
@@ -92,23 +86,6 @@ typedef struct        FX_MEDIA_STRUCT
     UINT        fx_media_heads;
     ULONG64        fx_media_total_sectors;
     ULONG        fx_media_total_clusters;
-
-    #ifdef FX_ENABLE_EXFAT
-        ULONG        fx_media_exfat_volume_serial_number;
-        UINT        fx_media_exfat_file_system_revision;
-        UINT        fx_media_exfat_volume_flag;
-        USHORT        fx_media_exfat_drive_select;
-        USHORT        fx_media_exfat_percent_in_use;
-        UINT        fx_media_exfat_bytes_per_sector_shift;
-        UINT        fx_media_exfat_sector_per_clusters_shift;
-        UCHAR        fx_media_exfat_bitmap_cache[512];
-        ULONG        fx_media_exfat_bitmap_start_sector;
-        ULONG        fx_media_exfat_bitmap_cache_size_in_sectors;
-        ULONG        fx_media_exfat_bitmap_cache_start_cluster;
-        ULONG        fx_media_exfat_bitmap_cache_end_cluster;
-        UINT        fx_media_exfat_bitmap_clusters_per_sector_shift;
-        UINT        fx_media_exfat_bitmap_cache_dirty;
-    #endif
 
     UINT        fx_media_reserved_sectors;
     UINT        fx_media_root_sector_start; 

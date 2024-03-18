@@ -69,101 +69,34 @@ The exact sector offset of the other areas in the logical sector view of the med
 - **System Boot Code** The *system boot code* field is an area to store a small portion of boot code. In most devices today, this is a legacy field.
 - **Signature 0x55AA** The *signature* field is a data pattern used to identify the boot record. If this field is not present, the boot record is not valid.
 
-### exFAT
-
-The maximum file size in FAT32 is 4GB, which limits the wide adoption of high-definition multimedia files. By default FAT32 supports storage media up to 32GB. With increasing flash and SD card capacity, FAT32 becomes less efficient in managing large volumes. exFAT is designed to overcome these limitations. exFAT supports file size up to one Exabyte (EB), which is approximately one billion GB. Another significant difference between exFAT and FAT32 is that exFAT uses bitmap to manage available space in the volume, making exFAT more efficient in finding available space when writing data to the file. For file stored in contiguous clusters, exFAT eliminates the walking down the FAT chain to find all the clusters, making it more efficient when accessing large files. exFAT is required for flash storage and SD cards larger than 32GB.
-
-### exFAT Logical Sectors
-
-The general layout of the media's logical sectors in exFAT is illustrated in Figure 2. In exFAT the boot block and the FAT area belong to System Area. The rest of the clusters are User Area. Although not required, exFAT standard does recommend that the Allocation Bitmap is at the beginning of the User Area, followed by the Up-case Table and the root directory.
-
-### exFAT Media Boot Record
-
-The content of the Media Boot Record in exFAT is different from those in FAT12/16/32. They are listed in Table 2. To prevent confusion, the area between 0x0B and 0x40, which contains various media parameters in FAT12/16/32 is marked as *Reserved* in exFAT. This reserved area must be programmed with zeros, avoiding any misinterpreting the Media Boot Record.
-
-![exFAT Logical Sectors](./media/user-guide/exfat-logical-sectors.png)
-
-**FIGURE 2. exFAT Logical Sectors**
-
-- **Jump Instruction** The *jump instruction* field is a three-byte field that represents an Intel x86 machine instruction for a processor jump. This is a legacy
-field in most situations.
-
-    **TABLE 2. exFAT Media Boot Record**
-
-    |Offset  |Field  |Number of Bytes|
-    |----------|-----------|------------|
-    |0x00|Jump Instruction|3|
-    |0x03|File System Name|8|
-    |0x0B|Reserved|53|
-    |0x40|Partition Offset|8|
-    |0x48|Volume Length|8|
-    |0x50|FAT Offset|4|
-    |0x54|FAT Length|4|
-    |0x58|Cluster Heap Offset|4|
-    |0x5C|Cluster Count|4|
-    |0x60|First Cluster of Root Directory|4|
-    |0x64|Volume Serial Number|4|
-    |0x68|File System Revision|2|
-    |0x6A|Volume Flags|2|
-    |0x6C|Bytes Per Sector Shift|1|
-    |0x6D|Sector Per Cluster Shift|1|
-    |0x6E|Number of FATs|1|
-    |0x6F|Drive Select|1|
-    |0x70|Percent in Use|7|
-    |0x71|Reserved|1|
-    |0x78|Boot Code|390|
-    |0x1FE|Boot Signature|2|
-
-- **File System Name** For exFAT the *file system name* field must be "EXFAT" followed by three trailing white spaces.
-- **Reserved** The content of the *reserved* field must be zero. This region overlaps with the boot records in FAT12/16/ 32. Making this area zero avoids file systems from mis-interprets this volume.
-- **Partition Offset** The *partition offset* field indicates the starting of this partition.
-- **Volume Length** The *volume length* field defines the size, in number of sectors, of this partition.
-- **FAT Offset** The *FAT offset* field defines the starting sector number, relative to the beginning of this partition, of the FAT table for this partition.
-- **FAT Length** The *FAT length* field defines the size of the FAT table, in number of sectors.
-- **Cluster Heap Offset** The *cluster heap offset* field defines the starting sector number, relative to the beginning of the partition, of the cluster heap. Cluster heap is the area where the directories information and the file data are stored.
-- **Cluster Count** The *cluster count* field defines the number of cluster this partition has.
-- **First Cluster of Root Directory** The *first cluster of root directory* field defines the starting location of the root directory, which is recommend to be right after the allocation bitmap and the up-case table.
-- **Volume Serial Number** The *volume serial number* field defines the serial number for this partition.
-- **File System Revision** The *file system revision* field defines the major and minor version of exFAT.
-- **Volume Flags** The *volume flags* field contains flags indicating the state of this volume.
-- **Bytes Per Sector Shift** The *bytes per sector shift* field defines the number of bytes per sector, in log2(n), where n is the number of bytes per sector. For example, in SD card, sector size is 512 bytes. Therefore this field shall be 9 (log2(512) = 9).
-- **Sectors Per Cluster Shift** The *sectors per cluster shift* field defines the number of sectors in a cluster, in log2(n) where n is the number of sectors per cluster.
-- **Number of FATs** The *number of FATs* field defines the number of FAT tables in this partition. For exFAT, the value is recommended to be 1, for one FAT table.
-- **Drive Select** The *driver select* field defines the extended INT 13h drive number.
-- **Percent in Use** The *percent in use* field define the percentage of the clusters in the cluster heap is being allocated. The valid values are between 0 and 100, inclusive.
-- **Reserved** This field is reserved for future use.
-- **Boot Code** The *boot code* field is an area to store a small portion of the boot code. In most devices today, this is a legacy field.
-- **Signature 0x55AA** The *boot signature* field is a data pattern used to identify the boot record. If this field is not present, the boot record is not valid.
-
 ### File Allocation Table (FAT)
 
-The *File Allocation Table (FAT)* starts after the reserved sectors in the media. The FAT area is basically an array of 12-bit, 16-bit, or 32-bit entries that determine if that cluster is allocated or part of a chain of clusters comprising a subdirectory or a file. The size of each FAT entry is determined by the number of clusters that need to be represented. If the number of clusters (derived from the total sectors divided by the sectors per cluster) is less than or equal to 4,086, 12-bit FAT entries are used. If the total number of clusters is greater than 4,086 and less than 65,525, 16-bit FAT entries are used. Otherwise, if the total number of clusters is greater than or equal to 65,525, 32-bit FAT or exFAT are used.
+The *File Allocation Table (FAT)* starts after the reserved sectors in the media. The FAT area is basically an array of 12-bit, 16-bit, or 32-bit entries that determine if that cluster is allocated or part of a chain of clusters comprising a subdirectory or a file. The size of each FAT entry is determined by the number of clusters that need to be represented. If the number of clusters (derived from the total sectors divided by the sectors per cluster) is less than or equal to 4,086, 12-bit FAT entries are used. If the total number of clusters is greater than 4,086 and less than 65,525, 16-bit FAT entries are used. Otherwise, if the total number of clusters is greater than or equal to 65,525, or 32-bit FAT is used.
 
-For FAT12/16/32, the FAT table not only maintains the cluster chain, it also provides information on cluster allocation: whether or not a cluster is available. In exFAT,
-the cluster allocation information is maintained by an Allocation Bitmap Directory Entry. Each partition has its own allocation bitmap. The size of the bitmap is large enough to cover all the available clusters. If a cluster is available for allocation, the corresponding bit in the allocation bitmap is set to 0. Otherwise the bit is set to 1. For a file that occupies consecutive clusters, exFAT does not require a FAT chain to keep track of all the clusters. However, for a file that does not occupy consecutive clusters, a FAT chain still needs to be maintained.
+For FAT12/16/32, the FAT table not only maintains the cluster chain, it also provides information on cluster allocation: whether or not a cluster is available. 
 
 ### FAT Entry Contents
 
 The first two entries in the FAT table are not used and typically have the following contents.
 
-|FAT Entry |12-bit FAT|16-bit FAT|32-bit FAT| exFAT|
-|----------|-----------|------------|-------|------|
-|Entry 0|0x0F0|0x00F0|0x000000F0|0xF8FFFFFF|
-|Entry 1|0xFFF|0xFFFF|0x0FFFFFFF|0xFFFFFFFF|
+|FAT Entry |12-bit FAT|16-bit FAT|32-bit FAT|
+|----------|-----------|------------|-------|
+|Entry 0|0x0F0|0x00F0|0x000000F0|
+|Entry 1|0xFFF|0xFFFF|0x0FFFFFFF|
 
 FAT entry number 2 represents the first cluster in the media's data area. The contents of each cluster entry determines whether or not it is free or part of a linked list of clusters allocated for a file or a subdirectory. If the cluster entry contains another valid cluster entry, then the cluster is allocated and its value points to the next cluster allocated in the cluster chain.
 
 Possible cluster entries are defined as follows.
 
-|Meaning|12-bit FAT|16-bit FAT|32-bit FAT| exFAT|
-|----------|-----------|------------|-------|------|
-|Free Cluster|0x000|0x0000|0x00000000|0x00000000|
-|Not Used|0x001|0x0001|0x00000001|0x00000001|
-|Reserved|0xFF0-FF6|0xFFF0-FFF6|0x0FFFFFF0-6|ClusterCounter +2 to 0xFFFFFFF6|
-|Bad Cluster|0xFF7|0xFFF7|0x0FFFFFF7|0xFFFFFFF7|
-|Reserved| - | - | - | 0xFFFFFFF8-E|
-|Last Cluster| 0xFF8-FFF| 0xFFF8-FFFF| 0x0FFFFFF8-F| 0xFFFFFFFF|
-|Cluster Link| 0x002-0xFEF| 0x0002-FFEF| 0x2-0x0FFFFFEF | 0x2 - ClusterCount + 1|
+|Meaning|12-bit FAT|16-bit FAT|32-bit FAT|
+|----------|-----------|------------|-------|
+|Free Cluster|0x000|0x0000|0x00000000|
+|Not Used|0x001|0x0001|0x00000001|
+|Reserved|0xFF0-FF6|0xFFF0-FFF6|0x0FFFFFF0-6|
+|Bad Cluster|0xFF7|0xFFF7|0x0FFFFFF7|
+|Reserved| - | - | - |
+|Last Cluster| 0xFF8-FFF| 0xFFF8-FFFF| 0x0FFFFFF8-F|
+|Cluster Link| 0x002-0xFEF| 0x0002-FFEF| 0x2-0x0FFFFFEF |
 
 The last cluster in an allocated chain of clusters contains the Last Cluster value (defined above). The first cluster number is found in the file or subdirectory's directory entry.
 
@@ -325,99 +258,6 @@ field represents a checksum of the 11 characters of the associated MSDOS 8.3 fil
     |3|LFN Directory Entry 1|
     |4|8.3 Directory Entry (ttttt~n.xx)|
 
-### exFAT Directory Description
-
-exFAT file system stores directory entry and file name differently. Directory entry contains the entry's attributes, various timestamps on when the entry was created, modified, and accessed. Other information, such as file size and starting cluster, is stored in Stream Extension Directory Entry which immediately follows the primary directory entry. exFAT supports only Long File Name (LFN) name format. which is stored in File Name Directory Entry immediately follows the Stream Extension Directory Entry, as shown in Table 2.
-
-### exFAT File Directory Entry
-
-A description of exFAT file directory entry and its contents is included in the following table and paragraphs.
-
-- **Entry Type**
-
-    The entry type field indicates the type of this entry. For File Directory Entry, this field must be 0x85.
-
-- **Secondary Entry Count**
-
-    The *secondary entry count* field indicates the number of secondary entries immediately follows this primary entry. Secondary entries associated with the file directory entry include one stream extension directory entry and one or more file name directory entries.
-
-    **TABLE 6. exFAT File Directory Entry**
-
-    |Offset|Field|Number of Bytes|
-    |----|-----------|-|
-    |0x00|Entry Type|1|
-    |0x01|Secondary Entry|1|
-    |0x02|Checksum|2|
-    |0x04|File Attributes|2|
-    |0x06|Reserved 1|2|
-    |0x08|Create Timestamp|4|
-    |0x0C|Last Modified Timestamp|4|
-    |0x10|Last Accessed Timestamp|4|
-    |0x14|Create 10ms Increment|1|
-    |0x15|Last Modified 10ms Increment|1|
-    |0x16|Create UTC Offset|1|
-    |0x17|Last Modified UTC Offset|1|
-    |0x18|Last Access UTC Offset|1|
-    |0x19|Reserved 2|7|
-
-- **Checksum**
-
-    The *checksum* field contains the value of the checksum over all entries in the directory entry set (the file directory entry and its secondary entries).
-
-- **File Attributes**
-
-    The one-byte attributes field entry contains a series of bits that specify various properties of the directory entry. The definition of most attributes bits is identical to FAT 12/16/32. Directory attribute definitions are as follows:
-
-    |Attribute Bit|Meaning|
-    |------------|-----------|
-    |0x01| Entry is read-only|
-    |0x02|Entry is hidden|
-    |0x04|Entry is a system entry|
-    |0x08|Entry is reserved|
-    |0x10|Entry is a directory|
-    |0x20|Entry has been modified|
-    |All other bits|Reserved|
-
-- **Reserved1**
-
-    This field should be zero.
-
-- **Create Timestamp**
-
-    The *create timestamp* field, combining information from the *create 10ms Increment* field, describes the local date and time the file or the directory was created.
-
-- **Last Modified Timestamp**
-
-    The *last modified timestamp* field, combining information from the *last modified 10ms increment* field, describe the local date and time the file or the directory was last modified. See notes below on timestamps.
-
-- **Last Accessed Timestamp**
-
-    The *last accessed timestamp* field describes the local date and time the file or the directory was last accessed. See notes below on timestamps.
-
-- **Create 10ms Increment**
-
-    The *create 10ms increment* field, combining information from the *create timestamp* field, describes the local date and time the file or the directory was created. See notes below on timestamps.
-
-- **Last Modified 10ms Increment**
-
-    The *last modified 10ms increment* field, combining information from the *last modified timestamp* field, describe the local date and time the file or the directory was last modified. See notes below on timestamps.
-
-- **Create UTC Offset**
-
-    The *create UTC offset* field describes the difference between the local time and the UTC time, when the file or the directory was created. See notes below on timestamps.
-
-- **Last Modified UTC Offset**
-
-    The *last modified UTC offset* field describes the difference between the local time and the UTC time, when the file or the directory was last modified. See notes below on timestamps.
-
-- **Last Accessed UTC Offset**
-
-    The *last accessed UTC offset* field describes the difference between the local time and the UTC time, when the file or the directory was last accessed. See notes below on timestamps.
-
-- **Reserved2**
-
-    This field should be zero.
-
 ### Notes on Timestamps
 
 - **Timestamp Entry**
@@ -503,13 +343,13 @@ A description of Stream Extension Directory Entry and its contents is included i
 
 - **Data Length**
 
-    The *data length* field contains the total number of bytes in the allocated clusters. This value may be larger than *Valid Data Length*, since exFAT allows pre-allocation of data clusters.
+    The *data length* field contains the total number of bytes in the allocated clusters.
 
 ### Root Directory
 
 In FAT 12- and 16-bit formats, the *root directory* is located immediately after all the FAT sectors in the media and can be located by examining the ***fx_media_root_sector_start*** in an opened **FX_MEDIA** control block. The size of the root directory, in terms of number of directory entries (each 32 bytes in size), is determined by the corresponding entry in the media's boot record.
 
-The root directory in FAT-32 and exFAT can be located anywhere in the available clusters. Its location and size are determined from the boot record when the media is opened. After the media is opened, the ***fx_media_root_sector_start*** field can be used to find the starting cluster of the FAT-32 or exFAT root directory.
+The root directory in FAT-32 can be located anywhere in the available clusters. Its location and size are determined from the boot record when the media is opened. After the media is opened, the ***fx_media_root_sector_start*** field can be used to find the starting cluster of the FAT-32 root directory.
 
 ### Subdirectories
 
@@ -546,14 +386,6 @@ Figure 4, "FileX FAT-16 File Example," shows a file named ***FILE.TXT*** with tw
 A FileX file may be opened multiple times simultaneously for read access. However, a file can only be opened once for writing. The information used to support the file access is contained in the ***FX_FILE*** file control block.
 
 > **Note:** *Note that the media driver can dynamically set write protection. If this happens all write requests are rejected as well as attempts to open a file for writing.*
-
-### File Layout in exFAT
-
-The design of exFAT does not require FAT chain to be maintained for a file if data is stored in contagious clusters. The *NoFATChain* bit in the Stream Extension Directory Entry indicates whether or not the FAT chain should be used when reading data from the file. If the *NoFATChain* is set, FileX reads sequentially from the cluster indicated in the *First Cluster* field in the Stream Extension Directory Entry.
-
-On the other hand, if the *NoFATChain* is clear, FileX will follow the FAT chain in order to traverse the entire file, similar to the FAT chain in FAT12/16/32.
-
-Figure 3 shows two sample files, one does not require FAT chain, and the other one requires a FAT chain.
 
 ## System Information
 
