@@ -1714,7 +1714,6 @@ fx_fault_tolerant_enable(media_ptr, fault_tolerant_memory, sizeof(fault_tolerant
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -1937,7 +1936,7 @@ This service sets the file's attributes to those specified by the caller.
 - **FX_FAT_READ_ERROR** (0x03) Unable to read FAT entry.
 - **FX_FILE_CORRUPT** (0x08) File is corrupted.
 - **FX_MEDIA_NOT_OPEN** (0x11) Specified media is not open.
-- **FX_NO_MORE_ENTRIES** (0x0F) No more entries in the FAT table or exFAT cluster map.
+- **FX_NO_MORE_ENTRIES** (0x0F) No more entries in the FAT table.
 - **FX_NO_MORE_SPACE** (0x0A) No more space to complete the operation.
 - **FX_NOT_FOUND** (0x04) Specified file was not found in the media.
 - **FX_NOT_A_FILE** (0x05) Specified file is a directory.
@@ -2457,7 +2456,7 @@ UINT fx_file_extended_allocate(
 
 This service allocates and links one or more contiguous clusters to the end of the specified file. FileX determines the number of clusters required by dividing the requested size by the number of bytes per cluster. The result is then rounded up to the next whole cluster.
 
-This service is designed for exFAT. The *size* parameter takes a 64-bit integer value, which allows the caller to pre-allocate space beyond 4GB range.
+The *size* parameter takes a 64-bit integer value, which allows the caller to pre-allocate space beyond 4GB range.
 
 ### Input Parameters
 
@@ -2544,7 +2543,7 @@ UINT fx_file_extended best_effort_allocate(
 
 This service allocates and links one or more contiguous clusters to the end of the specified file. FileX determines the number of clusters required by dividing the requested size by the number of bytes per cluster. The result is then rounded up to the next whole cluster. If there are not enough consecutive clusters available in the media, this service links the largest available block of consecutive clusters to the file. The amount of space actually allocated to the file is returned to the caller.
 
-This service is designed for exFAT. The *size* parameter takes a 64-bit integer value, which allows the caller to pre-allocate space beyond 4GB range.
+The *size* parameter takes a 64-bit integer value, which allows the caller to pre-allocate space beyond 4GB range.
 
 ### Input Parameters
 
@@ -2633,7 +2632,7 @@ UINT fx_file_extended_relative_seek(
 
 This service positions the internal file read/write pointer to the specified relative byte offset. Any subsequent file read or write request will begin at this location in the file.
 
-This service is designed for exFAT. The *byte_offset* parameter takes a 64bit integer value, which allows the caller to reposition the read/write pointer beyond 4GB range.
+The *byte_offset* parameter takes a 64bit integer value, which allows the caller to reposition the read/write pointer beyond 4GB range.
 
 If **FX_SEEK_BEGIN** is specified for the *seek_from parameter*, the seek operation is performed from the beginning of the file. If **FX_SEEK_END** is specified the seek operation is performed backward from the end of the file. If **FX_SEEK_FORWARD** is specified, the seek operation is performed forward from the current file position. If **FX_SEEK_BACK** is specified, the seek operation is performed backward from the current file position.
 
@@ -2725,7 +2724,7 @@ UINT fx_file_extended_seek(
 
 This service positions the internal file read/write pointer to the specified byte offset. Any subsequent file read or write request will begin at this location in the file.
 
-This service is designed for exFAT. The *byte_offset* parameter takes a 64bit integer value, which allows the caller to reposition the read/write pointer beyond 4GB range.
+The *byte_offset* parameter takes a 64bit integer value, which allows the caller to reposition the read/write pointer beyond 4GB range.
 
 ### Input Parameters
 
@@ -2806,7 +2805,7 @@ This service truncates the size of the file to the specified size. If the suppli
 
 > **Warning:** *Use caution truncating files that may also be simultaneously open for reading. Truncating a file also opened for reading can result in reading invalid data.*
 
-This service is designed for exFAT. The *size* parameter takes a 64-bit integer value, which allows the caller to operate beyond 4GB range.
+The *size* parameter takes a 64-bit integer value, which allows the caller to operate beyond 4GB range.
 
 ### Input Parameters
 
@@ -2890,7 +2889,7 @@ This service truncates the size of the file to the specified size. If the suppli
 
 > **Warning:** *Use caution truncating files that may also be simultaneously open for reading. Truncating a file also opened for reading can result in reading invalid data.*
 
-This service is designed for exFAT. The *size* parameter takes a 64-bit integer value, which allows the caller to operate beyond 4GB range.
+The *size* parameter takes a 64-bit integer value, which allows the caller to operate beyond 4GB range.
 
 ### Input Parameters
 
@@ -3777,7 +3776,6 @@ status = fx_media_abort(&my_media);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -3840,7 +3838,6 @@ status = fx_media_cache_invalidate(&my_media);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -3937,7 +3934,6 @@ status = fx_media_check(&my_media, sratch_memory, 4096,
 - fx_media_cache_invalidate
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4000,7 +3996,6 @@ status = fx_media_close(&my_media);
 - fx_media_cache_invalidate
 - fx_media_check
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4058,112 +4053,6 @@ fx_media_close_notify_set(media_ptr, my_media_close_callback);
 - fx_media_cache_invalidate
 - fx_media_check
 - fx_media_close
-- fx_media_exFAT_format
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
-
-## fx_media_exFAT_format
-
-Formats the specified media as an exFAT file system.
-
-### Prototype
-
-```c
-UINT fx_media_exFAT_format(
-    FX_MEDIA *media_ptr,
-    VOID (*driver)(FX_MEDIA *media),
-    VOID *driver_info_ptr, 
-    UCHAR *memory_ptr,
-    UINT memory_size, 
-    CHAR *volume_name,
-    UINT number_of_fats,
-    ULONG64 hidden_sectors, 
-    ULONG64 total_sectors,
-    UINT bytes_per_sector, 
-    UINT sectors_per_cluster,
-    UINT volume_serial_number, 
-    UINT boundary_unit);
-```
-
-### Description
-
-This service formats the supplied media in an exFAT compatible manner based on the supplied parameters. This service must be called prior to opening the media.
-
-> **Warning:** *Formatting an already formatted media effectively erases all files and directories on the media.*
-
-> **Important:** *The exFAT volume size should match the size of the partition (if there is an MBR or GPT layout), or the size of the whole device if there is no partition layout (no MBR or GPT). There is a limitation on Windows that exFAT Disk will not be recognized if formatted with some values of total sectors that are less than available sectors*
-
-> **Important:** *With reference to the specification, the bytes per sector may take on only the following values: 512, 1024, 2048 or 4096.*
-
-### Input Parameters
-
-- *media_ptr*: Pointer to the media control block. This is used only to provide some basic information necessary for the driver to operate.
-- *driver*: Pointer to the I/O driver for this media. This will typically be the same driver supplied to the subsequent fx_media_open call.
-- *driver_info_ptr*: Pointer to the optional information that the I/O driver may utilize.
-- *memory_ptr*: Pointer to the working memory for the media. memory_size Specifies the size of the working media memory. The size must be at least as large as the media's sector size.
-- *volume_name*: Pointer to the volume name string, which is a maximum of 11 characters.
-- *number_of_fats*: Number of FATs on the media. Current implementation supports one FAT on the media.
-- *hidden_sectors*: Number of sectors hidden before this media's boot sector. This is typical when multiple partitions are present.
-- *total_sectors*: Total number of sectors in the media.
-- *bytes_per_sector*: Number of bytes per sector, which is typically 512. FileX requires this to be a multiple of 32.
-- *sectors_per_cluster*: Number of sectors in each cluster. The cluster is the minimum allocation unit in a FAT file system.
-- *volume_serial_number*: Serial number to be used for this volume.
-- *boundary_unit*: Physical data area alignment size, in number of sectors.
-
-### Return Values
-
-- **FX_SUCCESS** (0x00) Successful media format.
-- **FX_IO_ERROR** (0x90) Driver I/O error.
-- **FX_PTR_ERROR** (0x18) Invalid media, driver, or memory pointer.
-- **FX_CALLER_ERROR**    (0x20) Caller is not a thread.
-
-### Allowed From
-
-Threads
-
-### Example
-
-```c
-FX_MEDIA             sd_card;
-UCHAR                 media_memory[512];
-
-/* Format a 64GB SD card with exFAT file system. The media has
-    been properly partitioned, with the partition starts from sector 32768.
-    For 64GB, there are total of 120913920 sectors, each sector 512 bytes. */
-
-status = fx_media_exFAT_format(&sd_card, _fx_sd_driver,
-                                driver_information, media_memory,
-                                sizeof(media_memory),
-                                "exFAT_DISK" /* Volume Name */,
-                                1 /* Number of FATs */,
-                                32768 /* Hidden sectors */,
-                                120913920 /* Total sectors */,
-                                512 /* Sector size */,
-                                256 /* Sectors per cluster */,
-                                12345 /* Volume ID */,
-                                8192 /* Boundary unit */);
-
-/* If status is FX_SUCCESS, the media was successfully formatted. */
-
-```
-
-### See Also
-
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4192,7 +4081,7 @@ UINT fx_media_extended_space_available(
 
 This service returns the number of bytes available in the media.
 
-This service is designed for exFAT. The pointer to *available_bytes* parameter takes a 64-bit integer value, which allows the caller to work with media beyond 4GB range.
+The pointer to *available_bytes* parameter takes a 64-bit integer value, which allows the caller to work with media beyond 4GB range.
 
 ### Input Parameters
 
@@ -4232,7 +4121,6 @@ status = fx_media_extended_space_available(&my_media, &available_bytes);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_flush
 - fx_media_format
 - fx_media_open
@@ -4301,7 +4189,6 @@ status = fx_media_flush(&my_media);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_format
 - fx_media_open
@@ -4421,7 +4308,6 @@ status = fx_media_format(&ram_disk, _fx_ram_driver,
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_open
@@ -4501,7 +4387,6 @@ status = fx_media_open(&ram_disk, "RAM DISK", fx_ram_driver, 0, &buffer[0], size
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4560,7 +4445,6 @@ fx_media_open_notify_set(media_ptr, my_media_open_callback);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4628,7 +4512,6 @@ status = fx_media_read(&my_media, 22, my_buffer);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4696,7 +4579,6 @@ status = fx_media_space_available(&my_media, &available_bytes);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4768,7 +4650,6 @@ status = fx_media_volume_get_extended(&ram_disk, volume_name,
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4845,7 +4726,6 @@ status = fx_media_volume_get_extended(&ram_disk, volume_name,
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4913,7 +4793,6 @@ status = fx_media_volume_set(&ram_disk, "MY_VOLUME");
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -4986,7 +4865,6 @@ status = fx_media_write(&my_media, 22, my_buffer);
 - fx_media_check
 - fx_media_close
 - fx_media_close_notify_set
-- fx_media_exFAT_format
 - fx_media_extended_space_available
 - fx_media_flush
 - fx_media_format
@@ -5282,7 +5160,7 @@ Creates a Unicode-named directory.
 ### Prototype
 
 ```c
-UINT fx_unicode_directory_create(
+UINT (
     FX_MEDIA *media_ptr, 
     UCHAR *source_unicode_name,
     ULONG source_unicode_length, 
@@ -5294,8 +5172,6 @@ UINT fx_unicode_directory_create(
 This service creates a Unicode-named subdirectory in the current default directory—no path information is allowed in the Unicode source name parameter. If successful, the short name (8.3 format) of the newly created Unicode subdirectory is returned by the service.
 
 > **Warning:** *All operations on the Unicode subdirectory (making it the default path, deleting, etc.) should be done by supplying the returned short name (8.3 format) to the standard FileX directory services.*
-
-> **Important:** *This service is not supported on exFAT media.*
 
 ### Input Parameters
 
@@ -5310,7 +5186,6 @@ This service creates a Unicode-named subdirectory in the current default directo
 - **FX_MEDIA_NOT_OPEN** (0x11) Specified media is not open.
 - **FX_ALREADY_CREATED** (0x0B) Specified directory already exists.
 - **FX_NO_MORE_SPACE** (0x0A) No more clusters available in the media for the new directory entry.
-- **FX_NOT_IMPLEMENTED** (0x22) Service not implemented for exFAT file system.
 - **FX_WRITE_PROTECT** (0x23) Specified media is write protected.
 - **FX_PTR_ERROR** (0x18) Invalid media or name pointers.
 - **FX_CALLER_ERROR** (0x20)    Caller is not a thread.
@@ -5381,8 +5256,6 @@ UINT fx_unicode_directory_rename(
 ### Description
 
 This service changes a Unicode-named subdirectory to specified new Unicode name in current working directory. The Unicode name parameters must not have path information.
-
-> **Important:** *This service is not supported on exFAT media.*
 
 ### Input Parameters
 
@@ -5481,7 +5354,6 @@ This service creates a Unicode-named file in the current default directory—no 
 - **FX_MEDIA_NOT_OPEN** (0x11) Specified media is not open.
 - **FX_ALREADY_CREATED** (0x0B) Specified file already exists.
 - **FX_NO_MORE_SPACE** (0x0A) No more clusters available in the media for the new file entry.
-- **FX_NOT_IMPLEMENTED** (0x22) Service not implemented for exFAT file system.
 - **FX_IO_ERROR** (0x90) Driver I/O error.
 - **FX_WRITE_PROTECT** (0x23) Specified media is write protected.
 - **FX_PTR_ERROR** (0x18) Invalid media or name pointers.
@@ -5558,8 +5430,6 @@ UINT fx_unicode_file_rename(
 ### Description
 
 This service changes a Unicode-named file name to specified new Unicode name in current default directory. The Unicode name parameters must not have path information.
-
-> **Important:** *This service is not supported on exFAT media.*
 
 ### Input Parameters
 
@@ -5997,7 +5867,6 @@ This service retrieves the short name (8.3 format) associated with the Unicode-n
 - **FX_IO_ERROR** (0x90) Driver I/O error.
 - **FX_MEDIA_NOT_OPEN** (0x11) Specified media is not open.
 - **FX_NOT_FOUND** (0x04)    Unicode name was not found.
-- **FX_NOT_IMPLEMENTED** (0x22) Service not implemented for exFAT file system.
 - **FX_SECTOR_INVALID** (0x89) Invalid sector.
 - **FX_PTR_ERROR** (0x18) Invalid media or name pointers.
 - **FX_CALLER_ERROR** (0x20)    Caller is not a thread.
@@ -6092,7 +5961,6 @@ This service retrieves the short name (8.3 format) associated with the Unicode-n
 - **FX_IO_ERROR** (0x90) Driver I/O error.
 - **FX_MEDIA_NOT_OPEN** (0x11) Specified media is not open.
 - **FX_NOT_FOUND** (0x04) Unicode name was not found.
-- **FX_NOT_IMPLEMENTED** (0x22) Service not implemented for exFAT file system.
 - **FX_SECTOR_INVALID** (0x89) Invalid sector.
 - **FX_PTR_ERROR** (0x18) Invalid media or name pointers.
 - **FX_CALLER_ERROR** (0x20)    Caller is not a thread.
