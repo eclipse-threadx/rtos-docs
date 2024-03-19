@@ -5160,7 +5160,7 @@ Creates a Unicode-named directory.
 ### Prototype
 
 ```c
-UINT (
+UINT fx_unicode_directory_create(
     FX_MEDIA *media_ptr, 
     UCHAR *source_unicode_name,
     ULONG source_unicode_length, 
