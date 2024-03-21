@@ -1543,6 +1543,20 @@ In MSRP module of NetxDuo, following functionalities are provided:
 - Management of the registration and deregistration processes for a domain, as well as handling the indications of these events.
 
 ### Multiple vlan registration protocol (MVRP)
-
+The Multiple VLAN Registration Protocol (MVRP) is a protocol that provides dynamic VLAN registration service. It is an MRP (Multiple Registration Protocol) application that makes use of MRP Attribute Declaration (MAD) and MRP Attribute Propagation (MAP) to provide common state machine descriptions and attribute propagation mechanisms. 
+MVRP provides a mechanism for dynamic maintenance of the contents of Dynamic VLAN Registration Entries for each VLAN and propagates the information they contain to other Bridges. This information allows MVRP-aware devices to dynamically establish and update their knowledge of the set of VLANs that currently have active members, and through which Ports those members can be reached. 
+In MVRP module of NetxDuo, following functionalities are provided to SRP/MRP components:
+- Initialization of an MVRP instance.
+- Parsing and packing of MRP Data Units (MRPDUs).
+- Process the join or leave a VLAN request command from SRP, and trigger the corresponding VLAN registration or deregistration process.
+- Handling of indications for a stream's registration and deregistration events from MRP.
 
 ### Multiple registration protocol (MRP)
+The Multiple Registration Protocol (MRP) is a protocol that provides dynamic registration and deregistration of attributes in a network. It is used to manage resources in a network, such as VLANs, multicast addresses, and streams. MRP operates uses a common state machine and attribute propagation mechanisms to provide a consistent view of the network resources. MRP is used by other protocols, such as MVRP (Multiple VLAN Registration Protocol) and MSRP (Multiple Stream Registration Protocol), to provide dynamic registration of VLANs and streams, respectively.
+
+In MRP module of NetxDuo, following functionalities are provided to MRP applications:
+- Provide the interface of MRP initialization.
+- Maintaining state machine for MRP applications.
+- Process the event triggered by receiving different MRP messages.
+- Receiveing the message from ethernet, and destribute the MRP messages to the corresponding MRP applications.
+- Handle the timer event for MRP applications.

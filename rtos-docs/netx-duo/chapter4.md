@@ -12051,3 +12051,55 @@ status = nxd_udp_source_extract(&packet_ptr, &ip_address, &port);
 - nxd_udp_packet_info_extract
 - nxd_udp_socket_send
 - nxd_udp_socket_source_send
+
+## nx_link_vlan_set
+Sets VLAN tag to interface.
+
+### Prototype  
+
+```c
+UINT nx_link_vlan_set(NX_IP *ip_ptr, UINT interface_index, UINT vlan_tag)
+```
+
+### Description
+
+This function sets VLAN tag to interface. VLAN tag is comprised the PCP and VLAN ID, encoded in host byte order. The PCP is the 3 most significant bits and the VLAN ID is the 12 least significant bits. The PCP is used to prioritize the packet and the VLAN ID is used to identify the VLAN.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to set the VLAN tag.
+- *vlan_tag*: VLAN tag to set to the interface.
+
+### Return Values
+- **NX_SUCCESS** (0x00) Successful socket checksum disable.
+- **NX_PTR_ERROR** (0x07) Invalid IP instance.
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT vlan_tag = 0x810;
+UINT interface_index = 0;
+
+/* Set VLAN tag to interface. */
+status = nx_link_vlan_set(&ip_0, interface_index, vlan_tag);
+```  
+
+### See Also
+
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
