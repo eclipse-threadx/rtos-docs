@@ -531,3 +531,67 @@ The following driver commands are required for network interfaces with TCP/IP se
   * Cleanup resources created during bind.
 * For operation `NX_TCPIP_OFFLOAD_UDP_SOCKET_SEND`,
   * Send data through TCP/IP offload. Be prepare to handle packet length larger than MTU or packet chain situation.
+
+
+## TSN driver support
+
+TSN shapers are  hardware features, so we can add shaper driver on ethernet card which has tsn features. we will introduce the ptp driver and shapers, there are three kinds of shapers : CBS(credit-based shaper),EST(enhanced scheduled traffic),FPE(frame preemption).
+### PTP initialize and callback function
+PTP are used in TSN system for many scanarios, espesially when EST are enabled. we have high requirment of ptp clock, so please use Fine mode to initialize PTP and we also need to complete the ptp driver callback which are called to get/set/adjust ptp clock.
+the driver interface.
+```C
+UINT nx_driver_ptp_clock_callback(NX_PTP_CLIENT *client_ptr, UINT operation,
+                                             NX_PTP_TIME *time_ptr, NX_PACKET *packet_ptr,
+                                             VOID *callback_data)
+```
+
+ For parameter operation:
+| operation                                   |  Description                                                   |
+| ------------------------------------------- | -------------------------------------------------------------- |
+| ***NX_PTP_CLIENT_CLOCK_INIT***              | An IPv4 or IPv6 packet is being transmitted,                   |
+| ***NX_PTP_CLIENT_CLOCK_SET***               | An ARP request or ARP response packet is being transmitted,    |
+| ***NX_PTP_CLIENT_CLOCK_PACKET_TS_EXTRACT*** | A Reverse ARP request or response packet is being transmitted, |
+| ***NX_PTP_CLIENT_CLOCK_GET***               | An IPv4 or IPv6 packet is being transmitted,                   |
+| ***NX_PTP_CLIENT_CLOCK_ADJUST***            | An ARP request or ARP response packet is being transmitted,    |
+| ***NX_PTP_CLIENT_CLOCK_PACKET_TS_PREPARE*** | A Reverse ARP request or response packet is being transmitted, |
+| ***NX_PTP_CLIENT_CLOCK_SOFT_TIMER_UPDATE*** | A Reverse ARP request or response packet is being transmitted, |
+
+
+-
+
+### CBS(credit-based shaper)
+
+the driver interface:
+```C
+UINT nx_driver_shaper_cbs_entry(NX_SHAPER_DRIVER_PARAMETER *parameter)
+
+```
+structure NX_SHAPER_DRIVER_PARAMETER:
+```C
+typedef struct NX_SHAPER_DRIVER_PARAMETER_STRUCT
+{
+    UINT          nx_shaper_driver_command;
+    UCHAR         shaper_type;
+    UCHAR         reserved[3];
+    void         *shaper_parameter;
+    NX_INTERFACE *nx_ip_driver_interface;
+} NX_SHAPER_DRIVER_PARAMETER;
+```
+
+| parameter -> nx_shaper_driver_command       |  Description                                                   |
+| ------------------------------------------- | -------------------------------------------------------------- |
+| ***NX_PTP_CLIENT_CLOCK_INIT***              | An IPv4 or IPv6 packet is being transmitted,                   |
+| ***NX_PTP_CLIENT_CLOCK_SET***               | An ARP request or ARP response packet is being transmitted,    |
+| ***NX_PTP_CLIENT_CLOCK_PACKET_TS_EXTRACT*** | A Reverse ARP request or response packet is being transmitted, |
+| ***NX_PTP_CLIENT_CLOCK_GET***               | An IPv4 or IPv6 packet is being transmitted,                   |
+| ***NX_PTP_CLIENT_CLOCK_ADJUST***            | An ARP request or ARP response packet is being transmitted,    |
+| ***NX_PTP_CLIENT_CLOCK_PACKET_TS_PREPARE*** | A Reverse ARP request or response packet is being transmitted, |
+| ***NX_PTP_CLIENT_CLOCK_SOFT_TIMER_UPDATE*** | A Reverse ARP request or response packet is being transmitted, |
+
+
+### CBS(credit-based shaper)
+data struct
+
+
+### CBS(credit-based shaper)
+data struct
