@@ -1512,12 +1512,35 @@ FPE (Frame Preemption Engine) is typically utilized in conjunction with TAS (Tim
 ### Time synchronization(gPTP)
 The gPTP (Generalized Precision Time Protocol), as described in the IEEE 1588 Precision Time Protocol standard, is utilized within Time-Sensitive Networks (TSN) to synchronize time across network devices.
 
+In gPTP module of NetxDuo, following functionalities are provided:
+- Creation and deletion of PTP client.
+- Starting and stopping the PTP client.
+- Retrieving and setting the PTP clock in the client.
+- Acquiring master clock information and sync message details through the PTP client.
+- Transmission of timestamp notifications for PTP packets.
+- Implementation of a software-based PTP clock.
+- Utility of computing the difference between two PTP times. 
+- Utility of converting a PTP time to a UTC date and time. 
 
-### Stream reservation protocol (SRP)
+### Stream Registration Protocol (SRP)
+SRP (Stream Reservation Protocol) is a protocol used in Time-Sensitive Networking (TSN). It allows devices to reserve resources for specific streams of data across the network. This ensures that these streams have the necessary bandwidth and can meet their time sensitivity requirements. 
 
+In SRP module of NetxDuo, following functionalities are provided:
+- Initializaiton of SRP service.
+- Starting and stopping the SRP talker service.
+- Starting and stopping the SRP listener service.
 
-### Multiple streams reservation protocol (MSRP)
+### Multiple Stream Reservation Protocol (MSRP)
+MSRP (Multiple Stream Reservation Protocol) in Time-Sensitive Networking (TSN) is an extension of the Stream Reservation Protocol (SRP). By allowing multiple stream reservations, MSRP enhances the deterministic data delivery capabilities of TSN, ensuring that data can be delivered with a guaranteed level of performance across multiple streams.
 
+In MSRP module of NetxDuo, following functionalities are provided:
+- Initialization of an MSRP instance.
+- Parsing and packing of MRP Data Units (MRPDUs).
+- Management of the registration and deregistration processes for a stream.
+- Management of the registration and deregistration processes for an attachment to a stream.
+- Handling of indications for a stream's registration and deregistration events.
+- Handling of indications for an attachment's registration and deregistration events.
+- Management of the registration and deregistration processes for a domain, as well as handling the indications of these events.
 
 ### Multiple vlan registration protocol (MVRP)
 
