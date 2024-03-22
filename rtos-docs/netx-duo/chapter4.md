@@ -13130,3 +13130,276 @@ No
 - nx_shaper_mapping_set
 - nx_shaper_cbs_parameter_set
 - nx_shaper_fp_parameter_set
+
+## nx_srp_init
+Initialization of SRP.
+
+### Prototype  
+
+```c
+UINT nx_srp_init(NX_SRP *srp_ptr, NX_IP *ip_ptr, UINT interface_index, NX_PACKET_POOL *pkt_pool_ptr,
+                 VOID *stack_ptr, ULONG stack_size, UINT priority);
+```
+### Description
+
+This function initialize SRP, it initializes MRP, MSRP, MVRP sequencly, and create a thread in MRP initializaton.
+
+### Parameters
+
+- *srp_ptr*:                             Pointer to SRP instance.
+- *ip_ptr*:                              Pointer to IP instance.
+- *interface_index*:                     Index of the network interface to use SRP.
+- *pkt_pool_ptr*:                        pointer to Packet pool.
+- *stack_ptr*:                           pointer to SRP thread Stack.
+- *stack_size*:                          SRP thread Stack size .
+- *priority*:                            SRP thread priority.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful init
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+#define SRP_THREAD_PRIORITY 5
+#define SRP_INTERFACE 0
+NX_SRP nx_srp;
+NX_IP ip_0;
+NX_PACKET_POOL pool_0;
+ULONG            srp_stack[2048 *2 / sizeof(ULONG)];
+
+/* Create the SRP client instance */
+nx_srp_init(&nx_srp, &ip_0, SRP_INTERFACE, &pool_0,
+                     (UCHAR *)srp_stack, sizeof(srp_stack), SRP_THREAD_PRIORITY);
+
+
+```
+### See Also
+
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+
+
+## nx_srp_talker_start
+Start SRP talker.
+
+### Prototype  
+
+```c
+UINT nx_srp_talker_start(NX_SRP *srp_ptr, NX_MSRP_DOMAIN *srp_domain, UCHAR *stream_id, UCHAR *dest_addr,
+                         UINT max_frame_size, UINT max_interval_frames, NX_MRP_EVENT_CALLBACK event_callback);
+```
+### Description
+
+This function start SRP talker, it sets event callback funtions and register domain, Vlan, stream request.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *event_callback*:                callback invoked by application to monitor the SRP process.
+- *stream_id*:                     stream id of talker advertised.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful start
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+#define SRP_THREAD_PRIORITY 5
+#define SRP_INTERFACE 0
+NX_SRP nx_srp;
+UINT MaxFrameSize = 1300;
+UINT MaxIntervalFrames = 1;
+UCHAR dest_addr[6] ={0X91,0XE0,0XF0,0X00,0X0E,0X80};
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+UINT srp_event_callback(NX_MRP_PARTICIPANT* participant, NX_MRP_ATTRIBUTE* attribute, UCHAR event,VOID *callback_data);
+
+    /* start the SRP client */
+    status = nx_srp_talker_start(&nx_srp, &srp_domain, stream_id,  dest_addr,
+                             MaxFrameSize, MaxIntervalFrames, srp_event_callback);
+
+
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_stop
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+## nx_srp_talker_stop
+Stop SRP talker.
+
+### Prototype  
+
+```c
+UINT nx_srp_talker_stop(NX_SRP *srp_ptr, UCHAR *stream_id, NX_MSRP_DOMAIN *domain)
+```
+### Description
+
+This function stop SRP talker. It withdraw the domain,Vlan,stream request.
+
+### Parameters
+
+- *srp_ptr*:                    Pointer to SRP instance.
+- *stream_id*:                  stream id of talker advertised.
+- *domain*:                     domain of SRP talker.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful stop
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+
+nx_srp_talker_stop(&nx_srp,stream_id, &srp_domain );
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+## nx_srp_listener_start
+Start SRP listener.
+
+### Prototype  
+
+```c
+
+UINT nx_srp_listener_start(NX_SRP *srp_ptr, NX_MRP_EVENT_CALLBACK event_callback, UCHAR *stream_id)
+```
+### Description
+
+This function start SRP listener. It enables listener and set user date and callback function.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *event_callback*:                callback invoked by application to monitor the SRP process.
+- *stream_id*:                     stream id of listener attached.
+
+
+### Return Values
+
+- **NX_MSRP_SUCCESS** (0x00) Successful listener start
+
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+UINT srp_event_callback(NX_MRP_PARTICIPANT* participant, NX_MRP_ATTRIBUTE* attribute, UCHAR event,VOID *callback_data);
+
+   nx_srp_listener_start(&nx_srp, srp_event_callback, stream_id)
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_stop
+
+## nx_srp_listener_stop
+Stop SRP listener.
+
+### Prototype  
+
+```c
+UINT nx_srp_listener_stop(NX_SRP *srp_ptr, UCHAR *stream_id, NX_MSRP_DOMAIN *domain)
+```
+### Description
+
+This function stop SRP listener. It unregister the domain,Vlan stream attached to talker.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *stream_id*:                     Stream id of listener attached to.
+- *domain*:                        Domain of listener attached to.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful stop
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+
+nx_srp_listener_stop(&nx_srp,stream_id, &srp_domain );
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_start
