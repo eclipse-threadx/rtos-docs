@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo FTP is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
+NetX Duo FTP is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_ftp_client.h** Header file for NetX Duo FTP Client
 - **nxd_ftp_client.c** C Source file for NetX Duo FTP Client
@@ -33,11 +33,7 @@ Note that the NetX Duo library can be enabled for IPv6 and still support IPv4 ne
 
 ## Small Example System of NetX Duo FTP
 
-<<<<<<< HEAD
-An example of how easy it is to use NetX Duo FTP is described in Figure 1.1 that appears below. In this example, both an FTP Server and an FTP Client are created. Therefore both FTP include files *nxd_ftp_client.h and nxd_ftp_server.h are* brought in at line 10 and 11. Next, the FTP Server is created in "*tx_application_define*" at line 99. Note that the FTP Server and Client control blocks are defined as global variables at line 26 previously.
-=======
 An example of how easy it is to use NetX Duo FTP is described below. In this example, both an FTP Server and an FTP Client are created. Therefore both FTP include files *nxd_ftp_client.h and nxd_ftp_server.h are* brought in at line 10 and 11. Next, the FTP Server is created in “*tx_application_define*” at line 99. Note that the FTP Server and Client control blocks are defined as global variables at line 26 previously.
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 
 This demo shows how to use the duo functions available in NetX Duo FTP as well as the legacy IPv4 limited FTP services. To use the IPv6 functions, the demo defines USE_IPV6 in line 16
 

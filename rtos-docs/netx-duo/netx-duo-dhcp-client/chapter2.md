@@ -9,13 +9,13 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo can be obtained from our public source code repository at <https://github.com/azure-rtos/netxduo>. The package includes the following files:
+NetX Duo can be obtained from our public source code repository at <https://github.com/eclipse-threadx/netxduo>. The package includes the following files:
 
 - **nxd_dhcp_client.h**: Header file for NetX Duo DHCP
 - **nxd_dhcp_client.c**: C Source file for DHCP NetX Duo
-- **nxd_dhcp_client.pdf**: User Guide for NetX Duo DHCP 
-    - **demo_netxduo_dhcp.c**: NetX Duo DHCP Client demonstration
-    - **demo_netxduo_multihome_dhcp_client.c**: NetX Duo DHCP Client demonstration of DHCP on multiple interfaces
+- **nxd_dhcp_client.pdf**: User Guide for NetX Duo DHCP
+- **demo_netxduo_dhcp.c**: NetX Duo DHCP Client demonstration
+- **demo_netxduo_multihome_dhcp_client.c**: NetX Duo DHCP Client demonstration of DHCP on multiple interfaces
 
 ## DHCP Installation
 
@@ -37,10 +37,10 @@ While the DHCP Client is in the bound state, the DHCP Client thread processes th
 
 The DHCP Client has API services that allow the host application to send a message to the DHCP Server. Note these services are NOT intended for the host application to manually run the DHCP Client protocol.
 
-  - *nx_dhcp_release*: this sends a RELEASE message to the Server when the host application is either leaving the network or needs relinquish its IP address.
-  - *nx_dhcp_decline*: this sends a DECLINE message to the Server if the host application determines independently of the DHCP Client that its IP address is already in use.
-  - *nx_dhcp_forcerenew*: this sends a FORCERENEW message to the Server
-  - *nx_dhcp_send_request*: This takes as an argument a DHCP message type, as specified in *nxd_dhcp_client.h*, and sends the message to the Server. This is intended primarily for sending the DHCP INFORM message.
+- *nx_dhcp_release*: this sends a RELEASE message to the Server when the host application is either leaving the network or needs relinquish its IP address.
+- *nx_dhcp_decline*: this sends a DECLINE message to the Server if the host application determines independently of the DHCP Client that its IP address is already in use.
+- *nx_dhcp_forcerenew*: this sends a FORCERENEW message to the Server
+- *nx_dhcp_send_request*: This takes as an argument a DHCP message type, as specified in *nxd_dhcp_client.h*, and sends the message to the Server. This is intended primarily for sending the DHCP INFORM message.
 
 See [Description of DHCP Services](chapter3.md) for more information about these services 
 
@@ -76,11 +76,7 @@ Note that the application can optimize the packet payload and number of packets 
 
 ## Small Example System
 
-<<<<<<< HEAD
-An example of how to use NetX Duo is shown in Figure 1.1 below. The application thread entry function "*my_thread_entry*" is created at line 101. After successful creation, DHCP processing is initiated with the *nx_dhcp_start* call at line 108. At this point, the DHCP Client thread task separately attempts to contact a DHCP server. During this process, the application code waits for a valid IP address to be registered with the IP instance using the *nx_ip_status_check* service (or *nx_ip_interface_status_check* for a secondary interface) on line 95. This is more commonly done in a loop with a shorter wait option.
-=======
 An example of how to use NetX Duo is shown below. The application thread entry function “*my_thread_entry*” is created at line 101. After successful creation, DHCP processing is initiated with the *nx_dhcp_start* call at line 108. At this point, the DHCP Client thread task separately attempts to contact a DHCP server. During this process, the application code waits for a valid IP address to be registered with the IP instance using the *nx_ip_status_check* service (or *nx_ip_interface_status_check* for a secondary interface) on line 95. This is more commonly done in a loop with a shorter wait option.
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 
 After line 127, DHCP has received a valid IP address and the application can then proceed, utilizing NetX Duo TCP/IP services as desired.
 

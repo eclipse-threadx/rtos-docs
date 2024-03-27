@@ -33,7 +33,7 @@ USBX host stack supplemental
   - [Ch. 4 - USBX Pictbridge implementation](usbx-host-stack-supplemental-4.md)
   - [Ch. 5 - USBX OTG](usbx-host-stack-supplemental-5.md)
 
-[USBX repository](https://github.com/azure-rtos/usbx/)
+[USBX repository](https://github.com/eclipse-threadx/usbx/)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

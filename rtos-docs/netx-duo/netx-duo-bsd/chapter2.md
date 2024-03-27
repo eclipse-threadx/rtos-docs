@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo BSD can be obtained from our public source code repository at [https://github.com/azure-rtos/netx/](https://github.com/azure-rtos/netx/). The package includes two source files and a PDF file that contains this document, as follows:
+NetX Duo BSD can be obtained from our public source code repository at [https://github.com/eclipse-threadx/netxduo/](https://github.com/eclipse-threadx/netxduo/). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_bsd.h**: Header file for NetX Duo BSD
 - **nxd_bsd.c**: C Source file for NetX Duo BSD

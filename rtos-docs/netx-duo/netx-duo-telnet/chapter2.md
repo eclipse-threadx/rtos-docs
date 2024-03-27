@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-The NetX Duo Telnet package is available at <https://github.com/azure-rtos/netxduo>. The package includes the following files:
+The NetX Duo Telnet package is available at <https://github.com/eclipse-threadx/netxduo>. The package includes the following files:
 
 - **nxd_telnet_client.h**: Header file for Telnet Client for NetX Duo
 - **nxd_telnet_client.c**: C Source file for Telnet Client for NetX Duo
@@ -32,11 +32,7 @@ Note also that because Telnet utilizes NetX Duo TCP services, TCP must be enable
 
 ## Small Example System
 
-<<<<<<< HEAD
-An example of how to use NetX Duo Telnet is shown in Figure 1.1 below. In this example, the Telnet include files *are* brought in at line 7 and 8. Next, the Telnet Server is created in "*tx_application_define*" at line 146. Note that the Telnet Server and Client control blocks are defined as global variables at line 23-24 previously.
-=======
 An example of how to use NetX Duo Telnet is shown below. In this example, the Telnet include files *are* brought in at line 7 and 8. Next, the Telnet Server is created in “*tx_application_define*” at line 146. Note that the Telnet Server and Client control blocks are defined as global variables at line 23-24 previously.
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
 
 Before the Telnet Server or Client can be started they must validate their IP address with NetX Duo. For IPv4 connections this is accomplished by simply waiting briefly to let the NetX Duo driver initialize the system on line 166. For IPv6 connections, this requires enabling IPv6 and ICMPv6 which it does in lines 171-172. The Client sets its global and link local IPv6 addresses on the primary interface on lines 181-186 and waits for NetX Duo validation to complete in the background. The Server also sets its global and link local addresses on its primary interface in lines 192 – 198. Note that the two services, *nxd_ipv6_global_address_set* and *nxd_ipv6_linklocal_address_set* are replaced with *nxd_ipv6_address_set service*. The former two services are still available for legacy NetX applications but are eventually deprecated. Developers are encouraged to use *nxd_ipv6_address_set* instead.
 

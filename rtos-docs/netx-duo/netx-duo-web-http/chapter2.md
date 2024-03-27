@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-HTTP for NetX Duo is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes three source files, two include files, and a file that contains this document, as follows:
+HTTP for NetX Duo is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes three source files, two include files, and a file that contains this document, as follows:
 
 - **nx_web_http_common.h** Common header file for NetX Duo Web HTTP
 - **nx_web_http_client.h** Header file for HTTP Client for NetX Duo Web

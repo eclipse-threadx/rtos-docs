@@ -348,7 +348,7 @@ VOID _fx_ram_driver(FX_MEDIA *media_ptr) { UCHAR *source_buffer;
 
             ((source_buffer[1] != (UCHAR)0x34) &&
 
-            (source_buffer[1] != (UCHAR)0x76)) || /* exFAT jump code. */
+            (source_buffer[1] != (UCHAR)0x76)) ||
 
             (source_buffer[2] != (UCHAR)0x90)) {
 
@@ -358,18 +358,7 @@ VOID _fx_ram_driver(FX_MEDIA *media_ptr) { UCHAR *source_buffer;
             /* For RAM disk only, pickup the bytes per sector. */
 
             bytes_per_sector =
-                _fx_utility_16_unsigned_read(&source_buffer[FX_BYTES_SECTOR]); #ifdef FX_ENABLE_EXFAT
-
-            /* if byte per sector is zero, then treat it as exFAT volume. */
-
-            if (bytes_per_sector == 0 && (source_buffer[1] == (UCHAR)0x76)) {
-
-            /* Pickup the byte per sector shift, and calculate byte per sector. */ 
-            bytes_per_sector = (UINT)(1 << source_buffer[FX_EF_BYTE_PER_SECTOR_SHIFT]);
-
-            }
-
-            #endif /* FX_ENABLE_EXFAT */
+                _fx_utility_16_unsigned_read(&source_buffer[FX_BYTES_SECTOR]);
 
             /* Ensure this is less than the media memory size. */
             if (bytes_per_sector \media_ptr -> fx_media_memory_size) {

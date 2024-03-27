@@ -21,7 +21,7 @@ Service Pack releases has the following symbol defined to indicate the service p
 
 ## Product Distribution
 
-NetX Duo Secure is available at [https://github.com/azure-rtos/netx](https://github.com/azure-rtos/netx). The package includes source files, include files, and a PDF file that contains this document, as follows:
+NetX Duo Secure is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes source files, include files, and a PDF file that contains this document, as follows:
 
 - **nx_secure_tls_api.h** Public API header file for NetX Duo Secure TLS
 - **nx_secure_tls_user.h** User defines header file for NetX Duo Secure TLS

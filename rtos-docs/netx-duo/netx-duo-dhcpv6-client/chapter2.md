@@ -9,7 +9,7 @@ This chapter contains a description of various issues related to installation, s
 
 ## Product Distribution
 
-NetX Duo DHCPv6 Client is available at [https://github.com/azure-rtos/netxduo](https://github.com/azure-rtos/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
+NetX Duo DHCPv6 Client is available at [https://github.com/eclipse-threadx/netxduo](https://github.com/eclipse-threadx/netxduo). The package includes two source files and a PDF file that contains this document, as follows:
 
 - **nxd_dhcpv6_client.h** Header file for NetX DuoDHCPv6 Client
 

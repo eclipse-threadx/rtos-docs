@@ -8,7 +8,7 @@ LevelX user guide
 - [Ch. 5 - LevelX NOR support](chapter5.md)
 - [Ch. 6 - LevelX NOR APIs](chapter6.md)
 
-[LevelX repository](https://github.com/azure-rtos/levelx)
+[LevelX repository](https://github.com/eclipse-threadx/levelx)
 
 [Eclipse ThreadX components](../../README.md)
 - [ThreadX](../threadx/index.md)

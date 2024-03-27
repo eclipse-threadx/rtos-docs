@@ -100,8 +100,4 @@ Note that if the Client is configured for no authentication and the SMTP Server 
 
 ## RFCs Supported by NetX Duo SMTP Client
 
-<<<<<<< HEAD
-NetX Duo SMTP Client API is compliant with RFC2821 "Simple Mail Transfer Protocol" and RFC 2554 "SMTP Service Extension for Authentication. "
-=======
 NetX Duo SMTP Client API is compliant with RFC2821 “Simple Mail Transfer Protocol” and RFC 2554 “SMTP Service Extension for Authentication.“
->>>>>>> cbb4d6e18ee28d86c6b8480f0804ded7e385d395
