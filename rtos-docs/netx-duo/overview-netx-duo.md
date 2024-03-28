@@ -167,7 +167,7 @@ NetX Duo supports the following HTTP/HTTPS protocols.
 
 - User Datagram Protocol (UDP)
 - Minimal 2.5 KB FLASH, 124 sockets bytes of RAM per socket
-- Fast, near wirespeed TCP packet processing:
+- Fast, near wirespeed UDP packet processing:
   - RX 95 Mbps on 100 Mbps Ethernet, MCU @100MHz, 14% MCU utilization
   - TX 94 Mbps on 100 Mbps Ethernet, MCU @100MHz, 10% MCU utilization
 - UDP Fast Path™ technology

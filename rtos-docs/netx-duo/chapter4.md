@@ -12051,3 +12051,1355 @@ status = nxd_udp_source_extract(&packet_ptr, &ip_address, &port);
 - nxd_udp_packet_info_extract
 - nxd_udp_socket_send
 - nxd_udp_socket_source_send
+
+## nx_link_vlan_set
+Sets VLAN tag to interface.
+
+### Prototype  
+
+```c
+UINT nx_link_vlan_set(NX_IP *ip_ptr, UINT interface_index, UINT vlan_tag)
+```
+
+### Description
+
+This function sets VLAN tag to interface. VLAN tag is comprised the PCP and VLAN ID, encoded in host byte order. The PCP is the 3 most significant bits and the VLAN ID is the 12 least significant bits. The PCP is used to prioritize the packet and the VLAN ID is used to identify the VLAN.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to set the VLAN tag.
+- *vlan_tag*: VLAN tag to set to the interface.
+
+### Return Values
+- **NX_SUCCESS** (0x00) Successful socket checksum disable.
+- **NX_PTR_ERROR** (0x07) Invalid IP instance.
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT vlan_tag = 0x810;
+UINT interface_index = 0;
+
+/* Set VLAN tag to interface. */
+status = nx_link_vlan_set(&ip_0, interface_index, vlan_tag);
+```  
+
+### See Also
+
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+
+## nx_link_vlan_get
+Get VLAN tag from interface.
+
+### Prototype  
+
+```c
+UINT nx_link_vlan_get(NX_IP *ip_ptr, UINT interface_index, UINT *vlan_tag)
+```
+
+### Description
+
+This function gets VLAN tag from interface, VLAN tag is comprised the PCP and VLAN ID, encoded in host byte order. The PCP is the 3 most significant bits and the VLAN ID is the 12 least significant bits. The PCP is used to prioritize the packet and the VLAN ID is used to identify the VLAN.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to get the VLAN tag.
+- *vlan_tag*: Pointer to store the VLAN tag.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful socket checksum disable.
+- **NX_PTR_ERROR** (0x07) Invalid IP instance.
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index.
+- **NX_NOT_FOUND** (0x4E) VLAN tag not found.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT vlan_tag;
+UINT interface_index = 0;
+
+/* Get VLAN tag from interface. */
+status = nx_link_vlan_get(&ip_0, interface_index, &vlan_tag);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+## nx_link_vlan_clear
+Clears VLAN tag from interface.
+
+### Prototype  
+
+```c
+UINT nx_link_vlan_clear(NX_IP *ip_ptr, UINT interface_index)
+```
+
+### Description
+
+This function clears VLAN tag from interface.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to clear the VLAN tag.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful socket checksum disable.
+- **NX_PTR_ERROR** (0x07) Invalid IP instance.
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+
+/* Clear VLAN tag from interface. */
+status = nx_link_vlan_clear(&ip_0, interface_index);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+## nx_link_multicast_join
+Join a multicast group.
+
+### Prototype  
+
+```c
+UINT nx_link_multicast_join(NX_IP *ip_ptr, UINT interface_index,
+                            ULONG physical_address_msw, ULONG physical_address_lsw)
+```
+
+### Description
+
+This function handles the request to join the specified multicast group on a specified network device. 
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to join the multicast group.
+- *physical_address_msw*: Top 16 bits (47-32) of the multicast address to join.
+- *physical_address_lsw*: Lower 32 bits (31-0) of the multicast address to join.
+
+### Return Values
+- **NX_SUCCESS** (0x00) Successful multicast group join.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+ULONG physical_address_msw = 0x011b;
+ULONG physical_address_lsw = 0x19000000;
+
+/* Join a multicast group. */
+status = nx_link_multicast_join(&ip_0, interface_index,
+                                physical_address_msw, physical_address_lsw);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+## nx_link_multicast_leave
+Leave a multicast group.
+
+### Prototype  
+
+```c
+UINT nx_link_multicast_leave(NX_IP *ip_ptr, UINT interface_index,
+                             ULONG physical_address_msw, ULONG physical_address_lsw)
+```
+
+### Description
+
+This function handles the request to leave the specified multicast group on a specified network device.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to leave the multicast group.
+- *physical_address_msw*: Top 16 bits (47-32) of the multicast address to leave.
+- *physical_address_lsw*: Lower 32 bits (31-0) of the multicast address to leave.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful multicast group leave.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+ULONG physical_address_msw = 0x011b;
+ULONG physical_address_lsw = 0x19000000;
+
+/* Leave a multicast group. */
+status = nx_link_multicast_leave(&ip_0, interface_index,
+                                 physical_address_msw, physical_address_lsw);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+  
+## nx_link_ethernet_packet_send
+Send an Ethernet packet.
+
+### Prototype  
+
+```c
+UINT nx_link_ethernet_packet_send(NX_IP *ip_ptr, UINT interface_index, NX_PACKET *packet_ptr,
+                                  ULONG physical_address_msw, ULONG physical_address_lsw, UINT packet_type)
+```
+
+### Description
+
+This function sends out a link packet with layer 3 header already constructed or raw packet. Ethernet header will be added in this function.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to send the packet.
+- *packet_ptr*: Pointer to the packet to send.
+- *physical_address_msw*: Top 16 bits (47-32) of the destination MAC address.
+- *physical_address_lsw*: Lower 32 bits (31-0) of the destination MAC address.
+- *packet_type*: Type of the packet to send.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful packet send.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+ULONG physical_address_msw = 0x011b;
+ULONG physical_address_lsw = 0x19000000;
+UINT packet_type = NX_PTP_ETHERNET_TYPE;
+
+/* Send an Ethernet packet. */
+status = nx_link_ethernet_packet_send(&ip_0, interface_index, packet_ptr,
+                                      physical_address_msw, physical_address_lsw, packet_type);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+
+## nx_link_raw_packet_send
+Send a raw packet.
+
+### Prototype  
+
+```c
+UINT nx_link_raw_packet_send(NX_IP *ip_ptr, UINT interface_index, NX_PACKET *packet_ptr);
+```
+
+### Description
+
+This function sends out a link packet with layer 2 header already constructed or raw packet. 
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to send the packet.
+- *packet_ptr*: Pointer to the packet to send.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful packet send.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+
+/* Send a raw packet. */
+status = nx_link_raw_packet_send(&ip_0, interface_index, packet_ptr);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+## nx_link_packet_receive_callback_add
+Add a packet receive callback.
+
+### Prototype  
+
+```c
+UINT nx_link_packet_receive_callback_add(NX_IP *ip_ptr, UINT interface_index, NX_LINK_RECEIVE_QUEUE *queue_ptr,
+                                         UINT packet_type, nx_link_packet_receive_callback *callback_ptr, VOID *context)
+```
+
+### Description
+
+This function adds a receive callback function to specified interface. Multiple callbacks callback functions can be added to each interface. They will be invoked one by one until the packet is consumed. Only packet matching registered packet_type will be passed to callback function. NX_LINK_PACKET_TYPE_ALL can be used to handle all types except TCP/IP ones. 
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to add the callback.
+- *queue_ptr*: Pointer to the receive queue.
+- *packet_type*: Type of the packet to receive.
+- *callback_ptr*: Pointer to the callback function.
+- *context*: Pointer to the context.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful packet send.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+NX_LINK_RECEIVE_QUEUE queue;
+UINT packet_type = NX_PTP_ETHERNET_TYPE;
+nx_link_packet_receive_callback callback;
+
+/* Add a packet receive callback. */
+status = nx_link_packet_receive_callback_add(&ip_0, interface_index, &queue,
+                                             packet_type, callback, NX_NULL);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_remove
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+## nx_link_packet_receive_callback_remove
+Remove a packet receive callback.
+
+### Prototype  
+
+```c
+UINT nx_link_packet_receive_callback_remove(NX_IP *ip_ptr, UINT interface_index, NX_LINK_RECEIVE_QUEUE *queue_ptr)
+```
+
+### Description
+
+This function removes a receive callback function to specified interface.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_index*: Index of the network interface to remove the callback.
+- *queue_ptr*: Pointer to the receive queue.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful packet send.
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer.
+- **NX_INVALID_INTERFACE** (0x4C) Device index points to an invalid network interface.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT interface_index = 0;
+NX_LINK_RECEIVE_QUEUE queue;
+
+/* Remove a packet receive callback. */
+status = nx_link_packet_receive_callback_remove(&ip_0, interface_index, &queue);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_ethernet_header_parse
+- nx_link_vlan_interface_create
+
+
+## nx_link_ethernet_header_parse
+Parse an Ethernet header.
+
+### Prototype  
+
+```c
+UINT nx_link_ethernet_header_parse(NX_PACKET *packet_ptr, ULONG *destination_msb, ULONG *destination_lsb,
+                                   ULONG *source_msb, ULONG *source_lsb, USHORT *ether_type, USHORT *vlan_tag,
+                                   UCHAR *vlan_tag_valid, UINT *header_size)
+```
+
+### Description
+
+This function parses Ethernet packet and return each file of header.
+
+### Parameters
+
+- *packet_ptr*: Pointer to the packet to parse.
+- *destination_msb*: Pointer to store the destination MAC address MSB.
+- *destination_lsb*: Pointer to store the destination MAC address LSB.
+- *source_msb*: Pointer to store the source MAC address MSB.
+- *source_lsb*: Pointer to store the source MAC address LSB.
+- *ether_type*: Pointer to store the Ethernet type.
+- *vlan_tag*: Pointer to store the VLAN tag.
+- *vlan_tag_valid*: Pointer to store the VLAN tag valid.
+- *header_size*: Pointer to store the header size.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful packet send.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+ULONG destination_msb, destination_lsb, source_msb, source_lsb;
+USHORT ether_type, vlan_tag;
+UCHAR vlan_tag_valid;
+UINT header_size;
+
+/* Parse an Ethernet header. */
+nx_link_ethernet_header_parse(packet_ptr, &destination_msb, &destination_lsb,
+                              &source_msb, &source_lsb, &ether_type, &vlan_tag,
+                              &vlan_tag_valid, &header_size);
+```
+
+### See Also
+
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+- nx_link_vlan_interface_create
+
+## nx_link_vlan_interface_create
+Create a VLAN interface.
+
+### Prototype  
+
+```c
+UINT nx_link_vlan_interface_create(NX_IP *ip_ptr, CHAR *interface_name, ULONG ip_address, ULONG network_mask,
+                                   UINT vlan_tag, UINT parent_interface_index, UINT *interface_index_ptr)
+```
+
+### Description
+
+This function creates a VLAN interface and bind to parent interface. Any packet received from parent interface will be dispatched to right interface according to the match of VLAN ID.
+
+### Parameters
+
+- *ip_ptr*: Pointer to previously created IP instance.
+- *interface_name*: Name of the interface.
+- *ip_address*: IP address of the interface.
+- *network_mask*: Network mask of the interface.
+- *vlan_tag*: VLAN tag of the interface.
+- *parent_interface_index*: Index of the parent interface.
+- *interface_index_ptr*: Pointer to store the index of the interface.
+
+### Return Values
+
+**NX_SUCCESS** (0x00) Successful packet send.
+**NX_DUPLICATED_ENTRY** (0x4D) Interface is duplicated.
+**NX_NO_MORE_ENTRIES** (0x4F) No more entries.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+status = nx_link_vlan_interface_create(&ip_0, "NetX IP Interface 0:2", IP_ADDRESS(0, 0, 0, 0), 0xFFFFFFFFUL, VLAN_ID, 0, &interface_0);
+if (status)
+{
+   error_counter++;
+}
+```
+
+### See Also
+- nx_link_vlan_set
+- nx_link_vlan_get
+- nx_link_vlan_clear
+- nx_link_multicast_join
+- nx_link_multicast_leave
+- nx_link_ethernet_packet_send
+- nx_link_raw_packet_send
+- nx_link_packet_receive_callback_add
+- nx_link_packet_receive_callback_remove
+
+## nx_shaper_create
+Create a shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_create(NX_INTERFACE *interface_ptr, NX_SHAPER_CONTAINER *shaper_container, NX_SHAPER *shaper, UCHAR shaper_type, NX_SHAPER_DRIVER shaper_driver);
+```
+
+### Description
+This function creates shaper in shaper container, and connects the shaper container with interface instance.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *shaper_container*: Pointer to the shaper container.
+- *shaper*: Pointer to the shaper.
+- shaper_type: Type of the shaper.
+- shaper_driver: Pointer to the shaper driver.
+
+### Return Values
+
+**NX_SUCCESS** (0x00) Successful shaper create.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+**NX_NO_MORE_ENTRIES** (0x4F) No more entries.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT shaper_init(NX_INTERFACE *interface_ptr)
+{
+UINT status;
+UCHAR pcp_list[8];
+UCHAR queue_id_list[8];
+
+    status = nx_shaper_create(interface_ptr, &shaper_container, &cbs_shaper, NX_SHAPER_TYPE_CBS, nx_driver_shaper_cbs_entry);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_default_mapping_get(interface_ptr, pcp_list, queue_id_list, 8);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_mapping_set(interface_ptr, pcp_list, queue_id_list, 8);
+
+    return status;
+}
+```
+
+### See Also
+
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_delete
+Delete a shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_delete(NX_INTERFACE *interface_ptr, NX_SHAPER *shaper)
+```
+
+### Description
+
+This function deletes a shaper from interface instance, unlink the shaper container with IP interface when there is no shaper exists.
+
+### Parameters
+
+*interface_ptr*: Pointer to the interface instance.
+*shaper*: Pointer to the shaper.
+
+### Return Values
+
+**NX_SUCCESS** (0x00) Successful shaper delete.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+**NX_ENTRY_NOT_FOUND** (0x4A) Entry not found.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+status = nx_shaper_delete(&ip_0, &cbs_shaper);
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_current_mapping_get
+Get current mapping of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_current_mapping_get(NX_INTERFACE *interface_ptr, UCHAR *pcp_list, UCHAR *queue_id_list, UCHAR list_size);
+```
+
+### Description
+
+This function gets the current pcp to HW queue mapping config.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *pcp_list*: Pointer to the pcp list.
+- *queue_id_list*: Pointer to the queue id list.
+- *list_size*: Size of the list.
+
+### Return Values
+
+**NX_SUCCESS** (0x00) Successfully get mapping.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+**NX_NOT_SUPPORTED** (0x4B) Not supported.
+**NX_NOT_SUCCESSFUL** (0x51) Not successful.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+status = nx_shaper_current_mapping_get(&ip_0, pcp_list, queue_id_list, 8);
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_default_mapping_get
+Get default mapping of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_default_mapping_get(NX_INTERFACE *interface_ptr, UCHAR *pcp_list, UCHAR *queue_id_list, UCHAR list_size)
+```
+
+### Description
+
+This function gets the default pcp to HW queue mapping config.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *pcp_list*: Pointer to the pcp list.
+- *queue_id_list*: Pointer to the queue id list.
+- *list_size*: Size of the list.
+
+### Return Values
+
+**NX_SUCCESS** Successfully get mapping.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+**NX_NOT_SUPPORTED** (0x4B) Not supported.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT shaper_init(NX_INTERFACE *interface_ptr)
+{
+UINT status;
+UCHAR pcp_list[8];
+UCHAR queue_id_list[8];
+
+    status = nx_shaper_create(interface_ptr, &shaper_container, &cbs_shaper, NX_SHAPER_TYPE_CBS, nx_driver_shaper_cbs_entry);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_default_mapping_get(interface_ptr, pcp_list, queue_id_list, 8);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_mapping_set(interface_ptr, pcp_list, queue_id_list, 8);
+
+    return status;
+}
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_mapping_set
+Set mapping of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_mapping_set(NX_INTERFACE *interface_ptr, UCHAR *pcp_list, UCHAR *queue_id_list, UCHAR list_size)
+```
+
+### Description
+
+This function sets the pcp to HW queue mapping config.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *pcp_list*: Pointer to the pcp list.
+- *queue_id_list*: Pointer to the queue id list.
+- *list_size*: Size of the list.
+
+### Return Values
+
+**NX_SUCCESS** Successfully set mapping.
+**NX_INVALID_PARAMETERS** (0x47) Invalid parameters.
+**NX_NOT_SUPPORTED** (0x4B) Not supported.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+UINT shaper_init(NX_INTERFACE *interface_ptr)
+{
+UINT status;
+UCHAR pcp_list[8];
+UCHAR queue_id_list[8];
+
+    status = nx_shaper_create(interface_ptr, &shaper_container, &cbs_shaper, NX_SHAPER_TYPE_CBS, nx_driver_shaper_cbs_entry);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_default_mapping_get(interface_ptr, pcp_list, queue_id_list, 8);
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+
+    status = nx_shaper_mapping_set(interface_ptr, pcp_list, queue_id_list, 8);
+
+    return status;
+}
+```
+
+### See Also
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_cbs_parameter_set
+Set CBS parameter of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_cbs_parameter_set(NX_INTERFACE *interface_ptr, NX_SHAPER_CBS_PARAMETER *cbs_parameter, UCHAR pcp)
+```
+
+### Description
+
+This function configures the hardware parameters for CBS shaper.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *cbs_parameter*: Pointer to the CBS parameter.
+- *pcp*: PCP value.
+
+### Return Values
+
+**NX_SUCCESS** Successfully set CBS parameter.
+**NX_NOT_SUPPORTED** (0x4B) Not supported.
+**NX_NOT_FOUND** (0x4E) Not found.
+**NX_NOT_SUPPORTED** (0x4B) Not supported.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+    status = nx_srp_cbs_config_get(srp_ptr -> talker[index].class_id,
+                                   (INT)port_rate,
+                                   srp_ptr -> talker[index].interval,
+                                   srp_ptr -> talker[index].max_interval_frames,
+                                   srp_ptr -> talker[index].max_frame_size,
+                                   interface_ptr -> nx_interface_ip_mtu_size,
+                                   idle_slope_a,
+                                   max_frame_size_a,
+                                   &(srp_ptr -> talker[index].cbs_parameters));
+    if(status)
+        return status;
+
+    printf("cbs parameters: idle slope: %d, send slope: %d, hi credit: %d, low credit: %d\r\n",
+                srp_ptr -> talker[index].cbs_parameters.idle_slope,
+                srp_ptr -> talker[index].cbs_parameters.send_slope,
+                srp_ptr -> talker[index].cbs_parameters.hi_credit,
+                srp_ptr -> talker[index].cbs_parameters.low_credit);
+    if(srp_ptr -> talker[index].class_id == NX_SRP_SR_CLASS_A)
+        status = nx_shaper_cbs_parameter_set(interface_ptr, &(srp_ptr -> talker[index].cbs_parameters), NX_SHAPER_CLASS_A_PCP);
+    else
+        status = nx_shaper_cbs_parameter_set(interface_ptr, &(srp_ptr -> talker[index].cbs_parameters), NX_SHAPER_CLASS_B_PCP);
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_fp_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_fp_parameter_set
+Set FP parameter of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_fp_parameter_set(NX_INTERFACE *interface_ptr, NX_SHAPER_FP_PARAMETER *fp_parameter);
+```
+
+### Description
+
+This function sets the frame preemption parameter, when used with other shapers, FP parameter should be set before other shapers.
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *fp_parameter*: Pointer to the FP parameter.
+
+### Return Values
+
+**NX_SUCCESS** Successfully set FP parameter.
+**NX_NOT_SUCCESSFUL** (0x51) Not successful.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+#ifdef FP_ENABLED
+    //fp_config
+    memset(&fp_config, 0, sizeof(NX_SHAPER_FP_PARAMETER));
+    fp_config.verification_enable = 1;
+    fp_config.express_guardband_enable = NX_TRUE;
+    fp_config.ha = 0;
+    fp_config.ra = 0;
+    fp_config.express_queue_bitmap = (1 << 3) | (1 << 2);
+
+    status = nx_shaper_fp_parameter_set(interface_ptr, &fp_config);
+
+    if (status != NX_SUCCESS)
+    {
+        return NX_FALSE;
+    }
+#endif
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_tas_parameter_set
+
+## nx_shaper_tas_parameter_set
+Set TAS parameter of shaper.
+
+### Prototype  
+
+```c
+UINT nx_shaper_tas_parameter_set(NX_INTERFACE *interface_ptr, NX_SHAPER_TAS_CONFIG *tas_config);
+```
+
+### Description
+
+This function configures the hardware parameters for TAS shaper. 
+
+### Parameters
+
+- *interface_ptr*: Pointer to the interface instance.
+- *tas_config*: Pointer to the TAS config.
+
+### Return Values
+
+**NX_SUCCESS** Successfully set TAS parameter.
+**NX_NOT_FOUND** (0x4E) Not found.
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+    tas_config.base_time = (ULONG64)100 << 32; //100seconds
+    tas_config.auto_fill_status = NX_SHAPER_TAS_IDLE_CYCLE_AUTO_FILL_DISABLED;
+    tas_config.cycle_time = 1000000;
+    tas_config.traffic_count = 2;
+
+    tas_config.traffic[0].pcp = 2;
+    tas_config.traffic[0].time_offset = 0;
+    tas_config.traffic[0].duration = 500000;
+    tas_config.traffic[0].traffic_control = NX_SHAPER_TRAFFIC_OPEN;
+
+    tas_config.traffic[1].pcp = 0;
+    tas_config.traffic[1].time_offset = 500000;
+    tas_config.traffic[1].duration = 500000;
+    tas_config.traffic[1].traffic_control = NX_SHAPER_TRAFFIC_OPEN;
+
+
+    status = nx_shaper_tas_parameter_set(interface_ptr, &tas_config);
+```
+
+### See Also
+
+- nx_shaper_create
+- nx_shaper_delete
+- nx_shaper_current_mapping_get
+- nx_shaper_default_mapping_get
+- nx_shaper_mapping_set
+- nx_shaper_cbs_parameter_set
+- nx_shaper_fp_parameter_set
+
+## nx_srp_init
+Initialization of SRP.
+
+### Prototype  
+
+```c
+UINT nx_srp_init(NX_SRP *srp_ptr, NX_IP *ip_ptr, UINT interface_index, NX_PACKET_POOL *pkt_pool_ptr,
+                 VOID *stack_ptr, ULONG stack_size, UINT priority);
+```
+### Description
+
+This function initialize SRP, it initializes MRP, MSRP, MVRP sequencly, and create a thread in MRP initializaton.
+
+### Parameters
+
+- *srp_ptr*:                             Pointer to SRP instance.
+- *ip_ptr*:                              Pointer to IP instance.
+- *interface_index*:                     Index of the network interface to use SRP.
+- *pkt_pool_ptr*:                        pointer to Packet pool.
+- *stack_ptr*:                           pointer to SRP thread Stack.
+- *stack_size*:                          SRP thread Stack size .
+- *priority*:                            SRP thread priority.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful init
+- **NX_INVALID_INTERFACE** (0x4C) Invalid interface index
+- **NX_PTR_ERROR** (0x07) Invalid IP pointer
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+#define SRP_THREAD_PRIORITY 5
+#define SRP_INTERFACE 0
+NX_SRP nx_srp;
+NX_IP ip_0;
+NX_PACKET_POOL pool_0;
+ULONG            srp_stack[2048 *2 / sizeof(ULONG)];
+
+/* Create the SRP client instance */
+nx_srp_init(&nx_srp, &ip_0, SRP_INTERFACE, &pool_0,
+                     (UCHAR *)srp_stack, sizeof(srp_stack), SRP_THREAD_PRIORITY);
+
+
+```
+### See Also
+
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+
+
+## nx_srp_talker_start
+Start SRP talker.
+
+### Prototype  
+
+```c
+UINT nx_srp_talker_start(NX_SRP *srp_ptr, NX_MSRP_DOMAIN *srp_domain, UCHAR *stream_id, UCHAR *dest_addr,
+                         UINT max_frame_size, UINT max_interval_frames, NX_MRP_EVENT_CALLBACK event_callback);
+```
+### Description
+
+This function start SRP talker, it sets event callback funtions and register domain, Vlan, stream request.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *event_callback*:                callback invoked by application to monitor the SRP process.
+- *stream_id*:                     stream id of talker advertised.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful start
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+#define SRP_THREAD_PRIORITY 5
+#define SRP_INTERFACE 0
+NX_SRP nx_srp;
+UINT MaxFrameSize = 1300;
+UINT MaxIntervalFrames = 1;
+UCHAR dest_addr[6] ={0X91,0XE0,0XF0,0X00,0X0E,0X80};
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+UINT srp_event_callback(NX_MRP_PARTICIPANT* participant, NX_MRP_ATTRIBUTE* attribute, UCHAR event,VOID *callback_data);
+
+    /* start the SRP client */
+    status = nx_srp_talker_start(&nx_srp, &srp_domain, stream_id,  dest_addr,
+                             MaxFrameSize, MaxIntervalFrames, srp_event_callback);
+
+
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_stop
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+## nx_srp_talker_stop
+Stop SRP talker.
+
+### Prototype  
+
+```c
+UINT nx_srp_talker_stop(NX_SRP *srp_ptr, UCHAR *stream_id, NX_MSRP_DOMAIN *domain)
+```
+### Description
+
+This function stop SRP talker. It withdraw the domain,Vlan,stream request.
+
+### Parameters
+
+- *srp_ptr*:                    Pointer to SRP instance.
+- *stream_id*:                  stream id of talker advertised.
+- *domain*:                     domain of SRP talker.
+
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful stop
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+
+nx_srp_talker_stop(&nx_srp,stream_id, &srp_domain );
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_listener_start
+- nx_srp_listener_stop
+
+## nx_srp_listener_start
+Start SRP listener.
+
+### Prototype  
+
+```c
+
+UINT nx_srp_listener_start(NX_SRP *srp_ptr, NX_MRP_EVENT_CALLBACK event_callback, UCHAR *stream_id)
+```
+### Description
+
+This function start SRP listener. It enables listener and set user date and callback function.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *event_callback*:                callback invoked by application to monitor the SRP process.
+- *stream_id*:                     stream id of listener attached.
+
+
+### Return Values
+
+- **NX_MSRP_SUCCESS** (0x00) Successful listener start
+
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+UINT srp_event_callback(NX_MRP_PARTICIPANT* participant, NX_MRP_ATTRIBUTE* attribute, UCHAR event,VOID *callback_data);
+
+   nx_srp_listener_start(&nx_srp, srp_event_callback, stream_id)
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_stop
+
+## nx_srp_listener_stop
+Stop SRP listener.
+
+### Prototype  
+
+```c
+UINT nx_srp_listener_stop(NX_SRP *srp_ptr, UCHAR *stream_id, NX_MSRP_DOMAIN *domain)
+```
+### Description
+
+This function stop SRP listener. It unregister the domain,Vlan stream attached to talker.
+
+### Parameters
+
+- *srp_ptr*:                       Pointer to SRP instance.
+- *stream_id*:                     Stream id of listener attached to.
+- *domain*:                        Domain of listener attached to.
+
+### Return Values
+
+- **NX_SUCCESS** (0x00) Successful stop
+- **NX_INVALID_PARAMETERS** (0x4D) Invalid parameter
+- **NX_MSRP_EVENT_NOT_SUPPORTED** (0x06) unsupported event
+- **NX_MSRP_ATTRIBUTE_FIND_ERROR** (0x09) not found attribute
+
+### Allowed From
+
+Threads
+
+### Preemption Possible
+
+No
+
+### Example
+
+```c
+NX_SRP nx_srp;
+UCHAR stream_id[8] = {0X00,0X11,0X22,0X33,0X44,0X56,0,1};
+NX_MSRP_DOMAIN srp_domain = {5,2,2};
+
+nx_srp_listener_stop(&nx_srp,stream_id, &srp_domain );
+```
+### See Also
+
+- nx_srp_init
+- nx_srp_talker_start
+- nx_srp_talker_stop
+- nx_srp_listener_start
