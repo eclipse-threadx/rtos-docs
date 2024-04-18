@@ -4,6 +4,13 @@ Eclipse ThreadX is a real time operating system (RTOS) for Internet of Things (I
 
 Eclipse ThreadX provides an EAL4+ Common Criteria security certified environment, including full IP layer security via IPsec and socket layer security via TLS and DTLS. Our software crypto library has achieved FIPS 140-2 certification. We also leverage hardware cryptographic capabilities, memory protection via ThreadX MODULES, and support for ARM's TrustZone ARMv8-M security features.
 
+**IMPORTANT:** Microsoft Azure RTOS, an embedded development suite with the ThreadX real-time operating system, has been deployed on more than 12 billion devices worldwide. Azure RTOS has now transitioned to an open-source project under the stewardship of the Eclipse Foundation, a recognized leader in hosting open-source IoT projects.
+
+With Eclipse Foundation as the new home, Azure RTOS becomes Eclipse ThreadX. For more information, see the following pages:
+
+* [Microsoft IoT blog](https://techcommunity.microsoft.com/t5/internet-of-things-blog/microsoft-contributes-azure-rtos-to-open-source/ba-p/3986318)
+* [Eclipse ThreadX project](https://threadx.io/)
+
 ## Eclipse ThreadX resources
 
 [Eclipse ThreadX repositories](https://github.com/eclipse-threadx/)
