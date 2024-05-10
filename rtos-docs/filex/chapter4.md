@@ -646,7 +646,7 @@ Gets a directory's  entry information
 ### Prototype
 
 ```c
-UINT fx_directory_first_full_entry_find(
+UINT fx_directory_information_get(
     FX_MEDIA *media_ptr,
     CHAR *directory_name,
     UINT *attributes,
