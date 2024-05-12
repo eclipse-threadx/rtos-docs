@@ -90,7 +90,7 @@ Font resources consist of one or more fonts, each with a unique logical name. Fo
 
 In the view above, the first four fonts are the pre-defined default fonts that are required by the GUIX library. You can change the font data associated with these fonts, however you cannot change these font ID names.
 
-The last font shown above, named "Italic", is a custom font that has been added to the project by the user.
+The following four fonts, named "LARGE", "MEDIUM", "NORMAL" and "SMALL", are custom fonts that have been added to the project by the user.
 
 To modify a font resource, double-click (or right-click and menu select) on the font resource. From this dialog the font resource can be modified to match the application's UI needs. ***Figure 13*** shows the modification dialog when **SYSTEM** is double-clicked.
 
