@@ -54,7 +54,7 @@ The Log Header area is followed by the FAT Chain Log area. Figure 9 contains inf
 |Field|Size(in bytes)|Description|
 |-----|--------------|-----------|
 |FAT Chain Log Checksum|2|Checksum of the entire FAT Chain Log area. The FAT Chain Log area is considered invalid if the it fails the checksum verification.|
-|Flag|1|Valid flag values are:<br/>0x01 FAT Chain Valid<br />0x02 BITMAP is being used|
+|Flag|1|Valid flag values are:<br/>0x01 FAT Chain Valid|
 |Reserved|1|Reserved for future use|
 |Insertion Point – Front|4|The cluster (that belongs to the original FAT chain) where the newly created chain is going to be attached to.|
 |Head Cluster of New FAT Chain|4|The first cluster of the newly created FAT Chain|
@@ -62,7 +62,7 @@ The Log Header area is followed by the FAT Chain Log area. Figure 9 contains inf
 |Insertion Point – Back|4|The original cluster where the newly created FAT chain joins at.|
 |Next Deletion Point|4|This field assists the FAT chain cleanup procedure.|
 
-The Log Entries Area contains log entries that describe the changes needed to recover from a failure. There are three types of log entry supported in the FileX fault tolerant module: FAT Log Entry; Directory Log Entry; and Bitmap Log Entry.
+The Log Entries Area contains log entries that describe the changes needed to recover from a failure. There are three types of log entry supported in the FileX fault tolerant module: FAT Log Entry; Directory Log Entry.
 
 The following three figures and three tables describe these log entries in detail.
 
@@ -92,19 +92,6 @@ Type|2|Type of Entry, must be FX_FAULT_TOLERANT_FAT_LOG_TYPE|
 |Sector Offset|4|Offset (in bytes) into the sector where this directory is located.|
 |Log Sector|4|The sector where the directory entry is located|
 |Log Data|Variable|Content of the directory entry|
-
-![Bitmap Log Entry](./media/user-guide/bitmap-log-entry.png)
-
-**Figure 8. Bitmap Log Entry**
-
-**TABLE 12. Bitmap Log Entry**
-
-|Field|Size(in bytes)|Description|
-|-----|--------------|-----------|
-|Type|2|Type of Entry, must be FX_FAULT_TOLERANT_BITMAP_LOG_TYPE|
-|Size|2|Size of this entry|
-|Cluster Number|4|Cluster number|
-|Value|4|Value to be written into the FAT entry|
 
 ## Fault Tolerant Protection
 
