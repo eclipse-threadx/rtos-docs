@@ -3,9 +3,88 @@ title: Chapter 4 - Description of FileX services
 description: This chapter contains a description of all FileX services in alphabetic order.
 ---
 
-# Chapter 4- Description of FileX services
+# Chapter 4 - Description of FileX services
 
 This chapter contains a description of all FileX services in alphabetic order. Service names are designed so all similar services are grouped together.
+
+The FileX API functions available to the application are as follows.
+## Directory_Services
+- [fx_directory_attributes_read](#fx_directory_attributes_read)
+- [fx_directory_attributes_set](#fx_directory_attributes_set)
+- [fx_directory_create](#fx_directory_create)
+- [fx_directory_default_get](#fx_directory_default_get)
+- [fx_directory_default_set](#fx_directory_default_set)
+- [fx_directory_delete](#fx_directory_delete)
+- [fx_directory_first_entry_find](#fx_directory_first_entry_find)
+- [fx_directory_information_get](#fx_directory_information_get)
+- [fx_directory_local_path_clear](#fx_directory_local_path_clear)
+- [fx_directory_local_path_get](#fx_directory_local_path_get)
+- [fx_directory_local_path_restore](#fx_directory_local_path_restore)
+- [fx_directory_local_path_set](#fx_directory_local_path_set)
+- [fx_directory_long_name_get](#fx_directory_long_name_get)
+- [fx_directory_name_test](#fx_directory_name_test)
+- [fx_directory_next_entry_find](#fx_directory_next_entry_find)
+- [fx_directory_next_full_entry_find](#fx_directory_next_full_entry_find)
+- [fx_directory_rename](#fx_directory_rename)
+- [fx_directory_short_name_get](#fx_directory_short_name_get)
+- [fx_directory_short_name_get_extended](#fx_directory_short_name_get_extended)
+
+## File_Services
+- [fx_file_allocate](#fx_file_allocate)
+- [fx_file_attributes_read](#fx_file_attributes_read)
+- [fx_file_attributes_set](#fx_file_attributes_set)
+- [fx_file_best_effort_allocate](#fx_file_best_effort_allocate)
+- [fx_file_close_fx_file_create](#fx_file_close_fx_file_create)
+- [fx_file_date_time_set](#fx_file_date_time_set)
+- [fx_file_delete](#fx_file_delete)
+- [fx_file_extended_allocate](#fx_file_extended_allocate)
+- [fx_file_extended_best_effort_allocate](#fx_file_extended_best_effort_allocate)
+- [fx_file_extended_relative_seek](#fx_file_extended_relative_seek)
+- [fx_file_extended_seek](#fx_file_extended_seek)
+- [fx_file_extended_truncate](#fx_file_extended_truncate)
+- [fx_file_extended_truncate_release](#fx_file_extended_truncate_release)
+- [fx_file_open_fx_file_read](#fx_file_open_fx_file_read)
+- [fx_file_relative_seek](#fx_file_relative_seek)
+- [fx_file_rename_fx_file_seek](#fx_file_rename_fx_file_seek)
+- [fx_file_truncate](#fx_file_truncate)
+- [fx_file_truncate_release](#fx_file_truncate_release)
+- [fx_file_write](#fx_file_write)
+- [fx_file_write_notify_set](#fx_file_write_notify_set)
+
+## Media_Services
+- [fx_fault_tolerant_enable](#fx_fault_tolerant_enable)
+- [fx_media_abort](#fx_media_abort)
+- [fx_media_cache_invalidate](#fx_media_cache_invalidate)
+- [fx_media_check](#fx_media_check)
+- [fx_media_close](#fx_media_close)
+- [fx_media_close_notify_set](#fx_media_close_notify_set)
+- [fx_media_extended_space_available](#fx_media_extended_space_available)
+- [fx_media_flush](#fx_media_flush)
+- [fx_media_format](#fx_media_format)
+- [fx_media_open](#fx_media_open)
+- [fx_media_open_notify_set](#fx_media_open_notify_set)
+- [fx_media_read](#fx_media_read)
+- [fx_media_space_available](#fx_media_space_available)
+- [fx_media_volume_get](#fx_media_volume_get)
+- [fx_media_write](#fx_media_write)
+
+## System_Services
+- [fx_system_date_get](#fx_system_date_get)
+- [fx_system_date_set](#fx_system_date_set)
+- [fx_system_initialize](#fx_system_initialize)
+- [fx_system_time_get](#fx_system_time_get)
+- [fx_system_time_set](#fx_system_time_set)
+
+## Unicode_Services
+- [fx_unicode_directory_create](#fx_unicode_directory_create)
+- [fx_unicode_directory_rename](#fx_unicode_directory_rename)
+- [fx_unicode_file_create](#fx_unicode_file_create)
+- [fx_unicode_file_rename](#fx_unicode_file_rename)
+- [fx_unicode_length_get](#fx_unicode_length_get)
+- [fx_unicode_length_get_extended](#fx_unicode_length_get_extended)
+- [fx_unicode_name_get](#fx_unicode_name_get)
+- [fx_unicode_short_name_get](#fx_unicode_short_name_get)
+- [fx_unicode_short_name_get_extended](#fx_unicode_short_name_get_extended)
 
 ## fx_directory_attributes_read
 
@@ -14,7 +93,7 @@ Reads a specified directory's attributes.
 ### Prototype
 
 ```c
-UINT fx_directory_attributes_read ( 
+UINT fx_directory_attributes_read( 
     FX_MEDIA *media_ptr,
     CHAR *directory_name,
     UINT *attributes_ptr);
@@ -43,7 +122,7 @@ This service reads the directory's attributes from the specified media.
 - **FX _NOT FOUND** (0x04) Specified directory was not found in the media
 - **FX_NOT_DIRECTORY** (0x0E) Entry is not a directory
 - **FX_IO_ERROR** (0x90) Driver I/O error
-- **FX_FILE_CORRUPT** 0x08) File is corrupted
+- **FX_FILE_CORRUPT** (0x08) File is corrupted
 - **FX_SECTOR_INVALID** (0x89) Invalid sector
 - **FX_FAT_READ_ERROR** (0x03) Unable to read FAT entry
 - **FX_NO_MORE_SPACE** (0x0A) No more space to complete the operation
@@ -58,35 +137,17 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA     my_media;
-UINT     status;
+FX_MEDIA    my_media;
+UINT        status;
 /* Retrieve the attributes of "mydir" from the specified media.*/
 status = fx_directory_attributes_read(&my_media, "mydir", &attributes);
+
 /* If status equals FX_SUCCESS, "attributes" contains the directory attributes of "mydir". */
 ```
 
 ### See Also
 
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_attributes_set
 
@@ -142,35 +203,18 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             my_media;
-UINT                 status;
-status = fx_directory_attributes_set(&my_media, "mydir", FX_READ_ONLY);
+FX_MEDIA    my_media;
+UINT        status;
+
 /*Set the attributes of "mydir" to read-only. */
+status = fx_directory_attributes_set(&my_media, "mydir", FX_READ_ONLY);
+
 /* If status equals FX_SUCCESS, the directory "mydir" is read-only. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_create
 
@@ -217,8 +261,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             my_media;
-UINT                 status;
+FX_MEDIA    my_media;
+UINT        status;
+
 /* Create a subdirectory called "temp" in the current default directory. */
 
 status = fx_directory_create(&my_media, "temp");
@@ -228,26 +273,7 @@ status = fx_directory_create(&my_media, "temp");
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_default_get
 
@@ -286,37 +312,20 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA my_media;
-CHAR *current_default_dir;
-UINT status;
+FX_MEDIA    my_media;
+CHAR        *current_default_dir;
+UINT        status;
+
 /* Retrieve the current default directory. */
 status = fx_directory_default_get(&my_media, &current_default_dir);
+
 /* If status equals FX_SUCCESS, "current_default_dir" 
     contains a pointer to the current default directory).*/
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_default_set
 
@@ -359,35 +368,18 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA     my_media;
-UINT status;
+FX_MEDIA    my_media;
+UINT        status;
+
 /* Set the default directory to \abc\def\ghi. */
 status = fx_directory_default_set(&my_media, "\\abc\\def\\ghi");
+
 /* If status equals FX_SUCCESS, the default directory for this media is \abc\def\ghi. All subsequent file operations that do not explicitly specify a path will default to this directory. Note that the character "\" serves as an escape character in a string. To represent the character "\", use the construct "\\". This is done because of the C language- only one "\" is really present in the string. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_delete
 
@@ -435,36 +427,18 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA     my_media;
-UINT status;
-/* Set the default directory to \abc\def\ghi. */
-status = fx_directory_delete(&my_media, "abc");
+FX_MEDIA    my_media;
+UINT        status;
+
 /* Delete the subdirectory "abc." */
+status = fx_directory_delete(&my_media, "abc");
+
 /* If status equals FX_SUCCESS, the subdirectory "abc" was deleted. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_first_entry_find
 
@@ -520,26 +494,7 @@ status = fx_directory_first_entry_find(&my_media, entry);
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_first_full_entry_find
 
@@ -618,26 +573,7 @@ status = fx_directory_first_full_entry_find(&my_media, entry_name,
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_information_get
 
@@ -703,26 +639,7 @@ status = fx_directory_information_get(&my_media, "myfile.txt", &attributes, &siz
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_local_path_clear
 
@@ -760,31 +677,13 @@ FX_MEDIA             my_media;
 UINT                 status;
 /* Clear the previously setup local path for this media. */
 status = fx_directory_local_path_clear(&my_media);
+
 /* If status equals FX_SUCCESS the local path is cleared. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_local_path_get
 
@@ -826,31 +725,13 @@ CHAR             *my_path;
 UINT             status;
 /* Retrieve the current local path string. */
 status = fx_directory_local_path_get(&my_media, &my_path);
+
 /* If status equals FX_SUCCESS, "my_path" points to the local path string. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_local_path_restore
 
@@ -893,32 +774,14 @@ FX_MEDIA                  my_media;
 FX_LOCAL_PATH             my_previous_local_path;
 UINT                      status;
 /* Restore the previous local path. */
+
 status = fx_directory_local_path_restore(&my_media, &my_previous_local_path);
 /* If status equals FX_SUCCESS, the previous local path has been restored. */
 ```
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_local_path_set
 
@@ -963,11 +826,12 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         my_media;
-UINT             status;
-FX_LOCAL_PATH     my_previous_local_path;
+FX_MEDIA        my_media;
+UINT            status;
+FX_LOCAL_PATH   local_path;
+
 /* Set the local path to \abc\def\ghi. */
-status = fx_directory_local_path_set (&my_media,&local_path,"\\abc\\def\\ghi");
+status = fx_directory_local_path_set(&my_media, &local_path, "\\abc\\def\\ghi");
 
 /* If status equals FX_SUCCESS, the default directory for this thread
 is \abc\def\ghi. All subsequent file operations that do not explicitly
@@ -978,26 +842,7 @@ character "\", use the construct "\\".*/
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_long_name_get
 
@@ -1051,26 +896,7 @@ status = fx_directory_long_name_get(&my_media, "TEXT~01.TXT", my_long_name);
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_long_name_get_extended
 
@@ -1118,7 +944,7 @@ Threads
 
 ```c
 FX_MEDIA        my_media;
-UCHAR            my_long_name[FX_MAX_LONG_NAME_LEN];
+UCHAR           my_long_name[FX_MAX_LONG_NAME_LEN];
 /* Retrieve the long name associated with "TEXT~01.TXT". */
 
 status = fx_directory_long_name_get_extended(&my_media,
@@ -1129,26 +955,7 @@ status = fx_directory_long_name_get_extended(&my_media,
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_name_test
 
@@ -1194,7 +1001,7 @@ Threads
 
 ```c
 FX_MEDIA        my_media;
-UNIT             status;
+UNIT            status;
 /* Check to see if the name "abc" is directory */
 
 status = fx_directory_name_test(&my_media, "abc");
@@ -1204,25 +1011,7 @@ status = fx_directory_name_test(&my_media, "abc");
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_next_entry_find
 
@@ -1280,26 +1069,7 @@ status = fx_directory_next_entry_find(&my_media, next_name);
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_next_full_entry_find
 
@@ -1391,26 +1161,7 @@ status = fx_directory_next_full_entry_find(&my_media, entry_name, &attributes, &
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_rename
 
@@ -1473,26 +1224,7 @@ status = fx_directory_rename(&my_media, "abc", "def");
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_short_name_get
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_short_name_get
 
@@ -1538,8 +1270,8 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         my_media;
-UCHAR             my_short_name[14];
+FX_MEDIA        my_media;
+UCHAR           my_short_name[14];
 
 /* Retrieve the short name associated with "my_really_long_name". */
 
@@ -1551,26 +1283,7 @@ status = fx_directory_short_name_get(&my_media,
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_directory_short_name_get_extended
 
@@ -1619,7 +1332,7 @@ Threads
 
 ```c
 FX_MEDIA        my_media;
-UCHAR            my_short_name[14];
+UCHAR           my_short_name[14];
 
 /* Retrieve the short name associated with "my_really_long_name". */
 
@@ -1631,26 +1344,7 @@ status = fx_directory_short_name_get_extended(&my_media,
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_unicode_directory_create
-- fx_unicode_directory_rename
+- [filex directory Services](#Directory_Services)
 
 ## fx_fault_tolerant_enable
 
@@ -1698,7 +1392,7 @@ Initialization, threads
 
 /* Declare memory space used for fault tolerant. */
 
-ULONG fault tolerant_memory[3072 / sizeof(ULONG)];
+ULONG   fault_tolerant_memory[3072 / sizeof(ULONG)];
 
 /* Enable fault tolerant. */
 
@@ -1708,22 +1402,7 @@ fx_fault_tolerant_enable(media_ptr, fault_tolerant_memory, sizeof(fault_tolerant
 
 ### See Also
 
-- fx_system_initialize
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
+- [filex media Services](#Media_Services)
 
 ## fx_file_allocate
 
@@ -1771,7 +1450,7 @@ Threads
 
 ```c
 
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
 
 /* Allocate 1024 bytes to the end of my_file. */
@@ -1784,29 +1463,7 @@ status = fx_file_allocate(&my_file, 1024);
 
 ### See Also
 
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_attributes_read
 
@@ -1874,31 +1531,7 @@ status = fx_file_attributes_read(&my_media, "myfile.txt", &attributes);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_attributes_set
 
@@ -1969,32 +1602,7 @@ status = fx_file_attributes_set(&my_media, "myfile.txt", FX_READ_ONLY);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_best_effort_allocate
 
@@ -2044,8 +1652,8 @@ Threads
 ```c
 
 FX_FILE         my_file;
-UINT             status;
-ULONG             actual_allocation;
+UINT            status;
+ULONG           actual_allocation;
 
 /* Attempt to allocate 1024 bytes to the end of my_file. */
 
@@ -2058,32 +1666,7 @@ status = fx_file_best_effort_allocate(&my_file, 1024, &actual_allocation);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_close
 
@@ -2121,7 +1704,7 @@ Threads
 
 ```c
 
-FX_FILE        my_file;
+FX_FILE     my_file;
 UINT        status;
 
 /* Close the previously opened file "my_file". */
@@ -2132,32 +1715,7 @@ status = fx_file_close(&my_file);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_create
 
@@ -2221,32 +1779,8 @@ status = fx_file_create(&my_media, "myfile.txt");
 ```
 
 ### See Also
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+
+- [filex file Services](#File_Services)
 
 ## fx_file_date_time_set
 
@@ -2273,6 +1807,8 @@ This service sets the date and time of the specified file.
 ```c
 
 FX_MEDIA         my_media;
+UINT             status;
+
 /* Set the date/time of "my_file". */
 status = fx_file_date_time_set(&my_media, "my_file", 1999, 12, 31, 23, 59, 59);
 
@@ -2320,6 +1856,8 @@ Threads
 ```c
 
 FX_MEDIA         my_media;
+UINT             status;
+
 /* Set the date/time of "my_file". */
 status = fx_file_date_time_set(&my_media, "my_file", 1999, 12, 31, 23, 59, 59);
 
@@ -2328,32 +1866,7 @@ status = fx_file_date_time_set(&my_media, "my_file", 1999, 12, 31, 23, 59, 59);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_delete
 
@@ -2402,8 +1915,9 @@ Threads
 
 ```c
 
-FX_MEDIA            my_media;
-UINT                 status;
+FX_MEDIA        my_media;
+UINT            status;
+
 /* Delete the file "myfile.txt". */
 
 status = fx_file_delete(&my_media, "myfile.txt");
@@ -2413,32 +1927,7 @@ status = fx_file_delete(&my_media, "myfile.txt");
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_extended_allocate
 
@@ -2486,8 +1975,9 @@ Threads
 
 ```c
 
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
+
 /* Allocate 0x100000000 bytes to the end of my_file. */
 
 status = fx_file_extended_allocate(&my_file, 0x100000000);
@@ -2499,32 +1989,7 @@ status = fx_file_extended_allocate(&my_file, 0x100000000);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_extended_best_effort_allocate
 
@@ -2573,8 +2038,8 @@ Threads
 
 ```c
 
-FX_FILE my_file;
-UINT             status;
+FX_FILE         my_file;
+UINT            status;
 ULONG64         actual_allocation;
 
 /* Attempt to allocate 0x100000000 bytes to the end of my_file. */
@@ -2588,32 +2053,7 @@ status = fx_file_extended_best_effort_allocate(&my_file,
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_extended_relative_seek
 
@@ -2669,7 +2109,7 @@ Threads
 
 ```c
 FX_FILE     my_file;
-UINT         status;
+UINT        status;
 
 /* Attempt to seek forward 0x100000000 bytes in "my_file". */
 
@@ -2681,32 +2121,7 @@ status = fx_file_extended_relative_seek(&my_file, 0x100000000, FX_SEEK_FORWARD);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_extended_seek
 
@@ -2750,7 +2165,8 @@ Threads
 
 ```c
 FX_FILE         my_file;
-UINT             status;
+UINT            status;
+
 /* Seek to position 0x100000000 of "my_file." */
 
 status = fx_file_extended_seek(&my_file, 0x100000000);
@@ -2761,32 +2177,7 @@ status = fx_file_extended_seek(&my_file, 0x100000000);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
-
+- [filex file Services](#File_Services)
 ## fx_file_extended_truncate
 
 Truncates a file.
@@ -2833,8 +2224,9 @@ Threads
 ### Example
 
 ```c
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
+
 /* Truncate "my_file" to 0x100000000 bytes. */
 
 status = fx_file_extended_truncate(&my_file, 0x100000000);
@@ -2844,32 +2236,7 @@ status = fx_file_extended_truncate(&my_file, 0x100000000);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_extended_truncate_release
 
@@ -2918,8 +2285,9 @@ Threads
 ### Example
 
 ```c
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
+
 /* Attempt to truncate everything after the first 0x100000000 bytes of "my_file". */
 
 status = fx_file_extended_truncate_release(&my_file, 0x100000000);
@@ -2930,32 +2298,7 @@ status = fx_file_extended_truncate_release(&my_file, 0x100000000);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_open
 
@@ -3013,9 +2356,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA     my_media;
+FX_MEDIA    my_media;
 FX_FILE     my_file;
-UINT         status;
+UINT        status;
 
 /* Open the file "myfile.txt" for reading. */
 
@@ -3027,31 +2370,7 @@ status = fx_file_open(&my_media, &my_file, "myfile.txt", FX_OPEN_FOR_READ);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_read
 
@@ -3115,32 +2434,7 @@ status = fx_file_read(&my_file, my_buffer, 1024, &actual_bytes);
 
 ### See Also
 
-- fx_file_allocate,
-- fx_file_attributes_read,
-- fx_file_attributes_set,
-- fx_file_best_effort_allocate,
-- fx_file_close,
-- fx_file_create,
-- fx_file_date_time_set,
-- fx_file_delete,
-- fx_file_extended_allocate,
-- fx_file_extended_best_effort_allocate,
-- fx_file_extended_relative_seek,
-- fx_file_extended_seek,
-- fx_file_extended_truncate,
-- fx_file_extended_truncate_release,
-- fx_file_open,
-- fx_file_relative_seek,
-- fx_file_rename,
-- fx_file_seek,
-- fx_file_truncate,
-- fx_file_truncate_release,
-- fx_file_write,
-- fx_file_write_notify_set,
-- fx_unicode_file_create,
-- fx_unicode_file_rename,
-- fx_unicode_name_get,
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_relative_seek
 
@@ -3194,7 +2488,7 @@ Threads
 
 ```c
 FX_FILE     my_file;
-UINT         status;
+UINT        status;
 
 /* Attempt to move 10 bytes forward in "my_file". */
 
@@ -3206,32 +2500,7 @@ status = fx_file_relative_seek(&my_file, 10, FX_SEEK_FORWARD);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_rename
 
@@ -3296,32 +2565,7 @@ status = fx_file_rename(&my_media, "myfile1.txt", "myfile2.txt");
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_seek
 
@@ -3364,42 +2608,19 @@ Threads
 ### Example
 
 ```c
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
+
 /* Seek to the beginning of "my_file." */
 status = fx_file_seek(&my_file, 0);
+
 /* If status equals FX_SUCCESS, the file read/write pointer
     is now positioned to the beginning of the file. */
 ```
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_truncate
 
@@ -3447,8 +2668,9 @@ Threads
 ### Example
 
 ```c
-FX_FILE                my_file;
-UINT                status;
+FX_FILE     my_file;
+UINT        status;
+
 /* Truncate "my_file" to 100 bytes. */
 
 status = fx_file_truncate(&my_file, 100);
@@ -3458,32 +2680,7 @@ status = fx_file_truncate(&my_file, 100);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_truncate_release
 
@@ -3533,7 +2730,7 @@ Threads
 
 ```c
 FX_FILE         my_file;
-UINT             status;
+UINT            status;
 
 /* Attempt to truncate everything after the first 100 bytes of "my_file". */
 
@@ -3545,32 +2742,7 @@ status = fx_file_truncate_release(&my_file, 100);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_write
 
@@ -3619,8 +2791,9 @@ Threads
 ### Example
 
 ```c
-FX_FILE            my_file;
+FX_FILE         my_file;
 UINT            status;
+
 /* Write a 10 character buffer to "my_file." */
 
 status = fx_file_write(&my_file, "1234567890", 10);
@@ -3630,32 +2803,7 @@ status = fx_file_write(&my_file, "1234567890", 10);
 
 ### See Also
 
-- fx_file_allocate,
-- fx_file_attributes_read,
-- fx_file_attributes_set,
-- fx_file_best_effort_allocate,
-- fx_file_close,
-- fx_file_create,
-- fx_file_date_time_set,
-- fx_file_delete,
-- fx_file_extended_allocate,
-- fx_file_extended_best_effort_allocate,
-- fx_file_extended_relative_seek,
-- fx_file_extended_seek,
-- fx_file_extended_truncate,
-- fx_file_extended_truncate_release,
-- fx_file_open,
-- fx_file_read,
-- fx_file_relative_seek,
-- fx_file_rename,
-- fx_file_seek,
-- fx_file_truncate,
-- fx_file_truncate_release,
-- fx_file_write_notify_set,
-- fx_unicode_file_create,
-- fx_unicode_file_rename,
-- fx_unicode_name_get,
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_file_write_notify_set
 
@@ -3697,32 +2845,7 @@ fx_file_write_notify_set(file_ptr, my_file_close_callback);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex file Services](#File_Services)
 
 ## fx_media_abort
 
@@ -3760,6 +2883,7 @@ Threads
 ```c
 FX_MEDIA    my_media;
 UINT        status;
+
 /* Abort all activity associated with "my_media". */
 
 status = fx_media_abort(&my_media);
@@ -3771,22 +2895,7 @@ status = fx_media_abort(&my_media);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_cache_invalidate
 
@@ -3833,22 +2942,7 @@ status = fx_media_cache_invalidate(&my_media);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_check
 
@@ -3911,9 +3005,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         my_media;
-ULONG             detected_errors;
-UCHAR             sratch_memory[4096];
+FX_MEDIA        my_media;
+ULONG           detected_errors;
+UCHAR           sratch_memory[4096];
 
 /* Check the media and correct all errors. */
 
@@ -3929,22 +3023,7 @@ status = fx_media_check(&my_media, sratch_memory, 4096,
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_close
 
@@ -3991,22 +3070,7 @@ status = fx_media_close(&my_media);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_close_notify_set
 
@@ -4048,22 +3112,7 @@ fx_media_close_notify_set(media_ptr, my_media_close_callback);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_extended_space_available
 
@@ -4103,8 +3152,9 @@ Threads
 
 ```c
 FX_MEDIA        my_media;
-ULONG64            available_bytes;
+ULONG64         available_bytes;
 UINT            status;
+
 /* Retrieve the available bytes in the media. */
 
 status = fx_media_extended_space_available(&my_media, &available_bytes);
@@ -4115,22 +3165,7 @@ status = fx_media_extended_space_available(&my_media, &available_bytes);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_flush
 
@@ -4183,22 +3218,7 @@ status = fx_media_flush(&my_media);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_format
 
@@ -4276,9 +3296,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         ram_disk;
-UCHAR             media_memory[512];
-UCHAR             ram_disk_memory[32768];
+FX_MEDIA        ram_disk;
+UCHAR           media_memory[512];
+UCHAR           ram_disk_memory[32768];
 
 /* Format a RAM disk with 32768 bytes and 512 bytes per sector. */
 
@@ -4302,22 +3322,7 @@ status = fx_media_format(&ram_disk, _fx_ram_driver,
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_open
 
@@ -4367,9 +3372,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         ram_disk,
-UINT             status;
-UCHAR             buffer[128];
+FX_MEDIA        ram_disk,
+UINT            status;
+UCHAR           buffer[128];
 /* Open a 32KByte RAM disk starting at the fixed address of 0x800000.
     Note that the total 32KByte media size and 128-byte sector size is defined inside of the driver. */
 
@@ -4381,22 +3386,7 @@ status = fx_media_open(&ram_disk, "RAM DISK", fx_ram_driver, 0, &buffer[0], size
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_open_notify_set
 
@@ -4439,22 +3429,7 @@ fx_media_open_notify_set(media_ptr, my_media_open_callback);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_read
 
@@ -4495,8 +3470,8 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         my_media;
-UCHAR             my_buffer[128];
+FX_MEDIA        my_media;
+UCHAR           my_buffer[128];
 UINT            STATUS;
 /* Read logical sector 22 into "my_buffer" assuming the
     physical media has a sector size of 128. */
@@ -4506,22 +3481,7 @@ status = fx_media_read(&my_media, 22, my_buffer);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_space_available
 
@@ -4561,8 +3521,9 @@ Threads
 
 ```c
 FX_MEDIA        my_media;
-ULONG            available_bytes;
+ULONG           available_bytes;
 UINT            status;
+
 /* Retrieve the available bytes in the media. */
 
 status = fx_media_space_available(&my_media, &available_bytes);
@@ -4573,22 +3534,7 @@ status = fx_media_space_available(&my_media, &available_bytes);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_volume_get
 
@@ -4632,7 +3578,9 @@ Threads
 
 ```c
 FX_MEDIA        ram_disk;
-UCHAR             volume_name[12];
+UCHAR           volume_name[12];
+UINT            status;
+
 /* Retrieve the volume name of the RAM disk, from the boot sector. */
 
 status = fx_media_volume_get_extended(&ram_disk, volume_name,
@@ -4644,22 +3592,7 @@ status = fx_media_volume_get_extended(&ram_disk, volume_name,
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_volume_get_extended
 
@@ -4706,8 +3639,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         ram_disk;
-UCHAR             volume_name[12];
+FX_MEDIA        ram_disk;
+UCHAR           volume_name[12];
+UINT            status;
 
 /* Retrieve the volume name of the RAM disk, from the boot sector. */
 
@@ -4720,22 +3654,7 @@ status = fx_media_volume_get_extended(&ram_disk, volume_name,
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_set
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_volume_set
 
@@ -4776,7 +3695,8 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA ram_disk;
+FX_MEDIA    ram_disk;
+UINT        status;
 
 /* Set the volume name to "MY_VOLUME". */
 
@@ -4787,22 +3707,7 @@ status = fx_media_volume_set(&ram_disk, "MY_VOLUME");
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_write
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_media_write
 
@@ -4844,9 +3749,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             my_media;
-UCHAR                 my_buffer[128];
-UINT                 status;
+FX_MEDIA        my_media;
+UCHAR           my_buffer[128];
+UINT            status;
 
 /* Write logical sector 22 from "my_buffer" assuming
     the physical media has a sector size of 128. */
@@ -4859,22 +3764,7 @@ status = fx_media_write(&my_media, 22, my_buffer);
 
 ### See Also
 
-- fx_fault_tolerant_enable
-- fx_media_abort
-- fx_media_cache_invalidate
-- fx_media_check
-- fx_media_close
-- fx_media_close_notify_set
-- fx_media_extended_space_available
-- fx_media_flush
-- fx_media_format
-- fx_media_open
-- fx_media_open_notify_set
-- fx_media_read
-- fx_media_space_available
-- fx_media_volume_get
-- fx_media_volume_set
-- fx_system_initialize
+- [filex media Services](#Media_Services)
 
 ## fx_system_date_get
 
@@ -4925,10 +3815,7 @@ status = fx_system_date_get(&year, &month, &day);
 
 ### See Also
 
-- fx_system_date_set
-- fx_system_initialize
-- fx_system_time_get
-- fx_system_time_set
+- [filex System Services](#System_Services)
 
 ## fx_system_date_set
 
@@ -4981,10 +3868,7 @@ status = fx_system_date_set(2005, 12, 12);
 
 ### See Also
 
-- fx_system_date_get
-- fx_system_initialize
-- fx_system_time_get
-- fx_system_time_set
+- [filex System Services](#System_Services)
 
 ## fx_system_initialize
 
@@ -5020,8 +3904,10 @@ Initialization, threads
 void tx_application_define(VOID *free_memory)
 {
     UINT status;
+    
     /* Initialize the FileX system. */
     fx_system_initialize();
+
     /* Set the file system date. */
     fx_system_date_set(my_year, my_month, my_day);
 
@@ -5038,10 +3924,7 @@ void tx_application_define(VOID *free_memory)
 
 ### See Also
 
-- fx_system_date_get
-- fx_system_date_set
-- fx_system_time_get
-- fx_system_time_set
+- [filex System Services](#System_Services)
 
 ## fx_system_time_get
 
@@ -5093,10 +3976,7 @@ status = fx_system_time_get(&hour, &minute, &second);
 
 ### See Also
 
-- fx_system_date_get
-- fx_system_date_set
-- fx_system_initialize
-- fx_system_time_set
+- [filex System Services](#System_Services)
 
 ## fx_system_time_set
 
@@ -5148,10 +4028,7 @@ status = fx_system_time_set(23, 21, 20);
 
 ### See Also
 
-- fx_system_date_get
-- fx_system_date_set
-- fx_system_initialize
-- fx_system_time_get
+- [filex System Services](#System_Services)
 
 ## fx_unicode_directory_create
 
@@ -5188,7 +4065,7 @@ This service creates a Unicode-named subdirectory in the current default directo
 - **FX_NO_MORE_SPACE** (0x0A) No more clusters available in the media for the new directory entry.
 - **FX_WRITE_PROTECT** (0x23) Specified media is write protected.
 - **FX_PTR_ERROR** (0x18) Invalid media or name pointers.
-- **FX_CALLER_ERROR** (0x20)    Caller is not a thread.
+- **FX_CALLER_ERROR** (0x20) Caller is not a thread.
 - **FX_IO_ERROR**    (0x90) Driver I/O error.
 
 ### Allowed From
@@ -5198,9 +4075,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             ram_disk;
-UCHAR                 my_short_name[13];
-UCHAR                 my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
+FX_MEDIA            ram_disk;
+UCHAR               my_short_name[13];
+UCHAR               my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
                                          0x54,0xD6, 0x7C,0xC7, 0x20,0x00, 0x74,0xC7,
                                          0x84,0xB9, 0x20,0x00, 0x85,0xC7, 0xC8,0xB2,
                                          0xE4,0xB2, 0x2E,0x00, 0x64,0x00, 0x6F,0x00,
@@ -5216,26 +4093,7 @@ length = fx_unicode_directory_create(&ram_disk, my_unicode_name, 17, my_short_na
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_rename
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_directory_rename
 
@@ -5283,11 +4141,11 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             my_media;
-UINT                 status;
-UCHAR                 my_short_name[13];
-UCHAR                 my_old_unicode_name[] = {'a', '\0', 'b', '\0', 'c', '\0', '\0', '\0'};
-UCHAR                 my_new_unicode_name[] = {'d', '\0', 'e', '\0', 'f', '\0', '\0', '\0'};
+FX_MEDIA            my_media;
+UINT                status;
+UCHAR               my_short_name[13];
+UCHAR               my_old_unicode_name[] = {'a', '\0', 'b', '\0', 'c', '\0', '\0', '\0'};
+UCHAR               my_new_unicode_name[] = {'d', '\0', 'e', '\0', 'f', '\0', '\0', '\0'};
 
 /* Change the Unicode-named file "abc" to "def". */
 
@@ -5300,26 +4158,7 @@ status = fx_unicode_directory_rename(&my_media, my_old_unicode_name,
 
 ### See Also
 
-- fx_directory_attributes_read
-- fx_directory_attributes_set
-- fx_directory_create
-- fx_directory_default_get
-- fx_directory_default_set
-- fx_directory_delete
-- fx_directory_first_entry_find
-- fx_directory_first_full_entry_find
-- fx_directory_information_get
-- fx_directory_local_path_clear
-- fx_directory_local_path_get
-- fx_directory_local_path_restore
-- fx_directory_local_path_set
-- fx_directory_long_name_get
-- fx_directory_name_test
-- fx_directory_next_entry_find
-- fx_directory_next_full_entry_find
-- fx_directory_rename
-- fx_directory_short_name_get
-- fx_unicode_directory_create
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_file_create
 
@@ -5366,9 +4205,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         ram_disk;
-UCHAR             my_short_name[13];
-UCHAR             my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
+FX_MEDIA        ram_disk;
+UCHAR           my_short_name[13];
+UCHAR           my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
                                      0x54,0xD6, 0x7C,0xC7, 0x20,0x00, 0x74,0xC7,
                                      0x84,0xB9, 0x20,0x00, 0x85,0xC7, 0xC8,0xB2,
                                      0xE4,0xB2, 0x2E,0x00, 0x64,0x00, 0x6F,0x00,
@@ -5384,32 +4223,7 @@ length = fx_unicode_file_create(&ram_disk, my_unicode_name, 17, my_short_name);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_file_rename
 
@@ -5457,11 +4271,11 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             my_media;
-UINT                 status;
-UCHAR                 my_short_name[13];
-UCHAR                 my_old_unicode_name[] = {'a', '\0', 'b', '\0', 'c', '\0', '\0', '\0'};
-UCHAR                 my_new_unicode_name[] = {'d', '\0', 'e', '\0', 'f', '\0', '\0', '\0'};
+FX_MEDIA        my_media;
+UINT            status;
+UCHAR           my_short_name[13];
+UCHAR           my_old_unicode_name[] = {'a', '\0', 'b', '\0', 'c', '\0', '\0', '\0'};
+UCHAR           my_new_unicode_name[] = {'d', '\0', 'e', '\0', 'f', '\0', '\0', '\0'};
 
 /* Change the Unicode-named file "abc" to "def". */
 
@@ -5474,32 +4288,7 @@ status = fx_unicode_file_rename(&my_media, my_old_unicode_name,
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_length_get
 
@@ -5547,33 +4336,7 @@ length = fx_unicode_length_get(my_unicode_name);
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_length_get_extended
 
@@ -5626,33 +4389,7 @@ length = fx_unicode_length_get_extended(my_unicode_name, sizeof(my_unicode_name)
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_name_get
 
@@ -5700,9 +4437,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA             ram_disk;
-UCHAR                 my_unicode_name[256*2];
-ULONG                 unicode_name_length;
+FX_MEDIA        ram_disk;
+UCHAR           my_unicode_name[256*2];
+ULONG           unicode_name_length;
 
 /* Get the Unicode name associated with the short name "ABC0~111.TXT".
     Note that the Unicode destination must have 2 times the
@@ -5715,32 +4452,7 @@ length = fx_unicode_name_get(&ram_disk, "ABC0~111.TXT", my_unicode_name, unicode
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_name_get_extended
 
@@ -5807,32 +4519,7 @@ length = fx_unicode_name_get_extended(&ram_disk, "ABC0~111.TXT",
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_short_name_get
 
@@ -5878,9 +4565,9 @@ Threads
 ### Example
 
 ```c
-FX_MEDIA         ram_disk;
-UCHAR             my_short_name[13];
-UCHAR             my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
+FX_MEDIA        ram_disk;
+UCHAR           my_short_name[13];
+UCHAR           my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
                                      0x54,0xD6, 0x7C,0xC7, 0x20,0x00, 0x74,0xC7,
                                      0x84,0xB9, 0x20,0x00, 0x85,0xC7, 0xC8,0xB2,
                                      0xE4,0xB2, 0x2E,0x00, 0x64,0x00, 0x6F,0x00,
@@ -5895,32 +4582,7 @@ length = fx_unicode_short_name_get(&ram_disk, my_unicode_name, 17, my_short_name
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
+- [filex Unicode Services](#Unicode_Services)
 
 ## fx_unicode_short_name_get_extended
 
@@ -5973,9 +4635,9 @@ Threads
 
 ```c
 #define         SHORT_NAME_BUFFER_SIZE 13
-FX_MEDIA         ram_disk;
-UCHAR             my_short_name[SHORT_NAME_BUFFER_SIZE];
-UCHAR             my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
+FX_MEDIA        ram_disk;
+UCHAR           my_short_name[SHORT_NAME_BUFFER_SIZE];
+UCHAR           my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x00,
                                      0x54,0xD6, 0x7C,0xC7, 0x20,0x00, 0x74,0xC7,
                                      0x84,0xB9, 0x20,0x00, 0x85,0xC7, 0xC8,0xB2,
                                      0xE4,0xB2, 0x2E,0x00, 0x64,0x00, 0x6F,0x00,
@@ -5984,37 +4646,11 @@ UCHAR             my_unicode_name[] = {0x38,0xC1, 0x88,0xBC, 0xF8,0xC9, 0x20,0x0
 /* Get the short name associated with the Unicode name contained in the array "my_unicode_name". */
 
 length = fx_unicode_short_name_get_extended(&ram_disk,
-    my_unicode_name, 17, my_short_name,SHORT_NAME_BUFFER_SIZE);
+    my_unicode_name, 17, my_short_name, SHORT_NAME_BUFFER_SIZE);
 
 /* If successful, the short name is returned in "my_short_name". */
 ```
 
 ### See Also
 
-- fx_file_allocate
-- fx_file_attributes_read
-- fx_file_attributes_set
-- fx_file_best_effort_allocate
-- fx_file_close
-- fx_file_create
-- fx_file_date_time_set
-- fx_file_delete
-- fx_file_extended_allocate
-- fx_file_extended_best_effort_allocate
-- fx_file_extended_relative_seek
-- fx_file_extended_seek
-- fx_file_extended_truncate
-- fx_file_extended_truncate_release
-- fx_file_open
-- fx_file_read
-- fx_file_relative_seek
-- fx_file_rename
-- fx_file_seek
-- fx_file_truncate
-- fx_file_truncate_release
-- fx_file_write
-- fx_file_write_notify_set
-- fx_unicode_file_create
-- fx_unicode_file_rename
-- fx_unicode_name_get
-- fx_unicode_short_name_get
+- [filex Unicode Services](#Unicode_Services)

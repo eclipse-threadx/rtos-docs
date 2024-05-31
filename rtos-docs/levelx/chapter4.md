@@ -4,6 +4,17 @@ description: The LevelX NAND APIs available to the application.
 ---
 
 # Chapter 4 - LevelX NAND APIs
+The LevelX NAND API functions available to the application are as follows.
+
+## NAND_Services
+- [lx_nand_flash_close](#lx_nand_flash_close)
+- [lx_nand_flash_initialize](#lx_nand_flash_initialize)
+- [lx_nand_flash_open](#lx_nand_flash_open)
+- [lx_nand_flash_page_ecc_check](#lx_nand_flash_page_ecc_check)
+- [lx_nand_flash_page_ecc_compute](#lx_nand_flash_page_ecc_compute)
+- [lx_nand_flash_sectors_read](#lx_nand_flash_sectors_read)
+- [lx_nand_flash_sectors_release](#lx_nand_flash_sectors_release)
+- [lx_nand_flash_sectors_write](#lx_nand_flash_sectors_write)
 
 ## lx_nand_flash_close
 
@@ -43,13 +54,7 @@ status = lx_nand_flash_close(&my_nand_flash);
 
 ### See Also
 
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_defragment
 
@@ -88,14 +93,7 @@ status = lx_nand_flash_defragment(&my_nand_flash);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_extended_cache_enable
 
@@ -141,14 +139,7 @@ status = lx_nand_flash_extended_cache_enable(&my_nand_flash,
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_format
 
@@ -196,11 +187,7 @@ status = lx_nand_flash_format(&my_nand_flash, "my nand flash",
 
 ### See Also
 
-- lx_nand_flash_open
-- lx_nand_flash_close
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_initialize
 
@@ -240,13 +227,7 @@ status = lx_nand_flash_initialize();
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_open
 
@@ -349,13 +330,7 @@ status = lx_nand_flash_page_ecc_check(&my_nand_flash, page_pointer, ecc_pointer)
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_page_ecc_compute
 
@@ -400,13 +375,7 @@ status = lx_nand_flash_page_ecc_compute(&my_nand_flash, page_pointer, ecc_pointe
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_partial_defragment
 
@@ -448,14 +417,7 @@ status = lx_nand_flash_partial_defragment(&my_nand_flash, 1);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_sector_read
 
@@ -500,13 +462,7 @@ status = lx_nand_flash_sector_read(&my_nand_flash, 20, buffer);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_release
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_sectors_read
 
@@ -593,13 +549,7 @@ status = lx_nand_flash_sector_release(&my_nand_flash, 20);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_sectors_release
 
@@ -644,13 +594,7 @@ status = lx_nand_flash_sectors_release(&my_nand_flash, 20, 10);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_write
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_sector_write
 
@@ -696,13 +640,7 @@ status = lx_nand_flash_sector_write(&my_nand_flash, 20, buffer);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
+- [levelx NAND Services](#NAND_Services)
 
 ## lx_nand_flash_sectors_write
 
@@ -750,12 +688,6 @@ status = lx_nand_flash_sectors_write(&my_nand_flash, 20, buffer, 10);
 
 ### See Also
 
-- lx_nand_flash_close
-- lx_nand_flash_initialize
-- lx_nand_flash_open
-- lx_nand_flash_page_ecc_check
-- lx_nand_flash_page_ecc_compute
-- lx_nand_flash_sectors_read
-- lx_nand_flash_sectors_release
+- [levelx NAND Services](#NAND_Services)
 
 

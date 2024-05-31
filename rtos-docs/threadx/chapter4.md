@@ -6,6 +6,99 @@ description: This chapter contains a description of all ThreadX services in alph
 
 This chapter contains a description of all ThreadX services in alphabetic order. Their names are designed so all similar services are grouped together. In the **Return Values** section in the following descriptions, values in **BOLD** are not affected by the **TX_DISABLE_ERROR_CHECKING** define used to disable API error checking; while values shown in nonbold are completely disabled. In addition, a "**Yes**" listed under the "**Preemption Possible**" heading indicates that calling the service may resume a higher-priority thread, thus preempting the calling thread.
 
+The Threadx API functions available to the application are as follows.
+## Block_Pool_Services
+- [tx_block_allocate](#tx_block_allocate)
+- [tx_block_pool_create](#tx_block_pool_create)
+- [tx_block_pool_delete](#tx_block_pool_delete)
+- [tx_block_pool_info_get](#tx_block_pool_info_get)
+- [tx_block_pool_performance_info_get](#tx_block_pool_performance_info_get)
+- [tx_block_pool_performance_system_info_get](#tx_block_pool_performance_system_info_get)
+- [tx_block_pool_prioritize](#tx_block_pool_prioritize)
+- [tx_block_release](#tx_block_release)
+
+## Event_Flags_Services
+- [tx_event_flags_create](#tx_event_flags_create)
+- [tx_event_flags_delete](#tx_event_flags_delete)
+- [tx_event_flags_get](#tx_event_flags_get)
+- [tx_event_flags_info_get](#tx_event_flags_info_get)
+- [tx_event_flags_performance_info_get](#tx_event_flags_performance_info_get)
+- [tx_event_flags_performance_system_info_get](#tx_event_flags_performance_system_info_get)
+- [tx_event_flags_set](#tx_event_flags_set)
+- [tx_event_flags_set_notify](#tx_event_flags_set_notify)
+
+## Interrupt_Services
+- [tx_interrupt_control](#tx_interrupt_control)
+
+## Mutex_Services
+- [tx_mutex_create](#tx_mutex_create)
+- [tx_mutex_delete](#tx_mutex_delete)
+- [tx_mutex_get](#tx_mutex_get)
+- [tx_mutex_info_get](#tx_mutex_info_get)
+- [tx_mutex_performance_info_get](#tx_mutex_performance_info_get)
+- [tx_mutex_performance_system_info_get](#tx_mutex_performance_system_info_get)
+- [tx_mutex_prioritize](#tx_mutex_prioritize)
+- [tx_mutex_put](#tx_mutex_put)
+
+## Queue_Services
+- [tx_queue_create](#tx_queue_create)
+- [tx_queue_delete](#tx_queue_delete)
+- [tx_queue_flush](#tx_queue_flush)
+- [tx_queue_front_send](#tx_queue_front_send)
+- [tx_queue_info_get](#tx_queue_info_get)
+- [tx_queue_performance_info_get](#tx_queue_performance_info_get)
+- [tx_queue_performance_system_info_get](#tx_queue_performance_system_info_get)
+- [tx_queue_prioritize](#tx_queue_prioritize)
+- [tx_queue_receive](#tx_queue_receive)
+- [tx_queue_send](#tx_queue_send)
+- [tx_queue_send_notify](#tx_queue_send_notify)
+
+## Semaphore_Services
+- [tx_semaphore_ceiling_put](#tx_semaphore_ceiling_put)
+- [tx_semaphore_create](#tx_semaphore_create)
+- [tx_semaphore_delete](#tx_semaphore_delete)
+- [tx_semaphore_get](#tx_semaphore_get)
+- [tx_semaphore_info_get](#tx_semaphore_info_get)
+- [tx_semaphore_performance_info_get](#tx_semaphore_performance_info_get)
+- [tx_semaphore_performance_system_info_get](#tx_semaphore_performance_system_info_get)
+- [tx_semaphore_prioritize](#tx_semaphore_prioritize)
+- [tx_semaphore_put](#tx_semaphore_put)
+- [tx_semaphore_put_notify](#tx_semaphore_put_notify)
+
+## Thread_Services
+- [tx_thread_create](#tx_thread_create)
+- [tx_thread_delete](#tx_thread_delete)
+- [tx_thread_entry_exit_notify](#tx_thread_entry_exit_notify)
+- [tx_thread_identify](#tx_thread_identify)
+- [tx_thread_info_get](#tx_thread_info_get)
+- [tx_thread_performance_info_get](#tx_thread_performance_info_get)
+- [tx_thread_performance_system_info_get](#tx_thread_performance_system_info_get)
+- [tx_thread_preemption_change](#tx_thread_preemption_change)
+- [tx_thread_priority_change](#tx_thread_priority_change)
+- [tx_thread_relinquish](#tx_thread_relinquish)
+- [tx_thread_reset](#tx_thread_reset)
+- [tx_thread_resume](#tx_thread_resume)
+- [tx_thread_sleep](#tx_thread_sleep)
+- [tx_thread_stack_error_notify](#tx_thread_stack_error_notify)
+- [tx_thread_suspend](#tx_thread_suspend)
+- [tx_thread_terminate](#tx_thread_terminate)
+- [tx_thread_time_slice_change](#tx_thread_time_slice_change)
+- [tx_thread_wait_abort](#tx_thread_wait_abort)
+
+## Time_Services
+- [tx_time_get](#tx_time_get)
+- [tx_time_set](#tx_time_set)
+
+## Timer_Services
+- [tx_timer_activate](#tx_timer_activate)
+- [tx_timer_change](#tx_timer_change)
+- [tx_timer_create](#tx_timer_create)
+- [tx_timer_deactivate](#tx_timer_deactivate)
+- [tx_timer_delete](#tx_timer_delete)
+- [tx_timer_info_get](#tx_timer_info_get)
+- [tx_timer_performance_info_get](#tx_timer_performance_info_get)
+- [tx_timer_performance_system_info_get](#tx_timer_performance_system_info_get)
+
 ## tx_block_allocate
 
 Allocate fixed-size block of memory
@@ -72,13 +165,7 @@ the allocated block of memory. */
 
 ### See Also
 
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get
-- tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_pool_prioritize
-- tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_create
 
@@ -106,11 +193,11 @@ This service creates a pool of fixed-size memory blocks. The memory area specifi
 
 ### Parameters
 
-- *pool_ptr**	Pointer to a memory block pool control block.
-- *name_ptr**	Pointer to the name of the memory block pool.
-- *block_size**	Number of bytes in each memory block.
-- *pool_start**	Starting address of the memory block pool. The starting address must be aligned to the size of the ULONG data type.
-- *pool_size**	Total number of bytes available for the memory block pool.
+- **pool_ptr**: Pointer to a memory block pool control block.
+- **name_ptr**: Pointer to the name of the memory block pool.
+- **block_size**: Number of bytes in each memory block.
+- **pool_start**: Starting address of the memory block pool. The starting address must be aligned to the size of the ULONG data type..
+- **pool_size**: Total number of bytes available for the memory block pool.
 
 ### Return Values
 
@@ -148,10 +235,7 @@ because of the one overhead pointer associated with each block. */
 
 ### See Also
 
-- tx_block_allocate, tx_block_pool_delete
-- tx_block_pool_info_get, tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_pool_prioritize, tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_delete
 
@@ -204,11 +288,7 @@ status = tx_block_pool_delete(&my_pool);
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_info_get, tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_pool_prioritize, tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_info_get
 
@@ -233,13 +313,13 @@ This service retrieves information about the specified block memory pool.
 
 ### Parameters
 
-- *pool_ptr**	Pointer to previously created memory block pool.
-- *name**	Pointer to destination for the pointer to the block pool's name.
-- *available**	Pointer to destination for the number of available blocks in the block pool.
-- *total_blocks**	Pointer to destination for the total number of blocks in the block pool.
-- *first_suspended**	Pointer to destination for the pointer to the thread that is first on the suspension list of this block pool.
-- *suspended_count**	Pointer to destination for the number of threads currently suspended on this block pool.
-- *next_pool**	Pointer to destination for the pointer of the next created block pool.
+- **pool_ptr**: Pointer to previously created memory block pool.
+- **name**: Pointer to destination for the pointer to the block pool's name.
+- **available**: Pointer to destination for the number of available blocks in the block pool.
+- **total_blocks**: Pointer to destination for the total number of blocks in the block pool.
+- **first_suspended**: Pointer to destination for the pointer to the thread that is first on the suspension list of this block pool.
+- **suspended_count**: Pointer to destination for the number of threads currently suspended on this block pool.
+- **next_pool**: Pointer to destination for the pointer of the next created block pool.
 
 > **Note:** *Supplying a TX_NULL for any parameter indicates the parameter is not required.*
 
@@ -281,12 +361,7 @@ valid. */
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get, tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_pool_prioritize, tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_performance_info_get
 
@@ -311,11 +386,11 @@ This service retrieves performance information about the specified memory block 
 
 ### Parameters
 
-- *pool_ptr**	Pointer to previously created memory block pool.
-- *allocates**	Pointer to destination for the number of allocate requests performed on this pool.
-- *releases**	Pointer to destination for the number of release requests performed on this pool.
-- *suspensions**	Pointer to destination for the number of thread allocation suspensions on this pool.
-- *timeouts**	Pointer to destination for the number of allocate suspension timeouts on this pool.
+- **pool_ptr**: Pointer to previously created memory block pool.
+- **allocates**: Pointer to destination for the number of allocate requests performed on this pool.
+- **releases**: Pointer to destination for the number of release requests performed on this pool.
+- **suspensions**: Pointer to destination for the number of thread allocation suspensions on this pool.
+- **timeouts**: Pointer to destination for the number of allocate suspension timeouts on this pool.
 
 > **Note:** *Supplying a TX_NULL for any parameter indicates that the parameter is not required.*
 
@@ -354,13 +429,7 @@ status = tx_block_pool_performance_info_get(&my_pool, &allocates,
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get
-- tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_performance_system_info_get
 
@@ -384,10 +453,10 @@ This service retrieves performance information about all memory block pools in t
 
 ### Parameters
 
-- *allocates*: Pointer to destination for the total number of allocate requests performed on all block pools.
-- *releases*: Pointer to destination for the total number of release requests performed on all block pools.
-- *suspensions*: Pointer to destination for the total number of thread allocation suspensions on all block pools.
-- *timeouts*: Pointer to destination for the total number of allocate suspension timeouts on all block pools.
+- **allocates**: Pointer to destination for the total number of allocate requests performed on all block pools.
+- **releases**: Pointer to destination for the total number of release requests performed on all block pools.
+- **suspensions**: Pointer to destination for the total number of thread allocation suspensions on all block pools.
+- **timeouts**: Pointer to destination for the total number of allocate suspension timeouts on all block pools.
 
 > **Note:** *Supplying a TX_NULL for any parameter indicates that the parameter is not required.*
 
@@ -423,13 +492,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get
-- tx_block_pool_performance_info_get
-- tx_block_pool_prioritize
-- tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_pool_prioritize
 
@@ -478,13 +541,7 @@ next tx_block_release call will wake up this thread. */
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get
-- tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_block_release
 
@@ -539,13 +596,7 @@ to by memory_ptr has been returned to the pool. */
 
 ### See Also
 
-- tx_block_allocate
-- tx_block_pool_create
-- tx_block_pool_delete
-- tx_block_pool_info_get
-- tx_block_pool_performance_info_get
-- tx_block_pool_performance_system_info_get
-- tx_block_pool_prioritize
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_allocate
 
@@ -571,13 +622,19 @@ This service allocates the specified number of bytes from the specified memory b
 
 ### Parameters
 
-- *pool_ptr*: <br>Pointer to a previously created memory block pool.
-- *memory_ptr*: <br>Pointer to a destination memory pointer. On successful allocation, the address of the allocated memory area is placed where this parameter points to.
-- *memory_size*: <br>Number of bytes requested.
-- *wait_option*: <br>Defines how the service behaves if there is not enough memory available. The wait options are defined as follows:
-  - **TX_NO_WAIT** (0x00000000) - Selecting **TX_NO_WAIT** results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from initialization.*
-  - **TX_WAIT_FOREVER** 0xFFFFFFFF) - Selecting **TX_WAIT_FOREVER** causes the calling thread to suspend indefinitely until enough memory is available.
-  - *timeout value* (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for the memory.
+- **pool_ptr**: Pointer to a previously created memory pool.
+- **memory_ptr**: Pointer to a destination memory pointer. On successful allocation, the address of the allocated memory area is placed where this parameter points to.
+- **memory_size**: Number of bytes requested.
+- **wait_option**: Defines how the service behaves if there is not enough memory available. The wait options are defined as follows:
+    - **TX_NO_WAIT**: (0x00000000)
+    - **TX_WAIT_FOREVER**: (0xFFFFFFFF)
+    - timeout value: (0x00000001 through 0xFFFFFFFE)
+
+    Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from initialization.*
+
+    Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until enough memory is available.
+
+    Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for the memory.
 
 ### Return Values
 
@@ -616,13 +673,7 @@ address of the allocated memory area. */
 
 ### See Also
 
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_create
 
@@ -681,13 +732,7 @@ allocating memory. */
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_delete
 
@@ -737,13 +782,7 @@ status = tx_byte_pool_delete(&my_pool);
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_info_get
 
@@ -816,13 +855,7 @@ valid. */
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_performance_info_get
 
@@ -900,13 +933,7 @@ successfully retrieved. */
 ```
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_performance_system_info_get
 
@@ -979,13 +1006,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_prioritize
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_pool_prioritize
 
@@ -1035,13 +1056,7 @@ if there is enough memory to satisfy its request. */
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_release
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_byte_release
 
@@ -1095,13 +1110,7 @@ memory_ptr has been returned to the pool. */
 
 ### See Also
 
-- tx_byte_allocate
-- tx_byte_pool_create
-- tx_byte_pool_delete
-- tx_byte_pool_info_get
-- tx_byte_pool_performance_info_get
-- tx_byte_pool_performance_system_info_get
-- tx_byte_pool_prioritize
+- [Block Pool Services](#Block_Pool_Services)
 
 ## tx_event_flags_create
 
@@ -1154,13 +1163,7 @@ for get and set services. */
 
 ### See Also
 
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_delete
 
@@ -1213,13 +1216,7 @@ deleted. */
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_get
 
@@ -1298,13 +1295,7 @@ actual events obtained. */
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_info_get
 
@@ -1371,13 +1362,7 @@ valid. */
 ```
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ### tx_event_flags_performance_info_get
 
@@ -1444,13 +1429,7 @@ retrieved. */
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_performance_system_info_get
 
@@ -1513,13 +1492,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_set
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_set
 
@@ -1578,13 +1551,7 @@ has been resumed. */
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set_notify
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_event_flags_set_notify
 
@@ -1638,13 +1605,7 @@ void my_event_flags_set_notify(TX_EVENT_FLAGS_GROUP *group_ptr)
 
 ### See Also
 
-- tx_event_flags_create
-- tx_event_flags_delete
-- tx_event_flags_get
-- tx_event_flags_info_get
-- tx_event_flags_performance_info_get
-- tx_event_flags_performance_system_info_get
-- tx_event_flags_set
+- [Event Flags Services](#Event_Flags_Services)
 
 ## tx_interrupt_control
 
@@ -1753,13 +1714,7 @@ use. */
 
 ### See Also
 
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_delete
 
@@ -1811,13 +1766,7 @@ deleted. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_get
 
@@ -1879,13 +1828,7 @@ status = tx_mutex_get(&my_mutex, TX_WAIT_FOREVER);
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_info_get
 
@@ -1958,13 +1901,7 @@ valid. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_performance_info_get
 
@@ -2037,13 +1974,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_performance_system_info_get
 
@@ -2113,13 +2044,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_prioritize
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_prioritize
 
@@ -2171,13 +2096,7 @@ up. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_put
+- [Mutex Services](#Mutex_Services)
 
 ## tx_mutex_put
 
@@ -2227,13 +2146,7 @@ count has been decremented and if zero, released. */
 
 ### See Also
 
-- tx_mutex_create
-- tx_mutex_delete
-- tx_mutex_get
-- tx_mutex_info_get
-- tx_mutex_performance_info_get
-- tx_mutex_performance_system_info_get
-- tx_mutex_prioritize
+- [Mutex Services](#Mutex_Services)
 
 ## tx_queue_create
 
@@ -2299,16 +2212,7 @@ message). */
 
 ### See Also
 
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_delete
 
@@ -2361,16 +2265,7 @@ deleted. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_flush
 
@@ -2422,16 +2317,7 @@ empty. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_front_send
 
@@ -2497,16 +2383,7 @@ of the specified queue. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_info_get
 
@@ -2579,16 +2456,7 @@ valid. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_performance_info_get
 
@@ -2662,16 +2530,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_performance_system_info_get
 
@@ -2742,16 +2601,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_prioritize
 
@@ -2804,16 +2654,7 @@ to this queue will wake up this thread. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_receive
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_receive
 
@@ -2881,16 +2722,7 @@ status = tx_queue_receive(&my_queue, my_message,
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_send
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_send
 
@@ -2953,16 +2785,7 @@ queue. */
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send_notify
+- [Queue Services](#Queue_Services)
 
 ## tx_queue_send_notify
 
@@ -3019,16 +2842,7 @@ void my_queue_send_notify(TX_QUEUE *queue_ptr)
 
 ### See Also
 
-- tx_queue_create
-- tx_queue_delete
-- tx_queue_flush
-- tx_queue_front_send
-- tx_queue_info_get
-- tx_queue_performance_info_get
-- tx_queue_performance_system_info_get
-- tx_queue_prioritize
-- tx_queue_receive
-- tx_queue_send
+- [Queue Services](#Queue_Services)
 
 ## tx_semaphore_ceiling_put
 
@@ -3081,15 +2895,7 @@ incremented. */
 
 ### See Also
 
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_create
 
@@ -3147,15 +2953,7 @@ use. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_delete
 
@@ -3206,15 +3004,7 @@ deleted. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_get
 
@@ -3276,14 +3066,7 @@ an instance of the semaphore. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_info_get
 
@@ -3353,15 +3136,7 @@ valid. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_performance_info_get
 
@@ -3428,15 +3203,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_performance_system_info_get
 
@@ -3499,15 +3266,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_prioritize
 
@@ -3558,11 +3317,7 @@ wake up this thread. */
 
 ### See Also
 
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_put
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_put
 
@@ -3613,15 +3368,7 @@ it was given the semaphore instance and resumed. */
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_get
-- tx_semaphore_put_notify
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_semaphore_put_notify
 
@@ -3679,15 +3426,7 @@ void my_semaphore_put_notify(TX_SEMAPHORE *semaphore_ptr)
 
 ### See Also
 
-- tx_semaphore_ceiling_put
-- tx_semaphore_create
-- tx_semaphore_delete
-- tx_semaphore_get
-- tx_semaphore_info_get
-- tx_semaphore_performance_info_get
-- tx_semaphore_performance_system_info_get
-- tx_semaphore_prioritize
-- tx_semaphore_put
+- [Semaphore Services](#Semaphore_Services)
 
 ## tx_thread_create
 
@@ -3790,23 +3529,7 @@ VOID my_thread_entry (ULONG initial_input)
 
 ### See Also
 
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_delete
 
@@ -3860,23 +3583,7 @@ deleted. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_entry_exit_notify
 
@@ -3938,24 +3645,7 @@ void my_entry_exit_notify(TX_THREAD *thread_ptr, UINT condition)
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_identify
 
@@ -4004,23 +3694,7 @@ interrupt occurred. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_info_get
 
@@ -4112,23 +3786,7 @@ valid. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_performance_info_get
 
@@ -4217,23 +3875,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_performance_system_info_get
 
@@ -4325,23 +3967,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_preemption_change
 
@@ -4405,23 +4031,7 @@ not prevented by preemption disabling. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_priority_change
 
@@ -4482,23 +4092,7 @@ now at the highest priority level in the system. */
 ```
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_relinquish
 
@@ -4574,23 +4168,7 @@ VOID my_second_thread(ULONG thread_input)
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_reset
 
@@ -4640,23 +4218,7 @@ status = tx_thread_reset(&my_thread);
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_resume
 
@@ -4691,8 +4253,6 @@ Initialization, threads, timers, and ISRs
 
 Yes
 
-TX_THREAD my_thread;
-
 ### Example
 
 ```c
@@ -4708,23 +4268,7 @@ now ready to execute. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_sleep
 
@@ -4774,22 +4318,7 @@ timer-ticks. */
 
 ### See Also
 
-- tx_thread_create, tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_stack_error_notify
 
@@ -4837,23 +4366,7 @@ status = tx_thread_stack_error_notify(my_stack_error_handler);
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_suspend
 
@@ -4907,23 +4420,7 @@ unconditionally suspended. */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_terminate
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_terminate
 
@@ -4974,22 +4471,7 @@ and cannot execute again until it is reset. */
 
 ### See Also
 
-- tx_thread_create tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_time_slice_change
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_time_slice_change
 
@@ -5053,23 +4535,7 @@ in "my_old_time_slice." */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_wait_abort
+- [Thread Services](#Thread_Services)
 
 ## tx_thread_wait_abort
 
@@ -5120,23 +4586,7 @@ was aborted (TX_WAIT_ABORTED). */
 
 ### See Also
 
-- tx_thread_create
-- tx_thread_delete
-- tx_thread_entry_exit_notify
-- tx_thread_identify
-- tx_thread_info_get
-- tx_thread_performance_info_get
-- tx_thread_performance_system_info_get
-- tx_thread_preemption_change
-- tx_thread_priority_change
-- tx_thread_relinquish
-- tx_thread_reset
-- tx_thread_resume
-- tx_thread_sleep
-- tx_thread_stack_error_notify
-- tx_thread_suspend
-- tx_thread_terminate
-- tx_thread_time_slice_change
+- [Thread Services](#Thread_Services)
 
 ## tx_time_get
 
@@ -5185,7 +4635,7 @@ clock. */
 
 ### See Also
 
-- tx_time_set
+- [Time Services](#Time_Services)
 
 ## tx_time_set
 
@@ -5231,7 +4681,7 @@ interrupt. */
 
 ### See Also
 
-- tx_time_get
+- [Time Services](#Time_Services)
 
 ## tx_timer_activate
 
@@ -5283,13 +4733,7 @@ now active. */
 
 ### See Also
 
-- tx_timer_change
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_change
 
@@ -5354,13 +4798,7 @@ status = tx_timer_activate(&my_timer);
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_create
 
@@ -5436,13 +4874,7 @@ my_timer_function every time it is called. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_deactivate
 
@@ -5491,13 +4923,7 @@ now deactivated. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_create
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_delete
 
@@ -5549,13 +4975,7 @@ deleted. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_info_get
 
@@ -5625,14 +5045,7 @@ valid. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_performance_info_get
 
@@ -5702,13 +5115,7 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_system_info_get
+- [Timer Services](#Timer_Services)
 
 ## tx_timer_performance_system_info_get
 
@@ -5775,10 +5182,4 @@ successfully retrieved. */
 
 ### See Also
 
-- tx_timer_activate
-- tx_timer_change
-- tx_timer_create
-- tx_timer_deactivate
-- tx_timer_delete
-- tx_timer_info_get
-- tx_timer_performance_info_get
+- [Timer Services](#Timer_Services)
