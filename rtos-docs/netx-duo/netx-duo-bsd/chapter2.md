@@ -416,7 +416,7 @@ UINT     status;
         printf("Error in Enable TCP \n");
     }
 
-    /* Now initialize BSD Scoket Wrapper */
+    /* Now initialize BSD Socket Wrapper */
     status = bsd_initialize (&bsd_ip, &bsd_pool,pointer, 2048, 2);
 }
 
@@ -870,7 +870,7 @@ UINT     status;
         printf("Error in Enable TCP \n");
     }
 
-    /* Now initialize BSD Scoket Wrapper */
+    /* Now initialize BSD Socket Wrapper */
     status = bsd_initialize(&bsd_ip, &bsd_pool,pointer, 2048, 2);
 
     /* Check BSD initialize status. */
