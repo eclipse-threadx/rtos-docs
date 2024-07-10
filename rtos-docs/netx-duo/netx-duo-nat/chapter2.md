@@ -385,7 +385,7 @@ NX_PACKET   *my_packet;
     }
 #endif
 
-    /* External Host ping NAT External address, NAT IP instance will response the requet.  */
+    /* External Host ping NAT External address, NAT IP instance will response the request.  */
     status =  nx_icmp_ping(&external_ip, NX_NAT_EXTERNAL_IPADR,
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 28, &my_packet, 100);
 

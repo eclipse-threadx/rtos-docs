@@ -13205,7 +13205,7 @@ UINT nx_srp_talker_start(NX_SRP *srp_ptr, NX_MSRP_DOMAIN *srp_domain, UCHAR *str
 ```
 ### Description
 
-This function start SRP talker, it sets event callback funtions and register domain, Vlan, stream request.
+This function start SRP talker, it sets event callback functions and register domain, Vlan, stream request.
 
 ### Parameters
 

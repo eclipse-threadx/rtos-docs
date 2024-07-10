@@ -1526,7 +1526,7 @@ In gPTP module of NetxDuo, following functionalities are provided:
 SRP (Stream Reservation Protocol) is a protocol used in Time-Sensitive Networking (TSN). It allows devices to reserve resources for specific streams of data across the network. This ensures that these streams have the necessary bandwidth and can meet their time sensitivity requirements. 
 
 In SRP module of NetxDuo, following functionalities are provided:
-- Initializaiton of SRP service.
+- Initialization of SRP service.
 - Starting and stopping the SRP talker service.
 - Starting and stopping the SRP listener service.
 
@@ -1558,5 +1558,5 @@ In MRP module of NetxDuo, following functionalities are provided to MRP applicat
 - Provide the interface of MRP initialization.
 - Maintaining state machine for MRP applications.
 - Process the event triggered by receiving different MRP messages.
-- Receiveing the message from ethernet, and destribute the MRP messages to the corresponding MRP applications.
+- Receiving the message from ethernet, and distribute the MRP messages to the corresponding MRP applications.
 - Handle the timer event for MRP applications.
