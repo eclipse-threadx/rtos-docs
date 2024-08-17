@@ -710,7 +710,7 @@ The characteristics of each event flags group are found in its control block. It
 
 Event group control blocks can be located anywhere in memory, but it is most common to make the control block a global structure by defining it outside the scope of any function.
 
-### Memory Block Pools
+## Memory Block Pools
 
 Allocating memory in a fast and deterministic manner is always a challenge in real-time applications. With this in mind, ThreadX provides the ability to create and manage multiple pools of fixed-size memory blocks.
 

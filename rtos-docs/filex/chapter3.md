@@ -183,7 +183,7 @@ FileX supports both 8.3 and Windows Long File Name (LFN) name formats. In additi
 
 - **Directory Time**
 
-    The two-byte *directory time* field contains the hours, minutes, and seconds of the last change to the specified directory entry. Bits 15 through 11 contain the hours, bits 10 though 5 contain the minutes, and bits 4 though 0 contain the half seconds. Actual seconds are divided by two before being written into this field.
+    The two-byte *directory time* field contains the hours, minutes, and seconds of the last change to the specified directory entry. Bits 15 through 11 contain the hours, bits 10 through 5 contain the minutes, and bits 4 through 0 contain the half seconds. Actual seconds are divided by two before being written into this field.
 
 - **Directory Date**
 
@@ -399,11 +399,11 @@ By default, the system date and time are set to the last release date of FileX. 
 
 ### System Date
 
-The FileX system date is maintained in the global ***_fx_system_date*** variable. Bits 15 through 9 contain the year offset from 1980, bits 8 through 5 contain the month offset, and bits 4 through 0 contain the day. |
+The FileX system date is maintained in the global ***_fx_system_date*** variable. Bits 15 through 9 contain the year offset from 1980, bits 8 through 5 contain the month offset, and bits 4 through 0 contain the day.
 
 ### System Time
 
-The FileX system time is maintained in the global ***_fx_system_time*** variable. Bits 15 through 11 contain the hours, bits 10 though 5 contain the minutes, and bits 4 though 0 contain the half seconds.
+The FileX system time is maintained in the global ***_fx_system_time*** variable. Bits 15 through 11 contain the hours, bits 10 through 5 contain the minutes, and bits 4 through 0 contain the half seconds.
 
 ### Periodic Time Update
 

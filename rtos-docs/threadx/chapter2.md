@@ -160,9 +160,9 @@ For other Eclipse ThreadX products (FileX, NetX Duo, GUIX, USBX, etc.), ThreadX 
 
 ### Detailed Configuration Options
 
-**TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO**
+**TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO**
 
-When defined, this option enables the gathering of performance information on byte pools. By default, this option is not defined.
+When defined, this option enables the gathering of performance information on block pools. By default, this option is not defined.
 
 **TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO**
 
