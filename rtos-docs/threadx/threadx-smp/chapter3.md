@@ -787,7 +787,7 @@ In addition to the application timers mentioned previously, ThreadX SMP provides
 
 The application can read or set this 32-bit counter through calls to *tx_time_get* and *tx_time_set*, respectively. The use of this tick counter is determined completely by the application. It is not used internally by ThreadX SMP.
 
-### Interrupts 
+## Interrupts
 Fast response to asynchronous events is the principal function of real-time, embedded applications. The application knows such an event is present through hardware interrupts. 
 
 An interrupt is an asynchronous change in processor execution. Typically, when an interrupt occurs, the processor saves a small portion of the current execution on the stack and transfers control to the appropriate interrupt vector. The interrupt vector is basically just the address of the routine responsible for handling the specific type interrupt. The exact interrupt handling procedure is processor specific. 
