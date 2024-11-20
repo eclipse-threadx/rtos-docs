@@ -1,0 +1,88 @@
+baseurl = "https://orcwg.org/"
+DefaultContentLanguage = "en"
+title = "ThreadX RTOS Documentation"
+theme = "eclipsefdn-hugo-solstice-theme"
+metaDataFormat = "yaml"
+disableKinds = ["taxonomy", "term"]
+themesDir = "node_modules/"
+enableRobotsTXT = true
+pluralizeListTitles = false
+disablePathToLower = true
+
+[Params]
+  google_tag_manager = "GTM-5WLCZXC"
+  description = "The open source community is collaborating to establish common specifications for secure software development based on open source best practices."
+  seo_title_suffix = " | The Eclipse Foundation"
+  keywords = []
+  news_count = 3
+  featured_content_publish_target = "orc"
+  styles = "public/css/styles.css"
+  gcse = "011805775785170369411:p3ec0igo0qq"
+  gcse_result_url = "/home/search/"
+  eclipse_search_icon = "<i data-feather=\"search\" stroke-width=\"1\"></i>"
+  js = "public/js/main.js?v1.0"
+  header_wrapper_class = "header-wrapper"
+  call_for_action_text = "Download"
+  call_for_action_url = "/downloads/"
+  #share_img = "/images/social-media.jpg"
+  #favicon = "/favicon.ico"
+  logo = "/images/orc-logo.png"
+  logo_width = "120"
+  layout_style = "astro"
+  hide_ad = false
+  hide_call_for_action = true
+  hide_footer_newsletter = true
+  #jumbotron_class = "col-xs-24"
+
+#  header_left_classes = ""
+#  main_menu_wrapper_classes = "col-sm-17 margin-top-25"
+#  projects_working_group = ""
+#  show_events = true
+#  table_classes = "table table-bordered"
+#  hide_cfa_same_page = true
+#  show_collapsible_menu = true
+  sidebar_layout = "default"
+
+[taxonomies]
+  tag = "tags"
+
+[Author]
+  name = "Eclipse Foundation"
+  website = "https://www.eclipse.org"
+  email = "webdev@eclipse-foundation.org"
+  facebook = "eclipse.org"
+  twitter = "eclipsefdn"
+  youtube = "EclipseFdn"
+  googleplus = "+Eclipse"
+  linkedin = "company/eclipse-foundation/"
+
+[permalinks]
+  news = "/:sections/:year/:month/:day/:slug/"
+
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+  identifier = "about"
+
+[[menu.main]]
+  name = "Membership"
+  url = "/membership/"
+  weight = 2
+  identifier = "membership"
+
+[[menu.main]]
+  name = "Participate"
+  url = "/participate/"
+  weight = 3
+  identifier = "participate"
+
+[[menu.main]]
+  name = "Participation and Membership FAQ"
+  url = "/about/participation-and-membership-faq/"
+  weight = 3
+  identifier = "participation-and-membership-faq"
