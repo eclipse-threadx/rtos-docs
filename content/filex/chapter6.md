@@ -30,7 +30,7 @@ Figure 5, "Log Structure Layout," shows the general layout of the log structure.
 
 > **Important:** *All multi-byte values stored in the log entries are in Little Endian format.*
 
-![Log Structure Layout](../media/user-guide/log-structure-layout.png)
+{{< figure src="../media/user-guide/log-structure-layout.png" title="Log Structure Layout" imgClass="img-responsive center-block" >}}
 
 **Figure 5. Log Structure Layout**
 
@@ -65,7 +65,7 @@ The Log Entries Area contains log entries that describe the changes needed to re
 
 The following three figures and three tables describe these log entries in detail.
 
-![FAT Log Entry](../media/user-guide/fat-log-entry.png)
+{{< figure src="../media/user-guide/fat-log-entry.png" title="FAT Log Entry" imgClass="img-responsive center-block" >}}
 
 **Figure 6. FAT Log Entry**
 
@@ -78,7 +78,7 @@ Type|2|Type of Entry, must be FX_FAULT_TOLERANT_FAT_LOG_TYPE|
 |Cluster Number|4|Cluster number|
 |Value|4|Value to be written into the FAT entry|
 
-![Directory Log Entry](../media/user-guide/directory-log-entry.png)
+{{< figure src="../media/user-guide/directory-log-entry.png" title="Directory Log Entry" imgClass="img-responsive center-block" >}}
 
 **Figure 7. Directory Log Entry**
 

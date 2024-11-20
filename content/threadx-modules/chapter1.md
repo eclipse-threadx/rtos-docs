@@ -12,7 +12,7 @@ The ThreadX Module component relies on the application to provide a memory area 
 
 There are no limits on the number of modules that can be loaded at the same time (aside from the amount of memory available), while there is only one copy of the resident Module Manager code. Figure 1 illustrates the relationship of the Module Manager and the modules themselves.
 
-![Modules and Module Manager Relationship](media/image2.png)
+{{< figure src="../media/image2.png" title="Modules and Module Manager Relationship" imgClass="img-responsive center-block" >}}
 
 **Figure 1** Modules and Module Manager
 

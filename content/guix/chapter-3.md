@@ -263,7 +263,7 @@ description of each.
 
 Model 1) No frame buffer, graphics data held in external GRAM:
 
-![No frame buffer, graphics data held in external GRAM](../media/guix/user-guide/no-frame-buffer.png)
+{{< figure src="../media/guix/user-guide/no-frame-buffer.png" title="No frame buffer, graphics data held in external GRAM" imgClass="img-responsive center-block" >}}
 
 In the model above, no memory for a frame buffer exists in memory local
 to the CPU. All graphics data is stored in an external GRAM which is
@@ -274,7 +274,7 @@ updated.
 
 Model 2) One local frame buffer:
 
-![One local frame buffer](../media/guix/user-guide/one-local-frame-buffer.png)
+{{< figure src="../media/guix/user-guide/one-local-frame-buffer.png" title="One local frame buffer" imgClass="img-responsive center-block" >}}
 
 In this model, memory for the graphics data is allocated from a
 random-access memory that is directly accessible the CPU. Dedicated
@@ -286,7 +286,7 @@ stack and program variables live.
 
 Model 3) Local frame buffer + external GRAM:
 
-![Local frame buffer + external GRAM](../media/guix/user-guide/local-frame-buffer-external-gram.png)
+{{< figure src="../media/guix/user-guide/local-frame-buffer-external-gram.png" title="Local frame buffer + external GRAM" imgClass="img-responsive center-block" >}}
 
 Model 3 is a combination of the first two. In this model, sufficient
 local memory exists to hold one frame buffer. In addition, the display
@@ -301,7 +301,7 @@ external GRAM.
 
 Model 4) Ping-pong frame buffers:
 
-![Ping-pong frame buffers](../media/guix/user-guide/ping-pong-frame-buffers.png)
+{{< figure src="../media/guix/user-guide/ping-pong-frame-buffers.png" title="Ping-pong frame buffers" imgClass="img-responsive center-block" >}}
 
 In model 4, sufficient memory is present to provide two local frame
 buffers. In this case, GUIX treats one frame buffer as the active frame
@@ -314,7 +314,7 @@ and tearing that can be observed in a single buffered system.
 
 Model 5) Ping-pong buffers with canvas compositing:
 
-![Ping-pong buffers with canvas compositing](../media/guix/user-guide/ping-pong-buffers-canvas-composting.png)
+{{< figure src="../media/guix/user-guide/ping-pong-buffers-canvas-composting.png" title="Ping-pong buffers with canvas compositing" imgClass="img-responsive center-block" >}}
 
 In model 5, any number of canvases can be created, up to the limits of
 available memory. The canvases can be overlaid or blended together as
@@ -327,7 +327,7 @@ into the final output composite.
 
 Model 6) Canvas compositing with external GRAM:
 
-![Canvas compositing with external GRAM](../media/guix/user-guide/canvas-compositing-external-gram.png)
+{{< figure src="../media/guix/user-guide/canvas-compositing-external-gram.png" title="Canvas compositing with external GRAM" imgClass="img-responsive center-block" >}}
 
 Model 6 is a slight variation on Model 5, in which only one composite
 buffer is required and the composite buffer is then transferred to
@@ -470,7 +470,7 @@ display order bidi text strings, you should select the **Generate Bidi
 Text in Display Order** checkbox in the GUIX Studio language
 configuration dialog:
 
-![Configure languages](../media/guix/user-guide/configure-languages.png)
+{{< figure src="../media/guix/user-guide/configure-languages.png" title="Configure languages" imgClass="img-responsive center-block" >}}
 
 With these options selected, the generated resource file will contain
 Bidi strings generated in display order, and no extra processing is
@@ -504,7 +504,7 @@ five basic areas: *instruction*, *constant*, *initialized data*,
 *uninitialized data*, and the *GUIX thread stack*.  The figure below demonstrates one possible
 layout of these memory areas:
 
-![Memory layout](../media/guix/user-guide/memory-area-example.png)
+{{< figure src="../media/guix/user-guide/memory-area-example.png" title="Memory layout" imgClass="img-responsive center-block" >}}
 
 It is important to understand that this only an example. The actual
 static memory layout is specific to the processor, development tools,
@@ -1664,9 +1664,9 @@ portion of the button when the button is pressed, and small "LED_OFF"
 bitmap when the button is not pressed. We want to create a button that
 looks like the illustrations below.
 
-![Screenshot of the green button for On.](../media/guix/image4.jpg) custom button "on"
+{{< figure src="../media/guix/image4.jpg" title="Screenshot of the green button for On." imgClass="img-responsive center-block" >}} custom button "on"
 
-![Screenshot of the red button for Off.](../media/guix/image5.jpg) custom button "off"
+{{< figure src="../media/guix/image5.jpg" title="Screenshot of the red button for Off." imgClass="img-responsive center-block" >}} custom button "off"
 
 In this case, we would write a button drawing function that looks
 something like the following.

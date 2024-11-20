@@ -53,7 +53,7 @@ USHORT*         pixel;
 
 GUIX manages the canvas dirty area using a linked list. By default, the canvas refreshes its dirty areas by iterating through the dirty list and refreshing each dirty area sequentially. This approach optimizes the utilization of available canvas memory. However, this method does not guarantee a specific refresh direction, which can make it challenging to effectively mitigate potential tearing effects.
 
-![Figure 1.](../media/guix/canvas_refresh_default.png)
+{{< figure src="../media/guix/canvas_refresh_default.png" title="Figure 1." imgClass="img-responsive center-block" >}}
 
 *Figure 1: Tearing Effect Example.*
 
@@ -71,7 +71,7 @@ To address the previously mentioned issues, two additional canvas refresh method
 
 When the canvas refresh direction is set to vertical, the canvas refreshes its dirty areas in the vertical direction.
 
-![Figure 2.](../media/guix/canvas_refresh_vertical.png)
+{{< figure src="../media/guix/canvas_refresh_vertical.png" title="Figure 2." imgClass="img-responsive center-block" >}}
 
 *Figure 2: Canvas Refreshing with Direction Set to Vertical.*
 
@@ -83,7 +83,7 @@ There can still be tearing effect in this refreshing method. To eliminate the te
 
 When the canvas refresh direction is set to horizontal, the canvas refreshes its dirty areas in the horizontal direction.
 
-![Figure 3.](../media/guix/canvas_refresh_horizontal.png)
+{{< figure src="../media/guix/canvas_refresh_horizontal.png" title="Figure 3." imgClass="img-responsive center-block" >}}
 
 *Figure 3: Canvas Refreshing with Direction Set to Horizontal.*
 

@@ -47,7 +47,7 @@ Designed to meet the growing need for FLASH devices, FileX uses the same design 
 
 FileX has been certified by SGS-TÜV Saar for use in safety-critical systems, according to IEC-61508 SIL 4. The certification confirms that FileX can be used in the development of safety-related software for the highest safety integrity levels of IEC-61508 for the "Functional Safety of electrical, electronic, and programmable electronic safety-related systems." SGS-TUV Saar, formed through a joint venture of Germany's SGS-Group and TUV Saarland, has become the leading accredited, independent company for testing, auditing, verifying, and certifying embedded software for safety-related systems worldwide.
 
-![SGS TUV Saar logo](../media/user-guide/sgs-tuv-saar-logo.png)
+{{< figure src="../media/user-guide/sgs-tuv-saar-logo.png" title="SGS TUV Saar logo" imgClass="img-responsive center-block" >}}
 
 - IEC 61508 up to SIL 4
 
@@ -57,7 +57,7 @@ FileX has been certified by SGS-TÜV Saar for use in safety-critical systems, ac
 
 FileX has been certified by UL for compliance with UL 60730-1 Annex H, CSA E60730-1 Annex H, IEC 60730-1 Annex H, UL 60335-1 Annex R, IEC 603351 Annex R, and UL 1998 safety standards for software in programmable components. Along with IEC/UL 60730-1, which has requirements for "Controls Using Software" in its Annex H, the IEC 60335-1 standard describes the requirements for "Programmable Electronic Circuits" in its Annex R. IEC 60730 Annex H and IEC 60335-1 Annex R address the safety of MCU hardware and software used in appliances such as washing machines, dishwashers, dryers, refrigerators, freezers, and ovens.
 
-![C RU US 2](../media/user-guide/c-ru-us-logo.png)
+{{< figure src="../media/user-guide/c-ru-us-logo.png" title="C RU US 2" imgClass="img-responsive center-block" >}}
 
 _UL/IEC 60730, UL/IEC 60335, UL 1998_
 

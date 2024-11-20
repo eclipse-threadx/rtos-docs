@@ -22,7 +22,7 @@ Using TraceX is as easy as opening a trace file inside TraceX! Run TraceX via th
 
 > **Important:** *You can also double-click on any trace file with an extension of **trx,** which will automatically launch TraceX.*
 
-![Screenshot of the TraceX GUI.](../media/user-guide/screen_shot_8.png)
+{{< figure src="../media/user-guide/screen_shot_8.png" title="Screenshot of the TraceX GUI." imgClass="img-responsive center-block" >}}
 
 **FIGURE 1**
 
@@ -36,6 +36,6 @@ After this installation step in completed, the example trace files with the exte
 
 One example trace file always present is the file ***demo_threadx.trx***. This example trace file shows the execution of the standard ThreadX demo, as described in Chapter 6 of the *ThreadX User Guide*.
 
-![Screenshot of the open dialog in TraceX.](../media/user-guide/screen_shot_9.png)
+{{< figure src="../media/user-guide/screen_shot_9.png" title="Screenshot of the open dialog in TraceX." imgClass="img-responsive center-block" >}}
 
 **FIGURE 2**

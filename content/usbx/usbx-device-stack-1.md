@@ -17,7 +17,7 @@ USBX supports both the host side and the device side. Each side is composed of t
 
 The relationship between the USB layers is as follows:
 
-![USB layers](media/usbx-device-stack/usb-layers.png)
+{{< figure src="../media/usbx-device-stack/usb-layers.png" title="USB layers" imgClass="img-responsive center-block" >}}
 
 ## Product Highlights
 

@@ -49,13 +49,13 @@ In NetX Duo DNS Client, record data is stored in such a way to make most efficie
 
 An example of a record buffer of fixed length (type AAAA record) is shown below:
 
-![Record buffer of fixed length](media/image2.png)
+{{< figure src="../media/image2.png" title="Record buffer of fixed length" imgClass="img-responsive center-block" >}}
 
 For those queries whose record types have variable data length, such as NS records whose host names are of variable length, NetX Duo DNS Client saves the data as follows. The buffer supplied in the DNS Client query is organized into an area of fixed length data and an area of unstructured memory. The top of the memory buffer is organized into 4-byte aligned record entries. Each record entry contains the IP address and a pointer to the variable length data for that IP address. The variable length data for each IP address are stored in the unstructured area memory starting at the end of the memory buffer. The variable length data for each successive record entry is saved in the next area memory adjacent to the previous record entries variable data. Hence, the variable data 'grows' towards the structured area of memory containing the record entries until there is insufficient memory to store another record entry and variable data.
 
 This is shown in the figure below:
 
-![Figure 2](media/image3.png)
+{{< figure src="../media/image3.png" title="Figure 2" imgClass="img-responsive center-block" >}}
 
 The example of the DNS domain name (NS) data storage is shown above.
 

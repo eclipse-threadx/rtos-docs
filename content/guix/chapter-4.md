@@ -6378,11 +6378,11 @@ A drop-list widget can have (but is not required to have) a child widget that is
 
 To define a child widget which will open and close the drop-list, first add a child widget to the drop list, and position this child within the drop list as desired:
 
-![Screenshot of the drop list.](../media/guix/image6.jpg)
+{{< figure src="../media/guix/image6.jpg" title="Screenshot of the drop list." imgClass="img-responsive center-block" >}}
 
 Then use the Studio properties view to assign this child widget the ID value ID_DROP_LIST_BUTTON, which is an internally defined ID value recognized by the parent drop list:
 
-![Screenshot of the Studio properties view.](../media/guix/image7.jpg)
+{{< figure src="../media/guix/image7.jpg" title="Screenshot of the Studio properties view." imgClass="img-responsive center-block" >}}
 
 ### Parameters
 - *drop_list*: Pointer to the drop list control block.

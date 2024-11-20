@@ -70,7 +70,7 @@ typedef struct GX_CIRCULAR_GAUGE_INFO_STRUCT
 
 The diagram below illustrates the xpos, ypos, and xcor, ycor coordinates:
 
-![Diagram of the Needle Y and X coordinates](../media/guix/image8.png)
+{{< figure src="../media/guix/image8.png" title="Diagram of the Needle Y and X coordinates" imgClass="img-responsive center-block" >}}
 
 ## GX_LINE_CHART_INFO
 

@@ -17,7 +17,7 @@ You can obtain the GUIX Studio app from the [Microsoft App Store](https://micros
 
 1. The first time that GUIX Studio launches, it displays a dialog box asking if you want to clone the GUIX repo to your local computer. You can either choose to clone the repository, point to where you have already cloned the repo, or choose not to clone the repo at all (in which case, one example project is installed on your computer).
 
-   ![Choose to clone the repo, point to an already-cloned repo, or skip.](../media/guix-studio/clone-repo.png)
+   {{< figure src="../media/guix-studio/clone-repo.png" title="Choose to clone the repo, point to an already-cloned repo, or skip." imgClass="img-responsive center-block" >}}
 
    > **Note:** You can return to this dialog box at any time by choosing **Configure** from the main menu of GUIX Studio, followed by **GUIX Repository**.
 
@@ -35,7 +35,7 @@ A series of example GUIX Studio project files with the extension "***gxp***" are
 
 One example project file that is always present is the file ***samples/demo_guix_simple/guix_simple.gxp***. This example project file shows the definition of a simple GUIX UI, as described in ***Chapter 7*** of this document.
 
-![Screenshot of the GUIX Studio UI.](../media/guix-studio/image_10.png)
+{{< figure src="../media/guix-studio/image_10.png" title="Screenshot of the GUIX Studio UI." imgClass="img-responsive center-block" >}}
 
 **Figure 1**
 

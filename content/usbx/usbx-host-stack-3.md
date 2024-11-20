@@ -18,7 +18,7 @@ USBX is composed of several components:
 
 The following diagram illustrates the USBX host stack.
 
-![USBX Host Stack](../media/usbx-host-stack/usbx-host-stack.png)
+{{< figure src="../media/usbx-host-stack/usbx-host-stack.png" title="USBX Host Stack" imgClass="img-responsive center-block" >}}
 
 ### Initialization
 
@@ -150,13 +150,13 @@ A USB device is represented by a tree of descriptors. There are six main types o
 - Functional descriptors
 
 A USB device may have a very simple description and looks like this.
-![Simple USB device](../media/usbx-host-stack/usb-device-simple.png)
+{{< figure src="../media/usbx-host-stack/usb-device-simple.png" title="Simple USB device" imgClass="img-responsive center-block" >}}
 
 In the above illustration, the device has only one configuration. A single interface is attached to this configuration, indicating that the device has only one function, and it has one endpoint only. Attached to the device descriptor is a string descriptor providing a visible identification of the device.
 
 However, a device may be more complex and may appear as follows.
 
-![Complex USB device](../media/usbx-host-stack/usb-device-complex.png)
+{{< figure src="../media/usbx-host-stack/usb-device-complex.png" title="Complex USB device" imgClass="img-responsive center-block" >}}
 
 In the above illustration, the device has two configuration descriptors attached to the device descriptor. This device may indicate that it has two power modes or can be driven by either standard classes or proprietary classes.
 
@@ -500,4 +500,4 @@ Functional descriptors are also known as class-specific descriptors. They normal
 
 USBX maintains most device descriptors in memory, that is, all descriptors except the string and functional descriptors. The following diagram shows how these descriptors are stored and related.
 
-![USBX Device Descriptor Framework in Memory](../media/usbx-host-stack/usbx-device-descriptor-framework.png)
+{{< figure src="../media/usbx-host-stack/usbx-device-descriptor-framework.png" title="USBX Device Descriptor Framework in Memory" imgClass="img-responsive center-block" >}}

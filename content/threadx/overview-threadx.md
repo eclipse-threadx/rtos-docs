@@ -107,7 +107,7 @@ Modules also have a separate address space from ThreadX itself. This enables Thr
 
 ThreadX and ThreadX SMP source code is MISRA-C: 2004 and MISRA C:2012 compliant. MISRA C is a set of programming guidelines for critical systems using the C programming language. The original MISRA C guidelines were primarily targeted toward automotive applications; however, MISRA C is now widely recognized as being applicable to any safety-critical application. ThreadX is compliant with all required and mandatory rules of MISRA-C: 2004 and MISRA C:2012.
 
-![Image of MISRA certification.](media/overview-threadx/misra-logo-certification.png)
+{{< figure src="../media/overview-threadx/misra-logo-certification.png" title="Image of MISRA certification." imgClass="img-responsive center-block" >}}
 
 ## Supports most popular tools
 

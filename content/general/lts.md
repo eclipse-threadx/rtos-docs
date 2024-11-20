@@ -17,7 +17,7 @@ Eclipse ThreadX releases generally follow the guidelines defined by [Semantic Ve
 
 Last updated: **2021/11**
 
-![Roadmap 2021](../media/roadmap.png)
+{{< figure src="../media/roadmap.png" title="Roadmap 2021" imgClass="img-responsive center-block" >}}
 
 ## Support policy
 

@@ -21,24 +21,24 @@ tx_trace_user_event_insert(4098,0x100,0x200,0x300,0x400);
 
 ## Default Display of User-Defined Events
 
-![User-defined event icon](../media/user-guide/tx-events/image0.png)
+{{< figure src="../media/user-guide/tx-events/image0.png" title="User-defined event icon" imgClass="img-responsive center-block" >}}
 
 By default, TraceX displays all user events with a default user-defined Event icon as described in Chapter 6. Figure 28 shows the default user-defined event icon for events 452 and 453, which were placed in the event buffer via the previous
 ***tx_trace_user_event_insert*** examples.
 
-![Screenshot of the default display of user-defined events.](../media/user-guide/10.1.png)
+{{< figure src="../media/user-guide/10.1.png" title="Screenshot of the default display of user-defined events." imgClass="img-responsive center-block" >}}
 **FIGURE 28**
 
 Detailed information is also available for user-defined Events. Figure 28 shows the detailed event information for event 452, which has event number 4096 and shows the specified four information fields.
 
-![Screenshot of the detailed display of user-defined events.](../media/user-guide/10.2.png)
+{{< figure src="../media/user-guide/10.2.png" title="Screenshot of the detailed display of user-defined events." imgClass="img-responsive center-block" >}}
 **FIGURE 29**
 
 ## Defining Custom User-Defined Event Icons
 
 TraceX also provides the user the ability to create custom user-defined event icons and custom information field labels. This capability is achieved by adding event icon specifications to the ***tracex_custom.trxc*** configuration file. This file is located in the ***CustomEvents*** subdirectory of your user-defined TraceX installation directory. An example directory path is shown in Figure 30.
 
-![Screenshot of an example directory path.](../media/user-guide/custom_events_folder.png)
+{{< figure src="../media/user-guide/custom_events_folder.png" title="Screenshot of an example directory path." imgClass="img-responsive center-block" >}}
 **FIGURE 30**
 
 The ***tracex_custom.trxc*** custom event configuration file is a simple ASCII text file containing zero or more custom event definitions. The format of the file is as follows:
@@ -78,15 +78,15 @@ where:
 
 Example definitions for each of the two user-defined events used in this chapter are shown in Figure 10.4. The first definition is for event 4096 at line 5 of the ***tracex_custom.trxc*** file. This definition gives user-defined event 4096 the name **First_User_Event**, specifies a two-letter abbreviation of **FE**, makes the top portion of the icon red, the bottom portion of the icon green, and names the information fields as **First_Info1**, **First_Info2**, **First_Info3**, and **First_Info4**. User-defined event 4098 is defined similarly at line 6 of ***tracex_custom.trxc***.
 
-![Screenshot of the example definitions for the user-defined events.](../media/user-guide/10.4.png)
+{{< figure src="../media/user-guide/10.4.png" title="Screenshot of the example definitions for the user-defined events." imgClass="img-responsive center-block" >}}
 **FIGURE 31**
 
 Since the ***tracex_custom.trxc*** file is read by TraceX during initialization, TraceX must be exited and restarted before the custom icon definitions can take effect. Figure 32 shows the TraceX display of user-defined events 452 and 453 with the custom event icons defined in ***tracex_custom.trxc***.
 
-![Screenshot of the TraceX display of user defined events with the custom event icons.](../media/user-guide/10.5.png)
+{{< figure src="../media/user-guide/10.5.png" title="Screenshot of the TraceX display of user defined events with the custom event icons." imgClass="img-responsive center-block" >}}
 **FIGURE 32**
 
 The additional information in the custom event definition is shown when the event you select using a double-click, mouse-over, or clicking the current event button. Figure 33 shows the double-click selection on event 452. The event name and information fields all match the sample definition that was added to ***tracex_custom.trxc***.
 
-![Screenshot of the double-click selection on an event.](../media/user-guide/10.6.png)
+{{< figure src="../media/user-guide/10.6.png" title="Screenshot of the double-click selection on an event." imgClass="img-responsive center-block" >}}
 **FIGURE 33**

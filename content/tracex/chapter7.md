@@ -14,79 +14,79 @@ The following describes each event:
 
 | **Icon**                         | **Meaning**                               |
 | -------------------------------- | ----------------------------------------- |
-| ![Internal Logical Sector Cache Miss icon](../media/user-guide/fx-events/image1.png)    | Internal Logical Sector Cache Miss |
-| ![Internal Directory Cache Miss icon](../media/user-guide/fx-events/image2.png)    | Internal Directory Cache Miss |
-| ![Internal Media Flush icon](../media/user-guide/fx-events/image3.png)    | Internal Media Flush |
-| ![Internal Directory Entry Read icon](../media/user-guide/fx-events/image4.png)    | Internal Directory Entry Read |
-| ![Internal Directory Entry Write icon](../media/user-guide/fx-events/image5.png)    | Internal Directory Entry Write |
-| ![Internal I / O Driver Read icon](../media/user-guide/fx-events/image6.png)    | Internal I/O Driver Read |
-| ![Internal I / O Driver Write icon](../media/user-guide/fx-events/image7.png)    | Internal I/O Driver Write |
-| ![Internal I / O Driver Flush icon](../media/user-guide/fx-events/image8.png)    | Internal I/O Driver Flush |
-| ![Internal I / O Driver Abort icon](../media/user-guide/fx-events/image9.png)    | Internal I/O Driver Abort |
-| ![Internal I / O Driver Initialize icon](../media/user-guide/fx-events/image10.png)    | Internal I/O Driver Initialize |
-| ![Internal I / O Driver Boot Read icon](../media/user-guide/fx-events/image11.png)    | Internal I/O Driver Boot Read |
-| ![Internal I / O Driver Release Sectors icon](../media/user-guide/fx-events/image12.png)    | Internal I/O Driver Release Sectors |
-| ![Internal I / O Driver Boot Write icon](../media/user-guide/fx-events/image13.png)    | Internal I/O Driver Boot Write |
-| ![Internal I / O Driver Driver Un-initialize icon](../media/user-guide/fx-events/image14.png)    | Internal I / O Driver Driver Un-initialize |
-| ![Directory Attributes Read icon](../media/user-guide/fx-events/image15.png)    | **Directory Attributes Read** (*fx_directory_attributes_read*) |
-| ![Directory Attributes Set icon](../media/user-guide/fx-events/image16.png)    | **Directory Attributes Set** (*fx_directory_attributes_set*) |
-| ![Directory Create icon](../media/user-guide/fx-events/image17.png)    | **Directory Create** (*fx_directory_create*) |
-| ![Directory Default Get icon](../media/user-guide/fx-events/image18.png)    | **Directory Default Get** (*fx_directory_default_get*) |
-| ![Directory Default Set icon](../media/user-guide/fx-events/image19.png)    | **Directory Default Set** (*fx_directory_default_set*) |
-| ![Directory Delete icon](../media/user-guide/fx-events/image20.png)    | **Directory Delete** (*fx_directory_delete*) |
-| ![Directory First Entry Find icon](../media/user-guide/fx-events/image21.png)    | **Directory First Entry Find** (*fx_directory_first_entry_find*) |
-| ![Directory First Full Entry Find icon](../media/user-guide/fx-events/image22.png)    | **Directory First Full Entry Find** (*fx_directory_first_full_entry_find*) |
-| ![Directory Information Get icon](../media/user-guide/fx-events/image23.png)    | **Directory Information Get** (*fx_directory_information_get*) |
-| ![Directory Local Path Clear icon](../media/user-guide/fx-events/image24.png)    | **Directory Local Path Clear** (*fx_directory_local_path_clear*) |
-| ![Directory Local Path Get icon](../media/user-guide/fx-events/image25.png)    | **Directory Local Path Get** (*fx_directory_local_path_get*) |
-| ![Directory Local Path Restore icon](../media/user-guide/fx-events/image26.png)    | **Directory Local Path Restore** (*fx_directory_local_path_restore*) |
-| ![Directory Local Path Set icon](../media/user-guide/fx-events/image27.png)    | **Directory Local Path Set** (*fx_directory_local_path_set*) |
-| ![Directory Long Name Get icon](../media/user-guide/fx-events/image28.png)    | **Directory Long Name Get** (*fx_directory_long_name_get*) |
-| ![Directory Name Test icon](../media/user-guide/fx-events/image29.png)    | **Directory Name Test** (*fx_directory_name_test*) |
-| ![Directory Next Entry Find icon](../media/user-guide/fx-events/image30.png)    | **Directory Next Entry Find** (*fx_directory_next_entry_find*) |
-| ![Directory Next Full Entry Find icon](../media/user-guide/fx-events/image31.png)    | **Directory Next Full Entry Find** (*fx_directory_next_full_entry_find*) |
-| ![Directory Rename icon](../media/user-guide/fx-events/image32.png)    | **Directory Rename** (*fx_directory_rename*) |
-| ![Directory Short Name Get icon](../media/user-guide/fx-events/image33.png)    | **Directory Short Name Get** (*fx_directory_short_name_get*) |
-| ![File Allocate icon](../media/user-guide/fx-events/image34.png)    | **File Allocate** (*fx_file_allocate*) |
-| ![File Attributes Read icon](../media/user-guide/fx-events/image35.png)    | **File Attributes Read** (*fx_file_attributes_read*) |
-| ![File Attributes Set icon](../media/user-guide/fx-events/image36.png)    | **File Attributes Set** (*fx_file_attributes_set*) |
-| ![File Best Effort Allocate icon](../media/user-guide/fx-events/image37.png)    | **File Best Effort Allocate** (*fx_file_best_effort_allocate*) |
-| ![File Close icon](../media/user-guide/fx-events/image38.png)    | **File Close** (*fx_file_close*) |
-| ![File Create icon](../media/user-guide/fx-events/image39.png)    | **File Create** (*fx_file_create*) |
-| ![File Date Time Set icon](../media/user-guide/fx-events/image40.png)    | **File Date Time Set** (*fx_file_date_time_set*) |
-| ![File Delete icon](../media/user-guide/fx-events/image41.png)    | **File Delete** (*fx_file_delete*) |
-| ![File Open icon](../media/user-guide/fx-events/image42.png)    | **File Open** (*fx_file_open*) |
-| ![File Read icon](../media/user-guide/fx-events/image43.png)    | **File Read** (*fx_file_read*) |
-| ![File Relative Seek icon](../media/user-guide/fx-events/image44.png)    | **File Relative Seek** (*fx_file_relative_seek*) |
-| ![File Rename icon](../media/user-guide/fx-events/image45.png)    | **File Rename** (*fx_file_rename*) |
-| ![File Seek icon](../media/user-guide/fx-events/image46.png)    | **File Seek** (*fx_file_seek*) |
-| ![File Truncate icon](../media/user-guide/fx-events/image47.png)    | **File Truncate** (*fx_file_truncate*) |
-| ![File Truncate Release icon](../media/user-guide/fx-events/image48.png)    | **File Truncate Release** (*fx_file_truncate_release*) |
-| ![File Write icon](../media/user-guide/fx-events/image49.png)    | **File Write** (*fx_file_write*) |
-| ![Media Abort icon](../media/user-guide/fx-events/image50.png)    | **Media Abort** (*fx_media_abort*) |
-| ![Media Cache Invalidate icon](../media/user-guide/fx-events/image51.png)    | **Media Cache Invalidate** (*fx_media_cache_invalidate*) |
-| ![Media Check icon](../media/user-guide/fx-events/image52.png)    | **Media Check** (*fx_media_check*) |
-| ![*Media Close icon](../media/user-guide/fx-events/image53.png)    | **Media Close** (*fx_media_close*) |
-| ![Media Flush icon](../media/user-guide/fx-events/image54.png)    | **Media Flush** (*fx_media_flush*) |
-| ![Media Format icon](../media/user-guide/fx-events/image55.png)    | **Media Format** (*fx_media_format*) |
-| ![Media Open icon](../media/user-guide/fx-events/image56.png)    | **Media Open** (*fx_media_open*) |
-| ![Media Read icon](../media/user-guide/fx-events/image57.png)    | **Media Read** (*fx_media_read*) |
-| ![Media Space Available icon](../media/user-guide/fx-events/image58.png)    | **Media Space Available** (*fx_media_space_available*) |
-| ![Media Volume Get icon](../media/user-guide/fx-events/image59.png)    | **Media Volume Get** (*fx_media_volume_get*) |
-| ![Media Volume Set icon](../media/user-guide/fx-events/image60.png)    | **Media Volume Set** (*fx_media_volume_set*) |
-| ![Media Write icon](../media/user-guide/fx-events/image61.png)    | **Media Write** (*fx_media_write*) |
-| ![System Date Get icon](../media/user-guide/fx-events/image62.png)    | **System Date Get** (*fx_system_date_get*) |
-| ![System Date Set icon](../media/user-guide/fx-events/image63.png)    | **System Date Set** (*fx_system_date_set*) |
-| ![System Initialize icon](../media/user-guide/fx-events/image64.png)    | **System Initialize** (*fx_system_initialize*) |
-| ![System Time Get icon](../media/user-guide/fx-events/image65.png)    | **System Time Get** (*fx_system_time_get*) |
-| ![System Time Set icon](../media/user-guide/fx-events/image66.png)    | **System Time Set** (*fx_system_time_set*) |
-| ![Unicode Directory Create icon](../media/user-guide/fx-events/image67.png)    | **Unicode Directory Create** (*fx_unicode_directory_create*) |
-| ![Unicode Directory Rename icon](../media/user-guide/fx-events/image68.png)    | **Unicode Directory Rename** (*fx_unicode_directory_rename*) |
-| ![Unicode File Create icon](../media/user-guide/fx-events/image69.png)    | **Unicode File Create** (*fx_unicode_file_create*) |
-| ![Unicode File Rename icon](../media/user-guide/fx-events/image70.png)    | **Unicode File Rename** (*fx_unicode_file_rename*) |
-| ![Unicode Length Get icon](../media/user-guide/fx-events/image71.png)    | **Unicode Length Get** (*fx_unicode_length_get*) |
-| ![Unicode Name Get icon](../media/user-guide/fx-events/image72.png)    | **Unicode Name Get** (*fx_unicode_name_get*) |
-| ![Unicode Short Name Get icon](../media/user-guide/fx-events/image73.png)    | **Unicode Short Name Get** (*fx_unicode_short_name_get*) |
+| {{< figure src="../media/user-guide/fx-events/image1.png" title="Internal Logical Sector Cache Miss icon" imgClass="img-responsive center-block" >}}    | Internal Logical Sector Cache Miss |
+| {{< figure src="../media/user-guide/fx-events/image2.png" title="Internal Directory Cache Miss icon" imgClass="img-responsive center-block" >}}    | Internal Directory Cache Miss |
+| {{< figure src="../media/user-guide/fx-events/image3.png" title="Internal Media Flush icon" imgClass="img-responsive center-block" >}}    | Internal Media Flush |
+| {{< figure src="../media/user-guide/fx-events/image4.png" title="Internal Directory Entry Read icon" imgClass="img-responsive center-block" >}}    | Internal Directory Entry Read |
+| {{< figure src="../media/user-guide/fx-events/image5.png" title="Internal Directory Entry Write icon" imgClass="img-responsive center-block" >}}    | Internal Directory Entry Write |
+| {{< figure src="../media/user-guide/fx-events/image6.png" title="Internal I / O Driver Read icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Read |
+| {{< figure src="../media/user-guide/fx-events/image7.png" title="Internal I / O Driver Write icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Write |
+| {{< figure src="../media/user-guide/fx-events/image8.png" title="Internal I / O Driver Flush icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Flush |
+| {{< figure src="../media/user-guide/fx-events/image9.png" title="Internal I / O Driver Abort icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Abort |
+| {{< figure src="../media/user-guide/fx-events/image10.png" title="Internal I / O Driver Initialize icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Initialize |
+| {{< figure src="../media/user-guide/fx-events/image11.png" title="Internal I / O Driver Boot Read icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Boot Read |
+| {{< figure src="../media/user-guide/fx-events/image12.png" title="Internal I / O Driver Release Sectors icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Release Sectors |
+| {{< figure src="../media/user-guide/fx-events/image13.png" title="Internal I / O Driver Boot Write icon" imgClass="img-responsive center-block" >}}    | Internal I/O Driver Boot Write |
+| {{< figure src="../media/user-guide/fx-events/image14.png" title="Internal I / O Driver Driver Un-initialize icon" imgClass="img-responsive center-block" >}}    | Internal I / O Driver Driver Un-initialize |
+| {{< figure src="../media/user-guide/fx-events/image15.png" title="Directory Attributes Read icon" imgClass="img-responsive center-block" >}}    | **Directory Attributes Read** (*fx_directory_attributes_read*) |
+| {{< figure src="../media/user-guide/fx-events/image16.png" title="Directory Attributes Set icon" imgClass="img-responsive center-block" >}}    | **Directory Attributes Set** (*fx_directory_attributes_set*) |
+| {{< figure src="../media/user-guide/fx-events/image17.png" title="Directory Create icon" imgClass="img-responsive center-block" >}}    | **Directory Create** (*fx_directory_create*) |
+| {{< figure src="../media/user-guide/fx-events/image18.png" title="Directory Default Get icon" imgClass="img-responsive center-block" >}}    | **Directory Default Get** (*fx_directory_default_get*) |
+| {{< figure src="../media/user-guide/fx-events/image19.png" title="Directory Default Set icon" imgClass="img-responsive center-block" >}}    | **Directory Default Set** (*fx_directory_default_set*) |
+| {{< figure src="../media/user-guide/fx-events/image20.png" title="Directory Delete icon" imgClass="img-responsive center-block" >}}    | **Directory Delete** (*fx_directory_delete*) |
+| {{< figure src="../media/user-guide/fx-events/image21.png" title="Directory First Entry Find icon" imgClass="img-responsive center-block" >}}    | **Directory First Entry Find** (*fx_directory_first_entry_find*) |
+| {{< figure src="../media/user-guide/fx-events/image22.png" title="Directory First Full Entry Find icon" imgClass="img-responsive center-block" >}}    | **Directory First Full Entry Find** (*fx_directory_first_full_entry_find*) |
+| {{< figure src="../media/user-guide/fx-events/image23.png" title="Directory Information Get icon" imgClass="img-responsive center-block" >}}    | **Directory Information Get** (*fx_directory_information_get*) |
+| {{< figure src="../media/user-guide/fx-events/image24.png" title="Directory Local Path Clear icon" imgClass="img-responsive center-block" >}}    | **Directory Local Path Clear** (*fx_directory_local_path_clear*) |
+| {{< figure src="../media/user-guide/fx-events/image25.png" title="Directory Local Path Get icon" imgClass="img-responsive center-block" >}}    | **Directory Local Path Get** (*fx_directory_local_path_get*) |
+| {{< figure src="../media/user-guide/fx-events/image26.png" title="Directory Local Path Restore icon" imgClass="img-responsive center-block" >}}    | **Directory Local Path Restore** (*fx_directory_local_path_restore*) |
+| {{< figure src="../media/user-guide/fx-events/image27.png" title="Directory Local Path Set icon" imgClass="img-responsive center-block" >}}    | **Directory Local Path Set** (*fx_directory_local_path_set*) |
+| {{< figure src="../media/user-guide/fx-events/image28.png" title="Directory Long Name Get icon" imgClass="img-responsive center-block" >}}    | **Directory Long Name Get** (*fx_directory_long_name_get*) |
+| {{< figure src="../media/user-guide/fx-events/image29.png" title="Directory Name Test icon" imgClass="img-responsive center-block" >}}    | **Directory Name Test** (*fx_directory_name_test*) |
+| {{< figure src="../media/user-guide/fx-events/image30.png" title="Directory Next Entry Find icon" imgClass="img-responsive center-block" >}}    | **Directory Next Entry Find** (*fx_directory_next_entry_find*) |
+| {{< figure src="../media/user-guide/fx-events/image31.png" title="Directory Next Full Entry Find icon" imgClass="img-responsive center-block" >}}    | **Directory Next Full Entry Find** (*fx_directory_next_full_entry_find*) |
+| {{< figure src="../media/user-guide/fx-events/image32.png" title="Directory Rename icon" imgClass="img-responsive center-block" >}}    | **Directory Rename** (*fx_directory_rename*) |
+| {{< figure src="../media/user-guide/fx-events/image33.png" title="Directory Short Name Get icon" imgClass="img-responsive center-block" >}}    | **Directory Short Name Get** (*fx_directory_short_name_get*) |
+| {{< figure src="../media/user-guide/fx-events/image34.png" title="File Allocate icon" imgClass="img-responsive center-block" >}}    | **File Allocate** (*fx_file_allocate*) |
+| {{< figure src="../media/user-guide/fx-events/image35.png" title="File Attributes Read icon" imgClass="img-responsive center-block" >}}    | **File Attributes Read** (*fx_file_attributes_read*) |
+| {{< figure src="../media/user-guide/fx-events/image36.png" title="File Attributes Set icon" imgClass="img-responsive center-block" >}}    | **File Attributes Set** (*fx_file_attributes_set*) |
+| {{< figure src="../media/user-guide/fx-events/image37.png" title="File Best Effort Allocate icon" imgClass="img-responsive center-block" >}}    | **File Best Effort Allocate** (*fx_file_best_effort_allocate*) |
+| {{< figure src="../media/user-guide/fx-events/image38.png" title="File Close icon" imgClass="img-responsive center-block" >}}    | **File Close** (*fx_file_close*) |
+| {{< figure src="../media/user-guide/fx-events/image39.png" title="File Create icon" imgClass="img-responsive center-block" >}}    | **File Create** (*fx_file_create*) |
+| {{< figure src="../media/user-guide/fx-events/image40.png" title="File Date Time Set icon" imgClass="img-responsive center-block" >}}    | **File Date Time Set** (*fx_file_date_time_set*) |
+| {{< figure src="../media/user-guide/fx-events/image41.png" title="File Delete icon" imgClass="img-responsive center-block" >}}    | **File Delete** (*fx_file_delete*) |
+| {{< figure src="../media/user-guide/fx-events/image42.png" title="File Open icon" imgClass="img-responsive center-block" >}}    | **File Open** (*fx_file_open*) |
+| {{< figure src="../media/user-guide/fx-events/image43.png" title="File Read icon" imgClass="img-responsive center-block" >}}    | **File Read** (*fx_file_read*) |
+| {{< figure src="../media/user-guide/fx-events/image44.png" title="File Relative Seek icon" imgClass="img-responsive center-block" >}}    | **File Relative Seek** (*fx_file_relative_seek*) |
+| {{< figure src="../media/user-guide/fx-events/image45.png" title="File Rename icon" imgClass="img-responsive center-block" >}}    | **File Rename** (*fx_file_rename*) |
+| {{< figure src="../media/user-guide/fx-events/image46.png" title="File Seek icon" imgClass="img-responsive center-block" >}}    | **File Seek** (*fx_file_seek*) |
+| {{< figure src="../media/user-guide/fx-events/image47.png" title="File Truncate icon" imgClass="img-responsive center-block" >}}    | **File Truncate** (*fx_file_truncate*) |
+| {{< figure src="../media/user-guide/fx-events/image48.png" title="File Truncate Release icon" imgClass="img-responsive center-block" >}}    | **File Truncate Release** (*fx_file_truncate_release*) |
+| {{< figure src="../media/user-guide/fx-events/image49.png" title="File Write icon" imgClass="img-responsive center-block" >}}    | **File Write** (*fx_file_write*) |
+| {{< figure src="../media/user-guide/fx-events/image50.png" title="Media Abort icon" imgClass="img-responsive center-block" >}}    | **Media Abort** (*fx_media_abort*) |
+| {{< figure src="../media/user-guide/fx-events/image51.png" title="Media Cache Invalidate icon" imgClass="img-responsive center-block" >}}    | **Media Cache Invalidate** (*fx_media_cache_invalidate*) |
+| {{< figure src="../media/user-guide/fx-events/image52.png" title="Media Check icon" imgClass="img-responsive center-block" >}}    | **Media Check** (*fx_media_check*) |
+| {{< figure src="../media/user-guide/fx-events/image53.png" title="*Media Close icon" imgClass="img-responsive center-block" >}}    | **Media Close** (*fx_media_close*) |
+| {{< figure src="../media/user-guide/fx-events/image54.png" title="Media Flush icon" imgClass="img-responsive center-block" >}}    | **Media Flush** (*fx_media_flush*) |
+| {{< figure src="../media/user-guide/fx-events/image55.png" title="Media Format icon" imgClass="img-responsive center-block" >}}    | **Media Format** (*fx_media_format*) |
+| {{< figure src="../media/user-guide/fx-events/image56.png" title="Media Open icon" imgClass="img-responsive center-block" >}}    | **Media Open** (*fx_media_open*) |
+| {{< figure src="../media/user-guide/fx-events/image57.png" title="Media Read icon" imgClass="img-responsive center-block" >}}    | **Media Read** (*fx_media_read*) |
+| {{< figure src="../media/user-guide/fx-events/image58.png" title="Media Space Available icon" imgClass="img-responsive center-block" >}}    | **Media Space Available** (*fx_media_space_available*) |
+| {{< figure src="../media/user-guide/fx-events/image59.png" title="Media Volume Get icon" imgClass="img-responsive center-block" >}}    | **Media Volume Get** (*fx_media_volume_get*) |
+| {{< figure src="../media/user-guide/fx-events/image60.png" title="Media Volume Set icon" imgClass="img-responsive center-block" >}}    | **Media Volume Set** (*fx_media_volume_set*) |
+| {{< figure src="../media/user-guide/fx-events/image61.png" title="Media Write icon" imgClass="img-responsive center-block" >}}    | **Media Write** (*fx_media_write*) |
+| {{< figure src="../media/user-guide/fx-events/image62.png" title="System Date Get icon" imgClass="img-responsive center-block" >}}    | **System Date Get** (*fx_system_date_get*) |
+| {{< figure src="../media/user-guide/fx-events/image63.png" title="System Date Set icon" imgClass="img-responsive center-block" >}}    | **System Date Set** (*fx_system_date_set*) |
+| {{< figure src="../media/user-guide/fx-events/image64.png" title="System Initialize icon" imgClass="img-responsive center-block" >}}    | **System Initialize** (*fx_system_initialize*) |
+| {{< figure src="../media/user-guide/fx-events/image65.png" title="System Time Get icon" imgClass="img-responsive center-block" >}}    | **System Time Get** (*fx_system_time_get*) |
+| {{< figure src="../media/user-guide/fx-events/image66.png" title="System Time Set icon" imgClass="img-responsive center-block" >}}    | **System Time Set** (*fx_system_time_set*) |
+| {{< figure src="../media/user-guide/fx-events/image67.png" title="Unicode Directory Create icon" imgClass="img-responsive center-block" >}}    | **Unicode Directory Create** (*fx_unicode_directory_create*) |
+| {{< figure src="../media/user-guide/fx-events/image68.png" title="Unicode Directory Rename icon" imgClass="img-responsive center-block" >}}    | **Unicode Directory Rename** (*fx_unicode_directory_rename*) |
+| {{< figure src="../media/user-guide/fx-events/image69.png" title="Unicode File Create icon" imgClass="img-responsive center-block" >}}    | **Unicode File Create** (*fx_unicode_file_create*) |
+| {{< figure src="../media/user-guide/fx-events/image70.png" title="Unicode File Rename icon" imgClass="img-responsive center-block" >}}    | **Unicode File Rename** (*fx_unicode_file_rename*) |
+| {{< figure src="../media/user-guide/fx-events/image71.png" title="Unicode Length Get icon" imgClass="img-responsive center-block" >}}    | **Unicode Length Get** (*fx_unicode_length_get*) |
+| {{< figure src="../media/user-guide/fx-events/image72.png" title="Unicode Name Get icon" imgClass="img-responsive center-block" >}}    | **Unicode Name Get** (*fx_unicode_name_get*) |
+| {{< figure src="../media/user-guide/fx-events/image73.png" title="Unicode Short Name Get icon" imgClass="img-responsive center-block" >}}    | **Unicode Short Name Get** (*fx_unicode_short_name_get*) |
 
 ## Event Descriptions
 
@@ -96,7 +96,7 @@ The following describes each individual event.
 
 #### Internal logical sector cache miss
 
-**Icon** ![Internal logical sector cache miss icon](../media/user-guide/fx-events/image1.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image1.png" title="Internal logical sector cache miss icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -113,7 +113,7 @@ This event represents an internal FileX logical sector cache miss.
 
 #### Internal directory cache miss
 
-**Icon** ![Internal directory cache miss icon](../media/user-guide/fx-events/image2.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image2.png" title="Internal directory cache miss icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -130,7 +130,7 @@ This event represents an internal FileX directory cache miss.
 
 #### Internal media flush
 
-**Icon** ![Internal media flush icon](../media/user-guide/fx-events/image3.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image3.png" title="Internal media flush icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -148,7 +148,7 @@ This event represents an internal FileX media flush.
 
 #### Internal directory entry read
 
-**Icon** ![Internal directory entry read icon](../media/user-guide/fx-events/image4.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image4.png" title="Internal directory entry read icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -165,7 +165,7 @@ This event represents an internal FileX directory entry read event.
 
 #### Internal directory entry write
 
-**Icon** ![Internal directory entry write icon](../media/user-guide/fx-events/image5.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image5.png" title="Internal directory entry write icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -182,7 +182,7 @@ This event represents an internal FileX directory entry write event.
 
 #### Internal I/O driver read 
 
-**Icon** ![Internal I / O driver read icon](../media/user-guide/fx-events/image6.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image6.png" title="Internal I / O driver read icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -199,7 +199,7 @@ This event represents an internal FileX I/O driver read event.
 
 #### Internal I/O driver write 
 
-**Icon** ![Internal I / O driver write icon](../media/user-guide/fx-events/image7.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image7.png" title="Internal I / O driver write icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -216,7 +216,7 @@ This event represents an internal FileX I/O driver write event.
 
 #### Internal I/O driver flush 
 
-**Icon** ![Internal I / O driver flush icon](../media/user-guide/fx-events/image8.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image8.png" title="Internal I / O driver flush icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -233,7 +233,7 @@ This event represents an internal FileX I/O driver flush event.
 
 #### Internal I/O driver abort
 
-**Icon** ![Internal I / O driver abort icon](../media/user-guide/fx-events/image9.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image9.png" title="Internal I / O driver abort icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -250,7 +250,7 @@ This event represents an internal FileX I/O driver abort event.
 
 #### Internal I/O driver initialize 
 
-**Icon** ![Internal I / O driver initialize icon](../media/user-guide/fx-events/image10.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image10.png" title="Internal I / O driver initialize icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -267,7 +267,7 @@ This event represents an internal FileX I/O driver initialize event.
 
 #### Internal I/O driver boot sector read 
 
-**Icon** ![Internal I / O driver boot sector read icon](../media/user-guide/fx-events/image11.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image11.png" title="Internal I / O driver boot sector read icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -284,7 +284,7 @@ This event represents an internal FileX I/O driver boot sector read event.
 
 #### Internal I/O driver release sectors 
 
-**Icon** ![Internal I / O driver release sectors icon](../media/user-guide/fx-events/image12.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image12.png" title="Internal I / O driver release sectors icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -301,7 +301,7 @@ This event represents an internal FileX I/O driver release sectors event.
 
 #### Internal I/O driver boot sector write 
 
-**Icon** ![Internal I / O driver boot sector write icon](../media/user-guide/fx-events/image13.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image13.png" title="Internal I / O driver boot sector write icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -318,7 +318,7 @@ This event represents an internal FileX I/O driver boot sector write event.
 
 #### Internal I/O driver un-initialize 
 
-**Icon** ![Internal I / O driver un-initialize icon](../media/user-guide/fx-events/image14.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image14.png" title="Internal I / O driver un-initialize icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -336,7 +336,7 @@ This event represents an internal FileX I/O driver un-initialize event.
 
 #### fx_directory_attributes_read 
 
-**Icon** ![Directory attributes read icon](../media/user-guide/fx-events/image15.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image15.png" title="Directory attributes read icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -362,7 +362,7 @@ This event represents a directory attributes read event.
 
 #### fx_directory_attributes_set 
 
-**Icon** ![Attributes set icon](../media/user-guide/fx-events/image16.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image16.png" title="Attributes set icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -386,7 +386,7 @@ This event represents a directory a directory attributes set event.
 
 #### fx_directory_create
 
-**Icon** ![Directory create icon](../media/user-guide/fx-events/image17.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image17.png" title="Directory create icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -403,7 +403,7 @@ This event represents a directory create event.
 
 #### fx_directory_default_get 
 
-**Icon** ![Directory default get icon](../media/user-guide/fx-events/image18.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image18.png" title="Directory default get icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -420,7 +420,7 @@ This event represents a directory default set event.
 
 #### fx_directory_default_set 
 
-**Icon** ![Directory default set icon](../media/user-guide/fx-events/image19.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image19.png" title="Directory default set icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -437,7 +437,7 @@ This event represents a directory default set event.
 
 #### fx_directory_delete
 
-**Icon** ![Directory delete icon](../media/user-guide/fx-events/image20.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image20.png" title="Directory delete icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -453,7 +453,7 @@ This event represents a directory delete event.
 
 #### fx_directory_first_entry_find
 
-**Icon** ![Directory first entry find icon](../media/user-guide/fx-events/image21.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image21.png" title="Directory first entry find icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -470,7 +470,7 @@ This event represents a directory first entry find event.
 
 #### fx_directory_first_full_entry_find
 
-**Icon** ![Directory first full entry find icon](../media/user-guide/fx-events/image22.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image22.png" title="Directory first full entry find icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -487,7 +487,7 @@ This event represents a directory first full entry find event.
 
 #### fx_directory_information_get
 
-**Icon** ![Directory information get icon](../media/user-guide/fx-events/image23.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image23.png" title="Directory information get icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -504,7 +504,7 @@ This event represents a directory information get event.
 
 #### fx_directory_local_path_clear
 
-**Icon** ![Directory local path clear icon](../media/user-guide/fx-events/image24.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image24.png" title="Directory local path clear icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -521,7 +521,7 @@ This event represents a directory local path clear event.
 
 #### fx_directory_local_path_get
 
-**Icon** ![Directory local path get icon](../media/user-guide/fx-events/image25.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image25.png" title="Directory local path get icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -538,7 +538,7 @@ This event represents a directory local path get event.
 
 #### fx_directory_local_path_restore
 
-**Icon** ![Directory local path restore icon](../media/user-guide/fx-events/image26.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image26.png" title="Directory local path restore icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -555,7 +555,7 @@ This event represents a directory local path restore event.
 
 #### fx_directory_local_path_set
 
-**Icon** ![Directory local path set icon](../media/user-guide/fx-events/image27.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image27.png" title="Directory local path set icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -572,7 +572,7 @@ This event represents a directory local path set event.
 
 #### fx_directory_long_name_get
 
-**Icon** ![Directory long name get icon](../media/user-guide/fx-events/image28.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image28.png" title="Directory long name get icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -589,7 +589,7 @@ This event represents a directory long name get event.
 
 #### fx_directory_name_test
 
-**Icon** ![Directory name test icon](../media/user-guide/fx-events/image29.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image29.png" title="Directory name test icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -606,7 +606,7 @@ This event represents a directory name test event.
 
 #### fx_directory_next_entry_find
 
-**Icon** ![Directory next entry find icon](../media/user-guide/fx-events/image30.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image30.png" title="Directory next entry find icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -623,7 +623,7 @@ This event represents a directory next entry find event.
 
 #### fx_directory_next_full_entry_find
 
-**Icon** ![Directory next full entry find icon](../media/user-guide/fx-events/image31.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image31.png" title="Directory next full entry find icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -640,7 +640,7 @@ This event represents a directory next full entry find event.
 
 #### fx_directory_rename event
 
-**Icon** ![Directory rename icon](../media/user-guide/fx-events/image32.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image32.png" title="Directory rename icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -657,7 +657,7 @@ This event represents a directory rename event.
 
 #### fx_directory_short_name_get
 
-**Icon** ![Directory short name get icon](../media/user-guide/fx-events/image33.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image33.png" title="Directory short name get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -674,7 +674,7 @@ This event represents a directory short name get event.
 
 #### fx_file_allocate
 
-**Icon** ![File allocate icon](../media/user-guide/fx-events/image34.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image34.png" title="File allocate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -691,7 +691,7 @@ This event represents a file allocate event.
 
 #### fx_file_attributes_read
 
-**Icon** ![File attributes read icon](../media/user-guide/fx-events/image35.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image35.png" title="File attributes read icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -717,7 +717,7 @@ This event represents a file attributes read event.
 
 #### fx_file_attributes_set
 
-**Icon** ![File attributes set icon](../media/user-guide/fx-events/image36.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image36.png" title="File attributes set icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -741,7 +741,7 @@ This event represents a file attributes set event.
 
 #### fx_file_best_effort_allocate
 
-**Icon** ![File best effort allocate icon](../media/user-guide/fx-events/image37.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image37.png" title="File best effort allocate icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -758,7 +758,7 @@ This event represents a file best effort allocate event.
 
 #### fx_file_close
 
-**Icon** ![File close icon](../media/user-guide/fx-events/image38.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image38.png" title="File close icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -775,7 +775,7 @@ This event represents a file close event.
 
 #### fx_file_create
 
-**Icon** ![File create icon](../media/user-guide/fx-events/image39.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image39.png" title="File create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -792,7 +792,7 @@ This event represents a file create event.
 
 #### fx_file_date_time_set
 
-**Icon** ![File date time set icon](../media/user-guide/fx-events/image40.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image40.png" title="File date time set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -809,7 +809,7 @@ This event represents a file date/time set event.
 
 #### fx_file_delete
 
-**Icon** ![File delete icon](../media/user-guide/fx-events/image41.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image41.png" title="File delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -826,7 +826,7 @@ This event represents a file delete event.
 
 #### fx_file_open
 
-**Icon** ![File open icon](../media/user-guide/fx-events/image42.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image42.png" title="File open icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -849,7 +849,7 @@ This event represents a file open event.
 
 #### fx_file_read
 
-**Icon** ![File read icon](../media/user-guide/fx-events/image43.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image43.png" title="File read icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -866,7 +866,7 @@ This event represents a file read event.
 
 #### fx_file_relative_seek
 
-**Icon** ![File relative seek icon](../media/user-guide/fx-events/image44.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image44.png" title="File relative seek icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -890,7 +890,7 @@ This event represents a file relative seek event.
 
 #### fx_file_rename
 
-**Icon** ![File rename icon](../media/user-guide/fx-events/image45.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image45.png" title="File rename icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -907,7 +907,7 @@ This event represents a file rename event.
 
 #### fx_file_seek
 
-**Icon** ![File seek icon](../media/user-guide/fx-events/image46.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image46.png" title="File seek icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -924,7 +924,7 @@ This event represents a file seek event.
 
 #### fx_file_truncate
 
-**Icon** ![File truncate icon](../media/user-guide/fx-events/image47.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image47.png" title="File truncate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -941,7 +941,7 @@ This event represents a file truncate event.
 
 #### fx_file_truncate_release 
 
-**Icon** ![File truncate release icon](../media/user-guide/fx-events/image48.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image48.png" title="File truncate release icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -958,7 +958,7 @@ This event represents a file truncate release event.
 
 #### fx_file_write 
 
-**Icon** ![File write icon](../media/user-guide/fx-events/image49.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image49.png" title="File write icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -975,7 +975,7 @@ This event represents a file write event.
 
 #### fx_media_abort 
 
-**Icon** ![Media abort icon](../media/user-guide/fx-events/image50.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image50.png" title="Media abort icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -992,7 +992,7 @@ This event represents a media abort event.
 
 #### fx_media_cache_invalidate
 
-**Icon** ![Media cache invalidate icon](../media/user-guide/fx-events/image51.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image51.png" title="Media cache invalidate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1009,7 +1009,7 @@ This event represents a media cache invalidate event.
 
 #### fx_media_check
 
-**Icon** ![Media check icon](../media/user-guide/fx-events/image52.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image52.png" title="Media check icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1033,7 +1033,7 @@ This event represents a media check event.
 
 #### fx_media_close
 
-**Icon** ![Media Close icon](../media/user-guide/fx-events/image53.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image53.png" title="Media Close icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1050,7 +1050,7 @@ This event represents a media close event.
 
 #### fx_media_flush
 
-**Icon** ![Media flush icon](../media/user-guide/fx-events/image54.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image54.png" title="Media flush icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1067,7 +1067,7 @@ This event represents a media flush event.
 
 #### fx_media_format
 
-**Icon** ![Media format icon](../media/user-guide/fx-events/image55.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image55.png" title="Media format icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1084,7 +1084,7 @@ This event represents a media format event.
 
 #### fx_media_open
 
-**Icon** ![Media open icon](../media/user-guide/fx-events/image56.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image56.png" title="Media open icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1101,7 +1101,7 @@ This event represents a media open event.
 
 #### fx_media_read
 
-**Icon** ![Media read icon](../media/user-guide/fx-events/image57.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image57.png" title="Media read icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1118,7 +1118,7 @@ This event represents a media read event.
 
 #### fx_media_space_available
 
-**Icon** ![Media space available icon](../media/user-guide/fx-events/image58.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image58.png" title="Media space available icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1135,7 +1135,7 @@ This event represents a media space available event.
 
 #### fx_media_volume_get
 
-**Icon** ![Media volume get icon](../media/user-guide/fx-events/image59.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image59.png" title="Media volume get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1152,7 +1152,7 @@ This event represents a media volume get event.
 
 #### fx_media_volume_set
 
-**Icon** ![Media volume set icon](../media/user-guide/fx-events/image60.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image60.png" title="Media volume set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1168,7 +1168,7 @@ This event represents a media volume set event.
 
 #### fx_media_write
 
-**Icon** ![Media write icon](../media/user-guide/fx-events/image61.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image61.png" title="Media write icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1185,7 +1185,7 @@ This event represents a media write event.
 
 #### fx_system_date_get 
 
-**Icon** ![System date get icon](../media/user-guide/fx-events/image62.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image62.png" title="System date get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1202,7 +1202,7 @@ This event represents a system date get event.
 
 #### fx_system_date_set 
 
-**Icon** ![System date set icon](../media/user-guide/fx-events/image63.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image63.png" title="System date set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1219,7 +1219,7 @@ This event represents a system date set event.
 
 #### fx_system_initialize 
 
-**Icon** ![System initialize icon](../media/user-guide/fx-events/image64.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image64.png" title="System initialize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1236,7 +1236,7 @@ This event represents a system initialize event.
 
 #### fx_system_time_get 
 
-**Icon** ![System time get icon](../media/user-guide/fx-events/image65.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image65.png" title="System time get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1253,7 +1253,7 @@ This event represents a system time get event.
 
 #### fx_system_time_set 
 
-**Icon** ![System time set icon](../media/user-guide/fx-events/image66.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image66.png" title="System time set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1270,7 +1270,7 @@ This event represents a system time set event.
 
 #### fx_unicode_directory_create 
 
-**Icon** ![Unicode directory create icon](../media/user-guide/fx-events/image67.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image67.png" title="Unicode directory create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1287,7 +1287,7 @@ This event represents a Unicode directory create event.
 
 #### fx_unicode_directory_rename
 
-**Icon** ![Unicode directory rename icon](../media/user-guide/fx-events/image68.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image68.png" title="Unicode directory rename icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1304,7 +1304,7 @@ This event represents a Unicode directory rename event.
 
 #### fx_unicode_file_create
 
-**Icon** ![Unicode file create icon](../media/user-guide/fx-events/image69.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image69.png" title="Unicode file create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1321,7 +1321,7 @@ This event represents a Unicode file create event.
 
 #### fx_unicode_file_rename
 
-**Icon** ![Unicode file rename icon](../media/user-guide/fx-events/image70.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image70.png" title="Unicode file rename icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1338,7 +1338,7 @@ This event represents a Unicode file rename event.
 
 #### fx_unicode_length_get
 
-**Icon** ![Unicode length get icon](../media/user-guide/fx-events/image71.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image71.png" title="Unicode length get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1355,7 +1355,7 @@ This event represents a Unicode length get event.
 
 #### fx_unicode_name_get
 
-**Icon** ![Unicode name get icon](../media/user-guide/fx-events/image72.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image72.png" title="Unicode name get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1372,7 +1372,7 @@ This event represents a Unicode name get event.
 
 #### fx_unicode_short_name_get
 
-**Icon** ![Unicode short name get icon](../media/user-guide/fx-events/image73.png)
+**Icon** {{< figure src="../media/user-guide/fx-events/image73.png" title="Unicode short name get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 

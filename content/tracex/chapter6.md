@@ -12,95 +12,95 @@ The following is a list of ThreadX events displayed by TraceX:
 
 | **Icon**                         | **Meaning** |
 | -------------------------------- | ------------------------------------- |
-| ![Internal thread resume icon](../media/user-guide/tx-events/image1.png)    | Internal thread resume  |
-| ![Internal thread suspend icon](../media/user-guide/tx-events/image2.png)    | Internal thread suspend |
-| ![Interrupt Service Routine Enter icon](../media/user-guide/tx-events/image3.png)    | Interrupt Service Routine (ISR) Enter |
-| ![Interrupt Service Routine Exit icon](../media/user-guide/tx-events/image4.png)    | Interrupt Service Routine (ISR) Exit  |
-| ![Internal time-slice icon](../media/user-guide/tx-events/image5.png)    | Internal time-slice |
-| ![Running icon](../media/user-guide/tx-events/image6.png)    | Running |
-| ![Block pool allocate icon](../media/user-guide/tx-events/image7.png)    | **Block pool allocate** (*tx_block_allocate*)  |
-| ![Block pool create icon](../media/user-guide/tx-events/image8.png)    | **Block pool create** (*tx_block_pool_create*) |
-| ![Block pool delete icon](../media/user-guide/tx-events/image9.png)    | **Block pool delete** (*tx_block_pool_delete*) |
-| ![Block pool information get icon](../media/user-guide/tx-events/image10.png)    | **Block pool information get** (*tx_block_pool_info_get*) |
-| ![Block pool performance information get con](../media/user-guide/tx-events/image11.png)    | **Block pool performance information get** (*tx_block_pool_performance_info_get*) |
-| ![Block pool system performance information get icon](../media/user-guide/tx-events/image12.png)    | **Block pool system performance information get** (*tx_block_pool_performance_system_info_get*) |
-| ![Block pool prioritize icon](../media/user-guide/tx-events/image13.png)    | **Block pool prioritize** (*tx_block_pool_prioritize*) |
-| ![Block release to pool icon](../media/user-guide/tx-events/image14.png)    | **Block release to pool** (*tx_block_release*) |
-| ![Byte pool allocate memory icon](../media/user-guide/tx-events/image15.png)    | **Byte pool allocate memory** (*tx_byte_allocate*) |
-| ![Byte pool create icon](../media/user-guide/tx-events/image16.png)    | **Byte pool create** (*tx_byte_pool_create*) |
-| ![Byte pool delete icon](../media/user-guide/tx-events/image17.png)    | **Byte pool delete** (*tx_byte_pool_delete*) |
-| ![Byte pool information get icon](../media/user-guide/tx-events/image18.png)    | **Byte pool information get** (*tx_byte_pool_info_get*) |
-| ![Byte pool performance information get icon](../media/user-guide/tx-events/image19.png)    | **Byte pool performance information get** (*tx_byte_pool_performance_info_get*) |
-| ![Byte pool system performance information get icon](../media/user-guide/tx-events/image20.png)    | **Byte pool system performance information get** (*tx_byte_pool_performance_system_info_get*) |
-| ![*Byte pool prioritize icon](../media/user-guide/tx-events/image21.png)    | **Byte pool prioritize** (*tx_byte_pool_prioritize*) |
-| ![Byte memory release to pool icon](../media/user-guide/tx-events/image22.png)    | **Byte memory release to pool** (*tx_byte_release*) |
-| ![Event flags create icon](../media/user-guide/tx-events/image23.png)    | **Event flags create** (*tx_event_flags_create*) |
-| ![Event flags delete icon](../media/user-guide/tx-events/image24.png)    | **Event flags delete** (*tx_event_flags_delete*) |
-| ![Event flags get icon](../media/user-guide/tx-events/image25.png)    | **Event flags get** (*tx_event_flags_get*) |
-| ![Event flags information get icon](../media/user-guide/tx-events/image26.png)    | **Event flags information get** (*tx_event_flags_info_get*) |
-| ![Event flags performance information get icon](../media/user-guide/tx-events/image27.png)    | **Event flags performance information get** (*tx_event_flags_performance_info_get*) |
-| ![Event flags system performance information get icon](../media/user-guide/tx-events/image28.png)    | **Event flags system performance information get** (*tx_event_flags_performance_system_info_get*) |
-| ![Event flags set icon](../media/user-guide/tx-events/image29.png)    | **Event flags set** (*tx_event_flags_set*) |
-| ![Event flags set notify icon](../media/user-guide/tx-events/image30.png)    | **Event flags set notify** (*tx_event_flags_set_notify*) |
-| ![Interrupt enable/disable icon](../media/user-guide/tx-events/image31.png)    | **Interrupt enable/disable** (*tx_interrupt_control*) |
-| ![Mutex create icon](../media/user-guide/tx-events/image32.png)    | **Mutex create** (*tx_mutex_create*) |
-| ![Mutex delete icon](../media/user-guide/tx-events/image33.png)    | **Mutex delete** (*tx_mutex_delete*) |
-| ![Mutex get icon](../media/user-guide/tx-events/image34.png)    | **Mutex get** (*tx_mutex_get*) |
-| ![Mutex information get icon](../media/user-guide/tx-events/image35.png)    | **Mutex information get** (*tx_mutex_info_get*) |
-| ![Mutex performance information get icon](../media/user-guide/tx-events/image36.png)    | **Mutex performance information get** (*tx_mutex_performance_info_get*) |
-| ![Mutex system performance information get icon](../media/user-guide/tx-events/image37.png)    | **Mutex system performance information get** (*tx_mutex_performance_system_info_get*) |
-| ![Mutex prioritize icon](../media/user-guide/tx-events/image38.png)    | **Mutex prioritize** (*tx_mutex_prioritize*) |
-| ![Mutex put icon](../media/user-guide/tx-events/image39.png)    | **Mutex put** (*tx_mutex_put*) |
-| ![Queue create icon](../media/user-guide/tx-events/image40.png)    | **Queue create** (*tx_queue_create*) |
-| ![Queue delete icon](../media/user-guide/tx-events/image41.png)    | **Queue delete** (*tx_queue_delete*) |
-| ![Queue flush icon](../media/user-guide/tx-events/image42.png)    | **Queue flush** (*tx_queue_flush*) |
-| ![Queue front send icon](../media/user-guide/tx-events/image43.png)    | **Queue front send** (*tx_queue_front_send*) |
-| ![Queue information get icon](../media/user-guide/tx-events/image44.png)    | **Queue information get** (*tx_queue_info_get*) |
-| ![Queue performance information get icon](../media/user-guide/tx-events/image45.png)    | **Queue performance information get** (*tx_queue_performance_info_get*) |
-| ![Queue system performance information get icon](../media/user-guide/tx-events/image46.png)    | **Queue system performance information get** (*tx_queue_performance_system_info_get*) |
-| ![Queue prioritize icon](../media/user-guide/tx-events/image47.png)    | **Queue prioritize** (*tx_queue_prioritize*) |
-| ![Queue receive message icon](../media/user-guide/tx-events/image48.png)    | **Queue receive message** (*tx_queue_receive*) |
-| ![Queue send message icon](../media/user-guide/tx-events/image49.png)    | **Queue send message** (*tx_queue_send*) |
-| ![Queue send notify icon](../media/user-guide/tx-events/image50.png)    | **Queue send notify** (*tx_queue_send_notify*) |
-| ![Semaphore ceiling put icon](../media/user-guide/tx-events/image51.png)    | **Semaphore ceiling put** (*tx_semaphore_ceiling_put*) |
-| ![Semaphore create icon](../media/user-guide/tx-events/image52.png)    | **Semaphore create** (*tx_semaphore_create*) |
-| ![Semaphore delete icon](../media/user-guide/tx-events/image53.png)    | **Semaphore delete** (*tx_semaphore_delete*) |
-| ![Semaphore get icon](../media/user-guide/tx-events/image54.png)    | **Semaphore get** (*tx_semaphore_get*) |
-| ![Semaphore information get icon](../media/user-guide/tx-events/image55.png)    | **Semaphore information get** (*tx_semaphore_info_get*) |
-| ![Semaphore performance information get icon](../media/user-guide/tx-events/image56.png)    | **Semaphore performance information get** (*tx_semaphore_performance_info_get*) |
-| ![Semaphore system performance information get icon](../media/user-guide/tx-events/image57.png)    | **Semaphore system performance information get** (*tx_semaphore_performance_system_info_get*) |
-| ![Semaphore prioritize icon](../media/user-guide/tx-events/image58.png)    | **Semaphore prioritize** (*tx_semaphore_prioritize*) |
-| ![Semaphore put icon](../media/user-guide/tx-events/image59.png)    | **Semaphore put** (*tx_semaphore_put*) |
-| ![Semaphore put notify icon](../media/user-guide/tx-events/image60.png)    | **Semaphore put notify** (*tx_semaphore_put_notify*) |
-| ![Thread create icon](../media/user-guide/tx-events/image61.png)    | **Thread create** (*tx_thread_create*) |
-| ![Thread delete icon](../media/user-guide/tx-events/image62.png)    | **Thread delete** (*tx_thread_delete*) |
-| ![Thread exit/entry notify icon](../media/user-guide/tx-events/image63.png)    | **Thread exit/entry notify** (*tx_thread_entry_exit_notify*) |
-| ![Thread identify icon](../media/user-guide/tx-events/image64.png)    | **Thread identify** (*tx_thread_identify*) |
-| ![Thread information get icon](../media/user-guide/tx-events/image65.png)    | **Thread information get** (*tx_thread_info_get*) |
-| ![Thread performance information get icon](../media/user-guide/tx-events/image66.png)    | **Thread performance information get** (*tx_thread_performance_info_get*) |
-| ![Thread performance system information get icon](../media/user-guide/tx-events/image67.png)    | **Thread performance system information get** (*tx_thread_performance_system_info_get*) |
-| ![Thread preemption change icon](../media/user-guide/tx-events/image68.png)    | **Thread preemption change** (*tx_thread_preemption_change*) |
-| ![Thread priority change icon](../media/user-guide/tx-events/image69.png)    | **Thread priority change** (*tx_thread_priority_change*) |
-| ![Thread relinquish icon](../media/user-guide/tx-events/image70.png)    | **Thread relinquish** (*tx_thread_relinquish*) |
-| ![Thread reset icon](../media/user-guide/tx-events/image71.png)    | **Thread reset** (*tx_thread_reset*) |
-| ![*Thread resume icon](../media/user-guide/tx-events/image72.png)    | **Thread resume** (**tx_thread_resume*) |
-| ![Thread Sleep icon](../media/user-guide/tx-events/image73.png)    | **Thread Sleep** (*tx_thread_sleep*)* |
-| ![Thread stack error notify icon](../media/user-guide/tx-events/image74.png)    | **Thread stack error notify** (*tx_thread_stack_error_notify*) |
-| ![Thread suspend icon](../media/user-guide/tx-events/image75.png)    | **Thread suspend** (*tx_thread_suspend*) |
-| ![Thread terminate icon](../media/user-guide/tx-events/image76.png)    | **Thread terminate** (*tx_thread_terminate*) |
-| ![Thread time-slice change icon](../media/user-guide/tx-events/image77.png)    | **Thread time-slice change** (*tx_thread_time_slice_change*) |
-| ![Thread wait abort icon](../media/user-guide/tx-events/image78.png)    | **Thread wait abort** (*tx_thread_wait_abort*) |
-| ![Time get icon](../media/user-guide/tx-events/image79.png)    | **Time get** (*tx_time_get*) |
-| ![Time set icon](../media/user-guide/tx-events/image80.png)    | **Time set** (*tx_time_set*) |
-| ![*Timer activate icon](../media/user-guide/tx-events/image81.png)    | **Timer activate** (*tx_timer_activate*) |
-| ![Timer change icon](../media/user-guide/tx-events/image82.png)    | **Timer change** (*tx_timer_change*) |
-| ![Timer create icon](../media/user-guide/tx-events/image83.png)    | **Timer create** (*tx_timer_create*) |
-| ![Timer deactivate icon](../media/user-guide/tx-events/image84.png)    | **Timer deactivate** (*tx_timer_deactivate*) |
-| ![Timer delete icon](../media/user-guide/tx-events/image85.png)    | **Timer delete** (*tx_timer_delete*) |
-| ![Timer information get icon](../media/user-guide/tx-events/image86.png)    | **Timer information get** (*tx_timer_info_get*) |
-| ![Timer performance information get icon](../media/user-guide/tx-events/image87.png)    | **Timer performance information get** (*tx_timer_performance_info_get*) |
-| ![*Timer performance system information get icon](../media/user-guide/tx-events/image88.png)    | **Timer performance system information get** (*tx_timer_performance_system_info_get*) |
-| ![User-Defined Eventicon](../media/user-guide/tx-events/image0.png)    | **User-Defined Event** (See Chapter 10)    |
+| {{< figure src="../media/user-guide/tx-events/image1.png" title="Internal thread resume icon" imgClass="img-responsive center-block" >}}    | Internal thread resume  |
+| {{< figure src="../media/user-guide/tx-events/image2.png" title="Internal thread suspend icon" imgClass="img-responsive center-block" >}}    | Internal thread suspend |
+| {{< figure src="../media/user-guide/tx-events/image3.png" title="Interrupt Service Routine Enter icon" imgClass="img-responsive center-block" >}}    | Interrupt Service Routine (ISR) Enter |
+| {{< figure src="../media/user-guide/tx-events/image4.png" title="Interrupt Service Routine Exit icon" imgClass="img-responsive center-block" >}}    | Interrupt Service Routine (ISR) Exit  |
+| {{< figure src="../media/user-guide/tx-events/image5.png" title="Internal time-slice icon" imgClass="img-responsive center-block" >}}    | Internal time-slice |
+| {{< figure src="../media/user-guide/tx-events/image6.png" title="Running icon" imgClass="img-responsive center-block" >}}    | Running |
+| {{< figure src="../media/user-guide/tx-events/image7.png" title="Block pool allocate icon" imgClass="img-responsive center-block" >}}    | **Block pool allocate** (*tx_block_allocate*)  |
+| {{< figure src="../media/user-guide/tx-events/image8.png" title="Block pool create icon" imgClass="img-responsive center-block" >}}    | **Block pool create** (*tx_block_pool_create*) |
+| {{< figure src="../media/user-guide/tx-events/image9.png" title="Block pool delete icon" imgClass="img-responsive center-block" >}}    | **Block pool delete** (*tx_block_pool_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image10.png" title="Block pool information get icon" imgClass="img-responsive center-block" >}}    | **Block pool information get** (*tx_block_pool_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image11.png" title="Block pool performance information get con" imgClass="img-responsive center-block" >}}    | **Block pool performance information get** (*tx_block_pool_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image12.png" title="Block pool system performance information get icon" imgClass="img-responsive center-block" >}}    | **Block pool system performance information get** (*tx_block_pool_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image13.png" title="Block pool prioritize icon" imgClass="img-responsive center-block" >}}    | **Block pool prioritize** (*tx_block_pool_prioritize*) |
+| {{< figure src="../media/user-guide/tx-events/image14.png" title="Block release to pool icon" imgClass="img-responsive center-block" >}}    | **Block release to pool** (*tx_block_release*) |
+| {{< figure src="../media/user-guide/tx-events/image15.png" title="Byte pool allocate memory icon" imgClass="img-responsive center-block" >}}    | **Byte pool allocate memory** (*tx_byte_allocate*) |
+| {{< figure src="../media/user-guide/tx-events/image16.png" title="Byte pool create icon" imgClass="img-responsive center-block" >}}    | **Byte pool create** (*tx_byte_pool_create*) |
+| {{< figure src="../media/user-guide/tx-events/image17.png" title="Byte pool delete icon" imgClass="img-responsive center-block" >}}    | **Byte pool delete** (*tx_byte_pool_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image18.png" title="Byte pool information get icon" imgClass="img-responsive center-block" >}}    | **Byte pool information get** (*tx_byte_pool_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image19.png" title="Byte pool performance information get icon" imgClass="img-responsive center-block" >}}    | **Byte pool performance information get** (*tx_byte_pool_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image20.png" title="Byte pool system performance information get icon" imgClass="img-responsive center-block" >}}    | **Byte pool system performance information get** (*tx_byte_pool_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image21.png" title="*Byte pool prioritize icon" imgClass="img-responsive center-block" >}}    | **Byte pool prioritize** (*tx_byte_pool_prioritize*) |
+| {{< figure src="../media/user-guide/tx-events/image22.png" title="Byte memory release to pool icon" imgClass="img-responsive center-block" >}}    | **Byte memory release to pool** (*tx_byte_release*) |
+| {{< figure src="../media/user-guide/tx-events/image23.png" title="Event flags create icon" imgClass="img-responsive center-block" >}}    | **Event flags create** (*tx_event_flags_create*) |
+| {{< figure src="../media/user-guide/tx-events/image24.png" title="Event flags delete icon" imgClass="img-responsive center-block" >}}    | **Event flags delete** (*tx_event_flags_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image25.png" title="Event flags get icon" imgClass="img-responsive center-block" >}}    | **Event flags get** (*tx_event_flags_get*) |
+| {{< figure src="../media/user-guide/tx-events/image26.png" title="Event flags information get icon" imgClass="img-responsive center-block" >}}    | **Event flags information get** (*tx_event_flags_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image27.png" title="Event flags performance information get icon" imgClass="img-responsive center-block" >}}    | **Event flags performance information get** (*tx_event_flags_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image28.png" title="Event flags system performance information get icon" imgClass="img-responsive center-block" >}}    | **Event flags system performance information get** (*tx_event_flags_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image29.png" title="Event flags set icon" imgClass="img-responsive center-block" >}}    | **Event flags set** (*tx_event_flags_set*) |
+| {{< figure src="../media/user-guide/tx-events/image30.png" title="Event flags set notify icon" imgClass="img-responsive center-block" >}}    | **Event flags set notify** (*tx_event_flags_set_notify*) |
+| {{< figure src="../media/user-guide/tx-events/image31.png" title="Interrupt enable/disable icon" imgClass="img-responsive center-block" >}}    | **Interrupt enable/disable** (*tx_interrupt_control*) |
+| {{< figure src="../media/user-guide/tx-events/image32.png" title="Mutex create icon" imgClass="img-responsive center-block" >}}    | **Mutex create** (*tx_mutex_create*) |
+| {{< figure src="../media/user-guide/tx-events/image33.png" title="Mutex delete icon" imgClass="img-responsive center-block" >}}    | **Mutex delete** (*tx_mutex_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image34.png" title="Mutex get icon" imgClass="img-responsive center-block" >}}    | **Mutex get** (*tx_mutex_get*) |
+| {{< figure src="../media/user-guide/tx-events/image35.png" title="Mutex information get icon" imgClass="img-responsive center-block" >}}    | **Mutex information get** (*tx_mutex_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image36.png" title="Mutex performance information get icon" imgClass="img-responsive center-block" >}}    | **Mutex performance information get** (*tx_mutex_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image37.png" title="Mutex system performance information get icon" imgClass="img-responsive center-block" >}}    | **Mutex system performance information get** (*tx_mutex_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image38.png" title="Mutex prioritize icon" imgClass="img-responsive center-block" >}}    | **Mutex prioritize** (*tx_mutex_prioritize*) |
+| {{< figure src="../media/user-guide/tx-events/image39.png" title="Mutex put icon" imgClass="img-responsive center-block" >}}    | **Mutex put** (*tx_mutex_put*) |
+| {{< figure src="../media/user-guide/tx-events/image40.png" title="Queue create icon" imgClass="img-responsive center-block" >}}    | **Queue create** (*tx_queue_create*) |
+| {{< figure src="../media/user-guide/tx-events/image41.png" title="Queue delete icon" imgClass="img-responsive center-block" >}}    | **Queue delete** (*tx_queue_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image42.png" title="Queue flush icon" imgClass="img-responsive center-block" >}}    | **Queue flush** (*tx_queue_flush*) |
+| {{< figure src="../media/user-guide/tx-events/image43.png" title="Queue front send icon" imgClass="img-responsive center-block" >}}    | **Queue front send** (*tx_queue_front_send*) |
+| {{< figure src="../media/user-guide/tx-events/image44.png" title="Queue information get icon" imgClass="img-responsive center-block" >}}    | **Queue information get** (*tx_queue_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image45.png" title="Queue performance information get icon" imgClass="img-responsive center-block" >}}    | **Queue performance information get** (*tx_queue_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image46.png" title="Queue system performance information get icon" imgClass="img-responsive center-block" >}}    | **Queue system performance information get** (*tx_queue_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image47.png" title="Queue prioritize icon" imgClass="img-responsive center-block" >}}    | **Queue prioritize** (*tx_queue_prioritize*) |
+| {{< figure src="../media/user-guide/tx-events/image48.png" title="Queue receive message icon" imgClass="img-responsive center-block" >}}    | **Queue receive message** (*tx_queue_receive*) |
+| {{< figure src="../media/user-guide/tx-events/image49.png" title="Queue send message icon" imgClass="img-responsive center-block" >}}    | **Queue send message** (*tx_queue_send*) |
+| {{< figure src="../media/user-guide/tx-events/image50.png" title="Queue send notify icon" imgClass="img-responsive center-block" >}}    | **Queue send notify** (*tx_queue_send_notify*) |
+| {{< figure src="../media/user-guide/tx-events/image51.png" title="Semaphore ceiling put icon" imgClass="img-responsive center-block" >}}    | **Semaphore ceiling put** (*tx_semaphore_ceiling_put*) |
+| {{< figure src="../media/user-guide/tx-events/image52.png" title="Semaphore create icon" imgClass="img-responsive center-block" >}}    | **Semaphore create** (*tx_semaphore_create*) |
+| {{< figure src="../media/user-guide/tx-events/image53.png" title="Semaphore delete icon" imgClass="img-responsive center-block" >}}    | **Semaphore delete** (*tx_semaphore_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image54.png" title="Semaphore get icon" imgClass="img-responsive center-block" >}}    | **Semaphore get** (*tx_semaphore_get*) |
+| {{< figure src="../media/user-guide/tx-events/image55.png" title="Semaphore information get icon" imgClass="img-responsive center-block" >}}    | **Semaphore information get** (*tx_semaphore_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image56.png" title="Semaphore performance information get icon" imgClass="img-responsive center-block" >}}    | **Semaphore performance information get** (*tx_semaphore_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image57.png" title="Semaphore system performance information get icon" imgClass="img-responsive center-block" >}}    | **Semaphore system performance information get** (*tx_semaphore_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image58.png" title="Semaphore prioritize icon" imgClass="img-responsive center-block" >}}    | **Semaphore prioritize** (*tx_semaphore_prioritize*) |
+| {{< figure src="../media/user-guide/tx-events/image59.png" title="Semaphore put icon" imgClass="img-responsive center-block" >}}    | **Semaphore put** (*tx_semaphore_put*) |
+| {{< figure src="../media/user-guide/tx-events/image60.png" title="Semaphore put notify icon" imgClass="img-responsive center-block" >}}    | **Semaphore put notify** (*tx_semaphore_put_notify*) |
+| {{< figure src="../media/user-guide/tx-events/image61.png" title="Thread create icon" imgClass="img-responsive center-block" >}}    | **Thread create** (*tx_thread_create*) |
+| {{< figure src="../media/user-guide/tx-events/image62.png" title="Thread delete icon" imgClass="img-responsive center-block" >}}    | **Thread delete** (*tx_thread_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image63.png" title="Thread exit/entry notify icon" imgClass="img-responsive center-block" >}}    | **Thread exit/entry notify** (*tx_thread_entry_exit_notify*) |
+| {{< figure src="../media/user-guide/tx-events/image64.png" title="Thread identify icon" imgClass="img-responsive center-block" >}}    | **Thread identify** (*tx_thread_identify*) |
+| {{< figure src="../media/user-guide/tx-events/image65.png" title="Thread information get icon" imgClass="img-responsive center-block" >}}    | **Thread information get** (*tx_thread_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image66.png" title="Thread performance information get icon" imgClass="img-responsive center-block" >}}    | **Thread performance information get** (*tx_thread_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image67.png" title="Thread performance system information get icon" imgClass="img-responsive center-block" >}}    | **Thread performance system information get** (*tx_thread_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image68.png" title="Thread preemption change icon" imgClass="img-responsive center-block" >}}    | **Thread preemption change** (*tx_thread_preemption_change*) |
+| {{< figure src="../media/user-guide/tx-events/image69.png" title="Thread priority change icon" imgClass="img-responsive center-block" >}}    | **Thread priority change** (*tx_thread_priority_change*) |
+| {{< figure src="../media/user-guide/tx-events/image70.png" title="Thread relinquish icon" imgClass="img-responsive center-block" >}}    | **Thread relinquish** (*tx_thread_relinquish*) |
+| {{< figure src="../media/user-guide/tx-events/image71.png" title="Thread reset icon" imgClass="img-responsive center-block" >}}    | **Thread reset** (*tx_thread_reset*) |
+| {{< figure src="../media/user-guide/tx-events/image72.png" title="*Thread resume icon" imgClass="img-responsive center-block" >}}    | **Thread resume** (**tx_thread_resume*) |
+| {{< figure src="../media/user-guide/tx-events/image73.png" title="Thread Sleep icon" imgClass="img-responsive center-block" >}}    | **Thread Sleep** (*tx_thread_sleep*)* |
+| {{< figure src="../media/user-guide/tx-events/image74.png" title="Thread stack error notify icon" imgClass="img-responsive center-block" >}}    | **Thread stack error notify** (*tx_thread_stack_error_notify*) |
+| {{< figure src="../media/user-guide/tx-events/image75.png" title="Thread suspend icon" imgClass="img-responsive center-block" >}}    | **Thread suspend** (*tx_thread_suspend*) |
+| {{< figure src="../media/user-guide/tx-events/image76.png" title="Thread terminate icon" imgClass="img-responsive center-block" >}}    | **Thread terminate** (*tx_thread_terminate*) |
+| {{< figure src="../media/user-guide/tx-events/image77.png" title="Thread time-slice change icon" imgClass="img-responsive center-block" >}}    | **Thread time-slice change** (*tx_thread_time_slice_change*) |
+| {{< figure src="../media/user-guide/tx-events/image78.png" title="Thread wait abort icon" imgClass="img-responsive center-block" >}}    | **Thread wait abort** (*tx_thread_wait_abort*) |
+| {{< figure src="../media/user-guide/tx-events/image79.png" title="Time get icon" imgClass="img-responsive center-block" >}}    | **Time get** (*tx_time_get*) |
+| {{< figure src="../media/user-guide/tx-events/image80.png" title="Time set icon" imgClass="img-responsive center-block" >}}    | **Time set** (*tx_time_set*) |
+| {{< figure src="../media/user-guide/tx-events/image81.png" title="*Timer activate icon" imgClass="img-responsive center-block" >}}    | **Timer activate** (*tx_timer_activate*) |
+| {{< figure src="../media/user-guide/tx-events/image82.png" title="Timer change icon" imgClass="img-responsive center-block" >}}    | **Timer change** (*tx_timer_change*) |
+| {{< figure src="../media/user-guide/tx-events/image83.png" title="Timer create icon" imgClass="img-responsive center-block" >}}    | **Timer create** (*tx_timer_create*) |
+| {{< figure src="../media/user-guide/tx-events/image84.png" title="Timer deactivate icon" imgClass="img-responsive center-block" >}}    | **Timer deactivate** (*tx_timer_deactivate*) |
+| {{< figure src="../media/user-guide/tx-events/image85.png" title="Timer delete icon" imgClass="img-responsive center-block" >}}    | **Timer delete** (*tx_timer_delete*) |
+| {{< figure src="../media/user-guide/tx-events/image86.png" title="Timer information get icon" imgClass="img-responsive center-block" >}}    | **Timer information get** (*tx_timer_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image87.png" title="Timer performance information get icon" imgClass="img-responsive center-block" >}}    | **Timer performance information get** (*tx_timer_performance_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image88.png" title="*Timer performance system information get icon" imgClass="img-responsive center-block" >}}    | **Timer performance system information get** (*tx_timer_performance_system_info_get*) |
+| {{< figure src="../media/user-guide/tx-events/image0.png" title="User-Defined Eventicon" imgClass="img-responsive center-block" >}}    | **User-Defined Event** (See Chapter 10)    |
 
 ## Event Descriptions
 
@@ -108,7 +108,7 @@ The following is a list of ThreadX events displayed by TraceX:
 
 #### Internal thread resume
 
-**Icon** ![Internal thread resume icon](../media/user-guide/tx-events/image1.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image1.png" title="Internal thread resume icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -141,7 +141,7 @@ This event represents the internal processing in ThreadX that resumes a thread f
 
 #### Internal thread suspend
 
-**Icon** ![Internal thread suspend icon](../media/user-guide/tx-events/image2.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image2.png" title="Internal thread suspend icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -172,7 +172,7 @@ This event represents the internal processing in ThreadX that suspends a thread'
 
 #### Enter ISR 
 
-**Icon** ![Enter I S R icon](../media/user-guide/tx-events/image3.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image3.png" title="Enter I S R icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -189,7 +189,7 @@ This event represents entering an Interrupt Service Routine (ISR) in the applica
 
 #### Exit ISR
 
-**Icon** ![Exit I S R icon](../media/user-guide/tx-events/image4.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image4.png" title="Exit I S R icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -206,7 +206,7 @@ This event represents exiting an Interrupt Service Routine (ISR) in the applicat
 
 #### Internal time-slice
 
-**Icon** ![Internal time-slice icon](../media/user-guide/tx-events/image5.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image5.png" title="Internal time-slice icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -221,7 +221,7 @@ This event represents the internal processing in ThreadX that performs the time-
 
 #### Running in context
 
-**Icon** ![Running icon](../media/user-guide/tx-events/image6.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image6.png" title="Running icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -237,7 +237,7 @@ This event represents running within a thread context or idle system. It is used
 
 #### tx_block_allocate
 
-**Icon** ![Block allocate icon](../media/user-guide/tx-events/image7.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image7.png" title="Block allocate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -253,7 +253,7 @@ This event represents allocating a memory block via tx_block_allocate. If succes
 
 #### tx_block_pool_create
 
-**Icon** ![Block pool create icon](../media/user-guide/tx-events/image8.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image8.png" title="Block pool create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -269,7 +269,7 @@ This event represents creating a memory block pool via tx_block_pool_create.
 
 #### tx_block_pool_delete
 
-**Icon** ![Block pool delete icon](../media/user-guide/tx-events/image9.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image9.png" title="Block pool delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -286,7 +286,7 @@ This event represents deleting a memory block pool via tx_block_pool_delete.
 
 #### tx_block_pool_info_get
 
-**Icon** ![Block pool information get icon](../media/user-guide/tx-events/image10.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image10.png" title="Block pool information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -303,7 +303,7 @@ This event represents getting information about a memory block pool via tx_block
 
 #### tx_block_pool_performance_info_get
 
-**Icon** ![Block pool performance information get icon](../media/user-guide/tx-events/image11.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image11.png" title="Block pool performance information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -320,7 +320,7 @@ This event represents getting performance information about a memory block pool 
 
 #### tx_block_pool_performance_system_info_get
 
-**Icon** ![Block pool performance system information get icon](../media/user-guide/tx-events/image12.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image12.png" title="Block pool performance system information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -336,7 +336,7 @@ This event represents getting performance information about all memory block poo
 
 #### tx_block_pool_prioritize
 
-**Icon** ![Block pool prioritize icon](../media/user-guide/tx-events/image13.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image13.png" title="Block pool prioritize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -352,7 +352,7 @@ This event represents placing the highest priority suspended thread at the front
 
 #### tx_block_release
 
-**Icon** ![Block release icon](../media/user-guide/tx-events/image14.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image14.png" title="Block release icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -369,7 +369,7 @@ This event represents releasing a previously allocated block back to the block p
 
 #### tx_byte_allocate
 
-**Icon** ![Byte allocate icon](../media/user-guide/tx-events/image15.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image15.png" title="Byte allocate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -384,7 +384,7 @@ This event represents allocating memory via tx_byte_allocate. If successful, the
 
 #### tx_byte_pool_create
 
-**Icon** ![Byte pool create icon](../media/user-guide/tx-events/image16.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image16.png" title="Byte pool create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -400,7 +400,7 @@ This event represents creating a byte pool via tx_byte_pool_create.
 
 #### tx_byte_pool_delete
 
-**Icon** ![Byte pool delete icon](../media/user-guide/tx-events/image17.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image17.png" title="Byte pool delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -417,7 +417,7 @@ This event represents deleting a byte pool via tx_byte_pool_delete.
 
 #### tx_byte_pool_info_get
 
-**Icon** ![Byte pool information get icon](../media/user-guide/tx-events/image18.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image18.png" title="Byte pool information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -434,7 +434,7 @@ This event represents getting byte pool information via tx_byte_pool_info_get.
 
 #### tx_byte_pool_info_get
 
-**Icon** ![Byte pool performance info get icon](../media/user-guide/tx-events/image19.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image19.png" title="Byte pool performance info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -451,7 +451,7 @@ This event represents getting byte pool performance information via tx_byte_pool
 
 #### tx_byte_pool_performance_system_info_get
 
-**Icon** ![Byte pool performance system info get icon](../media/user-guide/tx-events/image20.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image20.png" title="Byte pool performance system info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -468,7 +468,7 @@ This event represents getting byte pool performance system information via tx_by
 
 #### tx_byte_pool_prioritize
 
-**Icon** ![Byte pool prioritize icon](../media/user-guide/tx-events/image21.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image21.png" title="Byte pool prioritize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -485,7 +485,7 @@ This event represents prioritizing the byte pool's suspension list via tx_byte_p
 
 #### tx_byte_release
 
-**Icon** ![Byte release icon](../media/user-guide/tx-events/image22.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image22.png" title="Byte release icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -502,7 +502,7 @@ This event represents releasing a block of memory allocated from a byte pool via
 
 #### tx_event_flags_create
 
-**Icon** ![Event flags create icon](../media/user-guide/tx-events/image23.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image23.png" title="Event flags create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -518,7 +518,7 @@ This event represents creating a new event flags group via tx_event_flags_create
 
 #### tx_event_flags_delete
 
-**Icon** ![Event flags delete icon](../media/user-guide/tx-events/image24.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image24.png" title="Event flags delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -535,7 +535,7 @@ This event represents deleting an event flags group via tx_event_flags_delete.
 
 #### tx_event_flags_get
 
-**Icon** ![Event flags gt icon](../media/user-guide/tx-events/image25.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image25.png" title="Event flags gt icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -552,7 +552,7 @@ This event represents retrieving event flags from an existing event flags group 
 
 #### tx_event_flags_info_get
 
-**Icon** ![Event flags information get icon](../media/user-guide/tx-events/image26.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image26.png" title="Event flags information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -569,7 +569,7 @@ This event represents retrieving information regarding an existing event flags g
 
 #### tx_event_flags_performance_info_get
 
-**Icon** ![Event flags performance information get icon](../media/user-guide/tx-events/image27.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image27.png" title="Event flags performance information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -585,7 +585,7 @@ This event represents retrieving performance information regarding an existing e
 
 #### tx_event_flags_performance_system_info_get
 
-**Icon** ![Event flags performance system info get icon](../media/user-guide/tx-events/image28.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image28.png" title="Event flags performance system info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -601,7 +601,7 @@ This event represents retrieving performance information regarding an existing e
 
 #### tx_event_flags_set
 
-**Icon** ![Event flags set icon](../media/user-guide/tx-events/image29.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image29.png" title="Event flags set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -618,7 +618,7 @@ This event represents setting (or clearing) event flags in an existing event fla
 
 #### tx_event_flags_set_notify
 
-**Icon** ![Event flags set notify icon](../media/user-guide/tx-events/image30.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image30.png" title="Event flags set notify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -635,7 +635,7 @@ This event represents registering a notification callback for any event flag set
 
 #### tx_interrupt_control
 
-**Icon** ![Interrupt control icon](../media/user-guide/tx-events/image31.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image31.png" title="Interrupt control icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -652,7 +652,7 @@ This event represents changing the interrupt lockout posture of the processor vi
 
 #### tx_mutex_create
 
-**Icon** ![Mutex create icon](../media/user-guide/tx-events/image32.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image32.png" title="Mutex create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -670,7 +670,7 @@ This event represents creating a mutex via tx_mutex_create.
 
 #### tx_mutex_delete
 
-**Icon** ![Mutex delete icon](../media/user-guide/tx-events/image33.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image33.png" title="Mutex delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -687,7 +687,7 @@ This event represents deleting a mutex via tx_mutex_delete.
 
 #### tx_mutex_get
 
-**Icon** ![Mutex get icon](../media/user-guide/tx-events/image34.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image34.png" title="Mutex get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -704,7 +704,7 @@ This event represents obtaining a mutex via tx_mutex_get.
 
 #### tx_mutex_info_get
 
-**Icon** ![Mutex information get icon](../media/user-guide/tx-events/image35.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image35.png" title="Mutex information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -721,7 +721,7 @@ This event represents retrieving mutex information via tx_mutex_info_get.
 
 #### tx_mutex_performance_info_get
 
-**Icon** ![Mutex performance information get icon](../media/user-guide/tx-events/image36.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image36.png" title="Mutex performance information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -738,7 +738,7 @@ This event represents retrieving mutex performance information via tx_mutex_perf
 
 #### tx_mutex_performance_system_info_get
 
-**Icon** ![Mutex performance system info get icon](../media/user-guide/tx-events/image37.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image37.png" title="Mutex performance system info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -755,7 +755,7 @@ This event represents retrieving mutex system performance information via tx_mut
 
 #### tx_mutex_prioritize
 
-**Icon** ![Mutex prioritize icon](../media/user-guide/tx-events/image38.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image38.png" title="Mutex prioritize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -772,7 +772,7 @@ This event represents prioritizing the mutex's suspension list via tx_mutex_prio
 
 #### tx_mutex_put
 
-**Icon** ![Mutex put icon](../media/user-guide/tx-events/image39.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image39.png" title="Mutex put icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -789,7 +789,7 @@ This event represents releasing a previously owned mutex via tx_mutex_put.
 
 #### tx_queue_create
 
-**Icon** ![Queue create icon](../media/user-guide/tx-events/image40.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image40.png" title="Queue create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -806,7 +806,7 @@ This event represents creating a message queue via tx_queue_create.
 
 #### tx_queue_delete
 
-**Icon** ![Queue delete icon](../media/user-guide/tx-events/image41.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image41.png" title="Queue delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -823,7 +823,7 @@ This event represents deleting a queue via tx_queue_delete.
 
 #### tx_queue_flush
 
-**Icon** ![Queue flush icon](../media/user-guide/tx-events/image42.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image42.png" title="Queue flush icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -840,7 +840,7 @@ This event represents flushing (clearing all queue contents) of a queue via tx_q
 
 #### tx_queue_front_send
 
-**Icon** ![Queue front send icon](../media/user-guide/tx-events/image43.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image43.png" title="Queue front send icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -858,7 +858,7 @@ This event represents sending a message to the front of a queue via tx_queue_fro
 
 #### tx_queue_info_get
 
-**Icon** ![Queue information get icon](../media/user-guide/tx-events/image44.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image44.png" title="Queue information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -874,7 +874,7 @@ This event represents getting information about a queue via tx_queue_info_get.
 
 #### tx_queue_performance_info_get
 
-**Icon** ![Queue performance info get icon](../media/user-guide/tx-events/image45.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image45.png" title="Queue performance info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -891,7 +891,7 @@ This event represents getting performance information about a queue via tx_queue
 
 #### tx_queue_performance_system_info_get
 
-**Icon** ![Queue performance system info get icon](../media/user-guide/tx-events/image46.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image46.png" title="Queue performance system info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -908,7 +908,7 @@ This event represents getting system performance information about all the queue
 
 #### tx_queue_prioritize
 
-**Icon** ![Queue prioritize icon](../media/user-guide/tx-events/image47.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image47.png" title="Queue prioritize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -925,7 +925,7 @@ This event represents prioritizing the queue's suspension list via tx_queue_prio
 
 ##### tx_queue_receive
 
-**Icon** ![Queue receive icon](../media/user-guide/tx-events/image48.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image48.png" title="Queue receive icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -941,7 +941,7 @@ This event represents receiving a message from a queue via tx_queue_receive.
 
 #### tx_queue_send
 
-**Icon** ![Queue send icon](../media/user-guide/tx-events/image49.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image49.png" title="Queue send icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -958,7 +958,7 @@ This event represents sending a message to a queue via tx_queue_send.
 
 #### tx_queue_send_notify
 
-**Icon** ![Queue send notify icon](../media/user-guide/tx-events/image50.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image50.png" title="Queue send notify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -975,7 +975,7 @@ This event represents sending a message to a queue via tx_queue_send.
 
 #### tx_semaphore_ceiling_put
 
-**Icon** ![Semaphore ceiling put icon](../media/user-guide/tx-events/image51.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image51.png" title="Semaphore ceiling put icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -992,7 +992,7 @@ This event represents putting to a semaphore via tx_semaphore_ceiling_put. This 
 
 ##### tx_semaphore_create
 
-**Icon** ![Semaphore create icon](../media/user-guide/tx-events/image52.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image52.png" title="Semaphore create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1009,7 +1009,7 @@ This event represents creating a semaphore via tx_semaphore_create.
 
 #### tx_semaphore_delete
 
-**Icon** ![Semaphore delete icon](../media/user-guide/tx-events/image53.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image53.png" title="Semaphore delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1026,7 +1026,7 @@ This event represents deleting a semaphore via tx_semaphore_delete.
 
 #### tx_semaphore_get
 
-**Icon** ![Semaphore get icon](../media/user-guide/tx-events/image54.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image54.png" title="Semaphore get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1043,7 +1043,7 @@ This event represents obtaining a semaphore via tx_semaphore_get.
 
 #### tx_semaphore_info_get
 
-**Icon** ![Semaphore information get icon](../media/user-guide/tx-events/image55.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image55.png" title="Semaphore information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1060,7 +1060,7 @@ This event represents obtaining information about a semaphore via tx_semaphore_i
 
 #### tx_semaphore_performance_info_get
 
-**Icon** ![Semaphore performance info get icon](../media/user-guide/tx-events/image56.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image56.png" title="Semaphore performance info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1077,7 +1077,7 @@ This event represents obtaining performance information about a semaphore via tx
 
 #### tx_semaphore_performance_system_info_get
 
-**Icon** ![Semaphore performance system info icon](../media/user-guide/tx-events/image57.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image57.png" title="Semaphore performance system info icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1094,7 +1094,7 @@ This event represents obtaining performance information about all semaphores in 
 
 #### tx_semaphore_prioritize
 
-**Icon** ![Semaphore prioritize icon](../media/user-guide/tx-events/image58.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image58.png" title="Semaphore prioritize icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1111,7 +1111,7 @@ This event represents prioritizing the semaphore's suspension list via tx_semaph
 
 #### tx_semaphore_put
 
-**Icon** ![Semaphore put icon](../media/user-guide/tx-events/image59.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image59.png" title="Semaphore put icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1127,7 +1127,7 @@ This event represents releasing a semaphore instance via tx_semaphore_put.
 
 #### tx_semaphore_put_notify
 
-**Icon** ![Semaphore put notify icon](../media/user-guide/tx-events/image60.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image60.png" title="Semaphore put notify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1144,7 +1144,7 @@ This event represents registering a callback via tx_semaphore_put_notify that is
 
 #### tx_thread_create
 
-**Icon** ![Thread create icon](../media/user-guide/tx-events/image61.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image61.png" title="Thread create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1161,7 +1161,7 @@ This event represents creating a thread via tx_thread_create.
 
 #### tx_thread_delete
 
-**Icon** ![Thread delete icon](../media/user-guide/tx-events/image62.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image62.png" title="Thread delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1178,7 +1178,7 @@ This event represents deleting a thread via tx_thread_delete.
 
 #### tx_thread_entry_exit_notify
 
-**Icon** ![Thread entry/exit notify icon](../media/user-guide/tx-events/image63.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image63.png" title="Thread entry/exit notify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1195,7 +1195,7 @@ This event represents registering a callback via tx_thread_entry_exit_notify tha
 
 ##### tx_thread_identify
 
-**Icon** ![Thread identify icon](../media/user-guide/tx-events/image64.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image64.png" title="Thread identify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1212,7 +1212,7 @@ This event represents getting the current thread pointer via tx_thread_identify.
 
 #### tx_thread_info_get
 
-**Icon** ![Thread information get icon](../media/user-guide/tx-events/image65.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image65.png" title="Thread information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1229,7 +1229,7 @@ This event represents getting information about the specified thread via tx_thre
 
 ##### tx_thread_performance_info_get
 
-**Icon** ![Thread performance information get icon](../media/user-guide/tx-events/image66.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image66.png" title="Thread performance information get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1246,7 +1246,7 @@ This event represents getting performance information about the specified thread
 
 #### tx_thread_performance_system_info_get
 
-**Icon** ![Thread performance system info get icon](../media/user-guide/tx-events/image67.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image67.png" title="Thread performance system info get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1263,7 +1263,7 @@ This event represents getting performance information about all threads via tx_t
 
 #### tx_thread_preemption_change
 
-**Icon** ![Thread preemption change icon](../media/user-guide/tx-events/image68.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image68.png" title="Thread preemption change icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1280,7 +1280,7 @@ This event represents changing a thread's preemption-threshold via tx_thread_pre
 
 #### tx_thread_priority_change
 
-**Icon** ![Thread priority change icon](../media/user-guide/tx-events/image69.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image69.png" title="Thread priority change icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1296,7 +1296,7 @@ This event represents changing a thread's priority via tx_thread_priority_change
 
 #### tx_thread_relinquish
 
-**Icon** ![Thread relinquish icon](../media/user-guide/tx-events/image70.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image70.png" title="Thread relinquish icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1313,7 +1313,7 @@ This event represents relinquishing the processor from a thread via tx_thread_re
 
 #### tx_thread_reset
 
-**Icon** ![Thread reset icon](../media/user-guide/tx-events/image71.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image71.png" title="Thread reset icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1330,7 +1330,7 @@ This event represents resetting a completed or terminated thread via tx_thread_r
 
 ##### tx_thread_resume
 
-**Icon** ![Thread resume icon](../media/user-guide/tx-events/image72.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image72.png" title="Thread resume icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1347,7 +1347,7 @@ This event represents resuming a suspended thread via tx_thread_resume.
 
 #### tx_thread_sleep
 
-**Icon** ![Thread sleep icon](../media/user-guide/tx-events/image73.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image73.png" title="Thread sleep icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1364,7 +1364,7 @@ This event represents suspending the current thread for a specified number of ti
 
 #### tx_thread_stack_error_notify_event
 
-**Icon** ![Thread stack error notify icon](../media/user-guide/tx-events/image74.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image74.png" title="Thread stack error notify icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1381,7 +1381,7 @@ This event represents registering a thread stack error notification routine via 
 
 #### tx_thread_suspend
 
-**Icon** ![Thread suspend icon](../media/user-guide/tx-events/image75.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image75.png" title="Thread suspend icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1398,7 +1398,7 @@ This event represents suspending a thread via tx_thread_suspend.
 
 #### tx_thread_terminate
 
-**Icon** ![Thread terminate icon](../media/user-guide/tx-events/image76.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image76.png" title="Thread terminate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1415,7 +1415,7 @@ This event represents terminating a thread via tx_thread_terminate.
 
 #### tx_thread_time_slice_change
 
-**Icon** ![Thread time-slice change icon](../media/user-guide/tx-events/image77.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image77.png" title="Thread time-slice change icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1432,7 +1432,7 @@ This event represents changing a thread's time-slice via tx_thread_time_slice_ch
 
 #### tx_thread_wait_abort
 
-**Icon** ![Thread wait abort icon](../media/user-guide/tx-events/image78.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image78.png" title="Thread wait abort icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1449,7 +1449,7 @@ This event represents aborting a thread's suspension via tx_thread_wait_abort.
 
 #### tx_time_get
 
-**Icon** ![Time get icon](../media/user-guide/tx-events/image79.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image79.png" title="Time get icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1466,7 +1466,7 @@ This event represents getting the current number of timer ticks via tx_time_get.
 
 #### tx_time_set
 
-**Icon** ![Time set icon](../media/user-guide/tx-events/image80.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image80.png" title="Time set icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1483,7 +1483,7 @@ This event represents setting the current number of timer ticks via tx_time_set.
 
 #### tx_timer_activate
 
-**Icon** ![Timer activate icon](../media/user-guide/tx-events/image81.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image81.png" title="Timer activate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1500,7 +1500,7 @@ This event represents activating the specified timer via tx_timer_activate.
 
 #### tx_timer_change
 
-**Icon** ![Timer change icon](../media/user-guide/tx-events/image82.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image82.png" title="Timer change icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1517,7 +1517,7 @@ This event represents changing the specified timer via tx_timer_change.
 
 #### tx_timer_create
 
-**Icon** ![Timer create icon](../media/user-guide/tx-events/image83.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image83.png" title="Timer create icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1534,7 +1534,7 @@ This event represents creating a timer via tx_timer_create.
 
 #### tx_timer_deactivate
 
-**Icon** ![Timer deactivate icon](../media/user-guide/tx-events/image84.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image84.png" title="Timer deactivate icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1551,7 +1551,7 @@ This event represents deactivating a timer via tx_timer_deactivate.
 
 #### tx_timer_delete
 
-**Icon** ![Timer delete icon](../media/user-guide/tx-events/image85.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image85.png" title="Timer delete icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1568,7 +1568,7 @@ This event represents deleting a timer via tx_timer_delete.
 
 #### tx_timer_info_get
 
-**Icon** ![Timer get information icon](../media/user-guide/tx-events/image86.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image86.png" title="Timer get information icon" imgClass="img-responsive center-block" >}}
 
 **Description**
 
@@ -1585,7 +1585,7 @@ This event represents getting timer information via tx_timer_info_get.
 
 #### tx_timer_performance_info_get
 
-**Icon** ![Timer performance information get icon](../media/user-guide/tx-events/image87.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image87.png" title="Timer performance information get icon" imgClass="img-responsive center-block" >}}
 
 **Description** 
 
@@ -1602,7 +1602,7 @@ This event represents getting timer performance information via tx_timer_perform
 
 #### tx_timer_performance_system_info_get
 
-**Icon** ![Timer system performance info get icon](../media/user-guide/tx-events/image88.png)
+**Icon** {{< figure src="../media/user-guide/tx-events/image88.png" title="Timer system performance info get icon" imgClass="img-responsive center-block" >}}
 
 
 **Description** 

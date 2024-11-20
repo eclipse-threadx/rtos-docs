@@ -96,27 +96,27 @@ GUIX and GUIX Studio provide all the features necessary to create uniquely elega
 
 ### Home Automation
 
-![Screenshot of the GUIX home automation.](media/overview/guix_home_automation.png)
+{{< figure src="../media/overview/guix_home_automation.png" title="Screenshot of the GUIX home automation." imgClass="img-responsive center-block" >}}
 
 ### Medical
 
-![Screenshot of the GUIX medical device.](media/overview/demo_guix_medical.png)
+{{< figure src="../media/overview/demo_guix_medical.png" title="Screenshot of the GUIX medical device." imgClass="img-responsive center-block" >}}
 
 ### Consumer
 
-![Screenshot of the GUIX Consumer smart watch.](media/overview/demo_guix_smart_watch.png)
+{{< figure src="../media/overview/demo_guix_smart_watch.png" title="Screenshot of the GUIX Consumer smart watch." imgClass="img-responsive center-block" >}}
 
 ### White Goods
 
-![Screenshot of the GUIX white goods example.](media/overview/demo_guix_white_goods.png)
+{{< figure src="../media/overview/demo_guix_white_goods.png" title="Screenshot of the GUIX white goods example." imgClass="img-responsive center-block" >}}
 
 ### Automotive
 
-![Screenshot of the GUIX automotive.](media/overview/demo_guix_infotainment.png)
+{{< figure src="../media/overview/demo_guix_infotainment.png" title="Screenshot of the GUIX automotive." imgClass="img-responsive center-block" >}}
 
 ### Industrial
 
-![Screenshot of the GUIX industrial control.](media/overview/demo_guix_industrial.png)
+{{< figure src="../media/overview/demo_guix_industrial.png" title="Screenshot of the GUIX industrial control." imgClass="img-responsive center-block" >}}
 
 Each GUIX reference has a corresponding GUIX Studio project that defines all the graphical elements of the reference design. Changing a reference design is easy. Simply open the corresponding GUIX project, make the desired changes, save the project, and then select *Project*.
 
@@ -229,7 +229,7 @@ GUIX fully supports touchscreen (including gesture support), pen, and virtual ke
 
 GUIX Studio provides a complete WYSIWYG screen design environment which allows the user to drag-and-drop graphical elements used to build the GUI screens. GUIX Studio automatically generates C code compatible with the GUIX library, ready to be compiled and run on the target. Developers can produce pre-rendered fonts for use within an application using the integrated GUIX Studio font generation tool. Fonts can be generated in monochrome or anti-aliased formats, and are optimized to save space on the target. Fonts can include any set of characters, including Unicode characters for multi-lingual applications.
 
-![Diagram of SGS-TUV Saar certification logo.](media/overview/studio_screen_shot.png)
+{{< figure src="../media/overview/studio_screen_shot.png" title="Diagram of SGS-TUV Saar certification logo." imgClass="img-responsive center-block" >}}
 
 GUIX Studio facilitates the import of graphics from PNG or JPG files with conversion to compressed GUIX Pixelmaps for use on the target system. Many of the GUIX widget types are designed to incorporate user graphics for a custom look and feel. In addition, GUIX Studio allows customization of the default colors and drawing styles used by the GUIX widgets, allowing developers to tune the appearance of GUIX very easily. Generation and maintenance of application strings is another built-in facility of GUIX Studio. This enables developers to design an application using one language for developing, and quickly and easily add support for additional languages after the product is released. A complete GUIX application can be executed on a PC desktop within the GUIX Studio environment, allowing a quick and easy generation and demonstration of GUI concepts, testing of screen flows, and observation of screen transitions and animations. When completed, a design can be exported as target-ready C data structures, ready to be compiled and linked with the GUIX and ThreadX libraries.
 

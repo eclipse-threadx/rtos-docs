@@ -7,7 +7,7 @@ USBX contains a DPUMP class for the host and device side. This class is not a st
 
 USB DPUMP flow chart:
 
-![USB DPUMP flow chart](../media/usbx-host-stack-supplemental/usb-dpump-flow-chart.png)
+{{< figure src="../media/usbx-host-stack-supplemental/usb-dpump-flow-chart.png" title="USB DPUMP flow chart" imgClass="img-responsive center-block" >}}
 
 ## USBX DPUMP Host Class
 

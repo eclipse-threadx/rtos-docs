@@ -28,7 +28,7 @@ A complete discussion of TLS is included in Chapter 3 of the NetX Duo Secure TLS
 
 Any valid DTLS record must have a DTLS header, as shown in Figure 1. The header is the same as TLS with the addition of two new fields: the 16-bit *epoch* and the 48-bit *sequence number*, described below.
 
-![Diagram of a DTLS record header.](media/image2.png)
+{{< figure src="../media/image2.png" title="Diagram of a DTLS record header." imgClass="img-responsive center-block" >}}
 
 **Figure 1 - DTLS record header**
 
@@ -46,7 +46,7 @@ The fields of the TLS record header are defined as follows:
 
 Any valid DTLS handshake record must have a DTLS Handshake header, as shown in Figure 2.
 
-![Diagram of a DTLS Handshake Record header.](media/image3.png)
+{{< figure src="../media/image3.png" title="Diagram of a DTLS Handshake Record header." imgClass="img-responsive center-block" >}}
 
 **Figure 2 - DTLS Handshake record header**
 
@@ -83,7 +83,7 @@ Once the Finished messages are received and the handshake hashes are verified, t
 
 Finally, a TLS/DTLS session can only be successfully ended if either the Client or Server chooses to do so. A truncated session is considered a security breach (since an attacker may be attempting to prevent all the data being sent from being received) so a special notification is sent when either side wants to end the session, called a CloseNotify alert. Both the client and server must send and process a CloseNotify alert for a successful session shutdown.
 
-![Diagram of a typical DTLS handshake session.](media/image4.png)
+{{< figure src="../media/image4.png" title="Diagram of a typical DTLS handshake session." imgClass="img-responsive center-block" >}}
 
 **Figure 3- Typical DTLS handshake**
 
@@ -191,7 +191,7 @@ The TLS protocol (and therefore DTLS as well) fits into the networking stack bet
 
 TLS requires a transport layer protocol that supports in-order and lossless delivery, such as TCP. Due to this requirement, TLS cannot run on top of UDP since UDP does not guarantee delivery of datagrams. *DTLS* is a modified version of TLS, is used for applications that need the security of TLS over a datagram protocol like UDP.
 
-![Diagram of a TLS protocol layering.](media/image6.png)
+{{< figure src="../media/image6.png" title="Diagram of a TLS protocol layering." imgClass="img-responsive center-block" >}}
 
 **Figure 4- TCP/IP, UDP and TLS/DTLS protocol layers**
 

@@ -250,7 +250,7 @@ Eclipse ThreadX provides OEMs with components to secure communication and to cre
 
 NetX Duo conforms to RFC standards and offers complete interoperability with devices for most vendors.
 
-![IPv6 Ready Logo](../media/overview-netx-duo/ipv6-ready-logo.png)
+{{< figure src="../media/overview-netx-duo/ipv6-ready-logo.png" title="IPv6 Ready Logo" imgClass="img-responsive center-block" >}}
 
 NetX Duo is one of the only embedded TCP/IP stacks to achieve the rigorous IPv6-Ready Logo certification, evidence that it has passed conformance and interoperability tests, administered and validated by the IPv6 Forum. NetX Duo also utilizes the industry standard IxANVL (Automated Network Validation Library) for the NetX Duo core TCP/IP protocol implementation.
 
@@ -318,7 +318,7 @@ NetX Duo includes [Azure IoT Middleware for Eclipse ThreadX](https://github.com/
 - Resource limitation aware.
 - Protocol support.
 
-![NetX Duo Related Services](../media/overview-netx-duo/related-services.png)
+{{< figure src="../media/overview-netx-duo/related-services.png" title="NetX Duo Related Services" imgClass="img-responsive center-block" >}}
 
 ### Microsoft Defender for IoT
 

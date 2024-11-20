@@ -14,7 +14,7 @@ NetX Duo was developed to support IPv6 network based applications and network pr
 
 Message content is basically a message header followed by one or more (usually more) option blocks. Below is the basic structure where each block represents one byte:
 
-![Diagram showing DHCPv6 message and option block structure.](media/image2.jpg)
+{{< figure src="../media/image2.jpg" title="Diagram showing DHCPv6 message and option block structure." imgClass="img-responsive center-block" >}}
 
 **Figure 1. DHCPv6 message and option block structure**
 

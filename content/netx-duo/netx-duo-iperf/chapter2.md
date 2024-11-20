@@ -35,10 +35,10 @@ Running the demonstration is easy; simply load, build and execute the NetX Duo I
 
 Browse to the target board via a browser on the Iperf host platform. Assuming the target board IP address of **192.2.2.149**, the following is an example of the NetX Duo Iperf Demonstration initial web page.
 
-![An example of the Iperf initial web page](media/picture1.jpg)
+{{< figure src="../media/picture1.jpg" title="An example of the Iperf initial web page" imgClass="img-responsive center-block" >}}
 
 ## Running Jperf
 
 Running Jperf is easy, simply double-click on the Windows batch file ***jperf.bat***. This launches the Jperf IDE, as shown below. Once the Jperf IDE is displayed, the **Server Address** field must be set to the IP address of the NetX Duo Iperf Demonstration target board. In this example, the NetX Duo target board IP address is **192.2.2.149**. Also worth noting are the **UDP Bandwidth** and **UDP Packet Size** fields. These need to be set up for optimal UDP receive performance, as shown below.
 
-![Optimizing the UDP performance.](media/picture2.jpg)
+{{< figure src="../media/picture2.jpg" title="Optimizing the UDP performance." imgClass="img-responsive center-block" >}}
