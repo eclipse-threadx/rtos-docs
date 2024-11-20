@@ -5,4 +5,4 @@ description: View the ASCII Character Codes in hex.
 
 ## ASCII Character Codes in HEX
 
-![ASCII Character Codes in HEX](../media/user-guide/ascii-character-codes-hex.png)
+{{< figure src="../media/user-guide/ascii-character-codes-hex.png" title="ASCII Character Codes in HEX" imgClass="img-responsive center-block" >}}

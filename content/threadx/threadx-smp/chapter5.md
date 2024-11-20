@@ -276,7 +276,7 @@ Another advantage to the buffered I/O approach is that the input and output list
 ### Buffered Driver Responsibilities 
 Buffered device drivers are only concerned with managing linked lists of I/O buffers. An input buffer list is maintained for packets that are received before the application software is ready. Conversely, an output buffer list is maintained for packets being sent faster than the hardware device can handle them. Figure 15 on page 314 shows simple input and output linked lists of data packets and the buffer(s) that make up each packet.
 
-![Buffered Driver Responsibilities](media/image11.png)
+{{< figure src="../media/image11.png" title="Buffered Driver Responsibilities" imgClass="img-responsive center-block" >}}
 
 **FIGURE 15. Input-Output Lists**
 

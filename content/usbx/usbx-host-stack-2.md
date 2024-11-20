@@ -95,7 +95,7 @@ The list below details each configuration option.
 
 The USBX files are provided in several directories.
 
-![Source Code Tree](media/usbx-host-stack/source-code-tree.png)
+{{< figure src="../media/usbx-host-stack/source-code-tree.png" title="Source Code Tree" imgClass="img-responsive center-block" >}}
 
 In order to make the files recognizable by their names, the following convention has been adopted:
 

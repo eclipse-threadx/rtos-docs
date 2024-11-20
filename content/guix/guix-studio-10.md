@@ -9,13 +9,13 @@ This chapter describes how to create an example project in GUIX Studio and execu
 
 The first step is creating a new project and configuring the displays and languages that the project will support. When you first start GUIX Studio, you will see the ***Recent Projects*** screen:
 
-![Screenshot of the GUIX Studio Recent Projects dialog.](../media/guix-studio/recent_projects.png)
+{{< figure src="../media/guix-studio/recent_projects.png" title="Screenshot of the GUIX Studio Recent Projects dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.1**
 
 Click on the ***Create New Project***… button to begin a new project. You will be presented with the ***New GUIX Project*** dialog, shown here:
 
-![Screenshot of the GUIX Studio Create New Project dialog.](../media/guix-studio/create_new_project.png)
+{{< figure src="../media/guix-studio/create_new_project.png" title="Screenshot of the GUIX Studio Create New Project dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.2**
 
@@ -23,7 +23,7 @@ Type the name "***new_example***" as the project name. Project names should use 
 
 The next screen shown is the Project Configuration screen, shown here:
 
-![Screenshot of the GUIX Studio Configure Project dialog.](../media/guix-studio/config_new_project.png)
+{{< figure src="../media/guix-studio/config_new_project.png" title="Screenshot of the GUIX Studio Configure Project dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.3**
 
@@ -33,7 +33,7 @@ For this example, leave the ***Number of Displays*** set to "1", type the name "
 
 You should now see your project open with the Studio IDE, as shown in figure 10.4:
 
-![Screenshot of a project open with the Studio IDE.](../media/guix-studio/initial_screen.png)
+{{< figure src="../media/guix-studio/initial_screen.png" title="Screenshot of a project open with the Studio IDE." imgClass="img-responsive center-block" >}}
 
 **Figure 10.4**
 
@@ -41,17 +41,17 @@ When you create a new project, GUIX Studio automatically creates a default windo
 
 If this window is not selected, click on the window so that the dashed selection box is drawn around the window. Now in the ***Properties View***, change the ***Widget Name***, ***Widget Id***, ***Left***, ***Top***, ***Width***, ***Height***, and ***Border*** to match those settings shown below. As you make these changes, you should see your changes immediately taking effect within the Target View.
 
-![Screenshot of the Properties View dialog.](../media/guix-studio/initial_window_properties.png)
+{{< figure src="../media/guix-studio/initial_window_properties.png" title="Screenshot of the Properties View dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.5**
 
 Next we will add a pixelmap resource to be used within a ***GX_ICON*** widget. Several icons are provided with your GUIX Studio distribution that will work fine for this example. Expand your ***Pixelmaps*** Resource View and click the ***Add New Pixelmap*** button:
 
-![Screenshot of the Add New Pixelmap button.](../media/guix-studio/image74.jpg)
+{{< figure src="../media/guix-studio/image74.jpg" title="Screenshot of the Add New Pixelmap button." imgClass="img-responsive center-block" >}}
 
 Browse to your GUIX Studio installation folder, and within the ***./graphics/icons*** folder select the file named ***i_history_lg.png***. Click ***Open*** to add this resource to your project. Your ***Pixelmaps*** Resource View should now show a preview of the newly added icon image:
 
-![Screenshot of the Pixelmaps Resource View.](../media/guix-studio/example_add_pixelmap.png)
+{{< figure src="../media/guix-studio/example_add_pixelmap.png" title="Screenshot of the Pixelmaps Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 10.6**
 
@@ -59,13 +59,13 @@ We will use this new image resource later as part of our UI design.
 
 Similar to adding a pixelmap resource, we will add a new font resource to our toolbox so that we can use this font later in our design. Expand the ***Fonts*** Resource View and click on the ***Add New Font*** button. This action will invoke the ***Add/Edit*** font dialog. Next, browse to the supplied GUIX fonts in the GUIX Studio installation folder, ***.\\fonts\\verasans***, and select the TrueType font file named ***VeraIt.ttf***. Type font the font name "***MEDIUM_ITALIC***" in the font name field, and type "***30***" in the height field. Your dialog should now look like this:
 
-![Screenshot of the Edit Font dialog.](../media/guix-studio/example_add_font.png)
+{{< figure src="../media/guix-studio/example_add_font.png" title="Screenshot of the Edit Font dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.7**
 
 Click ***OK*** to add this font to your project. You should now see the font in your Resource View:
 
-![Screenshot of the Fonts in the Resource View.](../media/guix-studio/example_font_added.png)
+{{< figure src="../media/guix-studio/example_font_added.png" title="Screenshot of the Fonts in the Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 10.8**
 
@@ -73,31 +73,31 @@ We will use this new font later in our UI design.
 
 Now that we have some new resources available, we need to add some child widgets to our screen that can utilize these resources. Select the previously created window named "***hello_world***" by right-clicking on the window in the Target View. In the pop-up menu that is now displayed, select the menu command ***Insert, Text, Prompt*** to insert a new ***GX_PROMPT*** widget and attach the widget to the background window. Your window should now look like this:
 
-![Screenshot of a pop-up menu with the Prompt selection](../media/guix-studio/image78.jpg)
+{{< figure src="../media/guix-studio/image78.jpg" title="Screenshot of a pop-up menu with the Prompt selection" imgClass="img-responsive center-block" >}}
 
 **Figure 10.9**
 
 Click on the font named "***MEDIUM_ITALIC***" in the ***Fonts*** Resource View, and drag and drop the font on the prompt widget. Next, edit the prompt properties as shown in figure 10.10 to resize the prompt, set the prompt transparency, and change the prompt text and style:
 
-![Screenshot of the Properties View for the prompt.](../media/guix-studio/image79.jpg)
+{{< figure src="../media/guix-studio/image79.jpg" title="Screenshot of the Properties View for the prompt." imgClass="img-responsive center-block" >}}
 
 **Figure 10.10**
 
 You may need to scroll vertically in the Properties View to see each of these settings depending on your screen resolution. After making these changes, your Target View should now look like this:
 
-![Screenshot of a pop-up menu with the Hello World selection.](../media/guix-studio/image80.jpg)
+{{< figure src="../media/guix-studio/image80.jpg" title="Screenshot of a pop-up menu with the Hello World selection." imgClass="img-responsive center-block" >}}
 
 **Figure 10.11**
 
 Next we will place an Icon Button style widget on the screen. Select the background window by clicking on it, and use either the top-level menu or the right-click pop-up menu to select ***Insert, Button, Icon Button*** to add a new ***GX_ICON_BUTTON*** to the window. Click on the Icon named ***I_HISTORY_LG*** that we added earlier and drag it to the icon button. Using the properties view, adjust the icon position and size as show below:
 
-![Screenshot of the Properties View for the icon button style widget.](../media/guix-studio/image81.jpg)
+{{< figure src="../media/guix-studio/image81.jpg" title="Screenshot of the Properties View for the icon button style widget." imgClass="img-responsive center-block" >}}
 
 **Figure 10.12**
 
 Your screen should now look like this:
 
-![Screenshot of a pop-up menu with the Hello World and clipboard icon.](../media/guix-studio/image82.jpg)
+{{< figure src="../media/guix-studio/image82.jpg" title="Screenshot of a pop-up menu with the Hello World and clipboard icon." imgClass="img-responsive center-block" >}}
 
 **Figure 10.13**
 
@@ -107,7 +107,7 @@ We will call this complete for the simple example screen design. Your actual app
 
 The next step is to generate the resource file and specification file that define the embedded GUIX run-time UI. To generate your output files you will need right-click on the ***main_display*** node in the Project View, and select the ***Generate Resource Files*** command. You will observe an information window that indicates your resource files have been generated, as shown in figure 10.14:
 
-![Screenshot of a notification dialog.](../media/guix-studio/image83.jpg)
+{{< figure src="../media/guix-studio/image83.jpg" title="Screenshot of a notification dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10.14**
 

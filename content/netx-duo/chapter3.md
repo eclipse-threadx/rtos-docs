@@ -128,7 +128,7 @@ Duo: UDP and TCP. UDP services provide best-effort sending and receiving of data
 This layering is reflected in the actual network data packets. Each layer in TCP/IP contains a block of information called a header. This technique of surrounding data (and possibly protocol information) with
 a header is typically called data encapsulation. Figure 1 shows an example of NetX Duo layering and Figure 2 shows the resulting data encapsulation for UDP data being sent.
 
-![Protocol Layering](../media/user-guide/image12.jpg)
+{{< figure src="../media/user-guide/image12.jpg" title="Protocol Layering" imgClass="img-responsive center-block" >}}
 
 **FIGURE 1. Protocol Layering**
 
@@ -139,7 +139,7 @@ fixed-size network packets.
 
 Because NetX Duo packet pools consist of fixed-size memory blocks, there are never any internal fragmentation problems. Of course, fragmentation causes behavior that is inherently nondeterministic. In addition, the time required to allocate and free a NetX Duo packet amounts to simple linked-list manipulation. Furthermore, packet allocation and deallocation is done at the head of the available list. This provides the fastest possible linked list processing.
 
-![UDP Data Encapsulation](../media/user-guide/image13.png)
+{{< figure src="../media/user-guide/image13.png" title="UDP Data Encapsulation" imgClass="img-responsive center-block" >}}
 
 **FIGURE 2. UDP Data Encapsulation**
 
@@ -182,7 +182,7 @@ requirement on the payload area. To make the starting address of the payload are
 
 > **Warning:** *It is important for the network driver to use the **nx_packet_transmit_release** function when transmission of a packet is complete. This function checks to make sure the packet is not part of a TCP output queue before it is actually placed back in the available pool.*
 
-![Packet Header and Packet Pool Layout](../media/user-guide/image14.jpg)
+{{< figure src="../media/user-guide/image14.jpg" title="Packet Header and Packet Pool Layout" imgClass="img-responsive center-block" >}}
 
 **FIGURE 3. Packet Header and Packet Pool Layout**
 
@@ -281,7 +281,7 @@ Each host on the Internet has a unique 32-bit identifier called an IP address. T
 |D |224.0.0.0 to 239.255.255.255|
 |E |240.0.0.0 to 247.255.255.255|
 
-![Diagram of the IPv4 Address Structure.](../media/user-guide/ipv4-address-structure.PNG)
+{{< figure src="../media/user-guide/ipv4-address-structure.PNG" title="Diagram of the IPv4 Address Structure." imgClass="img-responsive center-block" >}}
 
 **FIGURE 4. IPv4 Address Structure**
 
@@ -302,7 +302,7 @@ route the packet to its destination. Note that the default gateway must be direc
 For any IPv4 packet to be sent on the Internet, it must have an IPv4 header. When higher-level protocols (UDP, TCP, ICMP, or IGMP) call the IP component to send a packet, the IPv4 transmit 
 module places an IPv4 header in front of the data. Conversely, when IP packets are received from the network, the IP component removes the IPv4 header from the packet before delivery to the higher-level protocols. Figure 5 shows the format of the IP header.
 
-![IPv4 Header Format](../media/user-guide/ipv4-header-format.png)
+{{< figure src="../media/user-guide/ipv4-header-format.png" title="IPv4 Header Format" imgClass="img-responsive center-block" >}}
 
 **FIGURE 5. IPv4 Header Format**
 
@@ -502,7 +502,7 @@ The formats of Ethernet ARP requests and responses are shown in Figure 6 and are
 | ***Protocol Type*** | This 2-byte field contains the protocol type, which is 0x0800 for IP addresses. |
 | ***Hardware Size*** | This 1-byte field contains the hardware address size, which is 6 for Ethernet addresses. |
 
-![Diagram of the  ARP Packet Format.](../media/user-guide/arp-packet-format.PNG)
+{{< figure src="../media/user-guide/arp-packet-format.PNG" title="Diagram of the  ARP Packet Format." imgClass="img-responsive center-block" >}}
 
 **FIGURE 6. ARP Packet Format**
 
@@ -606,7 +606,7 @@ Before ICMPv4 messages can be processed by NetX Duo, the application must call t
 
 An echo request is one type of ICMPv4 message that is typically used to check for the existence of a specific node on the network, as identified by its host IP address. The popular ping command is implemented using ICMP echo request/echo reply messages. If the specific host is present, its network stack processes the ping request and responses with a ping response. Figure 7 details the ICMPv4 ping message format.
 
-![ICMPv4 Ping Message](../media/user-guide/icmpv4-ping-message.png)  
+{{< figure src="../media/user-guide/icmpv4-ping-message.png" title="ICMPv4 Ping Message" imgClass="img-responsive center-block" >}}  
 
 **FIGURE 7. ICMPv4 Ping Message**
 
@@ -663,7 +663,7 @@ When the application joins a multicast group, an IGMP report message is sent via
 
 In the figure above (Figure 8), the IGMP header contains a version/type field, maximum response
 
-![Diagram of a IGMP report message.](../media/user-guide/image17.jpg)
+{{< figure src="../media/user-guide/image17.jpg" title="Diagram of a IGMP report message." imgClass="img-responsive center-block" >}}
 
 **FIGURE 8. IGMP Report Message**
 
@@ -835,7 +835,7 @@ The IPv6 header has been modified from the IPv4 header. When allocating a packet
 
 Figure 9 shows the format of the IPv6 header and the table lists the header components.
 
-![Diagram of the IPv6 header format.](../media/user-guide/image18.png)
+{{< figure src="../media/user-guide/image18.png" title="Diagram of the IPv6 header format." imgClass="img-responsive center-block" >}}
 
 **FIGURE 9. IPv6 Header Format**
 
@@ -989,7 +989,7 @@ Before ICMPv6 messages can be processed by NetX Duo, the application must call t
 ### ICMPv6 Messages     
 The ICMPv6 header structure is similar to the ICMPv4 header structure. As shown below, the basic ICMPv6 header contains the three fields, type, code, and checksum, plus variable length of ICMPv6 option data. 
 
-![Diagram of a basic ICMPv6 header.](../media/user-guide/image19.png)
+{{< figure src="../media/user-guide/image19.png" title="Diagram of a basic ICMPv6 header." imgClass="img-responsive center-block" >}}
 
 **FIGURE 10. Basic ICMPv6 Header**
 
@@ -1012,7 +1012,7 @@ The ICMPv6 header structure is similar to the ICMPv4 header structure. As shown 
 
 An example Neighbor Solicitation header is shown below.
 
-![Diagram of an example Neighbor Solicitation header.](../media/user-guide/image20.jpg)
+{{< figure src="../media/user-guide/image20.jpg" title="Diagram of an example Neighbor Solicitation header." imgClass="img-responsive center-block" >}}
 
 **FIGURE 11. ICMPv6 Header for a Neighbor Solicitation Message**
 
@@ -1078,7 +1078,7 @@ UDP places a simple packet header in front of the application's data on transmis
 similar UDP header from the packet on reception before delivering a received UDP packet to the application. UDP utilizes the IP protocol for sending and receiving packets, which means there is an IP header in front of the UDP header when the packet is on the network. Figure 12 shows the format of the
 UDP header.
 
-![Diagram of the UDP header format.](../media/user-guide/image21.png)
+{{< figure src="../media/user-guide/image21.png" title="Diagram of the UDP header format." imgClass="img-responsive center-block" >}}
 
 **FIGURE 12. UDP Header**
 
@@ -1176,7 +1176,7 @@ Except where noted, there are no changes in TCP protocol API services between Ne
 ### TCP Header   
 On transmission, TCP header is placed in front of the data from the user. On reception, TCP header is removed from the incoming packet, leaving only the user data available to the application. TCP utilizes the IP protocol to send and receive packets, which means there is an IP header in front of the TCP header when the packet is on the network. Figure 13 shows the format of the TCP header.
 
-![Diagram of the TCP header format.](../media/user-guide/image22.png)
+{{< figure src="../media/user-guide/image22.png" title="Diagram of the TCP header format." imgClass="img-responsive center-block" >}}
 
 **FIGURE 13. TCP Header**
 
@@ -1232,7 +1232,7 @@ As mentioned previously, the client side of the TCP connection initiates a conne
 
 After the client socket is bound, the ***nxd_tcp_client_socket_connect*** service is used to establish a connection with a TCP server. Note the socket must be in a CLOSED state to initiate a connection attempt. Establishing the connection starts with NetX Duo issuing a SYN packet and then waiting for a SYN ACK packet back from the server, which signifies acceptance of the connection request. After the SYN ACK is received, NetX Duo responds with an ACK packet and promotes the client socket to the ESTABLISHED state.
 
-![Diagram of the states of the TCP state machine.](../media/user-guide/image24.png)   
+{{< figure src="../media/user-guide/image24.png" title="Diagram of the states of the TCP state machine." imgClass="img-responsive center-block" >}}   
 
 **FIGURE 14. States of the TCP State Machine**
 
@@ -1460,7 +1460,7 @@ Time-Sensitive Networking (TSN) is a suite of standards crafted by the IEEE 802.
 
 In this section, the TSN compents in below frame work in colour blue are described.
 
-![Diagram of TSN Framework](../media/user-guide/tsn-framework.png)
+{{< figure src="../media/user-guide/tsn-framework.png" title="Diagram of TSN Framework" imgClass="img-responsive center-block" >}}
 
 **FIGURE 15. TSN Framework**
 

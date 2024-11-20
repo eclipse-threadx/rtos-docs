@@ -15,7 +15,7 @@ Before an application can be executed from within the Studio environment a few t
 
 After defining the screen(s) which are visible at startup, the user can define how the UI application will flow from screen to screen. GUIX Studio provides a graphical screen flow diagram to define screen transition logic. Simply select the menu selection ***Configure, Screen Flow*** to bring up screen flow edit dialog, see the screen shot in ***Figure 30***.
 
-![Screenshot of the GUIX Studio Screen Flow dialog.](../media/guix-studio/config_screen_flow.png)
+{{< figure src="../media/guix-studio/config_screen_flow.png" title="Screenshot of the GUIX Studio Screen Flow dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 30**
 
@@ -27,7 +27,7 @@ The screen-flow diagram is scrollable. You are able to drag any screen block dow
 
 To define transitions for a screen, right click on the placeholder for that screen to bring up a Edit Trigger List dialog, see ***Figure 31***.
 
-![Screenshot of the GUIX Studio Edit Trigger List dialog.](../media/guix-studio/edit_trigger_list.png)
+{{< figure src="../media/guix-studio/edit_trigger_list.png" title="Screenshot of the GUIX Studio Edit Trigger List dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 31**
 
@@ -35,7 +35,7 @@ The trigger edit dialog list the events that the user has defined that will trig
 
 To define a new trigger, select the ***Add New Trigger*** button in the Edit Trigger List  dialog to bring up Add Trigger dialog shown in ***Figure 32***.
 
-![Screenshot of the GUIX Studio Add Trigger dialog.](../media/guix-studio/add_trigger_for.png)
+{{< figure src="../media/guix-studio/add_trigger_for.png" title="Screenshot of the GUIX Studio Add Trigger dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 32**
 
@@ -51,7 +51,7 @@ To specify the animation or screen transition that should occur based on a parti
 
 The **Edit Action(s)** button brings up the Edit Actions for Trigger dialog, shown in Figure 33: 
 
-![Screenshot of the GUIX Studio Edit Actions for Trigger dialog.](../media/guix-studio/edit_actions_for_trigger.png)
+{{< figure src="../media/guix-studio/edit_actions_for_trigger.png" title="Screenshot of the GUIX Studio Edit Actions for Trigger dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 33**
 
@@ -59,7 +59,7 @@ This dialog allows you to define any number of actions to implement based on thi
 
 The define a new action to implement, click the Add New Action button, which brings up the Select Action dialog, Figure 34:
 
-![Screenshot of the GUIX Studio Select Action dialog.](../media/guix-studio/select_action.png)
+{{< figure src="../media/guix-studio/select_action.png" title="Screenshot of the GUIX Studio Select Action dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 34**
 
@@ -79,7 +79,7 @@ Available action types include:
 
 Once you have defined an action to take based on the selected trigger event, that action will be displayed in the Edit Actions for Trigger dialog. You can select this action to modify the parameters of that action as shown in Figure 35.
 
-![Screenshot of the GUIX Studio Edit Actions for Trigger dialog.](../media/guix-studio/edit_actions_for_trigger.png)
+{{< figure src="../media/guix-studio/edit_actions_for_trigger.png" title="Screenshot of the GUIX Studio Edit Actions for Trigger dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 35**
 
@@ -87,7 +87,7 @@ If the action type is an animation, a set of animation parameters are displayed 
 
 For slide and fade animations, you can also define the Easing Function to use by Selecting the Easing Func Select button. Easing functions are various curves designed to more closely mimic real life movement events. Selecting this button brings up the **Select Easing Function** dialog, Figure 36:
 
-![Screenshot of the GUIX Studio Select Easing Function dialog.](../media/guix-studio/easing_function_select.png)
+{{< figure src="../media/guix-studio/easing_function_select.png" title="Screenshot of the GUIX Studio Select Easing Function dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 36**
 
@@ -99,7 +99,7 @@ When you define trigger events and actions within GUIX Studio, automated event h
 
 Once startup screens and a screen flow diagram have been created, you can run your application within Studio by selecting the "Run Application"
 
-![Screenshot of the Run Application button.](../media/guix-studio/image68.jpg)
+{{< figure src="../media/guix-studio/image68.jpg" title="Screenshot of the Run Application button." imgClass="img-responsive center-block" >}}
 
 button on the toolbar, selecting Edit | Run Application from the project menu, or by selecting the Run button at the bottom of the Edit Screen Flow dialog.
 

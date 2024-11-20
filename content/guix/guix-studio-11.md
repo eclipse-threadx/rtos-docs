@@ -225,12 +225,12 @@ There are two methods available for creating XML files:
 - Add the required resources to the resource view and edit their properties as needed.
 - Select a resource, right-click on it, and choose `Generate XML` menu item to generate an XML file for the selected resource. `Figure 11.1,` and `Figure 11.2` show examples of generating XML file for font or pixelmap resources, respectively.
 
-    ![Screenshot of Generating XML File for Font.](../media/guix-studio/generate_xml_for_font.jpg)
+    {{< figure src="../media/guix-studio/generate_xml_for_font.jpg" title="Screenshot of Generating XML File for Font." imgClass="img-responsive center-block" >}}
 
     *Figure 11.1 Example of Generating XML File for a Font.*
 
-    ![Screenshot of Generating XML File for Pixelmap.](../media/guix-studio/generate_xml_for_pixelmap.jpg)
-    ![Screenshot of Generating XML File for Pixelmap Folder.](../media/guix-studio/generate_xml_for_pixelmap_folder.jpg)
+    {{< figure src="../media/guix-studio/generate_xml_for_pixelmap.jpg" title="Screenshot of Generating XML File for Pixelmap." imgClass="img-responsive center-block" >}}
+    {{< figure src="../media/guix-studio/generate_xml_for_pixelmap_folder.jpg" title="Screenshot of Generating XML File for Pixelmap Folder." imgClass="img-responsive center-block" >}}
 
     *Figure 11.2 Example of Generating XML File for a Pixelmap or a Pixelmap Polder.*
 

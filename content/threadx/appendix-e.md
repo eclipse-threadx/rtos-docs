@@ -173,7 +173,7 @@ source code. However, to enable the reuse, macros are used to replace
 data structures specific to each core with function calls or an array
 indexed by core, like the following:
 
-![Image that shows an array indexed by core.](media/misra-Compliance/image1.png)
+{{< figure src="../media/misra-Compliance/image1.png" title="Image that shows an array indexed by core." imgClass="img-responsive center-block" >}}
 
 Technically, this isn't replacing a reserved identifier, but the
 MISRA-C:2004 specification indicates that anything with an underscore
@@ -206,13 +206,13 @@ C-STAT 1.4.4 MISRA-C:2004 and MISRA C:2012. The following figures show
 the MISRA C rules checked by C-STAT (and should also serve as a
 compliance matrix):
 
-![Image that shows IAR EWARM 8.11.1.](media/misra-Compliance/image2.png)
+{{< figure src="../media/misra-Compliance/image2.png" title="Image that shows IAR EWARM 8.11.1." imgClass="img-responsive center-block" >}}
 
-![Image that shows C-STAT 1.4.4.](media/misra-Compliance/image3.png)
+{{< figure src="../media/misra-Compliance/image3.png" title="Image that shows C-STAT 1.4.4." imgClass="img-responsive center-block" >}}
 
-![Image that shows MISRA-C:2004.](media/misra-Compliance/image4.png)
+{{< figure src="../media/misra-Compliance/image4.png" title="Image that shows MISRA-C:2004." imgClass="img-responsive center-block" >}}
 
-![Image that shows MISRA C:2012.](media/misra-Compliance/image5.png)
+{{< figure src="../media/misra-Compliance/image5.png" title="Image that shows MISRA C:2012." imgClass="img-responsive center-block" >}}
 
 **Figure 1: MISRA-C:2004/MISRA C:2012 Compliance Matrix**
 
@@ -234,7 +234,7 @@ achieve full MISRA compliance. In addition to building ThreadX SMP with
 **_TX_MISRA_ENABLE_**, the ThreadX project should have the C dialect C89
 specified and strict language conformance selected, as follows:
 
-![Screenshot that shows strict language conformance.](media/misra-Compliance/image6.png)
+{{< figure src="../media/misra-Compliance/image6.png" title="Screenshot that shows strict language conformance." imgClass="img-responsive center-block" >}}
 
 Next, if the version of ThreadX does not have a pre-built
 **_tx_misra.s_** assembly file, the **_tx_misra.c_** file should be

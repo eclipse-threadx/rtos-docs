@@ -18,7 +18,7 @@ comprised of three layers.
 
 The relationship between the USB layers is as follows.
 
-![USB Layers](../media/usbx-device-stack/usb-layers.png)
+{{< figure src="../media/usbx-device-stack/usb-layers.png" title="USB Layers" imgClass="img-responsive center-block" >}}
 
 ## Product Highlights
 

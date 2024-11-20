@@ -14,7 +14,7 @@ Pictbridge uses USB as a transport layer but relies on PTP (Picture Transfer Pro
 
 The following is a diagram of the commands/responses between the DPS client and the DPS server when a print job occurs:
 
-![DPS commands and responses](../media/usbx-device-stack-supplemental/dps-client-server.png)
+{{< figure src="../media/usbx-device-stack-supplemental/dps-client-server.png" title="DPS commands and responses" imgClass="img-responsive center-block" >}}
 
 ## Pictbridge client implementation
 

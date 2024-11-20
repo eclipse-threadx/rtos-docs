@@ -9,7 +9,7 @@ This chapter contains a description of the GUIX Studio system analysis tool. A d
 
 There are five principal areas of the GUIX Studio UI, namely the ***Toolbar***, ***Project View***, ***Properties View***, ***Target View***, and ***Resource View***. ***Figure 2*** shows the basic GUIX Studio UI. Each of the views is further discussed in the following sub-sections.
 
-![Screenshot of the basic GUIX Studio UI.](../media/guix-studio/image_10.png)
+{{< figure src="../media/guix-studio/image_10.png" title="Screenshot of the basic GUIX Studio UI." imgClass="img-responsive center-block" >}}
 
 **Figure 2**
 
@@ -21,63 +21,63 @@ There are five principal areas of the GUIX Studio UI, namely the ***Toolbar***, 
 
 The ***Toolbar*** shows the buttons available to the GUIX Studio developer, as shown in ***Figure 3***.
 
-![Screenshot of the GUIX Studio toolbar.](../media/guix-studio/image11.jpg)
+{{< figure src="../media/guix-studio/image11.jpg" title="Screenshot of the GUIX Studio toolbar." imgClass="img-responsive center-block" >}}
 
 **Figure 3**
 
 The toolbar buttons are defined as follows:
 
-![New button](../media/guix-studio/new-button.png) Creates a new GUIX Studio project
+{{< figure src="../media/guix-studio/new-button.png" title="New button" imgClass="img-responsive center-block" >}} Creates a new GUIX Studio project
 
-![Open button](../media/guix-studio/open-button.png) Opens an existing GUIX Studio project
+{{< figure src="../media/guix-studio/open-button.png" title="Open button" imgClass="img-responsive center-block" >}} Opens an existing GUIX Studio project
 
-![Save button](../media/guix-studio/save-button.png) Saves the project
+{{< figure src="../media/guix-studio/save-button.png" title="Save button" imgClass="img-responsive center-block" >}} Saves the project
 
-![Cut button](../media/guix-studio/cut-button.png) Cut widget selected, including children
+{{< figure src="../media/guix-studio/cut-button.png" title="Cut button" imgClass="img-responsive center-block" >}} Cut widget selected, including children
 
-![Copy button](../media/guix-studio/copy-button.png) Copy selected widget, including children
+{{< figure src="../media/guix-studio/copy-button.png" title="Copy button" imgClass="img-responsive center-block" >}} Copy selected widget, including children
 
-![Paste button](../media/guix-studio/paste-button.png) Paste widget and children
+{{< figure src="../media/guix-studio/paste-button.png" title="Paste button" imgClass="img-responsive center-block" >}} Paste widget and children
 
-![Left align button](../media/guix-studio/left-align-button.png) Left-align selected widgets
+{{< figure src="../media/guix-studio/left-align-button.png" title="Left align button" imgClass="img-responsive center-block" >}} Left-align selected widgets
 
-![Right align button](../media/guix-studio/right-align-button.png) Right-align selected widgets
+{{< figure src="../media/guix-studio/right-align-button.png" title="Right align button" imgClass="img-responsive center-block" >}} Right-align selected widgets
 
-![Top align button](../media/guix-studio/top-align-button.png) Top-align selected widgets
+{{< figure src="../media/guix-studio/top-align-button.png" title="Top align button" imgClass="img-responsive center-block" >}} Top-align selected widgets
 
-![Bottom align button](../media/guix-studio/bottom-align-button.png) Bottom-align selected widgets
+{{< figure src="../media/guix-studio/bottom-align-button.png" title="Bottom align button" imgClass="img-responsive center-block" >}} Bottom-align selected widgets
 
-![Space vertically button](../media/guix-studio/space-vertically-button.png) Equally space selected widgets vertically
+{{< figure src="../media/guix-studio/space-vertically-button.png" title="Space vertically button" imgClass="img-responsive center-block" >}} Equally space selected widgets vertically
 
-![Space horizontally button](../media/guix-studio/space-horizontally-button.png) Equally space selected widgets horizontally
+{{< figure src="../media/guix-studio/space-horizontally-button.png" title="Space horizontally button" imgClass="img-responsive center-block" >}} Equally space selected widgets horizontally
 
-![Equal width button](../media/guix-studio/equal-width-button.png) Make selected widgets equal width
+{{< figure src="../media/guix-studio/equal-width-button.png" title="Equal width button" imgClass="img-responsive center-block" >}} Make selected widgets equal width
 
-![Equal height button](../media/guix-studio/equal-height-button.png) Make selected widgets equal height
+{{< figure src="../media/guix-studio/equal-height-button.png" title="Equal height button" imgClass="img-responsive center-block" >}} Make selected widgets equal height
 
-![Move front button](../media/guix-studio/move-front-button.png) Move selected widgets to front
+{{< figure src="../media/guix-studio/move-front-button.png" title="Move front button" imgClass="img-responsive center-block" >}} Move selected widgets to front
 
-![Move back button](../media/guix-studio/move-back-button.png) Move selected widgets to back
+{{< figure src="../media/guix-studio/move-back-button.png" title="Move back button" imgClass="img-responsive center-block" >}} Move selected widgets to back
 
-![Size button](../media/guix-studio/size-button.png) Size selected widget to content Zoom out target screen
+{{< figure src="../media/guix-studio/size-button.png" title="Size button" imgClass="img-responsive center-block" >}} Size selected widget to content Zoom out target screen
 
-![Zoom out button](../media/guix-studio/zoom-out-button.png) Zoom out target screen
+{{< figure src="../media/guix-studio/zoom-out-button.png" title="Zoom out button" imgClass="img-responsive center-block" >}} Zoom out target screen
 
-![Zoom in button](../media/guix-studio/zoom-in-button.png) Zoom in target screen
+{{< figure src="../media/guix-studio/zoom-in-button.png" title="Zoom in button" imgClass="img-responsive center-block" >}} Zoom in target screen
 
-![Record button](../media/guix-studio/record-button.png) Record Macro
+{{< figure src="../media/guix-studio/record-button.png" title="Record button" imgClass="img-responsive center-block" >}} Record Macro
 
-![Playback button](../media/guix-studio/playback-button.png) Playback Macro
+{{< figure src="../media/guix-studio/playback-button.png" title="Playback button" imgClass="img-responsive center-block" >}} Playback Macro
 
-![Run button](../media/guix-studio/run-button.png) Run Application
+{{< figure src="../media/guix-studio/run-button.png" title="Run button" imgClass="img-responsive center-block" >}} Run Application
 
-![About button](../media/guix-studio/about-button.png) About GUIX Studio
+{{< figure src="../media/guix-studio/about-button.png" title="About button" imgClass="img-responsive center-block" >}} About GUIX Studio
 
 ### Project View
 
 The ***Project View*** shows the hierarchical list GUIX objects that comprise the embedded UI. New GUIX objects can be added by clicking on the parent object and then selecting an object from the ***Insert*** menu (or by right-clicking on the object and selecting from the right-click menu). ***Figure 4*** below shows the GUIX Studio ***Project View***.
 
-![Screenshot of the GUIX Studio Project View.](../media/guix-studio/image_35.png)
+{{< figure src="../media/guix-studio/image_35.png" title="Screenshot of the GUIX Studio Project View." imgClass="img-responsive center-block" >}}
 
 **Figure 4**
 
@@ -85,7 +85,7 @@ The ***Project View*** shows the hierarchical list GUIX objects that comprise th
 
 The ***Properties View*** shows detailed property information of the currently selected GUIX object, which can be selected via the ***Project View*** or by clicking directly on the object in the ***Target View***. ***Figure 5*** below shows the GUIX Studio ***Properties View***.
 
-![Screenshot of the GUIX Studio Properties View.](../media/guix-studio/image36.jpg)
+{{< figure src="../media/guix-studio/image36.jpg" title="Screenshot of the GUIX Studio Properties View." imgClass="img-responsive center-block" >}}
 
 **Figure 5**
 
@@ -93,7 +93,7 @@ The ***Properties View*** shows detailed property information of the currently s
 
 The ***Target View*** is the WYSIWYG screen design and layout area. This view is meant to represent the physical display or displays available on your target hardware. Objects can be selected, moved, resized, etc. via simple mouse operations. In addition, alignment and Z-order button operations are available on selected objects in the Target View. Selecting an object in the ***Target View*** will also result in the properties for that object to be displayed in the ***Properties View***. ***Figure 6*** below shows the GUIX Studio ***Target View***.
 
-![Screenshot of the GUIX Studio Target View.](../media/guix-studio/image_37.png)
+{{< figure src="../media/guix-studio/image_37.png" title="Screenshot of the GUIX Studio Target View." imgClass="img-responsive center-block" >}}
 
 **Figure 6**
 
@@ -101,7 +101,7 @@ The ***Target View*** is the WYSIWYG screen design and layout area. This view is
 
 The ***Resource View*** is used to manage the resources (colors, fonts, pixelmaps, and strings) available to applications screens defined for each display. You can click on the resource view group headers to expand each group and examine the group contents. ***Figure 7*** below shows the GUIX Studio ***Resource View***.
 
-![Screenshot of the GUIX Studio Resource View.](../media/guix-studio/image38.jpg)
+{{< figure src="../media/guix-studio/image38.jpg" title="Screenshot of the GUIX Studio Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 7**
 

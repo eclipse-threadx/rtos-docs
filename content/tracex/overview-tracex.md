@@ -6,7 +6,7 @@ description: TraceX is Eclipse Foundation's host-based analysis tool that provid
 
 TraceX is Eclipse Foundation's host-based analysis tool that provides developers with a graphical view of real-time system events and enables them to visualize and better understand the behavior of their real-time systems. With TraceX, developers can see clearly the occurrence of system events like interrupts and context switches that occur out of view of standard debugging tools. The ability to identify and study these events, and to pinpoint the timing of their occurrence in the context of the overall system's operation enables developers to resolve programming problems by finding unexpected behavior and letting them investigate specific areas further Trace information is stored in a buffer on the target system, with the buffer location and size determined by the application at run-time. TraceX can process any buffer constructed in the proper manner, not only from ThreadX, but from any application or RTOS. The trace information may be uploaded to the host for analysis at any time – either post mortem or upon a breakpoint. ThreadX implements a circular buffer, which enables the most recent "N" events to be available for inspection in the event of system malfunction or other significant event.
 
-![TraceX Single-Core Display](../media/user-guide/screen_shot_33.png)
+{{< figure src="../media/user-guide/screen_shot_33.png" title="TraceX Single-Core Display" imgClass="img-responsive center-block" >}}
 
 **TraceX Single-Core Display**
 
@@ -16,11 +16,11 @@ TraceX is Eclipse Foundation's host-based analysis tool that provides developers
 
 TraceX is provides built-in system analysis reports that are available via a single button click from the TraceX toolbar. These buttons and reports include:
 
-![Generate Execution Profile report](../media/overview-tracex/execution-profile-report-button.jpg) Generate Execution Profile report
+{{< figure src="../media/overview-tracex/execution-profile-report-button.jpg" title="Generate Execution Profile report" imgClass="img-responsive center-block" >}} Generate Execution Profile report
 
-![Generate Performance Statistics report](../media/overview-tracex/performance-statistics-report-button.jpg) Generate Performance Statistics report
+{{< figure src="../media/overview-tracex/performance-statistics-report-button.jpg" title="Generate Performance Statistics report" imgClass="img-responsive center-block" >}} Generate Performance Statistics report
 
-![Generate Thread Stack Usage report](../media/overview-tracex/thread-stack-usage-report-button.jpg) Generate Thread Stack Usage report
+{{< figure src="../media/overview-tracex/thread-stack-usage-report-button.jpg" title="Generate Thread Stack Usage report" imgClass="img-responsive center-block" >}} Generate Thread Stack Usage report
 
 ### Trace data collected By ThreadX
 
@@ -49,7 +49,7 @@ Once the event log has been uploaded from target memory to the host, TraceX disp
 The sequential view mode is selected by clicking the "Sequential View" tab.
 This is the default mode. In this mode, events are shown immediately following each other–regardless of the elapsed time between them. Note also the ruler above the display area. It shows the relative event number from the beginning of the trace. This mode is the default mode and is especially useful in getting a good overview of what is going on in the system.
 
-![Sequential view mode](../media/user-guide/screen_shot_10.png)
+{{< figure src="../media/user-guide/screen_shot_10.png" title="Sequential view mode" imgClass="img-responsive center-block" >}}
 
 **Sequential view mode**
 
@@ -59,7 +59,7 @@ In this mode, events are shown in a time relative manner–with a solid green ba
 
 Note also the ruler above the event display. This ruler shows relative ticks from the beginning of the trace, as derived from the time stamp instrumented in the event trace logging inside of ThreadX. If the time-stamps are too close (low frequency timer), the events will run together. Conversely, if the time-stamps are too far apart (high frequency timer), then the events will be too far apart. Choosing the right frequency time stamp is an important consideration in making the time relative view meaningful.
 
-![Time View Mode](../media/user-guide/screen_shot_31.png)
+{{< figure src="../media/user-guide/screen_shot_31.png" title="Time View Mode" imgClass="img-responsive center-block" >}}
 
 ### System summary line
 
@@ -68,7 +68,7 @@ TraceX also provides a single summary line that includes all events on the same 
 TraceX lists the system contexts on the left-hand side of the display.
 Events that occur in a particular context are displayed on the horizontal line to the right of that context. In this way, the user can easily ascertain which context the event occurred as well as follow that context line to see all the events that occurred in a particular context.
 
-![System Summary Line](../media/user-guide/screen_shot_32.png)
+{{< figure src="../media/user-guide/screen_shot_32.png" title="System Summary Line" imgClass="img-responsive center-block" >}}
 
 **System Summary Line**
 
@@ -78,7 +78,7 @@ The first two context entries are always the "Interrupt" and "Initialize/Idle" c
 
 TraceX enables the developer to specify how the "Next" and "Previous" navigation buttons operate.
 
-![Navigation buttons](../media/user-guide/event.png)
+{{< figure src="../media/user-guide/event.png" title="Navigation buttons" imgClass="img-responsive center-block" >}}
 
 If "Event" is selected, navigation is done on the next/previous event. If "Context" is selected, navigation is done on the next/previous event on the same context. If "Object" is selected, navigation is done on the next/previous event of the current object, e.g., events associated with a specific queue. If "Switches" is selected, navigation is done on the next/previous context switch. If "Same ID" is selected, navigation is done on the next/previous event for the same event ID.
 
@@ -88,7 +88,7 @@ TraceX provides detailed information on some 300 events.
 These include six internal ThreadX events, two ISR events (enter and exit), 14 internal FileX events, 42 internal NetX Duo events, and one user-defined event. The remaining events correspond directly to ThreadX, FileX, and NetX Duo API services.
 Regardless of whether sequential or time display mode is selected, a mouse-over on any event in the display area results in detailed event information displayed near the event. The mouse-over of event 494 in the demonstration demo_threadx.trx trace file is shown here:
 
-![Mouse-Over Displays More Info](../media/user-guide/screen_shot_37.png)
+{{< figure src="../media/user-guide/screen_shot_37.png" title="Mouse-Over Displays More Info" imgClass="img-responsive center-block" >}}
 
 **Mouse-Over Displays More Info**
 
@@ -98,7 +98,7 @@ Each event displayed contains standard information about Context and both the Re
 
 By default, TraceX displays the events in an easy-to-view size, with a 1:1 pixel:tick mapping. The user may zoom in or zoom out as desired. Zooming out to 100% is useful to see the entire trace in the current display view, while zooming in is useful in conditions where the events overlap due to the resolution of the time stamp source.
 
-![Zoom-Out To 100% View or Zoom In for Details](../media/user-guide/screen_shot_41.png)
+{{< figure src="../media/user-guide/screen_shot_41.png" title="Zoom-Out To 100% View or Zoom In for Details" imgClass="img-responsive center-block" >}}
 
 **Zoom Out to 100% View or Zoom In for Details**
 
@@ -111,7 +111,7 @@ Restoring to a full icon view is equally easy; Either the zoom-in button may be 
 Determining the number of ticks between various events in TraceX is easy–simply click on the starting event and drag the mouse to the ending event.
 The delta number of ticks between the events will show up in the upper right-hand corner of the display.
 
-![Delta Ticks](../media/user-guide/screen_shot_42.png)
+{{< figure src="../media/user-guide/screen_shot_42.png" title="Delta Ticks" imgClass="img-responsive center-block" >}}
 
 **Delta Ticks**
 
@@ -123,7 +123,7 @@ TraceX automatically displays priority inversions detected in the trace file. Pr
 
 TraceX also displays "un-deterministic" priority inversions. These priority inversions differ from the "deterministic" priority inversions in that another thread of a different priority level has executed in the middle of what was a "deterministic" priority inversion, thereby making the time within the priority inversion somewhat "un-deterministic." This condition is often unknown to the user and can be very serious. In order to alert the user of this condition, TraceX shows "un-deterministic" priority inversions as a brighter salmon color.
 
-![Deterministic and Non-Deterministic Priority Inversion](../media/user-guide/screen_shot_43.png)
+{{< figure src="../media/user-guide/screen_shot_43.png" title="Deterministic and Non-Deterministic Priority Inversion" imgClass="img-responsive center-block" >}}
 
 **Deterministic and Non-Deterministic Priority Inversion**
 
@@ -131,34 +131,34 @@ TraceX also displays "un-deterministic" priority inversions. These priority inve
 
 TraceX provides a built-in execution profile report for all execution contexts within in the currently loaded trace file.
 
-![Execution profile](../media/user-guide/execution_profile.png)
+{{< figure src="../media/user-guide/execution_profile.png" title="Execution profile" imgClass="img-responsive center-block" >}}
 
 ### Performance statistics
 
 TraceX provides a built-in performance statistics report for the currently loaded trace file.
 
-![Performance statistics](../media/user-guide/performance_statistics.png)
+{{< figure src="../media/user-guide/performance_statistics.png" title="Performance statistics" imgClass="img-responsive center-block" >}}
 
 ### Thread stack usage
 
 TraceX provides a built-in stack usage report for all threads executing within in the currently loaded trace file.
 
-![Stack usage](../media/user-guide/thread_stack_usage.png)
+{{< figure src="../media/user-guide/thread_stack_usage.png" title="Stack usage" imgClass="img-responsive center-block" >}}
 
 TraceX presents the FileX performance statistics of the currently loaded trace file. This information is displayed for the entire system–on all opened media objects.
 
-![FileX statistics](../media/user-guide/filex_statistics.png)
+{{< figure src="../media/user-guide/filex_statistics.png" title="FileX statistics" imgClass="img-responsive center-block" >}}
 
 ### NetX Duo statistics
 
 TraceX also presents the NetX Duo performance statistics of the currently loaded trace file. This information is displayed for the entire system.
 
-![NetX statistics](../media/user-guide/netx_statistics.png)
+{{< figure src="../media/user-guide/netx_statistics.png" title="NetX statistics" imgClass="img-responsive center-block" >}}
 
 ### Raw trace dump
 
 TraceX can build a raw trace file in text format and launch notepad to display it.
 
-![Raw trace dump](../media/user-guide/raw_trace_dump.png)
+{{< figure src="../media/user-guide/raw_trace_dump.png" title="Raw trace dump" imgClass="img-responsive center-block" >}}
 
 Please note that all timing and size figures listed are estimates and may be different on your development platform

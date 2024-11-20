@@ -38,7 +38,7 @@ The NetX Duo SNMP protocol implements SNMP Version 1, 2, and 3. The SNMPv3 imple
 
 The SNMP protocol is designed to manage devices on the internet. To accomplish this, each SNMP managed device has a set of objects that are defined by the Structure of Management Information (SMI) as defined by RFC 1155. The structure is a hierarchical tree type of structure that looks like the following:
 
-![Diagram of the Structure of Management Information.](media/image3.png)
+{{< figure src="../media/image3.png" title="Diagram of the Structure of Management Information." imgClass="img-responsive center-block" >}}
 
 Each node in the tree is an object. The "dod" object in the tree is identified by the notation 1.3.6, while the "internet" object in the tree is identified by the notation 1.3.6.1. All SNMP object names begin with the notation 1.3.6.
 

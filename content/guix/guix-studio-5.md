@@ -13,7 +13,7 @@ When a new project is created, the configure project dialog is presented. This i
 
 Modifying the project and/or display settings is accomplished by either the menu option ***Configure, Project/Display*** or by selecting the project or display, right-clicking, and selecting ***Configure, Project/Display***. In either case, the ***Configure Project*** dialog is presented to facilitate changes to the project settings and/or display(s).
 
-![Screenshot of the Configure Project dialog.](../media/guix-studio/config_project.png)
+{{< figure src="../media/guix-studio/config_project.png" title="Screenshot of the Configure Project dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 21**
 
@@ -27,7 +27,7 @@ When you invoke the Studio "Generate Application" or "Generate Resources" comman
 
 Selecting widgets is done by either clicking on the widget in the ***Project View*** widget tree or by clicking on the widget visible in the ***Target View*** area. When a single widget is selected, its properties are displayed in the ***Property View*** area. ***Figure 22*** shows the widget "***button***" selected.
 
-![Screenshot of the selected widget.](../media/guix-studio/select_button.png)
+{{< figure src="../media/guix-studio/select_button.png" title="Screenshot of the selected widget." imgClass="img-responsive center-block" >}}
 
 **Figure 22**
 
@@ -57,7 +57,7 @@ As mentioned previously, the properties for a selected widget are presented in t
 
 ***Figure 23*** shows the properties of a simple window widget.
 
-![Screenshot of the properties of a simple window widget.](../media/guix-studio/image57.jpg)
+{{< figure src="../media/guix-studio/image57.jpg" title="Screenshot of the properties of a simple window widget." imgClass="img-responsive center-block" >}}
 
 **Figure 23**
 
@@ -73,7 +73,7 @@ To manipulate a widget, is first must be selected. This is done by either clicki
 
 To resize the widget's height, position the mouse on the top edge of the widget and wait for the mouse pointer to change to an up-down arrow. At this point, the widget height may be changed by moving the mouse while the right mouse button is depressed. The width of the mouse may be resized in a similar fashion by positioning the mouse pointer on the left edge of the widget. ***Figure 24*** shows the "***button***" widget resized and moved to the left/top area of the parent window.
 
-![Screenshot of the button widget.](../media/guix-studio/resize_button.png)
+{{< figure src="../media/guix-studio/resize_button.png" title="Screenshot of the button widget." imgClass="img-responsive center-block" >}}
 
 **Figure 24**
 
@@ -83,11 +83,11 @@ Selecting multiple widgets is accomplished by clicking on multiple widgets in th
 
 Once multiple widgets are selected, they may be simultaneously moved by clicking inside one on the selected widgets and moving the mouse with the right mouse button pushed down. In addition, the alignment buttons on the ***Tool Bar*** may be used to align the group of selected widgets. ***Figure 25*** shows both the "***button***" and "***new button***" widgets selected and ***Figure 26*** shows the result of the ***Align-Left*** button selection while these widgets are selected.
 
-![Screenshot of the button and new button widgets selected](../media/guix-studio/multiple_select.png)
+{{< figure src="../media/guix-studio/multiple_select.png" title="Screenshot of the button and new button widgets selected" imgClass="img-responsive center-block" >}}
 
 **Figure 25**
 
-![Screenshot of the result of the Align-Left button selection.](../media/guix-studio/align_left.png)
+{{< figure src="../media/guix-studio/align_left.png" title="Screenshot of the result of the Align-Left button selection." imgClass="img-responsive center-block" >}}
 
 **Figure 26**
 
@@ -95,7 +95,7 @@ Once multiple widgets are selected, they may be simultaneously moved by clicking
 
 A selected widget in the ***Target View*** may be cut, copied, and pasted in standard fashion. Widgets and screens can be copied within one project, or copied from one project and pasted into another.The ***Tool Bar*** has buttons for cut, copy, and paste. There are also the same options in the Edit menu option. Note that when pasting a widget, the parent widget should be selected before pasting the new widget. ***Figure 27*** shows the result of selecting the "***button***" widget, copying it, and pasting the copy in the same window.
 
-![Screenshot of the cut/copy/paste operations.](../media/guix-studio/copy_paste_button.png)
+{{< figure src="../media/guix-studio/copy_paste_button.png" title="Screenshot of the cut/copy/paste operations." imgClass="img-responsive center-block" >}}
 
 **Figure 27**
 
@@ -111,7 +111,7 @@ The easy way to avoid any problems in this regard is to keep a consistent direct
 
 Widgets can easily be moved in front of or behind other widgets. This is accomplished by selecting the widget and selecting either the ***Move to Front*** or ***Move to Back*** buttons on the ***Tool Bar***. ***Figure 28*** shows the moving the second button to the back.
 
-![Screenshot of the button z-order.](../media/guix-studio/change_z_order.png)
+{{< figure src="../media/guix-studio/change_z_order.png" title="Screenshot of the button z-order." imgClass="img-responsive center-block" >}}
 
 **Figure 28**
 
@@ -160,7 +160,7 @@ You are able to choose the percentage zoom setting that you want in ***Configure
 
 The ***Grid and Snap Settings*** dialog contains some settings and options for grid and snap. ***Figure 29*** shows the ***Grid and Snap Setting*** dialog when menu ***Configure|Target View|Grid/Snap*** is selected.
 
-![Screenshot of the Grid and Snap Settings.](../media/guix-studio/image63.jpg)
+{{< figure src="../media/guix-studio/image63.jpg" title="Screenshot of the Grid and Snap Settings." imgClass="img-responsive center-block" >}}
 
 **Figure 29**
 

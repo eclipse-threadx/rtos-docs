@@ -22,7 +22,7 @@ Connections across the NAT boundary are typically initiated by hosts on the priv
 
 A typical network setup with a NAT-enabled router is illustrated in Figure 1.
 
-![A typical network setup with a NAT-enabled router](media/image2.png)
+{{< figure src="../media/image2.png" title="A typical network setup with a NAT-enabled router" imgClass="img-responsive center-block" >}}
 
 **Figure 1 - A typical network setup with a NAT-enabled router**
 
@@ -30,7 +30,7 @@ A NAT-enabled router typically has two network interfaces. One interface is conn
 
 To illustrate a typical implementation of Network Address Translation, let us consider a network setup in Figure 2.
 
-![A typical implementation of Network Address Translation](media/image3.png)
+{{< figure src="../media/image3.png" title="A typical implementation of Network Address Translation" imgClass="img-responsive center-block" >}}
 
 **Figure 2 - A typical implementation of Network Address Translation**
 
@@ -38,7 +38,7 @@ In this scenario, the NAT router connects the private network to the left, and t
 
 Figure 3 shows a high-level view of the Network Address Translation process.
 
-![A high-level view of the Network Address Translation process](media/image4.png)
+{{< figure src="../media/image4.png" title="A high-level view of the Network Address Translation process" imgClass="img-responsive center-block" >}}
 
 **Figure 3 - A high-level view of the Network Address Translation process**
 
@@ -47,7 +47,7 @@ Figure 3 shows a high-level view of the Network Address Translation process.
 1. The packet is then transmitted over the Internet and ultimately reaches its destination host 128.15.54.3. Notice that on the receiving side, based on the IP layer source address and TCP layer port number, the packet appears to have originated from 202.151.24.14, port number 2015.
    Figure 4 shows the NAT process on the return path.
 
-   ![NAT process on the return path](media/image5.png)
+   {{< figure src="../media/image5.png" title="NAT process on the return path" imgClass="img-responsive center-block" >}}
 
    **Figure 4 - NAT process on the return path**
 1. In this scenario, the Internet host 128.15.54.3 sends a response packet with the NAT router's Internet address as its destination.

@@ -48,7 +48,7 @@ Each of the provided examples was created using the GUIX Studio interface design
 
 Now that you have a project open, click "+" to open the tree node named "Primary" in the Project View in the upper left corner of the IDE, and click on the top-level window within this folder named "Menu_Screen". Your project should not appear as shown below:
 
-![Screenshot of the Studio with project open.](../media/guix-studio/qs_project_open.png)
+{{< figure src="../media/guix-studio/qs_project_open.png" title="Screenshot of the Studio with project open." imgClass="img-responsive center-block" >}}
 
 ## GUIX Studio Views
 

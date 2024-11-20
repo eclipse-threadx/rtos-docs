@@ -25,7 +25,7 @@ This process of continually executing and scheduling threads is the most common 
 
 Interrupts are the cornerstone of real-time systems. Without interrupts it would be extremely difficult to respond to changes in the external world in a timely manner. On detection of an interrupt, the processor saves key information about the current program execution (usually on the stack), then transfers control to a predefined program area. This predefined program area is commonly called an Interrupt Service Routine. In most cases, interrupts occur during thread execution (or in the thread scheduling loop). However, interrupts may also occur inside of an executing ISR or an Application Timer.
 
-![Types of Program Execution](../media/user-guide/types-program-execution.png)
+{{< figure src="../media/user-guide/types-program-execution.png" title="Types of Program Execution" imgClass="img-responsive center-block" >}}
 
 **FIGURE 2. Types of Program Execution**
 
@@ -56,7 +56,7 @@ The system stack is generally set up immediately following the initialized and u
 
 The system stack is used by the compiler during initialization, then by ThreadX during initialization and, subsequently, in ISR processing.
 
-![Memory Area Example](../media/user-guide/memory-area-example.png)
+{{< figure src="../media/user-guide/memory-area-example.png" title="Memory Area Example" imgClass="img-responsive center-block" >}}
 
 **FIGURE 3. Memory Area Example**
 
@@ -113,7 +113,7 @@ combined processing of all threads makes an application.
 
 Threads are created dynamically by calling ***tx_thread_create*** during initialization or during thread execution. Threads are created in either a *ready* or *suspended* state.
 
-![Initialization Process](../media/user-guide/initialization-process.png)
+{{< figure src="../media/user-guide/initialization-process.png" title="Initialization Process" imgClass="img-responsive center-block" >}}
 
 **FIGURE 4. Initialization Process**
 
@@ -122,7 +122,7 @@ Threads are created dynamically by calling ***tx_thread_create*** during initial
 Understanding the different processing states of threads is a key ingredient to understanding the entire multithreaded environment. In ThreadX there are five distinct thread states:
 *ready*, *suspended*, *executing*, *terminated*, and *completed*. Figure 5 shows the thread state transition diagram for ThreadX.
 
-![Thread State Transition](../media/user-guide/thread-state-transition.png)
+{{< figure src="../media/user-guide/thread-state-transition.png" title="Thread State Transition" imgClass="img-responsive center-block" >}}
 
 **FIGURE 5. Thread State Transition**
 
@@ -244,7 +244,7 @@ Where a thread stack is located in memory is up to the application. The stack ar
 
 **Stack Memory Area** (example)
 
-![Typical Thread Stack](../media/user-guide/typical-thread-stack.png)
+{{< figure src="../media/user-guide/typical-thread-stack.png" title="Typical Thread Stack" imgClass="img-responsive center-block" >}}
 
 **FIGURE 6. Typical Thread Stack**
 
@@ -258,7 +258,7 @@ After the application is debugged, it is possible to tune the thread stack sizes
 
 **Stack Memory Area** (another example)
 
-![Stack Preset to 0xEFEF*](../media/user-guide/stack-preset.png)
+{{< figure src="../media/user-guide/stack-preset.png" title="Stack Preset to 0xEFEF*" imgClass="img-responsive center-block" >}}
 
 **FIGURE 7. Stack Preset to 0xEFEF**
 
@@ -553,7 +553,7 @@ This condition is best illustrated by a two thread, two semaphore example. Suppo
 
 **Deadly Embrace** (example)
 
-![Example of Suspended Threads](../media/user-guide/example-suspended-threads.png)
+{{< figure src="../media/user-guide/example-suspended-threads.png" title="Example of Suspended Threads" imgClass="img-responsive center-block" >}}
 
 **FIGURE 8. Example of Suspended Threads**
 

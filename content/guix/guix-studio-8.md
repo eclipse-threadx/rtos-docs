@@ -51,7 +51,7 @@ There are two ways to edit the rich text string from within GUIX Studio:
 
 After selecting a Rich Text View widget in the *Target View*, select the **Edit Rich Text** button in the *Properties View* to invoke the  rich text edit dialog, shown in Figure 8.1.
 
-![Screenshot of the GUIX Studio Edit Rich Text dialog.](../media/guix-studio/edit_rich_text_dialog.png)
+{{< figure src="../media/guix-studio/edit_rich_text_dialog.png" title="Screenshot of the GUIX Studio Edit Rich Text dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 8.1**
 
@@ -69,7 +69,7 @@ A string scroll wheel widget supports the display of an array of strings. These 
 
 The string scroll wheel widget supports an array of strings. The String Scroll Wheel Edit dialog, shown in Figure 8.2, is provided to allow the user to assign this array of strings.
 
-![Screenshot of the GUIX Studio String Scroll Wheel Edit dialog.](../media/guix-studio/string_scroll_wheel_edit.png)
+{{< figure src="../media/guix-studio/string_scroll_wheel_edit.png" title="Screenshot of the GUIX Studio String Scroll Wheel Edit dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 8.2**
 
@@ -81,7 +81,7 @@ To assign a string for each text index, you can either select a string ID from t
 
 A sprite widget is used to display a sequence of images to provide an animation effect. A sprite widget requires a frame list, which is an array of image IDs and unique parameters applied to each image in the frame. To build this frame list for the sprite widget the Edit Sprite Frames dialog, shown in figure 8.3, is provided:
 
-![Screenshot of the GUIX Studio Edit Sprite Frames dialog.](../media/guix-studio/edit_sprite_frames.jpg)
+{{< figure src="../media/guix-studio/edit_sprite_frames.jpg" title="Screenshot of the GUIX Studio Edit Sprite Frames dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 8.3**
 
@@ -91,7 +91,7 @@ The *Total number of Sprite Frames* field is an input field allowing you to ente
 
 The *Import Frames* button allows you to import a bunch of frames from pixelmap folders. Figure 8.4 shows the **Import Sprite Frames** dialog. You can select a folder from left, and then choose pixelmaps you'd like to import in the right.
 
-![Screenshot of the GUIX Studio Import Sprite Frames dialog.](../media/guix-studio/import_sprite_frames.jpg)
+{{< figure src="../media/guix-studio/import_sprite_frames.jpg" title="Screenshot of the GUIX Studio Import Sprite Frames dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 8.4**
 
@@ -118,6 +118,6 @@ When you save your changes in the Edit Sprite Frames dialog, GUIX Studio is able
 ### Assign a sprite widget with GIF resource
 You can add a GIF resource to **Pixelmap** resource group and assign the GIF resource to the sprite widget directly. After GIF resource is set, a frame list will be automatically generated, you can further edit each frame of the frame list through the sprite edit dialog:
 
-![Screenshot of the GUIX Studio Edit Sprite Frames dialog for GIF resource.](../media/guix-studio/edit_sprite_gif_frames.jpg)
+{{< figure src="../media/guix-studio/edit_sprite_gif_frames.jpg" title="Screenshot of the GUIX Studio Edit Sprite Frames dialog for GIF resource." imgClass="img-responsive center-block" >}}
 
 **Figure 8.5**

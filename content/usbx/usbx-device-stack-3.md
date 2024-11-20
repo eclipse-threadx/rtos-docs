@@ -19,7 +19,7 @@ USBX for the device is composed of several components.
 
 The following diagram illustrates the USBX Device stack.
 
-![USBX Device Stack](media/usbx-device-stack/usbx-device-stack.png)
+{{< figure src="../media/usbx-device-stack/usbx-device-stack.png" title="USBX Device Stack" imgClass="img-responsive center-block" >}}
 
 ### Initialization
 

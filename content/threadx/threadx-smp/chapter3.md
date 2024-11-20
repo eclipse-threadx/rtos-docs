@@ -21,7 +21,7 @@ After initialization is complete, each core running ThreadX SMP enters its threa
 
 This process of continually executing and scheduling threads is the most common type of program execution in ThreadX SMP applications.
 
-![Thread Execution](media/image4.png)
+{{< figure src="../media/image4.png" title="Thread Execution" imgClass="img-responsive center-block" >}}
 
 **FIGURE 1. Types of Program Execution**
 
@@ -46,7 +46,7 @@ ThreadX SMP resides along with the application program. As a result, the static 
 ### Static Memory Usage
 Most of the development tools divide the application program image into five basic areas: *instruction*, *constant*, *initialized data*, *uninitialized data*, and *system stack*. Figure 2 on page 47 shows an example of these memory areas.
 
-![Static Memory Usage](media/image5.png)
+{{< figure src="../media/image5.png" title="Static Memory Usage" imgClass="img-responsive center-block" >}}
 
 **FIGURE 2. Memory Area Example**
 
@@ -104,14 +104,14 @@ Scheduling and executing application threads is the most important activity of T
 
 Threads are created dynamically by calling *tx_thread_create* during initialization or during thread execution. Threads are created in either a *ready* or *suspended* state.
 
-![SMP Initialization Process](media/image6.png)
+{{< figure src="../media/image6.png" title="SMP Initialization Process" imgClass="img-responsive center-block" >}}
 
 **FIGURE 3. SMP Initialization Process**
 
 ### Thread Execution States  
 Understanding the different processing states of threads is a key ingredient to understanding the entire multithreaded environment. In ThreadX SMP, there are five distinct thread states: *ready*, *suspended*, *executing*, *terminated*, and *completed*. Figure 4 shows the thread state transition diagram for ThreadX SMP.
 
-![Thread Execution States](media/image7.png)
+{{< figure src="../media/image7.png" title="Thread Execution States" imgClass="img-responsive center-block" >}}
 
 **FIGURE 4. Thread State Transition**
 
@@ -223,7 +223,7 @@ In debug sessions, users can examine the internal ThreadX SMP pointer array ***_
 ### Thread Stack Area 
 Each thread must have its own stack for saving the context of its last execution and compiler use. Most C compilers use the stack for making function calls and for temporarily allocating local variables. Figure 5 on page 61 shows a typical thread's stack.
 
-![Thread Stack Area](media/image8.png)
+{{< figure src="../media/image8.png" title="Thread Stack Area" imgClass="img-responsive center-block" >}}
 
 **FIGURE 5. Typical Thread Stack**
 
@@ -244,7 +244,7 @@ The stack requirements for threads can be large. Therefore, it is important to d
 
 In most cases, an overflowed stack causes thread execution to corrupt memory adjacent (usually 
 
-![Memory Pitfalls](media/image9.png)
+{{< figure src="../media/image9.png" title="Memory Pitfalls" imgClass="img-responsive center-block" >}}
 
 **FIGURE 6. Stack Preset to 0xEFEF**
 
@@ -465,7 +465,7 @@ One of the most interesting and dangerous pitfalls associated with semaphores us
 
 This condition is best illustrated by a two thread, two semaphore example. Suppose the first thread owns the first semaphore and the second thread owns the second semaphore. If the first thread attempts to get the second semaphore and at the same time the second thread attempts to get the first semaphore, both threads enter a deadlock condition. In addition, if these threads stay suspended forever, their associated resources are locked-out forever as well. Figure 7 on page 78 illustrates this example.
 
-![Deadly Embrace](media/image10.png)
+{{< figure src="../media/image10.png" title="Deadly Embrace" imgClass="img-responsive center-block" >}}
 
 **FIGURE 7. Example of Suspended Threads**
 

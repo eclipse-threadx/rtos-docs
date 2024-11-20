@@ -257,7 +257,7 @@ The DFU class needs to work with a device firmware application specific to the t
 
 Following is the description of a typical DFU application flow.
 
-![DFU application flow](../media/usbx-device-stack-supplemental/dfu-application-flow.png)
+{{< figure src="../media/usbx-device-stack-supplemental/dfu-application-flow.png" title="DFU application flow" imgClass="img-responsive center-block" >}}
 
 The major challenge of the DFU class is getting the right application on the host to perform the download the firmware. There is no application supplied by Microsoft or the USB-IF. Some shareware exist and they work reasonably well on Linux and to a lesser extent on Windows.
 
@@ -269,7 +269,7 @@ On Windows, the USB registry must be able to associate the USB device with its P
 
 Running Zadig for the first time will show this screen:
 
-![Running Zadig for the first time](../media/usbx-device-stack-supplemental/zadig.png)
+{{< figure src="../media/usbx-device-stack-supplemental/zadig.png" title="Running Zadig for the first time" imgClass="img-responsive center-block" >}}
 
 From the device list, find your device and associate it with the libusb windows driver. This will bind the PID/VID of the device with the Windows USB library used by the DFU utilities.
 
@@ -352,7 +352,7 @@ The Initiator always determines the flow of the PIMA operations but the Responde
 
 The following diagram shows the transfer of a data object between the host and the PIMA device class.
 
-![PIMA transactions](../media/usbx-device-stack-supplemental/pima-transactions.png)
+{{< figure src="../media/usbx-device-stack-supplemental/pima-transactions.png" title="PIMA transactions" imgClass="img-responsive center-block" >}}
 
 ## Initialization of the PIMA device class
 

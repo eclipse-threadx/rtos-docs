@@ -22,7 +22,7 @@ The exact sector offset of the other areas in the logical sector view of the med
 
 - **Jump Instruction** The *jump instruction* field is a three-byte field that represents an Intel x86 machine instruction for a processor jump. This is a legacy field in most situations.
 
-  ![FileX Media Logical Sector View](../media/user-guide/filex-media-logical-sector-view.png)
+  {{< figure src="../media/user-guide/filex-media-logical-sector-view.png" title="FileX Media Logical Sector View" imgClass="img-responsive center-block" >}}
 
   **FIGURE 1. FileX Media Logical Sector View**
 
@@ -265,11 +265,11 @@ field represents a checksum of the 11 characters of the associated MSDOS 8.3 fil
 - **10ms Increment Fields**
     The value in the 10ms increment field provides finer granularity to the timestamp value. The valid values are between 0 (0ms) and 199 (1990ms).
 
-     ![10ms Increment Fields](../media/user-guide/10ms-increment-fields.png)
+     {{< figure src="../media/user-guide/10ms-increment-fields.png" title="10ms Increment Fields" imgClass="img-responsive center-block" >}}
 
 - **UTC Offset Field**
 
-     ![UTC Offset Field](../media/user-guide/utc-offset-field.png)
+     {{< figure src="../media/user-guide/utc-offset-field.png" title="UTC Offset Field" imgClass="img-responsive center-block" >}}
 
 - **Offset Value**
 
@@ -390,7 +390,7 @@ A FileX file may be opened multiple times simultaneously for read access. Howeve
 
 FileX system information consists of keeping track of the open media instances and maintaining the global system time and date.
 
-![File with Contiguous Clusters vs. File Requiring FAT Link](../media/user-guide/system-information.png)
+{{< figure src="../media/user-guide/system-information.png" title="File with Contiguous Clusters vs. File Requiring FAT Link" imgClass="img-responsive center-block" >}}
 
 **FIGURE 3. File with Contiguous Clusters vs. File Requiring FAT Link**
 
@@ -412,6 +412,6 @@ The constants **FX_UPDATE_RATE_IN_SECONDS** and **FX_UPDATE_RATE_IN_TICKS** repr
 
 The periodic FileX timer is used only for updating the global system date and time, which is used solely for file time-stamping. If time-stamping is not necessary, simply define **FX_NO_TIMER** when compiling ***fx_system_initialize.c*** to eliminate the creation of the FileX periodic timer.
 
-![FileX FAT-16 File Example](../media/user-guide/fat-16-file-example.png)
+{{< figure src="../media/user-guide/fat-16-file-example.png" title="FileX FAT-16 File Example" imgClass="img-responsive center-block" >}}
 
 **FIGURE 4. FileX FAT-16 File Example**

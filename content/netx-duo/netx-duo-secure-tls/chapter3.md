@@ -46,7 +46,7 @@ In order to use TLS 1.3, the macro NX_SECURE_TLS_ENABLE_TLS_1_3 must be globally
 
 Any valid TLS record must have a TLS header, as shown in Error! Reference source not found.
 
-![Diagram of a TLS record header.](media/image2.png)
+{{< figure src="../media/image2.png" title="Diagram of a TLS record header." imgClass="img-responsive center-block" >}}
 
 Figure 1 - TLS record header
 
@@ -66,7 +66,7 @@ The fields of the TLS record header are defined as follows:
 
 Any valid TLS handshake record must have a TLS Handshake header, as shown in Figure 2.
 
-![Diagram of a TLS Handshake record header.](media/image3.png)
+{{< figure src="../media/image3.png" title="Diagram of a TLS Handshake record header." imgClass="img-responsive center-block" >}}
 
 Figure 2 - TLS Handshake record header
 
@@ -102,7 +102,7 @@ Once the Finished messages are received and the handshake hashes are verified, t
 
 Finally, a TLS session can only be successfully ended if either the Client or Server chooses to do so. A truncated session is considered a security breach (since an attacker may be attempting to prevent all the data being sent from being received) so a special notification is sent when either side wants to end the session, called a CloseNotify alert. Both the client and server must send and process a CloseNotify alert for a successful session shutdown.
 
-![Diagram of a Typical TLS handshake.](media/image4.png)
+{{< figure src="../media/image4.png" title="Diagram of a Typical TLS handshake." imgClass="img-responsive center-block" >}}
 
 Figure 3- Typical TLS handshake
 
@@ -116,7 +116,7 @@ The new arrangement means that more of the TLS handshake is protected by encrypt
 
 7. A flight is simply a collection of TLS messages sent simultaneously in a group.
 
-![Diagram of a TLS 1.3 Handshake.](media/image5.png)
+{{< figure src="../media/image5.png" title="Diagram of a TLS 1.3 Handshake." imgClass="img-responsive center-block" >}}
 
 Figure 4 - TLS 1.3 Handshake
 
@@ -233,7 +233,7 @@ The TLS protocol fits into the networking stack between the transport layer (e.g
 
 TLS requires a transport layer protocol that supports in-order and lossless delivery, such as TCP. Due to this requirement, TLS cannot run on top of UDP since UDP does not guarantee delivery of datagrams. A separate protocol called *DTLS,* which is a modified version of TLS, is used for applications that need the security of TLS over a datagram protocol like UDP. NetX Duo Secure supports DTLS, but documentation for DTLS is separate from this document.
 
-![Diagram of a TCP/IP and TLS protocol layers.](media/image6.png)
+{{< figure src="../media/image6.png" title="Diagram of a TCP/IP and TLS protocol layers." imgClass="img-responsive center-block" >}}
 
 Figure 5- TCP/IP and TLS protocol layers
 

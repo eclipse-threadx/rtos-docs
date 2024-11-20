@@ -39,7 +39,7 @@ In NetX Duo DNS Client, the SOA record type, NX_DNS_SOA_ENTRY, is saved as seven
 
 The storage of a two SOA records is shown below. The SOA records containing fixed length data are entered starting at the top of the buffer. The pointers MNAME and RNAME point to the variable length data (host names) which are stored at the bottom of the buffer. Additional SOA records are entered after the first record ("additional SOA records…") and their variable length data is stored above the last entry's variable length data ("additional SOA variable length data"):
 
-![The storage of a two SOA records](media/image4.png)
+{{< figure src="../media/image4.png" title="The storage of a two SOA records" imgClass="img-responsive center-block" >}}
 
 If the input *record_buffer* cannot hold all the SOA data in the server reply, the the *record_buffer* holds as many records as will fit and returns the number of records in the buffer.
 
@@ -424,7 +424,7 @@ In NetX Duo DNS Client the NS data type, NX_DNS_NS_ENTRY, is saved as two 4-byte
 
 The buffer shown below contains four NX_DNS_NS_ENTRY records. The pointer to host name string in each entry points to the corresponding host name string in the bottom half of the buffer:
 
-![Contains four NX_DNS_NS_ENTRY records](media/image5.png)
+{{< figure src="../media/image5.png" title="Contains four NX_DNS_NS_ENTRY records" imgClass="img-responsive center-block" >}}
 
 If the input *record_buffer* cannot hold all the NS data in the server reply, the the *record_buffer* holds as many records as will fit and returns the number of records in the buffer.
 
@@ -544,7 +544,7 @@ In NetX Duo DNS Client, the mail exchange record type, NX_DNS_MAIL_EXCHANGE_ENTR
 
 A buffer containing four MX records is shown below. Each record contains the fixed length data from the list above. The pointer to the mail exchange server host name points to the corresponding host name at the bottom of the buffer.
 
-![A buffer containing four MX records](media/image6.png)
+{{< figure src="../media/image6.png" title="A buffer containing four MX records" imgClass="img-responsive center-block" >}}
 
 If the input *record_buffer* cannot hold all the MX data in the server reply, the the *record_buffer* holds as many records as will fit and returns the number of records in the buffer.
 
@@ -677,7 +677,7 @@ In NetX Duo DNS Client, the service record type, **NX_DNS_SRV_ENTRY**, is saved 
 
 Four SRV records are stored in the supplied buffer. Each NX_DNS_SRV_ENTRY record contains a pointer, *nx_dns_srv_hostname_ptr*, that points to the corresponding host name string in the bottom of the record buffer:
 
-![Four SRV records](media/image7.png)
+{{< figure src="../media/image7.png" title="Four SRV records" imgClass="img-responsive center-block" >}}
 
 If the input *record_buffer* cannot hold all the SRV data in the server reply, the the *record_buffer* holds as many records as will fit and returns the number of records in the buffer.
 
@@ -894,7 +894,7 @@ This service sends a query of Type A with the specified host name to obtain the 
 
 Multiple IPv4 addresses are stored in the 4-byte aligned buffer as shown below:
 
-![multiple address 4-byte aligned buffer](media/image8.png)
+{{< figure src="../media/image8.png" title="multiple address 4-byte aligned buffer" imgClass="img-responsive center-block" >}}
 
 If the supplied buffer cannot hold all the IP address data, the remaining A records are not stored in *record_buffer*. This enables the application to retrieve one, some or all of the available IP address data in the server reply.
 
@@ -999,7 +999,7 @@ This service sends a query of type AAAA with the specified domain name to obtain
 
 The format of IPv6 addresses stored in the 4-byte aligned buffer is shown below:
 
-![IPv6 format 4-byte aligned buffer](media/image9.png)
+{{< figure src="../media/image9.png" title="IPv6 format 4-byte aligned buffer" imgClass="img-responsive center-block" >}}
 
 If the input *record_buffer* cannot hold all the AAAA data in the server reply, the the *record_buffer* holds as many records as will fit and returns the number of records in the buffer.
 

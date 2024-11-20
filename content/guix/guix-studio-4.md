@@ -7,7 +7,7 @@ GUIX Studio provides management of all UI resources the application will use for
 
 All resource management is done within the ***Resource View*** of the GUIX Studio UI, as shown below in ***Figure 8***.
 
-![Screenshot of the GUIX Studio Resource View.](../media/guix-studio/image38.jpg)
+{{< figure src="../media/guix-studio/image38.jpg" title="Screenshot of the GUIX Studio Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 8**
 
@@ -15,7 +15,7 @@ All resource management is done within the ***Resource View*** of the GUIX Studi
 
 The ***Colors*** section of the ***Resource View*** allows you to manage your color resources. You can expand this view by clicking on the **+** field in the view header, resulting in the view shown below in ***Figure 9***:
 
-![Screenshot of the Colors section of the Resource View](../media/guix-studio/resource_view_color_section.png)
+{{< figure src="../media/guix-studio/resource_view_color_section.png" title="Screenshot of the Colors section of the Resource View" imgClass="img-responsive center-block" >}}
 
 **Figure 9**
 
@@ -27,7 +27,7 @@ You can change both the color name and color value for custom colors that you ha
 
 To modify a color resource, double-click (or right-click and menu select) on the color resource. This action brings up the color-definition dialog. From this dialog, the color resource can be modified to match the application's UI needs. ***Figure 10*** shows the modification dialog when **CANVAS** is double-clicked. The appearance of this dialog will change based on the color-format settings of the target display.
 
-![Screenshot of the Edit Color dialog.](../media/guix-studio/edit_color.png)
+{{< figure src="../media/guix-studio/edit_color.png" title="Screenshot of the Edit Color dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 10**
 
@@ -35,11 +35,11 @@ The appearance of the Edit Color dialog will change depending on the color depth
 
 To add a new color resource, from the ***Colors*** section of the ***Resource View*** select the following button:
 
-![Add New Color button](../media/guix-studio/resource_view_add_new_color.jpg)
+{{< figure src="../media/guix-studio/resource_view_add_new_color.jpg" title="Add New Color button" imgClass="img-responsive center-block" >}}
 
 Use the resulting color dialog to add a new color resource, as shown below in ***Figure 11**:*
 
-![Screenshot of the New Color in the Edit Color dialog.](../media/guix-studio/new_color.png)
+{{< figure src="../media/guix-studio/new_color.png" title="Screenshot of the New Color in the Edit Color dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 11**
 
@@ -65,7 +65,7 @@ When you switch the display color format using Project Configuration dialog, the
 
 When a project is configured for 256 color palette mode color format, the user can configure how the palette to be installed and used is defined. You can access and edit the palette definition by the using the Configure|Themes dialog, and if your project is set for 8 bpp you should see the "Edit Palette" button. Click this button to bring up the Edit Palette dialog:
 
-![Screenshot of the Edit Palette dialog.](../media/guix-studio/edit_palette.png)
+{{< figure src="../media/guix-studio/edit_palette.png" title="Screenshot of the Edit Palette dialog." imgClass="img-responsive center-block" >}}
 
 GUIX Studio divides the palette into two sections: The "user defined" section and the "auto-generated" section. GUIX Studio runs a sophisticated optimal palette generation algorithm to create the best palette for displaying the images that are included in each theme. You can carve out any number of palette entries you need to define by typing a number into the "Predefined Palette Entries" field, and enter any RGB value you like for any of these slots. The remaining slots will be allocated to Studio to create an optimal color palette for displaying your images.
 
@@ -81,7 +81,7 @@ For example, if you wanted to display anti-aliased red text on a medium gray bac
 
 In order to manage font resources the ***Fonts*** section of the ***Resource View*** must first be expanded by clicking on the **+** field, resulting in the dialog shown below in ***Figure 12***:
 
-![Screenshot of the Fonts section in the Resource View.](../media/guix-studio/resource_view_font_section.png)
+{{< figure src="../media/guix-studio/resource_view_font_section.png" title="Screenshot of the Fonts section in the Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 12**
 
@@ -93,17 +93,17 @@ The following four fonts, named "LARGE", "MEDIUM", "NORMAL" and "SMALL", are cus
 
 To modify a font resource, double-click (or right-click and menu select) on the font resource. From this dialog the font resource can be modified to match the application's UI needs. ***Figure 13*** shows the modification dialog when **SYSTEM** is double-clicked.
 
-![Screenshot of the modification dialog when SYSTEM is double-clicked.](../media/guix-studio/edit_system_font.png)
+{{< figure src="../media/guix-studio/edit_system_font.png" title="Screenshot of the modification dialog when SYSTEM is double-clicked." imgClass="img-responsive center-block" >}}
 
 **Figure 13**
 
 To add a new font resource, from the ***Fonts*** section of the ***Resource View*** select the following button:
 
-![Add New Font button](../media/guix-studio/resource_view_add_new_font.jpg)
+{{< figure src="../media/guix-studio/resource_view_add_new_font.jpg" title="Add New Font button" imgClass="img-responsive center-block" >}}
 
 This will invoke the `Font Edit` dialog to add a new font resource, as shown below in ***Figure 14***:
 
-![Screenshot of the modification dialog to add a new font resource.](../media/guix-studio/add_new_font.png)
+{{< figure src="../media/guix-studio/add_new_font.png" title="Screenshot of the modification dialog to add a new font resource." imgClass="img-responsive center-block" >}}
 
 **Figure 14**
 
@@ -143,7 +143,7 @@ In order to manage pixel-map resources the ***Pixel-maps*** section of the ***Re
 
 When the `Pixelmap` group is expanded, you should see a preview similar to this:
 
-![Screenshot of the Pixel-maps section in the Resource View.](../media/guix-studio/pixelmap_view.png)
+{{< figure src="../media/guix-studio/pixelmap_view.png" title="Screenshot of the Pixel-maps section in the Resource View." imgClass="img-responsive center-block" >}}
 
 **Figure 15**
 
@@ -157,7 +157,7 @@ Adding a new pixel-map folder is done by right-clicking on `Pixelmaps` section h
 
 To modify a pixel-map resource, double-click (or right-click and menu select) on the pixel-map resource. From this dialog the pixel-map resource can be modified to match the application's UI needs. ***Figure 16*** shows the modification dialog when **RADIO_ON** is double-clicked.
 
-![Screenshot of the Edit Pixel-maps dialog.](../media/guix-studio/edit_pixelmap.png)
+{{< figure src="../media/guix-studio/edit_pixelmap.png" title="Screenshot of the Edit Pixel-maps dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 16**
 
@@ -181,23 +181,23 @@ Once all options are set as desired, click the OK button to produce a new pixel-
 
 To add a new pixel-map resource, from within the `Pixelmaps` section of the ***Resource View*** select the following button:
 
-![Add New Pixel-map button.](../media/guix-studio/resource_view_add_new_pixelmap.jpg)
+{{< figure src="../media/guix-studio/resource_view_add_new_pixelmap.jpg" title="Add New Pixel-map button." imgClass="img-responsive center-block" >}}
 
 **Batch Pixelmap Edit**
 
 To modify the properties of a bunch of pixelmaps, right click on pixelmap group or folder, and select **Edit Pixelmap(s)** menu to invoke **Edit Pixelmap(s)** dialog.
 
-![Screenshot of the Edit Multi Pixel-maps dialog.](../media/guix-studio/batch_pixelmap_edit.jpg)
+{{< figure src="../media/guix-studio/batch_pixelmap_edit.jpg" title="Screenshot of the Edit Multi Pixel-maps dialog." imgClass="img-responsive center-block" >}}
 
 Checkbox status description:
 
-![Checked button.](../media/guix-studio/checkbox_checked.png)
+{{< figure src="../media/guix-studio/checkbox_checked.png" title="Checked button." imgClass="img-responsive center-block" >}}
 This status means all pixelmaps have the property checked, you can uncheck the button to change the property for all the pixelmaps.
 
-![Unchecked button.](../media/guix-studio/checkbox_unchecked.png)
+{{< figure src="../media/guix-studio/checkbox_unchecked.png" title="Unchecked button." imgClass="img-responsive center-block" >}}
 This status means all pixelmaps have the property unchecked, you can check the button to change the property for all the pixelmaps.
 
-![Undetermined button.](../media/guix-studio/checkbox_undetermined.png)
+{{< figure src="../media/guix-studio/checkbox_undetermined.png" title="Undetermined button." imgClass="img-responsive center-block" >}}
 This status means pixelmaps have a different status for the property, you can check or uncheck the button to change the property for all the pixelmaps, otherwise, the property remains unchanged.
 
 
@@ -205,7 +205,7 @@ This status means pixelmaps have a different status for the property, you can ch
 
 When the Strings group is expanded you should see a preview of the project string table, as shown below:
 
-![Screenshot of the expanded Strings group.](../media/guix-studio/string_res_view.png)
+{{< figure src="../media/guix-studio/string_res_view.png" title="Screenshot of the expanded Strings group." imgClass="img-responsive center-block" >}}
 
 **Figure 17**
 
@@ -221,7 +221,7 @@ GUIX Studio supports static text and multi-lingual application by defining and m
 
 The languages to be supported by your application are defined by using the Language Configuration Dialog, show here:
 
-![Screenshot of the Language Configuration dialog.](../media/guix-studio/config_languages.png)
+{{< figure src="../media/guix-studio/config_languages.png" title="Screenshot of the Language Configuration dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 18**
 
@@ -235,7 +235,7 @@ The checkbox "**Generate Bidi Text in Display Order**" instructs GUIX Studio to 
 
 The first language or "Index 1" language is referred to as your "reference language". This is the language that GUIX Studio will use when you are defining and editing your UI design. All other languages in your string table are referred to as Translation Languages. GUIX Studio supports exporting and importing the string table data in industry standard XLIFF or CSV format data files, convenient for exchanging string information with translators who might assist the application developer with adding translations for the languages to be supported other than the reference language. When you export the GUIX string table to an XLIFF or CSV file, the reference language along with one translation language are included in the XLIFF or CSV string data exchange file. Similarly, when you import an XLIFF or CSV file, the imported data is used to populate one translation language in your GUIX String table.
 
-![Screenshot of the String table Editor.](../media/guix-studio/string_table_editor.jpg)
+{{< figure src="../media/guix-studio/string_table_editor.jpg" title="Screenshot of the String table Editor." imgClass="img-responsive center-block" >}}
 
 **Figure 19**
 
@@ -267,7 +267,7 @@ When a translation expert returns the XLIFF file to you with the new string tran
 
 When you click the Export button, the XLIFF/CSV Export Control dialog, show below, is displayed:
 
-![Screenshot of the XLIFF/CSV Export Control dialog.](../media/guix-studio/string_export.jpg)
+{{< figure src="../media/guix-studio/string_export.jpg" title="Screenshot of the XLIFF/CSV Export Control dialog." imgClass="img-responsive center-block" >}}
 
 **Figure 20**
 

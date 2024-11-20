@@ -302,11 +302,11 @@ Buffered device drivers are only concerned with managing linked lists of I/O buf
 
 **Input List**
 
-![Input List](../media/user-guide/input-list.png)
+{{< figure src="../media/user-guide/input-list.png" title="Input List" imgClass="img-responsive center-block" >}}
 
 **Output List**
 
-![Output List](../media/user-guide/output-list.png)
+{{< figure src="../media/user-guide/output-list.png" title="Output List" imgClass="img-responsive center-block" >}}
 
 **FIGURE 15. Input-Output Lists**
 
