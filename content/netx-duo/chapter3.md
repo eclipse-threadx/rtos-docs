@@ -28,7 +28,7 @@ Initialization of IPv6 in NetX Duo requires a few additional NetX Duo services. 
 
 ### Application Interface Calls
 
-Calls from the application are largely made from application threads running under the ThreadX RTOS. However, some initialization, create, and enable services may be called from ***tx_application_define***. The "Allowed From" sections in [Chapter 4 - Description of NetX Duo Services](chapter4) indicate from which each NetX Duo service can be called.
+Calls from the application are largely made from application threads running under the ThreadX RTOS. However, some initialization, create, and enable services may be called from ***tx_application_define***. The "Allowed From" sections in [Chapter 4 - Description of NetX Duo Services](../chapter4) indicate from which each NetX Duo service can be called.
 
 For the most part, processing intensive activities such as computing checksums is done within the calling thread's context—without blocking access of other threads to the IP instance. For example, on transmission, the UDP checksum calculation is performed inside the ***nx_udp_socket_send*** service, prior to calling the underlying IP send function. On a received packet, the UDP checksum is calculated in the ***nx_udp_socket_receive*** service, executed in the  of the application thread. This helps prevent stalling network requests of higher-priority threads because of processing intensive checksum computation in lower-priority threads.
 
@@ -58,7 +58,7 @@ handled by the internal IP thread, which results in the least amount of ISR proc
 
 The network driver can also defer interrupt processing to run out of the context of the IP thread. In this mode, the ISR shall save the necessary information, call the internal function ***_nx_ip_driver_deferred_processing***, and acknowledge the interrupt controller. This service notifies IP thread to schedule a callback to the device driver to complete the process of the event that causes the interrupt.
 
-Some network controllers are capable of performing TCP/IP header checksum computation and validation in hardware, without taking up valuable CPU resources. To take advantage of the hardware capability feature, NetX Duo provides options to enable or disable various software checksum computation at compilation time, as well as turning on or off checksum computation at run time, if the device driver is able to communicate with the IP layer about is hardware capabilities. See [Chapter 5 - NetX Duo Network Drivers](chapter5) for more detailed information on writing NetX Duo network drivers.
+Some network controllers are capable of performing TCP/IP header checksum computation and validation in hardware, without taking up valuable CPU resources. To take advantage of the hardware capability feature, NetX Duo provides options to enable or disable various software checksum computation at compilation time, as well as turning on or off checksum computation at run time, if the device driver is able to communicate with the IP layer about is hardware capabilities. See [Chapter 5 - NetX Duo Network Drivers](../chapter5) for more detailed information on writing NetX Duo network drivers.
 
 ### Multihome Support
 
@@ -105,7 +105,7 @@ Services specifically for developing multihome applications include the followin
 - *nxd_ip_raw_packet_source_send*
 - *nxd_udp_socket_source_send*
 
-These services are explained in greater detail in [Description of NetX Duo Services](chapter4).
+These services are explained in greater detail in [Description of NetX Duo Services](../chapter4).
 
 ### Loopback Interface
 
@@ -1447,7 +1447,7 @@ VOID _nx_udp_socket_driver_packet_receive(NX_UDP_SOCKET *socket_ptr, NX_PACKET *
                                           NXD_ADDRESS *local_ip, NXD_ADDRESS *remote_ip, UINT remote_port);
 ```
 ### TCP/IP Offload Driver
-A driver function is needed for each IP interface. Refer to [Chapter 5](chapter5.md#tcpip-offload-driver-guidance) for more details on how to develop NetX Duo driver functions.
+A driver function is needed for each IP interface. Refer to [Chapter 5](../chapter5.md#tcpip-offload-driver-guidance) for more details on how to develop NetX Duo driver functions.
 
 ### TCP/IP Offload Known Limitations
 - Only TCP and UDP sockets are supported

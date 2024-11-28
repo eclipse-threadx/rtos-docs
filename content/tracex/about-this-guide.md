@@ -10,21 +10,21 @@ It is intended for the embedded real-time software developer using ThreadX Real-
 
 ## Organization
 
-- [Chapter 1](chapter1) - contains an basic overview of TraceX and describes its relationship to real-time development.
-- [Chapter 2](chapter2) - gives the basic steps to install and use TraceX to analyze your application right out of the box.
-- [Chapter 3](chapter3) - describes the main features of TraceX.
-- [Chapter 4](chapter4) - details performance analysis features of TraceX.
-- [Chapter 5](chapter5) - describes how to set up ThreadX, FileX, and NetX Duo in order to generate a trace buffer that is viewable by TraceX.
-- [Chapter 6](chapter6) - describes TraceX events in detail.
-- [Chapter 7](chapter7) - describes FileX events in detail.
-- [Chapter 8](chapter8) - describes NetX Duo events in detail.
-- [Chapter 9](chapter9) - describes USBX events in detail.
-- [Chapter 10](chapter10) - describes creating custom user events in detail.
-- [Chapter 11](chapter11) - describes the internal trace buffer in detail.
-- [Appendix A](appendix-a) - ThreadX port-specific file with its time-stamp source for gathering trace events.
-- [Appendix B](appendix-b) - ThreadX *tx_trace.h* file that shows implementation details regarding the event trace buffer.
-- [Appendix C](appendix-c) - Summarizes command line utilities for converting various file formats into proper TraceX binary files.
-- [Appendix D](appendix-d) - Examples of dumping trace files from various development tools.
+- [Chapter 1](../chapter1) - contains an basic overview of TraceX and describes its relationship to real-time development.
+- [Chapter 2](../chapter2) - gives the basic steps to install and use TraceX to analyze your application right out of the box.
+- [Chapter 3](../chapter3) - describes the main features of TraceX.
+- [Chapter 4](../chapter4) - details performance analysis features of TraceX.
+- [Chapter 5](../chapter5) - describes how to set up ThreadX, FileX, and NetX Duo in order to generate a trace buffer that is viewable by TraceX.
+- [Chapter 6](../chapter6) - describes TraceX events in detail.
+- [Chapter 7](../chapter7) - describes FileX events in detail.
+- [Chapter 8](../chapter8) - describes NetX Duo events in detail.
+- [Chapter 9](../chapter9) - describes USBX events in detail.
+- [Chapter 10](../chapter10) - describes creating custom user events in detail.
+- [Chapter 11](../chapter11) - describes the internal trace buffer in detail.
+- [Appendix A](../appendix-a) - ThreadX port-specific file with its time-stamp source for gathering trace events.
+- [Appendix B](../appendix-b) - ThreadX *tx_trace.h* file that shows implementation details regarding the event trace buffer.
+- [Appendix C](../appendix-c) - Summarizes command line utilities for converting various file formats into proper TraceX binary files.
+- [Appendix D](../appendix-d) - Examples of dumping trace files from various development tools.
 
 ## Guide Conventions
 

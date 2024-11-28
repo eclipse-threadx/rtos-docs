@@ -774,7 +774,7 @@ UINT ux_host_class_cdc_acm_read(
 
 This function reads from the cdc_acm interface. The call is blocking and only returns when there is either an error or when the transfer is complete.
 
-> **Note:** This functions reads raw bulk data from device, so it keeps pending until buffer is full or device terminates the transfer by a short packet (including Zero Length Packet). For more details, please refer to [**General Considerations for Bulk Transfer**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
+> **Note:** This functions reads raw bulk data from device, so it keeps pending until buffer is full or device terminates the transfer by a short packet (including Zero Length Packet). For more details, please refer to [**General Considerations for Bulk Transfer**](../usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
 > The function reads bytes from the device packet by packet. If the prepared buffer size is smaller than a packet and the device sends more data than expected (in other words, the prepared buffer size is not a multiple of the USB endpoint's max packet size), then buffer overflow will occur. To avoid this issue, the recommended way to read is to allocate a buffer exactly one packet size (USB endpoint max packet size). This way if there is more data, the next read can get it and no buffer overflow will occur. If there is less data, the current read can get a short packet instead of generating an error.
 
 ### Parameters

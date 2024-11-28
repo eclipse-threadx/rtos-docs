@@ -334,4 +334,4 @@ To learn more details about use, see [Device Update for IoT Hub with Eclipse Thr
 
 ## Next steps
 
-To learn more about NetX Duo, start with the [NetX Duo User Guide](about-this-guide).
+To learn more about NetX Duo, start with the [NetX Duo User Guide](../about-this-guide).

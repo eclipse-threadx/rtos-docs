@@ -2025,7 +2025,7 @@ UINT _ux_device_class_printer_read(
 
 This function is called when an application needs to read from the OUT data pipe (OUT from the host, IN from the device). It is blocking.
 
-> **Note:** This functions reads raw bulk data from device, so it keeps pending until buffer is full or device terminates the transfer by a short packet (including Zero Length Packet). For more details, please refer to [**General Considerations for Bulk Transfer**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
+> **Note:** This functions reads raw bulk data from device, so it keeps pending until buffer is full or device terminates the transfer by a short packet (including Zero Length Packet). For more details, please refer to [**General Considerations for Bulk Transfer**](../usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
 
 ### Parameters
 
@@ -2069,7 +2069,7 @@ UINT _ux_device_class_printer_write(
 
 This function is called when an application needs to write to the IN data pipe (IN from the host, OUT from the device). It is blocking.
 
-> **Note:** This function writes bulk data to host. The host keeps waiting until buffer is full or there is short packet. So if transfer size is multiple of max packet size of the IN endpoint, it's better to add another call with transfer size 0 to send ZLP, to tell host that all data is done. For more details, please refer to [**General Considerations for Bulk Transfer**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
+> **Note:** This function writes bulk data to host. The host keeps waiting until buffer is full or there is short packet. So if transfer size is multiple of max packet size of the IN endpoint, it's better to add another call with transfer size 0 to send ZLP, to tell host that all data is done. For more details, please refer to [**General Considerations for Bulk Transfer**](../usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
 
 ### Parameters
 

@@ -8,25 +8,25 @@ This guide contains comprehensive information about FileX, the high-performance,
 
 ## Organization
 
-[Chapter 1](chapter1) - Introduces FileX
+[Chapter 1](../chapter1) - Introduces FileX
 
-[Chapter 2](chapter2) - Gives the basic steps to install and use FileX with your ThreadX application
+[Chapter 2](../chapter2) - Gives the basic steps to install and use FileX with your ThreadX application
 
-[Chapter 3](chapter3) - Provides a functional overview of the FileX system and basic information about FAT file system formats
+[Chapter 3](../chapter3) - Provides a functional overview of the FileX system and basic information about FAT file system formats
 
-[Chapter 4](chapter4) - Details the application's interface to FileX
+[Chapter 4](../chapter4) - Details the application's interface to FileX
 
-[Chapter 5](chapter5) - Describes the supplied FileX RAM driver and how to write your own custom FileX drivers
+[Chapter 5](../chapter5) - Describes the supplied FileX RAM driver and how to write your own custom FileX drivers
 
-[Chapter 6](chapter6) - Describes the FileX Fault Tolerant Module
+[Chapter 6](../chapter6) - Describes the FileX Fault Tolerant Module
 
-[Appendix A](appendix-a) - FileX Services
+[Appendix A](../appendix-a) - FileX Services
 
-[Appendix B](appendix-b) - FileX Constants
+[Appendix B](../appendix-b) - FileX Constants
 
-[Appendix C](appendix-c) - FileX Data Types
+[Appendix C](../appendix-c) - FileX Data Types
 
-[Appendix D](appendix-d) - ASCII Chart
+[Appendix D](../appendix-d) - ASCII Chart
 
 ## Guide Conventions
 

@@ -111,7 +111,7 @@ This service creates an entry in the memory management hardware table for a shar
 - **module_instance** Pointer to the instance of the module.
 - **start_address** Starting address of shared memory region.
 - **length** Length of shared memory region.
-- **attributes** Attributes of memory region (cache, read, write, etc.). Attributes are port-specific; see [appendix](appendix) for attributes format.
+- **attributes** Attributes of memory region (cache, read, write, etc.). Attributes are port-specific; see [appendix](../appendix) for attributes format.
 
 ### Return values
 

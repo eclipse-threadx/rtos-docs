@@ -11,7 +11,7 @@ The ThreadX Module Manager resides in the resident portion of the application al
 
 The following steps are required for building the ThreadX Module Manager (each step is described in greater detail below).
 
-1. The **TX_THREAD** control block must be extended to include module information. The easiest way to accomplish this is to replace the definition of **TX_THREAD_EXTENSION_2** in the ***tx_port.h*** file with the **TX_THREAD_EXTENSION_2** found in ***txm_module_port.h***. See [appendix](appendix) for port-specific extensions.
+1. The **TX_THREAD** control block must be extended to include module information. The easiest way to accomplish this is to replace the definition of **TX_THREAD_EXTENSION_2** in the ***tx_port.h*** file with the **TX_THREAD_EXTENSION_2** found in ***txm_module_port.h***. See [appendix](../appendix) for port-specific extensions.
 
    Example extension:
 
@@ -254,4 +254,4 @@ void module_manager_entry(ULONG thread_input)
 
 The ***txm_module_manager_\**** source files must be added to the ThreadX library.
 
-A ThreadX Module Manager application is effectively the same as a standard ThreadX application, which is one or more application files linked together with the ThreadX library ***tx.a***. Building a module manager application is dependent on the tool chain being used. See [appendix](appendix) for port-specific examples.
+A ThreadX Module Manager application is effectively the same as a standard ThreadX application, which is one or more application files linked together with the ThreadX library ***tx.a***. Building a module manager application is dependent on the tool chain being used. See [appendix](../appendix) for port-specific examples.

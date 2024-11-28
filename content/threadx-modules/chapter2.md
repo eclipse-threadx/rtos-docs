@@ -57,7 +57,7 @@ ThreadX Modules have their own set of source files that are designed to be linke
 
 ## Module preamble
 
-The Module Preamble defines characteristics and resources of the module. Information such as the initial thread entry function and the initial memory area associated with the thread are defined in the preamble. Port-specific preamble examples are in the [appendix](appendix). Figure 3 shows an example ThreadX module preamble for a generic target (the lines starting with * are values typically modified by the application):
+The Module Preamble defines characteristics and resources of the module. Information such as the initial thread entry function and the initial memory area associated with the thread are defined in the preamble. Port-specific preamble examples are in the [appendix](../appendix). Figure 3 shows an example ThreadX module preamble for a generic target (the lines starting with * are values typically modified by the application):
 
 ```c
     AREA Init, CODE, READONLY
@@ -125,7 +125,7 @@ Some applications may optionally define a stopping thread, which is executed as 
 
 ## Module properties bit map
 
-The table below shows an example of the properties bit map. Port-specific properties bitmaps are in the [appendix](appendix).
+The table below shows an example of the properties bit map. Port-specific properties bitmaps are in the [appendix](../appendix).
 
 | Bit | Value | Meaning |
 |---|---|---|
@@ -138,7 +138,7 @@ The table below shows an example of the properties bit map. Port-specific proper
 
 ## Module linker control file
 
-When building a module, the module preamble must be placed before any other code section. A module must be built with position-independent code and data sections. Port-specific example linker files are in the [appendix](appendix).
+When building a module, the module preamble must be placed before any other code section. A module must be built with position-independent code and data sections. Port-specific example linker files are in the [appendix](../appendix).
 
 ## Module ThreadX library
 
@@ -566,7 +566,7 @@ void thread_6_and_7_entry(ULONG thread_input)
 
 ## Building Modules
 
-Building a module is dependent on the tool chain being used. See [appendix](appendix) for port-specific examples. Common activities to all ports include the following.
+Building a module is dependent on the tool chain being used. See [appendix](../appendix) for port-specific examples. Common activities to all ports include the following.
 
 - Building a module library
 - Building the module application

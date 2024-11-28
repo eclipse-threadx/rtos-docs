@@ -7,37 +7,37 @@ This guide contains comprehensive information about GUIX, the high-performance G
 
 ## Organization
 
-[Chapter 1 - Introduction to GUIX](chapter-1)
+[Chapter 1 - Introduction to GUIX](../chapter-1)
 
-[Chapter 2 - Installation and use of GUIX](chapter-2)
+[Chapter 2 - Installation and use of GUIX](../chapter-2)
 
-[Chapter 3 - Functional Overview of GUIX](chapter-3)
+[Chapter 3 - Functional Overview of GUIX](../chapter-3)
 
-[Chapter 4 - Description of GUIX Services](chapter-4)
+[Chapter 4 - Description of GUIX Services](../chapter-4)
 
-[Chapter 5 - GUIX Display Drivers](chapter-5)  
+[Chapter 5 - GUIX Display Drivers](../chapter-5)  
 
-[GUIX Example](guix-example)
+[GUIX Example](../guix-example)
 
-[Appendix A - GUIX Color Definitions](appendix-a)
+[Appendix A - GUIX Color Definitions](../appendix-a)
 
-[Appendix B - GUIX Color Formats](appendix-b)
+[Appendix B - GUIX Color Formats](../appendix-b)
 
-[Appendix C - GUIX Widget Styles](appendix-c)
+[Appendix C - GUIX Widget Styles](../appendix-c)
 
-[Appendix D - GUIX Brush, Canvas and Gradient Attributes](appendix-d)
+[Appendix D - GUIX Brush, Canvas and Gradient Attributes](../appendix-d)
 
-[Appendix E - GUIX Event Description](appendix-e)
+[Appendix E - GUIX Event Description](../appendix-e)
 
-[Appendix F - GUIX RTOS Binding Services](appendix-f)
+[Appendix F - GUIX RTOS Binding Services](../appendix-f)
 
-[Appendix G - GUIX Font Structure](appendix-g)
+[Appendix G - GUIX Font Structure](../appendix-g)
 
-[Appendix H - GUIX Build-Time Configuration flags](appendix-h)
+[Appendix H - GUIX Build-Time Configuration flags](../appendix-h)
 
-[Appendix I - GUIX Information Structures](appendix-i)
+[Appendix I - GUIX Information Structures](../appendix-i)
 
-[Appendix J - Canvas Partial Frame Buffer Feature](appendix-j)
+[Appendix J - Canvas Partial Frame Buffer Feature](../appendix-j)
 
 ## Guide Conventions
 

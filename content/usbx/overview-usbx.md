@@ -115,7 +115,7 @@ The USBX Host API is an intuitive and consistent API, following a noun-verb nami
 
 ### USBX Device API
 
-The USBX Device API is an intuitive and consistent API following a noun-verb naming convention. All APIs have leading ux_device_* to easily identify as USBX. Blocking APIs have optional thread timeout. Please see [USBX Host User Guide](usbx-host-stack-about) for more details.
+The USBX Device API is an intuitive and consistent API following a noun-verb naming convention. All APIs have leading ux_device_* to easily identify as USBX. Blocking APIs have optional thread timeout. Please see [USBX Host User Guide](../usbx-host-stack-about) for more details.
 
 * CDC/ACM
     - Minimal 0.8 KB FLASH, 2 KB RAM
@@ -166,4 +166,4 @@ PIMA (PTP/MTP)
 
 ## Next steps
 
-Start working with the USBX Host and Device Stack by following our [Host Stack User Guide](usbx-host-stack-about.md) or [Device Stack User Guide](usbx-device-stack-about).
+Start working with the USBX Host and Device Stack by following our [Host Stack User Guide](../usbx-host-stack-about.md) or [Device Stack User Guide](../usbx-device-stack-about).

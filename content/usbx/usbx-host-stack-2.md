@@ -281,9 +281,9 @@ When class function instance is activated, it's linked to the class who owns the
             return(UX_SUCCESS);
     }
 ```
-[`ux_host_stack_class_get`](usbx-host-stack-4.md#ux_host_stack_class_get) is used to get a registered class, given class name used on registration.
+[`ux_host_stack_class_get`](../usbx-host-stack-4.md#ux_host_stack_class_get) is used to get a registered class, given class name used on registration.
 
-[`ux_host_stack_class_instance_get`](usbx-host-stack-4.md#ux_host_stack_class_instance_get) is used to get function instance from specific registered class.
+[`ux_host_stack_class_instance_get`](../usbx-host-stack-4.md#ux_host_stack_class_instance_get) is used to get function instance from specific registered class.
 
 In example, the state of the instance and some other function related resources is checked, to confirm the instance is ready to use.
 
@@ -291,7 +291,7 @@ In example, the state of the instance and some other function related resources 
 
 There is an optional host change callback function which is assigned on host stack initialization. If the function is available, it's invoked when function instance is activated and in good state with all required resources available. Inside the callback the instance is passed and inside application callback user can save it for further operations.
 
-For more details, see [**ux_host_stack_initialize**](usbx-host-stack-4.md#ux_host_stack_initialize).
+For more details, see [**ux_host_stack_initialize**](../usbx-host-stack-4.md#ux_host_stack_initialize).
 
 ## Troubleshooting
 
