@@ -676,7 +676,7 @@ GX_DISABLE_THREADX_BINDING and re-building the GUIX library. This
 removes the ThreadX dependencies from the GUIX source code, and allows
 the application developer to implement the required operating system
 services using whatever RTOS is provided by the target system. [Appendix
-F - GUIX RTOS Binding Services](appendix-f) describes the services that need to
+F - GUIX RTOS Binding Services](../appendix-f) describes the services that need to
 be implemented to port GUIX to an operating system other than the
 ThreadX operating system.
 
@@ -1528,7 +1528,7 @@ types. For **GX_EVENT_PEN_DOWN** and **GX_EVENT_PEN_UP** events, the
 pen position. For timer events, the **gx_event_timer_id** field contains
 the ID of the expired timer. Other payload data fields are utilized for
 other event types. The complete list of pre-defined event types and
-their payload fields is defined in [Appendix E - GUIX Event Descriptions](appendix-e).
+their payload fields is defined in [Appendix E - GUIX Event Descriptions](../appendix-e).
 
 The application can also add its own custom events, starting numerically
 after the constant **GX_FIRST_APP_EVENT**. All event numbers after

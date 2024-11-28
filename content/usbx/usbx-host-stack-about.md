@@ -11,17 +11,17 @@ For technical information related to USB, see the USB specification and USB Clas
 
 ## Organization
 
-- [**Chapter 1**](usbx-host-stack-1) - contains an introduction to USBX
+- [**Chapter 1**](../usbx-host-stack-1) - contains an introduction to USBX
 
-- [**Chapter 2**](usbx-host-stack-2) - gives the basic steps to install and use USBX with your ThreadX application
+- [**Chapter 2**](../usbx-host-stack-2) - gives the basic steps to install and use USBX with your ThreadX application
 
-- [**Chapter 3**](usbx-host-stack-3) - provides a functional overview of USBX and basic information about USB
+- [**Chapter 3**](../usbx-host-stack-3) - provides a functional overview of USBX and basic information about USB
 
-- [**Chapter 4**](usbx-host-stack-4) - details the application's interface to USBX in host mode
+- [**Chapter 4**](../usbx-host-stack-4) - details the application's interface to USBX in host mode
 
-- [**Chapter 5**](usbx-host-stack-5) - describes the APIs of the USBX Host classes
+- [**Chapter 5**](../usbx-host-stack-5) - describes the APIs of the USBX Host classes
 
-- [**Chapter 6**](usbx-host-stack-6) - describes the USBX CDC-ECM class
+- [**Chapter 6**](../usbx-host-stack-6) - describes the USBX CDC-ECM class
 
 ## Troubleshooting
 

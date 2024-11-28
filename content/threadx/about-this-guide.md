@@ -10,27 +10,27 @@ It is intended for the embedded real-time software developer. The developer shou
 
 ## Organization
 
-[Chapter 1](chapter1) - Provides a basic overview of ThreadX and its relationship to real-time embedded development
+[Chapter 1](../chapter1) - Provides a basic overview of ThreadX and its relationship to real-time embedded development
 
-[Chapter 2](chapter2) - Gives the basic steps to install and use ThreadX in your application right *out of the box*
+[Chapter 2](../chapter2) - Gives the basic steps to install and use ThreadX in your application right *out of the box*
 
-[Chapter 3](chapter3) - Describes in detail the functional operation of ThreadX, the high performance real-time kernel
+[Chapter 3](../chapter3) - Describes in detail the functional operation of ThreadX, the high performance real-time kernel
 
-[Chapter 4](chapter4) - Details the application's interface to ThreadX
+[Chapter 4](../chapter4) - Details the application's interface to ThreadX
 
-[Chapter 5](chapter5) - Describes writing I/O drivers for ThreadX applications
+[Chapter 5](../chapter5) - Describes writing I/O drivers for ThreadX applications
 
-[Chapter 6](chapter6) - Describes the demonstration application that is supplied with every ThreadX processor support package
+[Chapter 6](../chapter6) - Describes the demonstration application that is supplied with every ThreadX processor support package
 
-[Appendix A](appendix-a) - ThreadX API
+[Appendix A](../appendix-a) - ThreadX API
 
-[Appendix B](appendix-b) - ThreadX constants
+[Appendix B](../appendix-b) - ThreadX constants
 
-[Appendix C](appendix-c) - ThreadX data types
+[Appendix C](../appendix-c) - ThreadX data types
 
-[Appendix D](appendix-d) - ASCII chart
+[Appendix D](../appendix-d) - ASCII chart
 
-[Appendix E](appendix-e) - ThreadX SMP MISRA C compliance
+[Appendix E](../appendix-e) - ThreadX SMP MISRA C compliance
 
 ## Guide Conventions
 

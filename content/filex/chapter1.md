@@ -87,7 +87,7 @@ impact on performance.
 
 FileX provides the very best deeply embedded file system technology in a manner that is easy to understand and easy to use! The FileX Application Programming Interface (API) makes the services intuitive and consistent. You won't have to decipher "alphabet soup" services that are all too common with other file systems.
 
-For a complete list of the FileX Version 5 Services, see [Appendix A](appendix-a).
+For a complete list of the FileX Version 5 Services, see [Appendix A](../appendix-a).
 
 ## Fault Tolerant Support
 

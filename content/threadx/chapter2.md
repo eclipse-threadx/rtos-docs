@@ -217,7 +217,7 @@ Defines the minimum stack size (in bytes). It is used for error checking when th
 
 **TX_MISRA_ENABLE**
 
-When defined, ThreadX utilizes MISRA C compliant conventions. Refer to ***[ThreadX SMP MISRA C compliance](appendix-e)*** for details.
+When defined, ThreadX utilizes MISRA C compliant conventions. Refer to ***[ThreadX SMP MISRA C compliance](../appendix-e)*** for details.
 
 **TX_MUTEX_ENABLE_PERFORMANCE_INFO**
 

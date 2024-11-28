@@ -12,15 +12,15 @@ For technical information related to USB, see the USB specification and USB Clas
 
 ## Organization
 
-- [**Chapter 1**](usbx-device-stack-1) - contains an introduction to USBX
+- [**Chapter 1**](../usbx-device-stack-1) - contains an introduction to USBX
 
-- [**Chapter 2**](usbx-device-stack-2) - gives the basic steps to install and use USBX with your ThreadX application
+- [**Chapter 2**](../usbx-device-stack-2) - gives the basic steps to install and use USBX with your ThreadX application
 
-- [**Chapter 3**](usbx-device-stack-3) - describes the functional components of the USBX device stack
+- [**Chapter 3**](../usbx-device-stack-3) - describes the functional components of the USBX device stack
 
-- [**Chapter 4**](usbx-device-stack-4) - describes the USBX device stack services
+- [**Chapter 4**](../usbx-device-stack-4) - describes the USBX device stack services
 
-- [**Chapter 5**](usbx-device-stack-5) - describes each USBX device class including their APIs
+- [**Chapter 5**](../usbx-device-stack-5) - describes each USBX device class including their APIs
 
 ## Troubleshooting
 

@@ -99,7 +99,7 @@ You should now see the running program, with the changes you made within Studio!
 
 ### Learning More
 
-The [GUIX Studio User Guide](about-guix-studio) is a much more thorough guide to using GUIX Studio. 
+The [GUIX Studio User Guide](../about-guix-studio) is a much more thorough guide to using GUIX Studio. 
 
-In addition, the [GUIX User Guide](about-guix) gives you much more detailed information about what is happening "Under the Hood" when your GUIX application executes. You will need to refer to both of these guides to fully utilize the capabilities of the GUIX runtime library and GUIX Studio.
+In addition, the [GUIX User Guide](../about-guix) gives you much more detailed information about what is happening "Under the Hood" when your GUIX application executes. You will need to refer to both of these guides to fully utilize the capabilities of the GUIX runtime library and GUIX Studio.
 

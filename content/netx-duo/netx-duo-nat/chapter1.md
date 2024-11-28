@@ -82,7 +82,7 @@ UINT nx_nat_inbound_entry_create(NX_NAT_DEVICE *nat_ptr,
     USHORT local_port, UCHAR protocol);
 ```
 
-This service is described in more detail in [Chapter 4 - Description of Services](chapter4)
+This service is described in more detail in [Chapter 4 - Description of Services](../chapter4)
 
 During runtime, if the translation table is full and no more entries can be added, NetX Duo NAT will notify the NAT application with a cache full callback if one is registered with the NAT instance. This is done using the *nx_nat_cache_notify_set* service:
 
@@ -91,7 +91,7 @@ UINT nx_nat_cache_notify_set(NX_NAT_DEVICE *nat_ptr,
     VOID (*cache_full_notify_cb)(NX_NAT_DEVICE *nat_ptr));
 ```
 
-See [Chapter 4 - Description of Services](chapter4) for more details about this service.
+See [Chapter 4 - Description of Services](../chapter4) for more details about this service.
 
 ## NAT Packet Processing in NetX Duo
 

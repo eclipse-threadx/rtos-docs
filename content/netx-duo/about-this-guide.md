@@ -10,16 +10,16 @@ It is intended for embedded real-time software developers familiar with basic ne
 
 ## Organization
 
-- [Chapter 1](chapter1) - Introduces NetX Duo
-- [Chapter 2](chapter2) - Gives the basic steps to install and use NetX Duo with your ThreadX application
-- [Chapter 3](chapter3) - Provides a functional overview of the NetX Duo system and basic information about the TCP/IP networking standards
-- [Chapter 4](chapter4) - Details the application's interface to NetX Duo
-- [Chapter 5](chapter5) - Describes network drivers for NetX Duo
-- [Appendix A](appendix-a) - NetX Duo Services
-- [Appendix B](appendix-b) - NetX Duo Constants
-- [Appendix C](appendix-c) - NetX Duo Data Types
-- [Appendix D](appendix-d) - BSD-Compatible Socket API
-- [Appendix E](appendix-e) - ASCII Chart
+- [Chapter 1](../chapter1) - Introduces NetX Duo
+- [Chapter 2](../chapter2) - Gives the basic steps to install and use NetX Duo with your ThreadX application
+- [Chapter 3](../chapter3) - Provides a functional overview of the NetX Duo system and basic information about the TCP/IP networking standards
+- [Chapter 4](../chapter4) - Details the application's interface to NetX Duo
+- [Chapter 5](../chapter5) - Describes network drivers for NetX Duo
+- [Appendix A](../appendix-a) - NetX Duo Services
+- [Appendix B](../appendix-b) - NetX Duo Constants
+- [Appendix C](../appendix-c) - NetX Duo Data Types
+- [Appendix D](../appendix-d) - BSD-Compatible Socket API
+- [Appendix E](../appendix-e) - ASCII Chart
 
 ## Guide Conventions
 
