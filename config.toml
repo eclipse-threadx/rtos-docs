@@ -1,4 +1,4 @@
-baseurl = "https://orcwg.org/"
+baseurl = "https://threadx.io/docs"
 DefaultContentLanguage = "en"
 title = "ThreadX RTOS Documentation"
 theme = "eclipsefdn-hugo-solstice-theme"
@@ -15,7 +15,7 @@ disablePathToLower = true
   seo_title_suffix = " | The Eclipse Foundation"
   keywords = []
   news_count = 3
-  featured_content_publish_target = "orc"
+  featured_content_publish_target = "threadx"
   styles = "public/css/styles.css"
   gcse = "011805775785170369411:p3ec0igo0qq"
   gcse_result_url = "/home/search/"
@@ -26,7 +26,6 @@ disablePathToLower = true
   call_for_action_url = "/downloads/"
   #share_img = "/images/social-media.jpg"
   #favicon = "/favicon.ico"
-  logo = "/images/orc-logo.png"
   logo_width = "120"
   layout_style = "astro"
   hide_ad = false
@@ -62,27 +61,3 @@ disablePathToLower = true
 [blackfriday]
   plainIDAnchors = true
   hrefTargetBlank = true
-
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 1
-  identifier = "about"
-
-[[menu.main]]
-  name = "Membership"
-  url = "/membership/"
-  weight = 2
-  identifier = "membership"
-
-[[menu.main]]
-  name = "Participate"
-  url = "/participate/"
-  weight = 3
-  identifier = "participate"
-
-[[menu.main]]
-  name = "Participation and Membership FAQ"
-  url = "/about/participation-and-membership-faq/"
-  weight = 3
-  identifier = "participation-and-membership-faq"
