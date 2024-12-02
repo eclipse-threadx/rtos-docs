@@ -1,0 +1,1505 @@
+##
+## FILEX
+##
+
+[[sidebar]]
+  name = "FileX Documentation"
+  url = "/filex/"
+  weight = 1
+  identifier = "filex"
+[[sidebar]]
+  name = "Overview of FileX"
+  url = "/filex/overview-filex"
+  weight = 1
+  parent = "filex"
+[[sidebar]]
+  name = "FileX User Guide"
+  identifier = "filex-user-guide"
+  weight = 2
+  parent = "filex"
+[[sidebar]]
+  name = "About this guide"
+  url = "/filex/about-this-guide"
+  weight = 1
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to FileX"
+  url = "/filex/chapter1"
+  weight = 2
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of FileX"
+  url = "/filex/chapter2"
+  weight = 3
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional components of FileX"
+  url = "/filex/chapter3"
+  weight = 4
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of FileX services"
+  url = "/filex/chapter4"
+  weight = 5
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - I/O drivers for FileX"
+  url = "/filex/chapter5"
+  weight = 6
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - FileX fault tolerant module"
+  url = "/filex/chapter6"
+  weight = 7
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "App. A - FileX services"
+  url = "/filex/appendix-a"
+  weight = 8
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "App. B - FileX constants"
+  url = "/filex/appendix-b"
+  weight = 9
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "App. C - FileX data types"
+  url = "/filex/appendix-c"
+  weight = 10
+  parent = "filex-user-guide"
+[[sidebar]]
+  name = "App. D - ASCII character codes"
+  url = "/filex/appendix-d"
+  weight = 11
+  parent = "filex-user-guide"
+
+##
+## GENERAL
+##
+
+[[sidebar]]
+  name = "General Documentation"
+  weight = 1
+  identifier = "general"
+[[sidebar]]
+  name = "Product Support Policy"
+  url = "/general/lts"
+  weight = 1
+  parent = "general"
+[[sidebar]]
+  name = "Security Updates"
+  url = "/general/security-updates"
+  weight = 2
+  parent = "general"
+
+##
+## GUIX
+##
+
+[[sidebar]]
+  name = "GUIX Documentation"
+  url = "/guix/"
+  weight = 1
+  identifier = "guix"
+[[sidebar]]
+  name = "Overview of GUIX"
+  url = "/guix/overview-guix"
+  weight = 1
+  parent = "guix"
+[[sidebar]]
+  name = "GUIX Studio Quick Start Guide"
+  url = "/guix/guix-studio-quick-start"
+  weight = 2
+  parent = "guix"
+[[sidebar]]
+  name = "GUIX User Guide"
+  identifier = "guix-user-guide"
+  weight = 3
+  parent = "guix"
+[[sidebar]]
+  name = "About this guide"
+  url = "/guix/about-guix"
+  weight = 1
+  parent = "guix-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to GUIX"
+  url = "/guix/chapter-1"
+  weight = 2
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of GUIX"
+  url = "/guix/chapter-2"
+  weight = 3
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "Ch. 3 - Functional overview of GUIX"
+  url = "/guix/chapter-3"
+  weight = 4
+  parent = "guix-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of GUIX services"
+  url = "/guix/chapter-4"
+  weight = 5
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "Ch. 5 - GUIX display drivers"
+  url = "/guix/chapter-5"
+  weight = 6
+  parent = "guix-user-guide"    
+[[sidebar]]
+  name = "GUIX example"
+  url = "/guix/guix-example"
+  weight = 7
+  parent = "guix-user-guide"
+[[sidebar]]
+  name = "App. A - GUIX color definitions"
+  url = "/guix/appendix-a"
+  weight = 8
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. B - GUIX color formats"
+  url = "/guix/appendix-b"
+  weight = 9
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. C - GUIX widget styles"
+  url = "/guix/appendix-c"
+  weight = 10
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. D - GUIX brush, canvas, and gradient attributes"
+  url = "/guix/appendix-d"
+  weight = 11
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. E - GUIX event description"
+  url = "/guix/appendix-e"
+  weight = 12
+  parent = "guix-user-guide"
+[[sidebar]]
+  name = "App. F - GUIX RTOS binding services"
+  url = "/guix/appendix-f"
+  weight = 13
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. G - GUIX font structure"
+  url = "/guix/appendix-g"
+  weight = 14
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. H - GUIX build-time configuration flags"
+  url = "/guix/appendix-h"
+  weight = 15
+  parent = "guix-user-guide"  
+[[sidebar]]
+  name = "App. I - GUIX information structures"
+  url = "/guix/appendix-i"
+  weight = 16
+  parent = "guix-user-guide" 
+[[sidebar]]
+  name = "App. J - Canvas Partial Frame Buffer Feature"
+  url = "/guix/appendix-j"
+  weight = 17
+  parent = "guix-user-guide"
+
+[[sidebar]]
+  name = "GUIX Studio User Guide"
+  identifier = "guix-studio-user-guide"
+  weight = 4
+  parent = "guix"
+[[sidebar]]
+  name = "About GUIX Studio"
+  url = "/guix/about-guix-studio"
+  weight = 1
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to GUIX Studio"
+  url = "/guix/guix-studio-1"
+  weight = 2
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and Use of GUIX Studio"
+  url = "/guix/guix-studio-2"
+  weight = 3
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of GUIX Studio"
+  url = "/guix/guix-studio-3"
+  weight = 4
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - GUIX Studio Resources"
+  url = "/guix/guix-studio-4"
+  weight = 5
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - GUIX Studio Screen Designer"
+  url = "/guix/guix-studio-5"
+  weight = 6
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - GUIX Studio Generated Code"
+  url = "/guix/guix-studio-6"
+  weight = 7
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 7 - Defining Screen Flow"
+  url = "/guix/guix-studio-7"
+  weight = 8
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 8 - Notes on Editing Specific Widget Types"
+  url = "/guix/guix-studio-8"
+  weight = 9
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 9 - GUIX Studio Command Line"
+  url = "/guix/guix-studio-9"
+  weight = 10
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 10 - Simple Example Project"
+  url = "/guix/guix-studio-10"
+  weight = 11
+  parent = "guix-studio-user-guide"
+[[sidebar]]
+  name = "Ch. 11 - Resource Project File"
+  url = "/guix/guix-studio-11"
+  weight = 12
+  parent = "guix-studio-user-guide"
+
+##
+## LEVELX
+##
+
+[[sidebar]]
+  name = "LevelX Documentation"
+  url = "/levelx/"
+  weight = 1
+  identifier = "levelx"
+[[sidebar]]
+  name = "LevelX User Guide"
+  identifier = "levelx-user-guide"
+  weight = 2
+  parent = "levelx"
+[[sidebar]]
+  name = "Ch. 1 - Overview of LevelX"
+  url = "/levelx/chapter1"
+  weight = 1
+  parent = "levelx-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of LevelX"
+  url = "/levelx/chapter2"
+  weight = 1
+  parent = "levelx-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - LevelX NAND support"
+  url = "/levelx/chapter3"
+  weight = 1
+  parent = "levelx-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - LevelX NAND APIs"
+  url = "/levelx/chapter4"
+  weight = 1
+  parent = "levelx-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - LevelX NOR support"
+  url = "/levelx/chapter5"
+  weight = 1
+  parent = "levelx-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - LevelX NOR APIs"
+  url = "/levelx/chapter6"
+  weight = 1
+  parent = "levelx-user-guide"
+
+##
+## NETX-DUO
+##
+
+[[sidebar]]
+  name = "NetX Duo Documentation"
+  url = "/netx-duo/"
+  weight = 1
+  identifier = "netx-duo"
+[[sidebar]]
+  name = "NetX Duo Overview"
+  url = "/netx-duo/overview-netx-duo"
+  weight = 1
+  parent = "netx-duo"
+[[sidebar]]
+  name = "NetX Duo User Guide"
+  identifier = "netx-duo-user-guide"
+  weight = 2
+  parent = "netx-duo"
+[[sidebar]]
+  name = "About This Guide"
+  url = "/netx-duo/about-this-guide"
+  weight = 1
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo"
+  url = "/netx-duo/chapter1"
+  weight = 2
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo"
+  url = "/netx-duo/chapter2"
+  weight = 3
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional components of NetX Duo"
+  url = "/netx-duo/chapter3"
+  weight = 4
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of NetX Duo services"
+  url = "/netx-duo/chapter4"
+  weight = 5
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - NetX Duo network drivers"
+  url = "/netx-duo/chapter5"
+  weight = 6
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo services"
+  url = "/netx-duo/appendix-a"
+  weight = 7
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "App. B - NetX Duo constants"
+  url = "/netx-duo/appendix-b"
+  weight = 8
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "App. C - NetX Duo data types"
+  url = "/netx-duo/appendix-c"
+  weight = 9
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "App. D - BSD-compatible socket API"
+  url = "/netx-duo/appendix-d"
+  weight = 10
+  parent = "netx-duo-user-guide"
+[[sidebar]]
+  name = "App. E - ASCII character codes"
+  url = "/netx-duo/appendix-e"
+  weight = 11
+  parent = "netx-duo-user-guide"
+
+[[sidebar]]
+  name = "NetX Duo AutoIP User Guide"
+  identifier = "netx-duo-auto-ip-guide"
+  weight = 3
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo AutoIP"
+  url = "/netx-duo/netx-duo-auto-ip/chapter1"
+  weight = 1
+  parent = "netx-duo-auto-ip-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo AutoIP"
+  url = "/netx-duo/netx-duo-auto-ip/chapter2"
+  weight = 2
+  parent = "netx-duo-auto-ip-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo AutoIP services"
+  url = "/netx-duo/netx-duo-auto-ip/chapter3"
+  weight = 3
+  parent = "netx-duo-auto-ip-guide"
+
+[[sidebar]]
+  name = "NetX Duo BSD Services User Guide"
+  identifier = "netx-duo-bsd-guide"
+  weight = 4
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo BSD"
+  url = "/netx-duo/netx-duo-bsd/chapter1"
+  weight = 1
+  parent = "netx-duo-bsd-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo BSD"
+  url = "/netx-duo/netx-duo-bsd/chapter2"
+  weight = 2
+  parent = "netx-duo-bsd-guide"
+[[sidebar]]
+  name = "Ch. 3 - NetX Duo BSD Services"
+  url = "/netx-duo/netx-duo-bsd/chapter3"
+  weight = 3
+  parent = "netx-duo-bsd-guide"
+
+[[sidebar]]
+  name = "NetX Duo Crypto User Guide"
+  identifier = "netx-duo-crypto-guide"
+  weight = 5
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo Crypto"
+  url = "/netx-duo/netx-duo-crypto/chapter1"
+  weight = 1
+  parent = "netx-duo-crypto-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo Crypto"
+  url = "/netx-duo/netx-duo-crypto/chapter2"
+  weight = 2
+  parent = "netx-duo-crypto-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional components of NetX Duo Crypto"
+  url = "/netx-duo/netx-duo-crypto/chapter3"
+  weight = 3
+  parent = "netx-duo-crypto-guide"
+[[sidebar]]
+  name = "Ch. 4 - NetX Duo Crypto API description"
+  url = "/netx-duo/netx-duo-crypto/chapter4"
+  weight = 4
+  parent = "netx-duo-crypto-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo Crypto CAVS test"
+  url = "/netx-duo/netx-duo-crypto/appendix-a"
+  weight = 5
+  parent = "netx-duo-crypto-guide"
+
+[[sidebar]]
+  name = "NetX Duo DHCP client user guide"
+  identifier = "netx-duo-dhcp-client-guide"
+  weight = 6
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo DHCP client"
+  url = "/netx-duo/netx-duo-dhcp-client/chapter1"
+  weight = 1
+  parent = "netx-duo-dhcp-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo DHCP client"
+  url = "/netx-duo/netx-duo-dhcp-client/chapter2"
+  weight = 1
+  parent = "netx-duo-dhcp-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo DHCP client services"
+  url = "/netx-duo/netx-duo-dhcp-client/chapter3"
+  weight = 1
+  parent = "netx-duo-dhcp-client-guide"
+[[sidebar]]
+  name = "App. A - Description of the Restore state feature for NetX Duo DHCP client services"
+  url = "/netx-duo/netx-duo-dhcp-client/appendix-a"
+  weight = 1
+  parent = "netx-duo-dhcp-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo DHCP server user guide"
+  identifier = "netx-duo-dhcp-server-guide"
+  weight = 7
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo DHCP server"
+  url = "/netx-duo/netx-duo-dhcp-server/chapter1"
+  weight = 1
+  parent = "netx-duo-dhcp-server-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of the NetX Duo DHCP server"
+  url = "/netx-duo/netx-duo-dhcp-server/chapter2"
+  weight = 2
+  parent = "netx-duo-dhcp-server-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo DHCP server services"
+  url = "/netx-duo/netx-duo-dhcp-server/chapter3"
+  weight = 3
+  parent = "netx-duo-dhcp-server-guide"
+
+[[sidebar]]
+  name = "NetX Duo DHCPv6 server user guide"
+  identifier = "netx-duo-dhcpv6-server-guide"
+  weight = 8
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo DHCPv6 client"
+  url = "/netx-duo/netx-duo-dhcpv6-client/chapter1"
+  weight = 1
+  parent = "netx-duo-dhcpv6-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo DHCPv6 client"
+  url = "/netx-duo/netx-duo-dhcpv6-client/chapter2"
+  weight = 2
+  parent = "netx-duo-dhcpv6-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - NetX Duo DHCPv6 configuration options"
+  url = "/netx-duo/netx-duo-dhcpv6-client/chapter3"
+  weight = 3
+  parent = "netx-duo-dhcpv6-client-guide"
+[[sidebar]]
+  name = "Ch. 4 - NetX Duo DHCPv6 client services"
+  url = "/netx-duo/netx-duo-dhcpv6-client/chapter4"
+  weight = 4
+  parent = "netx-duo-dhcpv6-client-guide"
+[[sidebar]]
+  name = "App. A - Description of the Restore State Feature"
+  url = "/netx-duo/netx-duo-dhcpv6-client/appendix-a"
+  weight = 5
+  parent = "netx-duo-dhcpv6-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo DHCPv6 server user guide"
+  identifier = "netx-duo-dhcpv6-server-guide"
+  weight = 9
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo DHCPv6 server"
+  url = "/netx-duo/netx-duo-dhcpv6-server/chapter1"
+  weight = 1
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo DHCPv6 server"
+  url = "/netx-duo/netx-duo-dhcpv6-server/chapter2"
+  weight = 2
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "Ch. 3 - NetX Duo DHCPv6 server configuration options"
+  url = "/netx-duo/netx-duo-dhcpv6-server/chapter3"
+  weight = 3
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "Ch. 4 - NetX Duo DHCPv6 server services"
+  url = "/netx-duo/netx-duo-dhcpv6-server/chapter4"
+  weight = 4
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo DHCPv6 option codes"
+  url = "/netx-duo/netx-duo-dhcpv6-server/appendix-a"
+  weight = 5
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "App. B- NetX Duo DHCPv6 server status code"
+  url = "/netx-duo/netx-duo-dhcpv6-server/appendix-b"
+  weight = 6
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "App. C - NetX Duo DHCPv6 unique identifiers (DUIDs)"
+  url = "/netx-duo/netx-duo-dhcpv6-server/appendix-c"
+  weight = 7
+  parent = "netx-duo-dhcpv6-server-guide"
+[[sidebar]]
+  name = "App. D - Advanced NetX Duo DHCPv6 server example"
+  url = "/netx-duo/netx-duo-dhcpv6-server/appendix-d"
+  weight = 8
+  parent = "netx-duo-dhcpv6-server-guide"
+
+[[sidebar]]
+  name = "NetX Duo DNS user guide"
+  identifier = "netx-duo-dns-client-guide"
+  weight = 10
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo DNS client"
+  url = "/netx-duo/netx-duo-dns/chapter1"
+  weight = 1
+  parent = "netx-duo-dns-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and Use of NetX Duo DNS client"
+  url = "/netx-duo/netx-duo-dns/chapter2"
+  weight = 2
+  parent = "netx-duo-dns-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo DNS client Services"
+  url = "/netx-duo/netx-duo-dns/chapter3"
+  weight = 3
+  parent = "netx-duo-dns-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo FTP user guide"
+  identifier = "netx-duo-ftp-guide"
+  weight = 11
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo FTP"
+  url = "/netx-duo/netx-duo-ftp/chapter1"
+  weight = 1
+  parent = "netx-duo-ftp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of FTP"
+  url = "/netx-duo/netx-duo-ftp/chapter2"
+  weight = 2
+  parent = "netx-duo-ftp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of FTP services"
+  url = "/netx-duo/netx-duo-ftp/chapter3"
+  weight = 3
+  parent = "netx-duo-ftp-guide"
+
+[[sidebar]]
+  name = "NetX Duo HTTP user guide"
+  identifier = "netx-duo-http-guide"
+  weight = 12
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Chapter 1 - Introduction to NetX Duo HTTP"
+  url = "/netx-duo/netx-duo-http/Chapter1"
+  weight = 1
+  parent = "netx-duo-http-guide"
+[[sidebar]]
+  name = "Chapter 2 - Installation and Use of NetX Duo HTTP"
+  url = "/netx-duo/netx-duo-http/Chapter2"
+  weight = 2
+  parent = "netx-duo-http-guide"
+[[sidebar]]
+  name = "Chapter 3 - Description of NetX HTTP Services"
+  url = "/netx-duo/netx-duo-http/Chapter3"
+  weight = 3
+  parent = "netx-duo-http-guide"
+
+[[sidebar]]
+  name = "NetX Duo Iperf user guide"
+  identifier = "netx-duo-iperf-guide"
+  weight = 13
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Chapter 1 - Introduction to NetX Duo Iperf"
+  url = "/netx-duo/netx-duo-iperf/chapter1"
+  weight = 1
+  parent = "netx-duo-iperf-guide"
+[[sidebar]]
+  name = "Chapter 2 - Installing and using NetX Duo Iperf"
+  url = "/netx-duo/netx-duo-iperf/chapter2"
+  weight = 2
+  parent = "netx-duo-iperf-guide"
+[[sidebar]]
+  name = "Chapter 3 - Running the Demonstration"
+  url = "/netx-duo/netx-duo-iperf/chapter3"
+  weight = 3
+  parent = "netx-duo-iperf-guide"
+
+[[sidebar]]
+  name = "NetX Duo mDNS/DNS-SD user guide"
+  identifier = "netx-duo-mdns-guide"
+  weight = 14
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo mDNS/DNS-SD"
+  url = "/netx-duo/netx-duo-mdns/chapter1"
+  weight = 1
+  parent = "netx-duo-mdns-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of mDNS"
+  url = "/netx-duo/netx-duo-mdns/chapter2"
+  weight = 2
+  parent = "netx-duo-mdns-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of internal service cache"
+  url = "/netx-duo/netx-duo-mdns/chapter3"
+  weight = 3
+  parent = "netx-duo-mdns-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of mDNS services"
+  url = "/netx-duo/netx-duo-mdns/chapter4"
+  weight = 4
+  parent = "netx-duo-mdns-guide"
+
+[[sidebar]]
+  name = "NetX Duo MQTT user guide"
+  identifier = "netx-duo-mqtt-guide"
+  weight = 15
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo MQTT client"
+  url = "/netx-duo/netx-duo-mqtt/chapter1"
+  weight = 1
+  parent = "netx-duo-mqtt-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo MQTT client"
+  url = "/netx-duo/netx-duo-mqtt/chapter2"
+  weight = 2
+  parent = "netx-duo-mqtt-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo MQTT client services"
+  url = "/netx-duo/netx-duo-mqtt/chapter3"
+  weight = 3
+  parent = "netx-duo-mqtt-guide"
+
+[[sidebar]]
+  name = "NetX Duo NAT user guide"
+  identifier = "netx-duo-nat-guide"
+  weight = 16
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo NAT"
+  url = "/netx-duo/netx-duo-nat/chapter1"
+  weight = 1
+  parent = "netx-duo-nat-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NAT"
+  url = "/netx-duo/netx-duo-nat/chapter2"
+  weight = 2
+  parent = "netx-duo-nat-guide"
+[[sidebar]]
+  name = "Ch. 3 - NAT configuration options"
+  url = "/netx-duo/netx-duo-nat/chapter3"
+  weight = 3
+  parent = "netx-duo-nat-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of NAT services"
+  url = "/netx-duo/netx-duo-nat/chapter4"
+  weight = 4
+  parent = "netx-duo-nat-guide"
+
+[[sidebar]]
+  name = "NetX Duo POP3 client user guide"
+  identifier = "netx-duo-pop3-client-guide"
+  weight = 17
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo POP3 client"
+  url = "/netx-duo/netx-duo-pop3-client/chapter1"
+  weight = 1
+  parent = "netx-duo-pop3-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo POP3 client"
+  url = "/netx-duo/netx-duo-pop3-client/chapter2"
+  weight = 2
+  parent = "netx-duo-pop3-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of POP3 client services"
+  url = "/netx-duo/netx-duo-pop3-client/chapter3"
+  weight = 3
+  parent = "netx-duo-pop3-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo PPP user guide"
+  identifier = "netx-ppp-guide"
+  weight = 18
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo PPP"
+  url = "/netx-duo/netx-duo-ppp/chapter1"
+  weight = 1
+  parent = "netx-duo-ppp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo PPP"
+  url = "/netx-duo/netx-duo-ppp/chapter2"
+  weight = 2
+  parent = "netx-duo-ppp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo PPP services"
+  url = "/netx-duo/netx-duo-ppp/chapter3"
+  weight = 3
+  parent = "netx-duo-ppp-guide"
+
+[[sidebar]]
+  name = "NetX Duo NAT user guide"
+  identifier = "netx-duo-nat-guide"
+  weight = 19
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo PTP client"
+  url = "/netx-duo/netx-duo-ptp-client/chapter1"
+  weight = 1
+  parent = "netx-duo-ptp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo PTP client"
+  url = "/netx-duo/netx-duo-ptp-client/chapter2"
+  weight = 2
+  parent = "netx-duo-ptp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo PTP client services"
+  url = "/netx-duo/netx-duo-ptp-client/chapter3"
+  weight = 3
+  parent = "netx-duo-ptp-guide"
+
+[[sidebar]]
+  name = "NetX Duo RTP user guide"
+  identifier = "netx-duo-rtp-guide"
+  weight = 20
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo RTP Sender"
+  url = "/netx-duo/netx-duo-rtp/chapter1"
+  weight = 1
+  parent = "netx-duo-rtp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo RTP Sender"
+  url = "/netx-duo/netx-duo-rtp/chapter2"
+  weight = 2
+  parent = "netx-duo-rtp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo RTP Sender Services"
+  url = "/netx-duo/netx-duo-rtp/chapter3"
+  weight = 3
+  parent = "netx-duo-rtp-guide"
+
+[[sidebar]]
+  name = "NetX Duo RTSP user guide"
+  identifier = "netx-duo-rtsp-guide"
+  weight = 21
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the NetX Duo RTSP Server"
+  url = "/netx-duo/netx-duo-rtsp/chapter1"
+  weight = 1
+  parent = "netx-duo-rtsp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo RTSP Server"
+  url = "/netx-duo/netx-duo-rtsp/chapter2"
+  weight = 1
+  parent = "netx-duo-rtsp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo RTSP Server Services"
+  url = "/netx-duo/netx-duo-rtsp/chapter3"
+  weight = 1
+  parent = "netx-duo-rtsp-guide"
+
+[[sidebar]]
+  name = "NetX Duo SMTP client user guide"
+  identifier = "netx-duo-smtp-client-guide"
+  weight = 22
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo SMTP client"
+  url = "/netx-duo/netx-duo-smtp-client/chapter1"
+  weight = 1
+  parent = "netx-duo-smtp-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo SMTP client"
+  url = "/netx-duo/netx-duo-smtp-client/chapter2"
+  weight = 2
+  parent = "netx-duo-smtp-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - client description of SMTP client services"
+  url = "/netx-duo/netx-duo-smtp-client/chapter3"
+  weight = 3
+  parent = "netx-duo-smtp-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo SNMP user guide"
+  identifier = "netx-duo-snmp-guide"
+  weight = 23
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo SNMP"
+  url = "/netx-duo/netx-duo-snmp/chapter1"
+  weight = 1
+  parent = "netx-duo-snmp-guide"  
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of the NetX Duo SNMP agent"
+  url = "/netx-duo/netx-duo-snmp/chapter2"
+  weight = 2
+  parent = "netx-duo-snmp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo SNMP agent services"
+  url = "/netx-duo/netx-duo-snmp/chapter3"
+  weight = 3
+  parent = "netx-duo-snmp-guide"
+
+[[sidebar]]
+  name = "NetX Duo SNTP user guide"
+  identifier = "netx-duo-sntp-client-guide"
+  weight = 24
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo SNTP client"
+  url = "/netx-duo/netx-duo-sntp-client/chapter1"
+  weight = 1
+  parent = "netx-duo-sntp-client-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and Use of NetX Duo SNTP client"
+  url = "/netx-duo/netx-duo-sntp-client/chapter2"
+  weight = 2
+  parent = "netx-duo-sntp-client-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo SNTP client Services"
+  url = "/netx-duo/netx-duo-sntp-client/chapter3"
+  weight = 3
+  parent = "netx-duo-sntp-client-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo SNTP Fatal Error Codes"
+  url = "/netx-duo/netx-duo-sntp-client/appendix-a"
+  weight = 4
+  parent = "netx-duo-sntp-client-guide"
+
+[[sidebar]]
+  name = "NetX Duo Telnet user guide"
+  identifier = "netx-duo-telnet-guide"
+  weight = 25
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo Telnet"
+  url = "/netx-duo/netx-duo-telnet/chapter1"
+  weight = 1
+  parent = "netx-duo-telnet-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo Telnet"
+  url = "/netx-duo/netx-duo-telnet/chapter2"
+  weight = 2
+  parent = "netx-duo-telnet-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo Telnet services"
+  url = "/netx-duo/netx-duo-telnet/chapter3"
+  weight = 3
+  parent = "netx-duo-telnet-guide"
+
+[[sidebar]]
+  name = "NetX Duo TFTP user guide"
+  identifier = "netx-duo-tftp-guide"
+  weight = 26
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo TFTP"
+  url = "/netx-duo/netx-duo-tftp/chapter1"
+  weight = 1
+  parent = "netx-duo-tftp-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo TFTP"
+  url = "/netx-duo/netx-duo-tftp/chapter2"
+  weight = 2
+  parent = "netx-duo-tftp-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of NetX Duo TFTP services"
+  url = "/netx-duo/netx-duo-tftp/chapter3"
+  weight = 3
+  parent = "netx-duo-tftp-guide"
+
+[[sidebar]]
+  name = "NetX Duo Web HTTP and HTTPS user guide"
+  identifier = "netx-duo-web-http-guide"
+  weight = 27
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo HTTP and HTTPS"
+  url = "/netx-duo/netx-duo-web-http/chapter1"
+  weight = 1
+  parent = "netx-duo-web-http-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo HTTP and HTTPS"
+  url = "/netx-duo/netx-duo-web-http/chapter2"
+  weight = 2
+  parent = "netx-duo-web-http-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of HTTP services"
+  url = "/netx-duo/netx-duo-web-http/chapter3"
+  weight = 3
+  parent = "netx-duo-web-http-guide"
+
+[[sidebar]]
+  name = "NetX Duo Secure DTLS user guide"
+  identifier = "netx-duo-secure-dtls-guide"
+  weight = 28
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo Secure DTLS"
+  url = "/netx-duo/netx-duo-secure-dtls/chapter1"
+  weight = 1
+  parent = "netx-duo-secure-dtls-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo Secure DTLS"
+  url = "/netx-duo/netx-duo-secure-dtls/chapter2"
+  weight = 2
+  parent = "netx-duo-secure-dtls-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional description of NetX Duo Secure DTLS"
+  url = "/netx-duo/netx-duo-secure-dtls/chapter3"
+  weight = 3
+  parent = "netx-duo-secure-dtls-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of NetX Duo Secure DTLS services"
+  url = "/netx-duo/netx-duo-secure-dtls/chapter4"
+  weight = 4
+  parent = "netx-duo-secure-dtls-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo Secure DTLS return/error codes"
+  url = "/netx-duo/netx-duo-secure-dtls/appendix-a"
+  weight = 5
+  parent = "netx-duo-secure-dtls-guide"
+
+[[sidebar]]
+  name = "NetX Duo Secure TLS user guide"
+  identifier = "netx-duo-secure-tls-guide"
+  weight = 29
+  parent = "netx-duo"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to NetX Duo Secure"
+  url = "/netx-duo/netx-duo-secure-tls/chapter1"
+  weight = 1
+  parent = "netx-duo-secure-tls-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of NetX Duo Secure"
+  url = "/netx-duo/netx-duo-secure-tls/chapter2"
+  weight = 2
+  parent = "netx-duo-secure-tls-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional description of NetX Duo Secure"
+  url = "/netx-duo/netx-duo-secure-tls/chapter3"
+  weight = 3
+  parent = "netx-duo-secure-tls-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of NetX Duo Secure services"
+  url = "/netx-duo/netx-duo-secure-tls/chapter4"
+  weight = 4
+  parent = "netx-duo-secure-tls-guide"
+[[sidebar]]
+  name = "App. A - NetX Duo Secure return/error codes"
+  url = "/netx-duo/netx-duo-secure-tls/appendix-a"
+  weight = 5
+  parent = "netx-duo-secure-tls-guide"
+
+##
+## THREADX
+##
+
+[[sidebar]]
+  name = "ThreadX Documentation"
+  url = "/threadx/"
+  weight = 1
+  identifier = "threadx"
+[[sidebar]]
+  name = "ThreadX Overview"
+  url = "/threadx/overview-threadx"
+  weight = 1
+  parent = "threadx"
+[[sidebar]]
+  name = "ThreadX User Guide"
+  identifier = "threadx-user-guide"
+  weight = 1
+  parent = "threadx"
+[[sidebar]]
+  name = "About this guide"
+  url = "/threadx/about-this-guide"
+  weight = 1
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to ThreadX"
+  url = "/threadx/chapter1"
+  weight = 2
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and Use of ThreadX"
+  url = "/threadx/chapter2"
+  weight = 3
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional Components of ThreadX"
+  url = "/threadx/chapter3"
+  weight = 4
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of ThreadX Services"
+  url = "/threadx/chapter4"
+  weight = 5
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - Device Drivers for ThreadX"
+  url = "/threadx/chapter5"
+  weight = 6
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - Demonstration System for ThreadX"
+  url = "/threadx/chapter6"
+  weight = 7
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "App. A - ThreadX API services"
+  url = "/threadx/appendix-a"
+  weight = 8
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "App. B - ThreadX constants"
+  url = "/threadx/appendix-b"
+  weight = 9
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "App. C - ThreadX data types"
+  url = "/threadx/appendix-c"
+  weight = 10
+  parent = "threadx-user-guide"
+[[sidebar]]
+  name = "App. D - ASCII character codes"
+  url = "/threadx/appendix-d"
+  weight = 11
+  parent = "threadx-user-guide"
+
+##
+## THREADX ARMv8-M
+##
+
+[[sidebar]]
+  name = "ThreadX User Guide Addendum for ARMv8-M"
+  identifier = "threadx-armv8m-user-guide"
+  weight = 2
+  parent = "threadx"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to ThreadX for ARMv8-M"
+  url = "/threadx/user-guide-armv8m/chapter1"
+  weight = 1
+  parent = "threadx-armv8m-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installing ThreadX support for ARMv8-M"
+  url = "/threadx/user-guide-armv8m/chapter2"
+  weight = 2
+  parent = "threadx-armv8m-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - ThreadX APIs for ARMv8-M"
+  url = "/threadx/user-guide-armv8m/chapter3"
+  weight = 3
+  parent = "threadx-armv8m-user-guide"
+
+[[sidebar]]
+  name = "ThreadX SMP User Guide"
+  identifier = "threadx-smp-user-guide"
+  weight = 3
+  parent = "threadx"
+[[sidebar]]
+  name = "About This Guide"
+  url = "/threadx/threadx-smp/about-this-guide"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to ThreadX SMP"
+  url = "/threadx/threadx-smp/chapter1"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation & Use of ThreadX SMP"
+  url = "/threadx/threadx-smp/chapter2"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional Components of ThreadX SMP"
+  url = "/threadx/threadx-smp/chapter3"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of ThreadX SMP Services"
+  url = "/threadx/threadx-smp/chapter4"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - Device Drivers for ThreadX SMP"
+  url = "/threadx/threadx-smp/chapter5"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - Demonstration System for ThreadX SMP"
+  url = "/threadx/threadx-smp/chapter6"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "App. A - ThreadX SMP API Services"
+  url = "/threadx/threadx-smp/appendix-a"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "App. B - ThreadX SMP Constants"
+  url = "/threadx/threadx-smp/appendix-b"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "App. C - ThreadX SMP Data Types"
+  url = "/threadx/threadx-smp/appendix-c"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "App. D - ASCII Character Codes"
+  url = "/threadx/threadx-smp/appendix-d"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+[[sidebar]]
+  name = "App. E - ThreadX SMP MISRA C compliance"
+  url = "/threadx/appendix-e"
+  weight = 1
+  parent = "threadx-smp-user-guide"
+
+##
+## THREADX MODULES
+##
+
+[[sidebar]]
+  name = "ThreadX Modules Documentation"
+  url = "/threadx-modules/"
+  weight = 1
+  identifier = "threadx-modules"
+[[sidebar]]
+  name = "ThreadX Modules User Guide"
+  identifier = "threadx-modules-user-guide"
+  weight = 1
+  parent = "threadx-modules"
+[[sidebar]]
+  name = "Ch. 1 - Overview"
+  url = "/threadx-modules/chapter1"
+  weight = 1
+  parent = "threadx-modules-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Module requirements"
+  url = "/threadx-modules/chapter2"
+  weight = 2
+  parent = "threadx-modules-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Module Manager requirements"
+  url = "/threadx-modules/chapter3"
+  weight = 3
+  parent = "threadx-modules-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Module APIs"
+  url = "/threadx-modules/chapter4"
+  weight = 4
+  parent = "threadx-modules-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - Module Manager APIs"
+  url = "/threadx-modules/chapter5"
+  weight = 5
+  parent = "threadx-modules-user-guide"
+[[sidebar]]
+  name = "Appendix - Port-specific examples"
+  url = "/threadx-modules/appendix"
+  weight = 6
+  parent = "threadx-modules-user-guide" 
+
+##
+## TRACEX
+##
+
+[[sidebar]]
+  name = "TraceX Documentation"
+  url = "/tracex/"
+  weight = 1
+  identifier = "tracex"
+[[sidebar]]
+  name = "TraceX Overview"
+  url = "/tracex/overview-tracex"
+  weight = 1
+  parent = "tracex"
+[[sidebar]]
+  name = "TraceX User Guide"
+  identifier = "tracex-user-guide"
+  weight = 1
+  parent = "tracex"
+[[sidebar]]
+  name = "About this guide"
+  url = "/tracex/about-this-guide"
+  weight = 1
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to TraceX"
+  url = "/tracex/chapter1"
+  weight = 2
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - Installation and use of TraceX"
+  url = "/tracex/chapter2"
+  weight = 3
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Description of TraceX"
+  url = "/tracex/chapter3"
+  weight = 4
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - TraceX performance analysis"
+  url = "/tracex/chapter4"
+  weight = 5
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - Generating trace buffers"
+  url = "/tracex/chapter5"
+  weight = 6
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - ThreadX trace events"
+  url = "/tracex/chapter6"
+  weight = 7
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 7 - FileX trace events"
+  url = "/tracex/chapter7"
+  weight = 8
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 8 - NetX Duo trace events"
+  url = "/tracex/chapter8"
+  weight = 9
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 9 - USBX trace events"
+  url = "/tracex/chapter9"
+  weight = 10
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 10 - Customer user events"
+  url = "/tracex/chapter10"
+  weight = 11
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "Ch. 11 - Format of event trace buffer"
+  url = "/tracex/chapter11"
+  weight = 12
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "App. A - Sample tx_port.h"
+  url = "/tracex/appendix-a"
+  weight = 13
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "App. B - The tx_trace.h File"
+  url = "/tracex/appendix-b"
+  weight = 14
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "App. C - DOS command-line utilities"
+  url = "/tracex/appendix-c"
+  weight = 15
+  parent = "tracex-user-guide"
+[[sidebar]]
+  name = "App. D - Dumping and trace buffer"
+  url = "/tracex/appendix-d"
+  weight = 16
+  parent = "tracex-user-guide"
+
+##
+## USBX
+##
+
+[[sidebar]]
+  name = "USBX Documentation"
+  url = "/usbx/"
+  weight = 1
+  identifier = "usbx"
+[[sidebar]]
+  name = "USBX Overview"
+  url = "/usbx/overview-tracex"
+  weight = 1
+  parent = "usbx"
+[[sidebar]]
+  name = "USBX device stack user guide"
+  identifier = "usbx-device-user-guide"
+  weight = 2
+  parent = "usbx"
+[[sidebar]]
+  name = "About this guide"
+  url = "/usbx/usbx-device-stack-about"
+  weight = 1
+  parent = "usbx-device-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to USBX"
+  url = "/usbx/usbx-device-stack-1"
+  weight = 2
+  parent = "usbx-device-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - USBX installation"
+  url = "/usbx/usbx-device-stack-2"
+  weight = 3
+  parent = "usbx-device-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional components of USBX device stack"
+  url = "/usbx/usbx-device-stack-3"
+  weight = 4
+  parent = "usbx-device-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of USBX device services"
+  url = "/usbx/usbx-device-stack-4"
+  weight = 5
+  parent = "usbx-device-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - USBX device class considerations"
+  url = "/usbx/usbx-device-stack-5"
+  weight = 6
+  parent = "usbx-device-user-guide"
+
+[[sidebar]]
+  name = "USBX device stack supplemental"
+  identifier = "usbx-device-supplemental"
+  weight = 3
+  parent = "usbx"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the USBX device stack user guide supplement"
+  url = "/usbx/usbx-device-stack-supplemental-1"
+  weight = 1
+  parent = "usbx-device-supplemental"
+[[sidebar]]
+  name = "Ch. 2 - USBX device class considerations"
+  url = "/usbx/usbx-device-stack-supplemental-2"
+  weight = 2
+  parent = "usbx-device-supplemental"
+[[sidebar]]
+  name = "Ch. 3 - USBX DPUMP class considerations"
+  url = "/usbx/usbx-device-stack-supplemental-3"
+  weight = 3
+  parent = "usbx-device-supplemental"
+[[sidebar]]
+  name = "Ch. 4 - USBX Pictbridge implementation"
+  url = "/usbx/usbx-device-stack-supplemental-4"
+  weight = 4
+  parent = "usbx-device-supplemental"
+[[sidebar]]
+  name = "Ch. 5 - USBX OTG"
+  url = "/usbx/usbx-device-stack-supplemental-5"
+  weight = 5
+  parent = "usbx-device-supplemental"
+
+[[sidebar]]
+  name = "USBX host stack user guide"
+  identifier = "usbx-host-user-guide"
+  weight = 4
+  parent = "usbx"
+[[sidebar]]
+  name = "About this guide"
+  url = "/usbx/usbx-host-stack-about"
+  weight = 1
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to USBX"
+  url = "/usbx/usbx-host-stack-1"
+  weight = 2
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 2 - USBX installation"
+  url = "/usbx/usbx-host-stack-2"
+  weight = 3
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 3 - Functional components of USBX host stack"
+  url = "/usbx/usbx-host-stack-3"
+  weight = 4
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 4 - Description of USBX host services"
+  url = "/usbx/usbx-host-stack-4"
+  weight = 5
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 5 - USBX host classes API"
+  url = "/usbx/usbx-host-stack-5"
+  weight = 6
+  parent = "usbx-host-user-guide"
+[[sidebar]]
+  name = "Ch. 6 - USBX CDC-ECM class usage"
+  url = "/usbx/usbx-host-stack-6"
+  weight = 7
+  parent = "usbx-host-user-guide"
+
+[[sidebar]]
+  name = "USBX host stack supplemental"
+  identifier = "usbx-host-supplemental"
+  weight = 5
+  parent = "usbx"
+[[sidebar]]
+  name = "Ch. 1 - Introduction to the USBX host stack user guide supplement"
+  url = "/usbx/usbx-host-stack-supplemental-1"
+  weight = 1
+  parent = "usbx-host-supplemental"
+[[sidebar]]
+  name = "Ch. 2 - USBX Host Classes API"
+  url = "/usbx/usbx-host-stack-supplemental-2"
+  weight = 2
+  parent = "usbx-host-supplemental"
+[[sidebar]]
+  name = "Ch. 3 - USBX DPUMP class considerations"
+  url = "/usbx/usbx-host-stack-supplemental-3"
+  weight = 3
+  parent = "usbx-host-supplemental"
+[[sidebar]]
+  name = "Ch. 4 - USBX Pictbridge implementation"
+  url = "/usbx/usbx-host-stack-supplemental-4"
+  weight = 4
+  parent = "usbx-host-supplemental"
+[[sidebar]]
+  name = "Ch. 5 - USBX OTG"
+  url = "/usbx/usbx-host-stack-supplemental-5"
+  weight = 5
+  parent = "usbx-host-supplemental"
