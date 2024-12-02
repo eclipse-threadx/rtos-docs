@@ -1,0 +1,35 @@
+/*!
+ * Copyright (c) 2024 Eclipse Foundation, Inc.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0
+*/
+.featured-jumbotron {
+  background-image: url('images/jumbotron-bg-default.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  & &-headline {
+    font-size: @font-size-3xl;
+  }
+
+  & &-subtitle {
+    font-size: @font-size-2xl;
+    margin-bottom: 6rem;
+  }
+
+  & > .container {
+    filter: drop-shadow(0 0 12px #000000aa) drop-shadow(0 0 12px #000000aa);
+  }
+
+  & &-headline,
+  & &-subtitle {
+    font-weight: @headings-font-weight;
+    text-shadow: unset;
+  }
+}
+

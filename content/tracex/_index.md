@@ -26,7 +26,7 @@ TraceX user guide
 
 [Download TraceX](https://aka.ms/azrtos-tracex-installer)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)

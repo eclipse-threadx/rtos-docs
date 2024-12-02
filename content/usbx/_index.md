@@ -38,7 +38,7 @@ USBX host stack supplemental
 
 [USBX repository](https://github.com/eclipse-threadx/usbx/)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)

@@ -1,0 +1,70 @@
+cards:
+  - title: Build your embedded application
+    see_more: threadx 
+    links:
+      - title: What is Azure RTOS ThreadX?
+        href: threadx/overview-threadx
+        icon: map-o
+      - title: Explore the user guide
+        href: threadx/about-this-guide
+        icon: book
+  - title: Enable file management
+    see_more: filex
+    links:
+      - title: What is Azure RTOS FileX?
+        href: filex/overview-filex
+        icon: map-o
+      - title: Explore the user guide
+        href: filex/about-this-guide
+        icon: book
+  - title: Integrate graphical elements
+    see_more: guix
+    links:
+      - title: What is Azure RTOS GUIX?
+        href: guix/overview-guix
+        icon: map-o
+      - title: Explore the user guide
+        href: guix/about-guix
+        icon: book
+  - title: Debug and resolve issues
+    see_more: tracex
+    links:
+      - title: What is Azure RTOS TraceX?
+        href: tracex/overview-tracex
+        icon: map-o
+  - title: Enable network connectivity
+    see_more: netx
+    links:
+      - title: What is Azure RTOS NetX?
+        href: netx/overview-netx
+        icon: map-o
+      - title: Explore the user guide
+        href: netx/about-this-guide
+        icon: book
+  - title: Enable network connectivity and IPv6 capabilities
+    see_more: netx-duo
+    links:
+      - title: What is Azure RTOS NetX Duo?
+        href: netx-duo/overview-netx-duo
+        icon: map-o
+      - title: Explore the user guide
+        href: netx-duo/about-this-guide
+        icon: book
+  - title: Interface with USB devices
+    see_more: usbx
+    links:
+      - title: What is Azure RTOS USBX?
+        href: usbx/overview-usbx
+        icon: map-o
+      - title: Explore the device stack user guide
+        href: usbx/usbx-device-stack-about
+        icon: book
+      - title: Explore the host stack user guide
+        href: usbx/usbx-host-stack-about
+        icon: book
+  - title: Provide flash memory wear leveling
+    see_more: levelx
+    links:
+      - title: What is Azure RTOS LevelX?
+        href: levelx/chapter1
+        icon: map-o

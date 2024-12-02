@@ -13,7 +13,7 @@ LevelX user guide
 
 [LevelX repository](https://github.com/eclipse-threadx/levelx)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)

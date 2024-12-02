@@ -42,7 +42,7 @@ GUIX Studio User Guide
 
 [GUIX repository](https://github.com/eclipse-threadx/guix)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)
