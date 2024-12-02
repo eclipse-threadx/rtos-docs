@@ -39,7 +39,7 @@ ThreadX SMP user guide
 
 [ThreadX repository](https://github.com/eclipse-threadx/threadx)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)

@@ -20,7 +20,7 @@ FileX user guide
 
 [FileX repository](https://github.com/eclipse-threadx/filex)
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)

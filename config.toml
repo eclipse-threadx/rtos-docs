@@ -22,11 +22,12 @@ disablePathToLower = true
   eclipse_search_icon = "<i data-feather=\"search\" stroke-width=\"1\"></i>"
   js = "public/js/main.js?v1.0"
   header_wrapper_class = "header-wrapper"
-  call_for_action_text = "Download"
-  call_for_action_url = "/downloads/"
-  #share_img = "/images/social-media.jpg"
-  #favicon = "/favicon.ico"
-  logo_width = "120"
+  #call_for_action_text = "Download"
+  #call_for_action_url = "/downloads/"
+  share_img = "/docs/images/social-media.jpg"
+  favicon = "/docs/favicon.ico"
+  logo = "/docs/images/threadx.png"
+  logo_width = "160"
   layout_style = "astro"
   hide_ad = false
   hide_call_for_action = true

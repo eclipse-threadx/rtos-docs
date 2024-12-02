@@ -174,7 +174,7 @@ NetX Duo addons
 [NetX Duo repository](https://github.com/eclipse-threadx/netxduo)
 
 
-[Eclipse ThreadX components](../../README)
+Eclipse ThreadX components
 - [ThreadX](../threadx)
 - [ThreadX Modules](../threadx-modules)
 - [NetX Duo](../netx-duo)
