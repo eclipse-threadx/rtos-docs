@@ -26,7 +26,7 @@ To use NetX Duo DHCPv6 Client API, the entire distribution mentioned above can b
 
 The application code must include *nxd_dhcpv6_client.h* after it includes *tx_api.h* and *nx_api.h*, to use DHCPv6 Client, ThreadX and NetX Duo services, respectively. *nxd_dhcpv6_client.c* must be compiled in the project in the same manner as other application files and its object form must be linked along with the files of the application.
 
-### <span class="underline">Client DHCP Unique Identifier (DUID)</span>
+### Client DHCP Unique Identifier (DUID)
 
 The Client DUID uniquely defines each Client on a network. An application must create a Client DUID prior to requesting an IPv6 address from a Server. The Client DUID is automatically included in all messages to the Server. To create a DUID, the application calls the service *nx_dhcpv6_create_client_duid:*
 ```C
@@ -39,7 +39,7 @@ The application calls this service and specifies the type of DUID (link layer on
 
 For devices rebooting and wishing to use a previously assigned IPv6 address lease, the application must create the Client DUID as the one it used when assigned the IPv6 address. The link layer address is all that is needed to create a link layer Client DUID. This does not require previous non volatile memory storage if the device has access to the link layer address. For DUIDs of type time, the application must have access to the same time data used in the previous DUID creation and this does require non volatile memory. Clients that do not have any stable storage must not use DUIDs of type time.
 
-### <span class="underline">Client Identity Association for Non Temporary Addresses (IANA)</span>
+### Client Identity Association for Non Temporary Addresses (IANA)
 
 The application must create an IANA and optionally one or more IA addresses before requesting an IPv6 address. To do so, the application calls the *nx_dhcpv6_create_client_iana* service. To create an IA address option, the application calls the *nx_dhcpv6_add_client_ia* service with a requested IPv6 address and lifetime values as a hint to the Server.
 
@@ -67,7 +67,7 @@ The NetX Duo DHCPv6 Client supports *nx_dhcpv6_create_client_ia* for legacy DHCP
 
 These services are demonstrated in the "Small Example System" elsewhere in this chapter.
 
-### <span class="underline">Non Volatile Memory Considerations To Reuse IANAs and IAs</span>
+### Non Volatile Memory Considerations To Reuse IANAs and IAs
 
 The application must save IANA parameters T1, T2, and the IANA identifier to non volatile memory if it wishes to use the same address(es) on rebooting. The application must also save its IA which includes its IPv6 address to non volatile memory.
 
@@ -86,7 +86,7 @@ UINT nx_dhcpv6_start(NX_DHCPV6 *dhcpv6_ptr, ULONG nv_time);
 
 From this point, the DHCPv6 Client thread task will take over monitoring the time accrued on the IPv6 lease for when to renew the lease.
 
-### <span class="underline">Setting DHCPv6 Option Data</span>
+### Setting DHCPv6 Option Data
 
 Before requesting an IPv6 lease, the application can request other network parameter data such as DNS server and time server. Some of these parameters have specific services. A few are shown below:
 
@@ -98,7 +98,7 @@ UINT  nx_dhcpv6_request_option_time_server(NX_DHCPV6 *dhcpv6_ptr,
                                            UINT enable);
 ```
 
-### <span class="underline">Initiating the IPv6 address Request</span>
+### Initiating the IPv6 address Request
 
 The application starts the DHCPv6 Client thread by calling the *nx_dhcpv6_start* service with a zero time input. To initiate the DHCPv6 protocol to request an IPv6 address, the application calls *nx_dhcpv6_request_solicit.*
 

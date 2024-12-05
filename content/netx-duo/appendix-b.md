@@ -6,6 +6,7 @@ description: Explore the NetX Duo Constants.
 
 ## Alphabetic Listing
 
+{{< grid/div isMarkdown="false" >}}
 <table>
 <thead>
 <tr class="even">
@@ -1670,9 +1671,11 @@ description: Explore the NetX Duo Constants.
 </tr>
 </tbody>
 </table>
+{{</ grid/div >}}
 
 ## Listings by Value  
 
+{{< grid/div isMarkdown="false" >}}
 <table>
 <tr>
 <td class="tg-0lax">NX_ANY_PORT</td>
@@ -1927,7 +1930,8 @@ description: Explore the NetX Duo Constants.
 <td class="tg-0lax">3</td>
 </tr>
 <tr>
-<td class="tg-0lax">NX_ICMP_PORT_UNREACH_CODE<br></td>
+<td class="tg-0lax">NX_ICMP_PORT_UNREACH_CODE  
+</td>
 <td class="tg-0lax">3</td>
 </tr>
 <tr>
@@ -3115,3 +3119,4 @@ description: Explore the NetX Duo Constants.
 <td class="tg-0lax">0xFFFFFFFF</td>
 </tr>
 </table>
+{{</ grid/div >}}

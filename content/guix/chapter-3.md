@@ -594,7 +594,7 @@ files, and store them as proprietary GUIX Pixelmap data resources. These
 services are provided for completeness for those applications that
 require runtime conversion of jpeg and/or PNG images to pixelmap format.
 
-**GX_STYLE_TEXT_COPY** allows the user to specify that a particular widget or widgets will keep it's own private copy of dynamically assigned text. Using this option requires that the memory allocation mechanism be installed prior to use. If this style flag is **<span class="underline">not</span>** provided when a text type widget is created, the application must allocate static storage areas for all dynamically created and assigned text strings. Automatic variables
+**GX_STYLE_TEXT_COPY** allows the user to specify that a particular widget or widgets will keep it's own private copy of dynamically assigned text. Using this option requires that the memory allocation mechanism be installed prior to use. If this style flag is **not** provided when a text type widget is created, the application must allocate static storage areas for all dynamically created and assigned text strings. Automatic variables
 should not be used in this case to hold runtime generated string data. If the **GX_STYLE_TEXT_COPY** style is enabled, automatic variables may be used to hold string data assigned to GUIX widgets, since each widget will create its own copy of the assigned text.
 
 Pixelmap resize and rotation utility functions return the resulting
