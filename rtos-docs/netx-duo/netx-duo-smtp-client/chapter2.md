@@ -110,7 +110,7 @@ void    tx_application_define(void *first_unused_memory)
     /* Create SMTP Client packet pool. This is only for transmitting packets to the
        server. It need not be a separate packet pool than the IP default packet pool
        but for more efficient resource use, we use two different packet pools
-       because the CLient SMTP messages generally require more payload than IP
+       because the Client SMTP messages generally require more payload than IP
        control packets.
 
        Packet payload depends on the SMTP Client application requirements.  Size of
