@@ -17,19 +17,19 @@ With Eclipse Foundation as the new home, Azure RTOS becomes Eclipse ThreadX. For
 
 Documentation for components:
 
-- [ThreadX](./rtos-docs/threadx/index.md)
-- [ThreadX Modules](./rtos-docs/threadx-modules/index.md)
-- [NetX Duo](./rtos-docs/netx-duo/index.md)
-- [GUIX](./rtos-docs/guix/index.md) 
-- [FileX](./rtos-docs/filex/index.md)
-- [LevelX](./rtos-docs/levelx/index.md)
-- [USBX](./rtos-docs/usbx/index.md)
-- [TraceX](./rtos-docs/tracex/index.md)
+- [ThreadX](./rtos-docs/threadx)
+- [ThreadX Modules](./rtos-docs/threadx-modules)
+- [NetX Duo](./rtos-docs/netx-duo)
+- [GUIX](./rtos-docs/guix) 
+- [FileX](./rtos-docs/filex)
+- [LevelX](./rtos-docs/levelx)
+- [USBX](./rtos-docs/usbx)
+- [TraceX](./rtos-docs/tracex)
 
 Other resources:
 
-- [Product Support Policy](./rtos-docs/general/lts.md)
-- [Security Updates](./rtos-docs/general/security-updates.md)
+- [Product Support Policy](./rtos-docs/general/lts)
+- [Security Updates](./rtos-docs/general/security-updates)
 
 
 ## Components of Eclipse ThreadX

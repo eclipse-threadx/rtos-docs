@@ -1,0 +1,31 @@
+<!--
+Copyright (c) 2024 Eclipse Foundation, Inc.
+
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License v. 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0.
+
+SPDX-License-Identifier: EPL-2.0
+-->
+<h2>Azure RTOS</h2>
+<p>Build deeply embedded IoT applications and edge devices.</p>
+<div class="display-flex flex-wrap">
+{{ range .Site.Data.sections.cards }}
+  <div class="card-container col-xs-24 col-sm-12">
+    <div class="card-panel bordered panel panel-default flex-column">
+      <div class="panel-body margin-10">
+        <p class="card-title padding-bottom-5"><strong>{{ .title }}</strong></p>
+        <ul class="list-unstyled padding-bottom-5">
+          {{ range .links }}
+          <li class="margin-left-20 margin-bottom-5"><i class="fa fa-{{ .icon }}" aria-hidden="true"></i><a class="padding-left-10" href="{{ .href }}">{{ .title }}</a></li>
+          {{ end }}
+        </ul>
+        {{- with .see_more }}
+        <a href="{{ . }}">See more<i class="padding-left-10 fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
+</div>
