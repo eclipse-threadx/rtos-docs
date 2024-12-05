@@ -10,7 +10,7 @@ The NetX Duo MQTT client package requires that NetX Duo (version 5.10 or later) 
 
 ## NetX Duo MQTT Specification
 
-NetX Duo MQTT client implement is compliant with OASIS MQTT Version 3.1.1 Oct 29<sup>th</sup> 2014. The specification can be found at:
+NetX Duo MQTT client implement is compliant with OASIS MQTT Version 3.1.1 Oct 29{{< sup >}}th{{</ sup >}} 2014. The specification can be found at:
 
 - [http://mqtt.org/](http://mqtt.org/)
 

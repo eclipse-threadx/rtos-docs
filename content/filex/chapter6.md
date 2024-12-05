@@ -53,7 +53,7 @@ The Log Header area is followed by the FAT Chain Log area. Figure 9 contains inf
 |Field|Size(in bytes)|Description|
 |-----|--------------|-----------|
 |FAT Chain Log Checksum|2|Checksum of the entire FAT Chain Log area. The FAT Chain Log area is considered invalid if the it fails the checksum verification.|
-|Flag|1|Valid flag values are:<br/>0x01 FAT Chain Valid|
+|Flag|1|Valid flag values are:{{<br>}}0x01 FAT Chain Valid|
 |Reserved|1|Reserved for future use|
 |Insertion Point – Front|4|The cluster (that belongs to the original FAT chain) where the newly created chain is going to be attached to.|
 |Head Cluster of New FAT Chain|4|The first cluster of the newly created FAT Chain|

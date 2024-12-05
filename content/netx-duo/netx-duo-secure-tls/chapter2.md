@@ -608,7 +608,7 @@ There are several configuration options for building NetX Duo Secure. Following 
 | **NX_SECURE_DISABLE_ERROR_CHECKING**                | Defined, this option removes the basic NetX Duo Secure error checking. It is typically used after the application has been debugged. |
 | **NX_CRYPTO_MAX_RSA_MODULUS_SIZE**                  | Defined, this option gives the maximum RSA modulus expected, in bits. The default value is 4096 for a 4096-bit modulus. Other values can be 3072, 2048, or 1024 (not recommended). |
 | **NX_SECURE_ALLOW_SELF_SIGNED_CERTIFICATES**        | Defined, this option allows TLS to accept self-signed certificates from a remote host. By default, TLS will reject self-signed server certificates as a security precaution. If this macro is defined, self-signed certificates must still be added to the trusted store to be accepted. |
-| **NX_SECURE_ENABLE_CLIENT_CERTIFICATE_VERIFY**      | Defined, this option enables the optional X.509 Client Certificate Verification for TLS Servers<sup>1</sup>.  |
+| **NX_SECURE_ENABLE_CLIENT_CERTIFICATE_VERIFY**      | Defined, this option enables the optional X.509 Client Certificate Verification for TLS Servers{{< sup >}}1{{</ sup >}}.  |
 | **NX_SECURE_ENABLE_PSK_CIPHERSUITES**               | Defined, this option enables Pre-Shared Key (PSK) functionality. It does not disable digital certificates. |
 | **NX_SECURE_TLS_MAX_PSK_ID_SIZE**                   | Defined, this option gives the maximum size of PSK ID. |
 | **NX_SECURE_TLS_MAX_PSK_KEYS**                      | Defined, this option gives the maximum number of PSK keys. |

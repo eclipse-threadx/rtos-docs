@@ -685,9 +685,9 @@ This service creates a TFTP Server that responds to TFTP Client requests on port
 
 - *pool_ptr*: Pointer to TFTP packet pool.
 
-> **Note:** The supplied pool must have packet payloads at least 580 bytes in size.<sup>1</sup>
+> **Note:** The supplied pool must have packet payloads at least 580 bytes in size.{{< sup >}}1{{</ sup >}}
 
-<sup>1</sup> The data portion of a packet is exactly 512 bytes, but the packet payload size must be at least 572 bytes. The remaining bytes are used for the UDP, IPv6, and Ethernet headers and potential trailing bytes required by the driver for alignment.
+{{< sup >}}1{{</ sup >}} The data portion of a packet is exactly 512 bytes, but the packet payload size must be at least 572 bytes. The remaining bytes are used for the UDP, IPv6, and Ethernet headers and potential trailing bytes required by the driver for alignment.
 
 ### Return Values
 

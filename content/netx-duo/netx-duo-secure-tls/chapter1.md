@@ -26,7 +26,7 @@ NetX Duo Secure supports the following protocols related to TLS. The list is not
 | RFC 5280 | X.509 PKI Certificates (v3)                                                                                 | 41   |
 | RFC 5746 | Transport Layer Security (TLS) Renegotiation Indication Extension                                           |      |
 | RFC 5869 | HMAC-based Extract-and-Expand Key Derivation Function (HKDF)                                                | 19   |
-| RFC 6066<sup>1</sup> | Transport Layer Security (TLS) Extensions: Extension Definitions                                            | 19   |
+| RFC 6066{{< sup >}}1{{</ sup >}} | Transport Layer Security (TLS) Extensions: Extension Definitions                                            | 19   |
 | RFC 6234 | US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)                                                 | 33   |
 | RFC 8443 | Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS) Versions 1.2 and Earlier |      |
 | RFC 8446 | The Transport Layer Security (TLS) Protocol Version 1.3                                                     | 19   |

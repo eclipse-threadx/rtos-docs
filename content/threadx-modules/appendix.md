@@ -62,7 +62,7 @@ _txm_module_preamble:
 | Bit | Value | Meaning |
 |---|---|---|
 | [23-0] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for ARM11 using GCC
 
@@ -372,7 +372,7 @@ __txm_module_preamble
 | Bit | Value | Meaning |
 |---|---|---|
 | [23-0] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for ARM11 using AC5
 
@@ -482,9 +482,9 @@ __txm_module_preamble
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
 | [23-1] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-A7 using AC5
 
@@ -624,11 +624,11 @@ __txm_module_preamble
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M3 using AC5
 
@@ -753,11 +753,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M3 using AC6
 
@@ -867,11 +867,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M3 using GNU
 
@@ -1217,11 +1217,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M3 using IAR
 
@@ -1394,11 +1394,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M33 using AC6
 
@@ -1464,11 +1464,11 @@ An example workspace is provided. Build the ThreadX library, ThreadX Modules lib
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M33 using GNU
 
@@ -1569,11 +1569,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M33 using IAR
 
@@ -1748,11 +1748,11 @@ __txm_module_preamble
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M4 using AC5
 
@@ -1877,11 +1877,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M4 using AC6
 
@@ -1990,11 +1990,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M4 using GNU
 
@@ -2341,11 +2341,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M4 using IAR
 
@@ -2521,11 +2521,11 @@ __txm_module_preamble
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M7 using AC5
 
@@ -2578,11 +2578,11 @@ armlink -d -o demo_threadx_module_manager.axf --elf --ro 0x00000000 --first tx_i
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M7 using AC6
 
@@ -2628,11 +2628,11 @@ Module always has read access to shared memory.
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M7 using GNU
 
@@ -2978,11 +2978,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-M7 using IAR
 
@@ -3140,9 +3140,9 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
 | [23-1] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-R4 using AC6
 
@@ -3269,9 +3269,9 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
 | [23-1] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x01<br />0x02 | **Compiler ID**<br />IAR<br />ARM<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x01{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
 
 #### Module linker for Cortex-R4 using IAR
 
@@ -3417,11 +3417,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MMU protection<br />MMU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MMU protection{{<br>}}MMU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x03 | **Compiler ID**<br />GHS |
+| [31-24] | {{<br>}}0x03 | **Compiler ID**{{<br>}}GHS |
 
 #### Module linker for MCF544xx using GHS
 
@@ -3581,11 +3581,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x02 | **Compiler ID**<br />IAR<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}GNU |
 
 #### Module linker for RX63 using IAR
 
@@ -3778,11 +3778,11 @@ __txm_module_preamble:
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0<br />1 | Privileged mode execution<br />User mode execution |
-| 1 | 0<br />1 | No MPU protection<br />MPU protection (must have user mode selected) |
-| 2 | 0<br />1 | Disable shared/external memory access<br />Enable shared/external memory access |
+| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
+| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
+| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | <br />0x00<br />0x02 | **Compiler ID**<br />IAR<br />GNU |
+| [31-24] | {{<br>}}0x00{{<br>}}0x02 | **Compiler ID**{{<br>}}IAR{{<br>}}GNU |
 
 #### Module linker for RX65N using IAR
 

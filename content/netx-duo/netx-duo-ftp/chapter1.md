@@ -104,7 +104,7 @@ The FTP Server utilizes the *well-known TCP port 21* to field Client requests. F
 1. Server sends "230" response to signal success.
 1. Client sends "TYPE I" message for binary transfer.
 1. Server sends "200" response to signal success.
-1. *IPv4 applications*: Client sends "PORT" message with IP address and port.<br />*IPv6 applications*: Client sends "EPRT" message with IP address and port.
+1. *IPv4 applications*: Client sends "PORT" message with IP address and port.{{<br>}}*IPv6 applications*: Client sends "EPRT" message with IP address and port.
 1. Server sends "200" response to signal success.
 1. Client sends "RETR" message with file name to read.
 1. Server creates data socket and connects with client data port specified in the "PORT" command.
@@ -128,8 +128,8 @@ If the FTP Client makes a read request in the passive transfer mode, the command
 1. Server sends "230" response to signal success.
 1. Client sends "TYPE I" message for binary transfer.
 1. Server sends "200" response to signal success.
-1. ***IPv4 applications:* Client sends "PASV" message.**<br />***IPv6 applications:* Client sends "EPSV" message.**
-1. ***IPv4 applications:* Server sends "227" response, and IP address and port for the Client to connect to, to signal success.**<br />***IPv6 applications:* Server sends "229" response, and IP address and port for the Client to connect to, to signal success.**
+1. ***IPv4 applications:* Client sends "PASV" message.**{{<br>}}***IPv6 applications:* Client sends "EPSV" message.**
+1. ***IPv4 applications:* Server sends "227" response, and IP address and port for the Client to connect to, to signal success.**{{<br>}}***IPv6 applications:* Server sends "229" response, and IP address and port for the Client to connect to, to signal success.**
 1. Client sends "RETR" message with file name to read.
 1. **Server creates data server socket and listens for the Client connect request on this socket using the port specified in the response in step 10.**
 1. **Server sends "150" response on the control socket to signal file read has started.**
@@ -150,7 +150,7 @@ If the FTP Client makes a read request in the passive transfer mode, the command
 1. Server sends "230" response to signal success.
 1. Client sends "TYPE I" message for binary transfer.
 1. Server sends "200" response to signal success.
-1. *IPv4 applications*: Client sends "PORT" message with IP address and port.<br />*IPv6 applications*: Client sends "EPRT" message with IP address and port.
+1. *IPv4 applications*: Client sends "PORT" message with IP address and port.{{<br>}}*IPv6 applications*: Client sends "EPRT" message with IP address and port.
 1. Server sends "200" response to signal success.
 1. Client sends "STOR" message with file name to write.
 1. Server creates data socket and connects with client data port specified in the previous "EPRT" or "PORT" command.
@@ -172,8 +172,8 @@ If the FTP Client makes a write request in the passive transfer mode, the comman
 1. Server sends "230" response to signal success.
 1. Client sends "TYPE I" message for binary transfer.
 1. Server sends "200" response to signal success.
-1. ***IPv4 applications:* Client sends "PASV" message.**<br />***IPv6 applications:* Client sends "EPSV" message.**
-1. ***IPv4 applications:* Server sends "227" response, and IP address and port for the Client to connect to, to signal success.**<br />***IPv6 applications:* Server sends "229" response, and IP address and port for the Client to connect to, to signal success.**
+1. ***IPv4 applications:* Client sends "PASV" message.**{{<br>}}***IPv6 applications:* Client sends "EPSV" message.**
+1. ***IPv4 applications:* Server sends "227" response, and IP address and port for the Client to connect to, to signal success.**{{<br>}}***IPv6 applications:* Server sends "229" response, and IP address and port for the Client to connect to, to signal success.**
 1. Client sends "STOR" message with file name to write.
 1. **Server creates data server socket and listens for the Client connect request on this socket using the port specified in the response in step 10.**
 1. **Server sends "150" response on the control socket to signal file write has started.**

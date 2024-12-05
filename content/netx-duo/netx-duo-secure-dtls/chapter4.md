@@ -2465,7 +2465,7 @@ UINT nx_secure_dtls_session_create(
 
 ### Description
 
-This service creates and configures a DTLS session. Generally, this will be used to create DTLS Client sessions as DTLS Server sessions are managed with the DTLS Server mechanism (see *nx_secure_dtls_server_create*), but there may be instances where an application needs to create a single stand-alone DTLS Server session instance in which case this service may be used<sup>7</sup>.
+This service creates and configures a DTLS session. Generally, this will be used to create DTLS Client sessions as DTLS Server sessions are managed with the DTLS Server mechanism (see *nx_secure_dtls_server_create*), but there may be instances where an application needs to create a single stand-alone DTLS Server session instance in which case this service may be used{{< sup >}}7{{</ sup >}}.
 
 The parameters configure the information and memory allocation needed to instantiate a DTLS session. The crypto_table parameter is a TLS table containing all of the cryptographic routines needed for TLS/DTLS encryption and authentication. The metadata_buffer is used for encryption calculations (see nx_secure_tls_metadata_size_calculate in the NetX Duo Secure TLS User Guide), and the packet_reassembly_buffer is used to reassemble UDP datagrams into a complete DTLS record for decryption.
 
