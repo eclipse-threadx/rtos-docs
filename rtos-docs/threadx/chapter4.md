@@ -1379,7 +1379,7 @@ valid. */
 - tx_event_flags_set
 - tx_event_flags_set_notify
 
-### tx_event_flags_performance_info_get
+## tx_event_flags_performance_info_get
 
 Get event flags group performance information
 
