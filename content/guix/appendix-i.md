@@ -421,5 +421,5 @@ typedef struct GX_SPRITE_FRAME_STRUCT
 | **gx_sprite_frame_x_offset**             | Offset from the sprite widget left to display the pixelmap |
 | **gx_sprite_frame_y_offset**             | Offset from the sprite widget top to display the pixelmap |
 | **gx_sprite_frame_delay**                | Delay value, in GUIX timer ticks, after displaying this frame before advancing to the next sprite frame |
-| **gx_sprite_frame_background_operation** | Define how the background should be erased. Possible values for this field are:{{<br>}}GX_SPRITE_BACKGROUND_NO_ACTION: No fill between frames{{<br>}}GX_SPRITE_BACKGROUND_SOLID_FILL: Redraw sprite background{{<br>}}GX_SPRITE_BACKGROUND_RESTORE: Restore previous pixelmap |
+| **gx_sprite_frame_background_operation** | Define how the background should be erased. Possible values for this field are:<br>GX_SPRITE_BACKGROUND_NO_ACTION: No fill between frames<br>GX_SPRITE_BACKGROUND_SOLID_FILL: Redraw sprite background<br>GX_SPRITE_BACKGROUND_RESTORE: Restore previous pixelmap |
 | **gx_sprite_frame_alpha**                | Alpha value to be added to the displayed pixelmap. The value 255 specifies that no extra alpha value should be imposed. If the pixelmap includes an alpha channel, this alpha channel will be added to the frame alpha value. |

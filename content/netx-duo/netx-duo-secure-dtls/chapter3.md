@@ -36,8 +36,8 @@ The fields of the TLS record header are defined as follows:
 
 | TLS Header Field | Purpose  |
 | ---------------- | --------- |
-| **8-bit Message Type** | This field contains the type of DTLS record being sent. Valid types are as follows:{{<br>}}- ChangeCipherSpec: 0x14{{<br>}}- Alert: 0x15{{<br>}}- Handshake: 0x16{{<br>}}- Application Data: 0x17{{<br>}} |
-| **16-bit Protocol Version** | This field contains the DTLS protocol version. Valid values are as follows:{{<br>}}- DTLS 1.1: 0xFEFD |
+| **8-bit Message Type** | This field contains the type of DTLS record being sent. Valid types are as follows:<br>- ChangeCipherSpec: 0x14<br>- Alert: 0x15<br>- Handshake: 0x16<br>- Application Data: 0x17<br> |
+| **16-bit Protocol Version** | This field contains the DTLS protocol version. Valid values are as follows:<br>- DTLS 1.1: 0xFEFD |
 |  **16-bit Epoch** |  This field contains the DTLS "epoch" which is a counter that is incremented each time the encryption state is changed (e.g. when generating new session keys).  |
 |  **48-bit Sequence Number** |  This field contains a sequence number which identifies this particular record. It is used by DTLS to maintain record ordering and check for retransmission need. |
 |  **16-bit Length** |  This field contains the length of the data encapsulated in the DTLS record.  |
@@ -54,12 +54,12 @@ The fields of the DTLS Handshake record header are defined as follows:
 
 | TLS Header Field | Purpose  |
 | ---------------- | ------------------------------------------------ |
-| **8-bit Message Type** | This field contains the type of DTLS record being sent. Valid types are as follows:{{<br>}}- ChangeCipherSpec: 0x14{{<br>}}- Alert: 0x15{{<br>}}- Handshake: 0x16{{<br>}}- Application Data: 0x17 |
+| **8-bit Message Type** | This field contains the type of DTLS record being sent. Valid types are as follows:<br>- ChangeCipherSpec: 0x14<br>- Alert: 0x15<br>- Handshake: 0x16<br>- Application Data: 0x17 |
 |  **16-bit Epoch** | This field contains the DTLS "epoch" which is a counter that is incremented each time the encryption state is changed (e.g. when generating new session keys). |
 |  **48-bit Sequence Number** | This field contains a sequence number which identifies this particular record. It is used by DTLS to maintain record ordering and check for retransmission need. |
-|  **16-bit Protocol Version** | This field contains the DTLS protocol version. Valid values are as follows:{{<br>}}- DTLS 1.1: 0xFEFD |
+|  **16-bit Protocol Version** | This field contains the DTLS protocol version. Valid values are as follows:<br>- DTLS 1.1: 0xFEFD |
 | **16-bit Length** | This field contains the length of the data encapsulated in the DTLS record. |
-| **8-bit Handshake Type** | This field contains the handshake message type. Valid values are as follows:{{<br>}}- HelloRequest: 0x00{{<br>}}- ClientHello: 0x01{{<br>}}- ServerHello: 0x02{{<br>}}- Certificate: 0x0B{{<br>}}- ServerKeyExchange: 0x0C{{<br>}}- CertificateRequest: 0x0D{{<br>}}- ServerHelloDone: 0x0E{{<br>}}- CertificateVerify: 0x0F{{<br>}}- ClientKeyExchange: 0x10{{<br>}}- Finished: 0x14 |
+| **8-bit Handshake Type** | This field contains the handshake message type. Valid values are as follows:<br>- HelloRequest: 0x00<br>- ClientHello: 0x01<br>- ServerHello: 0x02<br>- Certificate: 0x0B<br>- ServerKeyExchange: 0x0C<br>- CertificateRequest: 0x0D<br>- ServerHelloDone: 0x0E<br>- CertificateVerify: 0x0F<br>- ClientKeyExchange: 0x10<br>- Finished: 0x14 |
 | **24-bit Length** | This field contains the length of the handshake message data. |
 | **16-bit Sequence Number** | This field contains a sequence number. |
 

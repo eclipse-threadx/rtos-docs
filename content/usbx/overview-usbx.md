@@ -100,7 +100,7 @@ The USBX Host API is an intuitive and consistent API, following a noun-verb nami
     - Intuitive USBX host APIs in this form: *ux_host_class_prolific_**
 * STORAGE
     - Minimal 5.6 KB FLASH, 4 KB RAM
-    - Automatic scaling{{<br>}} Integrated with FileX
+    - Automatic scaling<br> Integrated with FileX
     - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_storage_**
 * USB Host STACK
@@ -125,7 +125,7 @@ The USBX Device API is an intuitive and consistent API following a noun-verb nam
 * CDC/ECM
     - Minimal 1.5 KB FLASH, 4 KB to 8 KB RAM
     - Automatic scaling
-    - System-level trace via TraceX{{<br>}} Intuitive USBX device APIs in this form: *ux_device_class_cdc_ecm_**.
+    - System-level trace via TraceX<br> Intuitive USBX device APIs in this form: *ux_device_class_cdc_ecm_**.
 * DFU
     - Minimal 1.1 KB FLASH, 2 KB RAM
     -  Automatic scaling

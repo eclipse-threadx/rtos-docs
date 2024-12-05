@@ -114,7 +114,7 @@ The input parameters are defined as follows:
 
 | Parameter | Meaning |
 | --------- | --------|
-| *request_type* | Specifies the HTTP Client request, valid requests are defined as: {{<br>}} **NX_HTTP_SERVER_GET_REQUEST**{{<br>}}**NX_HTTP_SERVER_POST_REQUEST**{{<br>}}**NX_HTTP_SERVER_HEAD_REQUEST**{{<br>}}**NX_HTTP_SERVER_PUT_REQUEST**{{<br>}}**NX_HTTP_SERVER_DELETE_REQUEST** |
+| *request_type* | Specifies the HTTP Client request, valid requests are defined as: <br> **NX_HTTP_SERVER_GET_REQUEST**<br>**NX_HTTP_SERVER_POST_REQUEST**<br>**NX_HTTP_SERVER_HEAD_REQUEST**<br>**NX_HTTP_SERVER_PUT_REQUEST**<br>**NX_HTTP_SERVER_DELETE_REQUEST** |
 | *resource* | Specific resource requested. |
 | *name* | Destination for the pointer to the required username. |
 | *password* | Destination for the pointer to the required password. |

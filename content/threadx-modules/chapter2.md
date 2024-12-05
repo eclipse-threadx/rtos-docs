@@ -129,11 +129,11 @@ The table below shows an example of the properties bit map. Port-specific proper
 
 | Bit | Value | Meaning |
 |---|---|---|
-| 0 | 0{{<br>}}1 | Privileged mode execution{{<br>}}User mode execution |
-| 1 | 0{{<br>}}1 | No MPU protection{{<br>}}MPU protection (must have user mode selected) |
-| 2 | 0{{<br>}}1 | Disable shared/external memory access{{<br>}}Enable shared/external memory access |
+| 0 | 0<br>1 | Privileged mode execution<br>User mode execution |
+| 1 | 0<br>1 | No MPU protection<br>MPU protection (must have user mode selected) |
+| 2 | 0<br>1 | Disable shared/external memory access<br>Enable shared/external memory access |
 | [23-3] | 0 | Reserved
-| [31-24] | {{<br>}}0x01{{<br>}}0x02{{<br>}}0x03 | **Compiler ID**{{<br>}}IAR{{<br>}}ARM{{<br>}}GNU |
+| [31-24] | <br>0x01<br>0x02<br>0x03 | **Compiler ID**<br>IAR<br>ARM<br>GNU |
 
 
 ## Module linker control file

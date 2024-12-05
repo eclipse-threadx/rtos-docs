@@ -26,9 +26,9 @@ This service allocates a fixed-size memory block from the specified memory pool.
 
 ### Parameters
 
-- *pool_ptr*: {{<br>}}Pointer to a previously created memory block pool.
-- *block_ptr*: {{<br>}}Pointer to a destination block pointer. On successful allocation, the address of the allocated memory block is placed where this parameter points.
-- *wait_option*: {{<br>}}Defines how the service behaves if there are no memory blocks available. The wait options are defined as follows:
+- *pool_ptr*: <br>Pointer to a previously created memory block pool.
+- *block_ptr*: <br>Pointer to a destination block pointer. On successful allocation, the address of the allocated memory block is placed where this parameter points.
+- *wait_option*: <br>Defines how the service behaves if there are no memory blocks available. The wait options are defined as follows:
   - **TX_NO_WAIT** (0x00000000) - Selecting **TX_NO_WAIT** results in an immediate return from this service regardless if it was successful or not. *This is the only valid option if the service is called from a non-thread; e.g., Initialization, timer, or ISR*.
   - **TX_WAIT_FOREVER** (0xFFFFFFF) - Selecting **TX_WAIT_FOREVER** causes the calling thread to suspend indefinitely until a memory block is available.
   - *timeout value* (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for a memory block.
@@ -570,10 +570,10 @@ This service allocates the specified number of bytes from the specified memory b
 
 ### Parameters
 
-- *pool_ptr*: {{<br>}}Pointer to a previously created memory block pool.
-- *memory_ptr*: {{<br>}}Pointer to a destination memory pointer. On successful allocation, the address of the allocated memory area is placed where this parameter points to.
-- *memory_size*: {{<br>}}Number of bytes requested.
-- *wait_option*: {{<br>}}Defines how the service behaves if there is not enough memory available. The wait options are defined as follows:
+- *pool_ptr*: <br>Pointer to a previously created memory block pool.
+- *memory_ptr*: <br>Pointer to a destination memory pointer. On successful allocation, the address of the allocated memory area is placed where this parameter points to.
+- *memory_size*: <br>Number of bytes requested.
+- *wait_option*: <br>Defines how the service behaves if there is not enough memory available. The wait options are defined as follows:
   - **TX_NO_WAIT** (0x00000000) - Selecting **TX_NO_WAIT** results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from initialization.*
   - **TX_WAIT_FOREVER** 0xFFFFFFFF) - Selecting **TX_WAIT_FOREVER** causes the calling thread to suspend indefinitely until enough memory is available.
   - *timeout value* (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for the memory.
@@ -1241,9 +1241,9 @@ This service retrieves event flags from the specified event flags group. Each ev
 
 ### Parameters
 
-- *group_ptr*: {{<br>}}Pointer to a previously created event flags group.
-- *requested_flags*: {{<br>}}32-bit unsigned variable that represents the requested event flags.
-- *get_option*: {{<br>}}Specifies whether all or any of the requested event flags are required. The following are valid selections:
+- *group_ptr*: <br>Pointer to a previously created event flags group.
+- *requested_flags*: <br>32-bit unsigned variable that represents the requested event flags.
+- *get_option*: <br>Specifies whether all or any of the requested event flags are required. The following are valid selections:
 
   - **TX_AND** (0x02)
   - **TX_AND_CLEAR** (0x03)
@@ -1252,8 +1252,8 @@ This service retrieves event flags from the specified event flags group. Each ev
 
     Selecting TX_AND or TX_AND_CLEAR specifies that all event flags must be present in the group. Selecting TX_OR or TX_OR_CLEAR     specifies that any event flag is satisfactory. Event flags that satisfy the request are cleared (set to zero) if TX_AND_CLEAR or TX_OR_CLEAR are specified.
 
-- *actual_flags_ptr*: {{<br>}}Pointer to destination of where the retrieved event flags are placed. Note that the actual flags obtained may contain flags that were not requested.
-- *wait_option*:  {{<br>}}Defines how the service behaves if the selected event flags are not set. The wait options are defined as follows:
+- *actual_flags_ptr*: <br>Pointer to destination of where the retrieved event flags are placed. Note that the actual flags obtained may contain flags that were not requested.
+- *wait_option*:  <br>Defines how the service behaves if the selected event flags are not set. The wait options are defined as follows:
   - **TX_NO_WAIT** (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. This is the only valid option if the service is called from a non-thread; e.g., Initialization, timer, or ISR.
   - **TX_WAIT_FOREVER** timeout value  (0xFFFFFFFF) - Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until the event flags are available.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for the event flags.
@@ -1539,9 +1539,9 @@ This service sets or clears event flags in an event flags group, depending upon 
 
 ### Parameters
 
-- *group_ptr*: {{<br>}}Pointer to the previously created event flags group control block.
-- *flags_to_set*: {{<br>}}Specifies the event flags to set or clear based upon the set option selected.
-- *set_option*: {{<br>}}Specifies whether the event flags specified are ANDed or ORed into the current event flags of the group. The following are valid selections:
+- *group_ptr*: <br>Pointer to the previously created event flags group control block.
+- *flags_to_set*: <br>Specifies the event flags to set or clear based upon the set option selected.
+- *set_option*: <br>Specifies whether the event flags specified are ANDed or ORed into the current event flags of the group. The following are valid selections:
   - **TX_AND** (0x02)
   - **TX_OR** (0x00)
 
@@ -1840,8 +1840,8 @@ If the mutex is owned by another thread and this thread is higher priority and p
 
 ### Parameters
 
-- *mutex_ptr*:   {{<br>}}Pointer to a previously created mutex.
-- *wait_option*: {{<br>}}Defines how the service behaves if the mutex is already owned by another thread. The wait options are defined as follows:
+- *mutex_ptr*:   <br>Pointer to a previously created mutex.
+- *wait_option*: <br>Defines how the service behaves if the mutex is already owned by another thread. The wait options are defined as follows:
   - **TX_NO_WAIT*: (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from Initialization.*
   - **TX_WAIT_FOREVER** timeout value (0xFFFFFFFF) - Selecting **TX_WAIT_FOREVER** causes the calling thread to suspend indefinitely until the mutex is available.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for the mutex.
@@ -2323,7 +2323,7 @@ UINT tx_queue_delete(TX_QUEUE *queue_ptr);
 
 This service deletes the specified message queue. All threads suspended waiting for a message from this queue are resumed and given a TX_DELETED return status.
 
-> **Important:** *The application must ensure that any send notify callback for this queue is completed (or disabled) before deleting the queue. In addition, the application must prevent any future use of a deleted queue.* {{<br>}}{{<br>}}*It is also the application's responsibility to manage the memory area associated with the queue, which is available after this service completes.*
+> **Important:** *The application must ensure that any send notify callback for this queue is completed (or disabled) before deleting the queue. In addition, the application must prevent any future use of a deleted queue.* <br><br>*It is also the application's responsibility to manage the memory area associated with the queue, which is available after this service completes.*
 
 ### Parameters
 
@@ -2451,9 +2451,9 @@ This service sends a message to the front location of the specified message queu
 
 ### Parameters
 
-- *queue_ptr*: {{<br>}}Pointer to a message queue control block.
-- *source_ptr*: {{<br>}}Pointer to the message.
-- *wait_option*:  {{<br>}}Defines how the service behaves if the message queue is full. The wait options are defined as follows:
+- *queue_ptr*: <br>Pointer to a message queue control block.
+- *source_ptr*: <br>Pointer to the message.
+- *wait_option*:  <br>Defines how the service behaves if the message queue is full. The wait options are defined as follows:
   - **TX_NO_WAIT*: (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from a non-thread; e.g., Initialization, timer, or ISR.*
   - **TX_WAIT_FOREVER** (0xFFFFFFFF) - Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until there is room in the queue.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for room in the queue.
@@ -2835,9 +2835,9 @@ This service retrieves a message from the specified message queue. The retrieved
 
 ### Parameters
 
-- *queue_ptr*: {{<br>}}Pointer to a previously created message queue.
-- *destination_ptr*: {{<br>}}Location of where to copy the message.
-- *wait_option*: {{<br>}}Defines how the service behaves if the message queue is empty. The wait options are defined as follows:
+- *queue_ptr*: <br>Pointer to a previously created message queue.
+- *destination_ptr*: <br>Location of where to copy the message.
+- *wait_option*: <br>Defines how the service behaves if the message queue is empty. The wait options are defined as follows:
   - **TX_NO_WAIT*: (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. This is the only valid option if the service is called from a non-thread; e.g.,  Initialization, timer, or ISR.
   - **TX_WAIT_FOREVER** (0xFFFFFFFF) - Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until a message is available.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for a message.
@@ -2909,9 +2909,9 @@ UINT tx_queue_send(
 This service sends a message to the specified message queue. The sent message is **copied** to the queue from the memory area specified by the source pointer.
 
 ### Parameters
-- *queue_ptr*: {{<br>}}Pointer to a previously created message queue.
-- *source_ptr*: {{<br>}}Pointer to the message.
-- *wait_option*: {{<br>}}Defines how the service behaves if the message queue is full. The wait options are defined as follows:
+- *queue_ptr*: <br>Pointer to a previously created message queue.
+- *source_ptr*: <br>Pointer to the message.
+- *wait_option*: <br>Defines how the service behaves if the message queue is full. The wait options are defined as follows:
   - **TX_NO_WAIT*: (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from a non-thread; e.g., Initialization, timer, or ISR*.
   - **TX_WAIT_FOREVER** (0xFFFFFFFF) - Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until there is room in the queue.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for room in the queue.
@@ -3233,8 +3233,8 @@ This service retrieves an instance (a single count) from the specified counting 
 
 ### Parameters
 
-- *semaphore_ptr*: {{<br>}}Pointer to a previously created counting semaphore.
-- *wait_option*: {{<br>}}Defines how the service behaves if there are no instances of the semaphore available; i.e., the semaphore count is zero. The wait options are defined as follows:
+- *semaphore_ptr*: <br>Pointer to a previously created counting semaphore.
+- *wait_option*: <br>Defines how the service behaves if there are no instances of the semaphore available; i.e., the semaphore count is zero. The wait options are defined as follows:
   - **TX_NO_WAIT** (0x00000000) - Selecting TX_NO_WAIT results in an immediate return from this service regardless of whether or not it was successful. *This is the only valid option if the service is called from a non-thread; e.g., initialization, timer, or ISR.*
   - **TX_WAIT_FOREVER** (0xFFFFFFFF) - Selecting TX_WAIT_FOREVER causes the calling thread to suspend indefinitely until a semaphore instance is available.
   - timeout value (0x00000001 through 0xFFFFFFFE) - Selecting a numeric value (1-0xFFFFFFFE) specifies the maximum number of timer-ticks to stay suspended while waiting for a semaphore instance.
