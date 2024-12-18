@@ -45,7 +45,7 @@ In order to use TLS 1.3, the macro NX_SECURE_TLS_ENABLE_TLS_1_3 must be globally
 
 ### TLS Record header
 
-Any valid TLS record must have a TLS header, as shown in Error! Reference source not found.
+Any valid TLS record must have a TLS header, as shown in Figure 1.
 
 ![Diagram of a TLS record header.](media/image2.png)
 
