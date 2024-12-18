@@ -2,6 +2,7 @@
 title: Chapter 4 - Description of GUIX Services
 description: This chapter contains a description of all GUIX services (listed below) in alphabetic order.
 ---
+
 # Chapter 4 - Description of GUIX Services
 
 This chapter contains a description of all GUIX services (listed below) in alphabetic order.  
@@ -3745,7 +3746,7 @@ This service draws text on the canvas. This API, while still supported, is depre
 - *x_start*: Starting x-coordinate for text.
 - *y_start*: Starting y-coordinate for text.
 - *string*: Pointer to string to draw.
-- *length*: If length >= 0, limits the number of characters drawn to length. If length < 0, the entire string until NULL terminator is drawn.
+- *length*: If length >= 0, limits the number of characters drawn to length. If length \< 0, the entire string until NULL terminator is drawn.
 
 ### Return Values
 
@@ -17812,7 +17813,7 @@ The GX_STUDIO_WIDGET structure is defined in the application specifications head
 
 For statically allocated widgets, the widget control block is defined in the generated specifications.c file, and given the widget name defined within GUIX Studio. For dynamically allocated widgets, the application should pass GX_NULL as the widget control block address and the function will attempt to dynamically allocate the widget control block using the `gx_system_memory_allocate()` function, which is also defined by and provided by the application.
 
-For an application to directly reference the GUIX Studio widget definition within the generated specifications file, it is necessary to follow the naming convention utilized by the GUI Studio code generator. The GX_STUDIO_WIDGET structure generated within the specifications.c file is always named according to this convention: <widget_name>_define, where the <widget_name> field may be repeated multiple times if the widget is child of a child widget.
+For an application to directly reference the GUIX Studio widget definition within the generated specifications file, it is necessary to follow the naming convention utilized by the GUI Studio code generator. The GX_STUDIO_WIDGET structure generated within the specifications.c file is always named according to this convention: `<widget_name>_define`, where the `<widget_name>` field may be repeated multiple times if the widget is child of a child widget.
 
 ### Parameters
 
@@ -18766,7 +18767,7 @@ This service sets pen configuration to control the pen speed and distance parame
 The gx_pen_configuration_min_drag_dist member of GX_PEN_CONFIGURATION is a fixed point data type, and you should use GX_FIXED_VAL_MAKE(value) to convert from INT to GX_FIXED_VAL. For example, if you want to set minimum drag distance to 0.5 pixel per tick, you have to set the
 gx_pen_configuration_min_drag_dist to `GX_FIXED_VAL_MAKE(1) / 2`.
 
-In GUIX releases 5.4.0 and older, the gx_pen_configuration_min_drag_dist member of GX_PEN_CONFIGURATION was of (INT << 8) type rather than GX_FIXED_VAL type. If your project with 5.4.0 version GUIX library is using this API, you will need to modify the min_drag_dist parameter or #define GUIX_5_4_0_COMPATIBILITY when building the GUIX library.
+In GUIX releases 5.4.0 and older, the gx_pen_configuration_min_drag_dist member of GX_PEN_CONFIGURATION was of (INT \<\< 8) type rather than GX_FIXED_VAL type. If your project with 5.4.0 version GUIX library is using this API, you will need to modify the min_drag_dist parameter or #define GUIX_5_4_0_COMPATIBILITY when building the GUIX library.
 
 ### Parameters
 
@@ -21466,7 +21467,7 @@ The gradient type flags include GX_GRADIENT_TYPE_ALPHA and GX_GRADIENT_TYPE_MIRR
 - **GX_NOT_SUPPORTED** (0x28) Gradient is not type GX_GRADIENT_TYPE_ALPHA.
 - **GX_FAILURE** (0x10) Memory allocator is not defined or memory allocation is failed.
 - GX_CALLER_ERROR (0x11) Invalid caller of this function.
-- GX_PTR_ERROR (0x07) Gradient pointer not valid<.
+- GX_PTR_ERROR (0x07) Gradient pointer not valid.
 
 ### Allowed From
 
@@ -24685,7 +24686,7 @@ This service searches through the children of the specified parent looking for a
 
 - *parent*: Pointer to parent widget from which search is started.
 - *widget_id*: Widget ID to search for.
-- *search_depth*: Defines the recursive nesting level into which the function will search child widgets. If this value is <= 0, only immediate children of the parent widget are searched. If this value is GX_SEARCH_DEPTH_INFINITE, all children of all child widgets are exhaustively searched. For any other value > 0, this value limits how deeply nested this function will search through child widgets looked for the requested widget ID.
+- *search_depth*: Defines the recursive nesting level into which the function will search child widgets. If this value is \<= 0, only immediate children of the parent widget are searched. If this value is GX_SEARCH_DEPTH_INFINITE, all children of all child widgets are exhaustively searched. For any other value \> 0, this value limits how deeply nested this function will search through child widgets looked for the requested widget ID.
 - *return_widget*: Pointer to destination for found widget.
 
 ### Return Values
