@@ -5,15 +5,13 @@ description: This article is a summary of the additional APIs available to a mod
 
 # Chapter 4 - Module APIs
 
-## Summary of Module APIs
-
 There are several additional API functions available to a module, as follows:
-
-- ***txm_module_application_request*** - *Application-specific request to resident code*
-- ***txm_module_object_allocate*** - *Allocate memory outside of module for object*
-- ***txm_module_object_deallocate*** - *Deallocate previously allocated object memory*
-- ***txm_module_object_pointer_get*** - *Find system object and retrieve object pointer*
-- ***txm_module_object_pointer_get_extended*** - *Find system object and retrieve object pointer, name length safety*
+## Threadx_Module_APIs
+- [txm_module_application_request](#txm_module_application_request)
+- [txm_module_object_allocate](#txm_module_object_allocate)
+- [txm_module_object_deallocate](#txm_module_object_deallocate)
+- [txm_module_object_pointer_get](#txm_module_object_pointer_get)
+- [txm_module_object_pointer_get_extended](#txm_module_object_pointer_get_extended)
 
 ## Return values
 
@@ -68,8 +66,9 @@ status = txm_module_application_request(77, 1, 2, 3);
 
 /* If status is TX_SUCCESS the request was successful. */
 ```
+### See also
 
----
+- [Threadx Module APIs](#Threadx_Module_APIs)
 
 ## txm_module_object_allocate
 
@@ -117,10 +116,7 @@ status = txm_module_object_allocate(&queue_pointer, sizeof(TX_QUEUE));
 
 ### See also
 
-- txm_module_object_deallocate
-- txm_module_object_pointer_get
-
----
+- [Threadx Module APIs](#Threadx_Module_APIs)
 
 ## txm_module_object_deallocate
 
@@ -164,10 +160,7 @@ status = txm_module_object_deallocate(queue_pointer);
 
 ### See also
 
-- txm_module_object_allocate
-- txm_module_object_pointer_get
-
----
+- [Threadx Module APIs](#Threadx_Module_APIs)
 
 ## txm_module_object_pointer_get
 
@@ -232,9 +225,7 @@ status = txm_module_object_pointer_get(TXM_QUEUE_OBJECT,
 
 ### See also
 
-- txm_module_manager_object_pointer_get_extended
-
----
+- [Threadx Module APIs](#Threadx_Module_APIs)
 
 ## txm_module_object_pointer_get_extended
 
@@ -301,4 +292,4 @@ TX_QUEUE *queue_pointer;
 
 ### See also
 
-- txm_module_manager_object_pointer_get
+- [Threadx Module APIs](#Threadx_Module_APIs)

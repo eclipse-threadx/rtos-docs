@@ -8,6 +8,587 @@ This chapter contains a description of all GUIX services (listed below) in alpha
 
 In the "Return Values" section in the following API descriptions, values in **BOLD** are not affected by the **GX_DISABLE_ERROR_CHECKING** define that is used to disable API error checking, while non-bold values are completely disabled.
 
+The GUIX API functions available to the application are as follows.
+## Accordion_Menu_Services
+- [gx_accordion_menu_create](#gx_accordion_menu_create)
+- [gx_accordion_menu_draw](#gx_accordion_menu_draw)
+- [gx_accordion_menu_event_process](#gx_accordion_menu_event_process)
+- [gx_accordion_menu_position](#gx_accordion_menu_position)
+
+## Animation_Services
+- [gx_animation_canvas_define](#gx_animation_canvas_define)
+- [gx_animation_create](#gx_animation_create)
+- [gx_animation_delete](#gx_animation_delete)
+- [gx_animation_drag_disable](#gx_animation_drag_disable)
+- [gx_menu_remove](#gx_menu_remove)
+- [gx_animation_drag_enable](#gx_animation_drag_enable)
+- [gx_animation_landing_speed_set](#gx_animation_landing_speed_set)
+- [gx_animation_start](#gx_animation_start)
+- [gx_animation_stop](#gx_animation_stop)
+
+## Binres_Services
+- [gx_binres_font_load](#gx_binres_font_load)
+- [gx_binres_language_count_get](#gx_binres_language_count_get)
+- [gx_binres_language_info_load](#gx_binres_language_info_load)
+- [gx_binres_language_table_load](#gx_binres_language_table_load)
+- [gx_binres_language_table_load_ext](#gx_binres_language_table_load_ext)
+- [gx_binres_pixelmap_load](#gx_binres_pixelmap_load)
+- [gx_binres_theme_load](#gx_binres_theme_load)
+
+## Brush_Services
+- [gx_brush_default](#gx_brush_default)
+- [gx_brush_define](#gx_brush_define)
+
+## Button_Services
+- [gx_button_background_draw](#gx_button_background_draw)
+- [gx_button_create](#gx_button_create)
+- [gx_button_deselect](#gx_button_deselect)
+- [gx_button_draw](#gx_button_draw)
+- [gx_button_event_process](#gx_button_event_process)
+- [gx_button_select](#gx_button_select)
+
+## Canvas_Services
+- [gx_canvas_aligned_text_draw](#gx_canvas_aligned_text_draw)
+- [gx_canvas_alpha_set](#gx_canvas_alpha_set)
+- [gx_canvas_arc_draw](#gx_canvas_arc_draw)
+- [gx_canvas_block_move](#gx_canvas_block_move)
+- [gx_canvas_circle_draw](#gx_canvas_circle_draw)
+- [gx_canvas_create](#gx_canvas_create)
+- [gx_canvas_delete](#gx_canvas_delete)
+- [gx_canvas_drawing_complete](#gx_canvas_drawing_complete)
+- [gx_canvas_ellipse_draw](#gx_canvas_ellipse_draw)
+- [gx_canvas_hardware_layer_bind](#gx_canvas_hardware_layer_bind)
+- [gx_canvas_hide](#gx_canvas_hide)
+- [gx_canvas_line_draw](#gx_canvas_line_draw)
+- [gx_canvas_memory_define](#gx_canvas_memory_define)
+- [gx_canvas_mouse_define](#gx_canvas_mouse_define)
+- [gx_canvas_mouse_hide](#gx_canvas_mouse_hide)
+- [gx_canvas_offset_set](#gx_canvas_offset_set)
+- [gx_canvas_pie_draw](#gx_canvas_pie_draw)
+- [gx_canvas_pixel_draw](#gx_canvas_pixel_draw)
+- [gx_canvas_pixelmap_blend](#gx_canvas_pixelmap_blend)
+- [gx_canvas_pixelmap_draw](#gx_canvas_pixelmap_draw)
+- [gx_canvas_pixelmap_get](#gx_canvas_pixelmap_get)
+- [gx_canvas_pixelmap_rotate](#gx_canvas_pixelmap_rotate)
+- [gx_canvas_pixelmap_tile](#gx_canvas_pixelmap_tile)
+- [gx_canvas_polygon_draw](#gx_canvas_polygon_draw)
+- [gx_canvas_rectangle_draw](#gx_canvas_rectangle_draw)
+- [gx_canvas_rotated_text_draw](#gx_canvas_rotated_text_draw)
+- [gx_canvas_rotated_text_draw_ext](#gx_canvas_rotated_text_draw_ext)
+- [gx_canvas_shift](#gx_canvas_shift)
+- [gx_canvas_show](#gx_canvas_show)
+- [gx_canvas_text_draw](#gx_canvas_text_draw)
+- [gx_canvas_text_draw_ext](#gx_canvas_text_draw_ext)
+
+## Checkbox_Services
+- [gx_checkbox_create](#gx_checkbox_create)
+- [gx_checkbox_draw](#gx_checkbox_draw)
+- [gx_checkbox_event_process](#gx_checkbox_event_process)
+- [gx_checkbox_pixelmap_set](#gx_checkbox_pixelmap_set)
+- [gx_checkbox_select](#gx_checkbox_select)
+
+## Circular_Gauge_Services
+- [gx_circular_gauge_angle_get](#gx_circular_gauge_angle_get)
+- [gx_circular_gauge_angle_set](#gx_circular_gauge_angle_set)
+- [gx_circular_gauge_animation_set](#gx_circular_gauge_animation_set)
+- [gx_circular_gauge_background_draw](#gx_circular_gauge_background_draw)
+- [gx_circular_gauge_create](#gx_circular_gauge_create)
+- [gx_circular_gauge_draw](#gx_circular_gauge_draw)
+- [gx_circular_gauge_event_process](#gx_circular_gauge_event_process)
+
+## Context_Services
+- [gx_context_brush_default](#gx_context_brush_default)
+- [gx_context_brush_define](#gx_context_brush_define)
+- [gx_context_brush_get](#gx_circular_gauge_draw)
+- [gx_context_brush_set](#gx_context_brush_set)
+- [gx_context_brush_style_set](#gx_context_brush_style_set)
+- [gx_context_brush_pattern_set](#gx_context_brush_pattern_set)
+- [gx_context_brush_width_set](#gx_context_brush_width_set)
+- [gx_context_color_get](#gx_context_color_get)
+- [gx_context_fill_color_set](#gx_context_fill_color_set)
+- [gx_context_font_get](#gx_context_font_get)
+- [gx_context_font_set](#gx_context_font_set)
+- [gx_context_line_color_set](#gx_context_line_color_set)
+- [gx_context_pixelmap_get](#gx_context_pixelmap_get)
+- [gx_context_pixelmap_set](#gx_context_pixelmap_set)
+- [gx_context_raw_brush_define](#gx_context_raw_brush_define)
+- [gx_context_raw_fill_color_set](#gx_context_raw_fill_color_set)
+- [gx_context_raw_line_color_set](#gx_context_raw_line_color_set)
+- [gx_context_string_get](#gx_context_string_get)
+- [gx_context_string_get_ext](#gx_context_string_get_ext)
+
+## Display_Services
+- [gx_display_active_language_set](#gx_display_active_language_set)
+- [gx_display_color_set](#gx_display_color_set)
+- [gx_display_color_table_set](#gx_display_color_table_set)
+- [gx_display_create](#gx_display_create)
+- [gx_display_delete](#gx_display_delete)
+- [gx_display_font_table_set](#gx_display_font_table_set)
+- [gx_display_language_direction_table_set](#gx_display_language_direction_table_set)
+- [gx_display_language_table_get](#gx_display_language_table_get)
+- [gx_display_language_table_get_ext](#gx_display_language_table_get_ext)
+- [gx_display_language_table_set](#gx_display_language_table_set)
+- [gx_display_language_table_set_ext](#gx_display_language_table_set_ext)
+- [gx_display_pixelmap_table_set](#gx_display_pixelmap_table_set)
+- [gx_display_string_get](#gx_display_string_get)
+- [gx_display_string_get_ext](#gx_display_string_get_ext)
+- [gx_display_string_table_get](#gx_display_string_table_get)
+- [gx_display_string_table_get_ext](#gx_display_string_table_get_ext)
+- [gx_display_theme_install](#gx_display_theme_install)
+
+## Drop_List_Services
+- [gx_drop_list_close](#gx_drop_list_close)
+- [gx_drop_list_create](#gx_drop_list_create)
+- [gx_drop_list_event_process](#gx_drop_list_event_process)
+- [gx_drop_list_open](#gx_drop_list_open)
+- [gx_drop_list_pixelmap_set](#gx_drop_list_pixelmap_set)
+- [gx_drop_list_popup_get](#gx_drop_list_popup_get)
+
+## Generic_Scroll_Wheel_Services
+- [gx_generic_scroll_wheel_children_position](#gx_generic_scroll_wheel_children_position)
+- [gx_generic_scroll_wheel_create](#gx_generic_scroll_wheel_create)
+- [gx_generic_scroll_wheel_draw](#gx_generic_scroll_wheel_draw)
+- [gx_generic_scroll_wheel_event_process](#gx_generic_scroll_wheel_event_process)
+- [gx_generic_scroll_wheel_row_height_set](#gx_generic_scroll_wheel_row_height_set)
+- [gx_generic_scroll_wheel_total_rows_set](#gx_generic_scroll_wheel_total_rows_set)
+
+## Horizontal_List_Services
+- [gx_horizontal_list_children_position](#gx_horizontal_list_children_position)
+- [gx_horizontal_list_create](#gx_horizontal_list_create)
+- [gx_horizontal_list_event_process](#gx_horizontal_list_event_process)
+- [gx_horizontal_list_page_index_set](#gx_horizontal_list_page_index_set)
+- [gx_horizontal_list_selected_index_get](#gx_horizontal_list_selected_index_get)
+- [gx_horizontal_list_selected_widget_get](#gx_horizontal_list_selected_widget_get)
+- [gx_horizontal_list_selected_set](#gx_horizontal_list_selected_set)
+- [gx_horizontal_list_total_columns_set](#gx_horizontal_list_total_columns_set)
+
+## Horizontal_Scrollbar_Services
+- [gx_horizontal_scrollbar_create](#gx_horizontal_scrollbar_create)
+
+## Icon_Services
+- [gx_icon_button_create](#gx_icon_button_create)
+- [gx_icon_button_draw](#gx_icon_button_draw)
+- [gx_icon_button_pixelmap_set](#gx_icon_button_pixelmap_set)
+- [gx_icon_background_draw](#gx_icon_background_draw)
+- [gx_icon_create](#gx_icon_create)
+- [gx_icon_draw](#gx_icon_draw)
+- [gx_icon_event_process](#gx_icon_event_process)
+- [gx_icon_pixelmap_set](#gx_icon_pixelmap_set)
+
+## Image_Reader_Services
+- [gx_image_reader_create](#gx_image_reader_create)
+- [gx_image_reader_palette_set](#gx_image_reader_palette_set)
+- [gx_image_reader_start](#gx_image_reader_start)
+
+## Line_Chart_Services
+- [gx_line_chart_axis_draw](#gx_line_chart_axis_draw)
+- [gx_line_chart_create](#gx_line_chart_create)
+- [gx_line_chart_data_draw](#gx_line_chart_data_draw)
+- [gx_line_chart_draw](#gx_line_chart_draw)
+- [gx_line_chart_update](#gx_line_chart_update)
+- [gx_line_chart_y_scale_calculate](#gx_line_chart_y_scale_calculate)
+
+## Menu_Services
+- [gx_menu_create](#gx_menu_create)
+- [gx_menu_draw](#gx_menu_draw)
+- [gx_menu_insert](#gx_menu_insert)
+- [gx_menu_remove](#gx_menu_remove)
+- [gx_menu_text_draw](#gx_menu_text_draw)
+- [gx_menu_text_offset_set](#gx_menu_text_offset_set)
+
+## Multi_Line_Text_Button_Services
+- [gx_multi_line_text_button_create](#gx_multi_line_text_button_create)
+- [gx_multi_line_text_button_draw](#gx_multi_line_text_button_draw)
+- [gx_multi_line_text_button_event_process](#gx_multi_line_text_button_event_process)
+- [gx_multi_line_text_button_text_draw](#gx_multi_line_text_button_text_draw)
+- [gx_multi_line_text_button_text_id_set](#gx_multi_line_text_button_text_id_set)
+- [gx_multi_line_text_button_text_set](#gx_multi_line_text_button_text_set)
+- [gx_multi_line_text_button_text_set_ext](#gx_multi_line_text_button_text_set_ext)
+
+## Multi_Line_Text_Input_Services
+- [gx_multi_line_text_input_backspace](#gx_multi_line_text_input_backspace)
+- [gx_multi_line_text_input_buffer_clear](#gx_multi_line_text_input_buffer_clear)
+- [gx_multi_line_text_input_buffer_get](#gx_multi_line_text_input_buffer_get)
+- [gx_multi_line_text_input_char_insert](#gx_multi_line_text_input_char_insert)
+- [gx_multi_line_text_input_create](#gx_multi_line_text_input_create)
+- [gx_multi_line_text_input_cursor_pos_get](#gx_multi_line_text_input_cursor_pos_get)
+- [gx_multi_line_text_input_delete](#gx_multi_line_text_input_delete)
+- [gx_multi_line_text_input_down_arrow](#gx_multi_line_text_input_down_arrow)
+- [gx_multi_line_text_input_end](#gx_multi_line_text_input_end)
+- [gx_multi_line_text_input_event_process](#gx_multi_line_text_input_event_process)
+- [gx_multi_line_text_input_fill_color_set](#gx_multi_line_text_input_fill_color_set)
+- [gx_multi_line_text_input_home](#gx_multi_line_text_input_home)
+- [gx_multi_line_text_input_left_arrow](#gx_multi_line_text_input_left_arrow)
+- [gx_multi_line_text_input_right_arrow](#gx_multi_line_text_input_right_arrow)
+- [gx_mutli_line_text_input_style_add](#gx_mutli_line_text_input_style_add)
+- [gx_multi_line_text_input_style_remove](#gx_multi_line_text_input_style_remove)
+- [gx_multi_line_text_input_style_set](#gx_multi_line_text_input_style_set)
+- [gx_multi_line_text_input_text_color_set](#gx_multi_line_text_input_text_color_set)
+- [gx_multi_line_text_input_text_select](#gx_multi_line_text_input_text_select)
+- [gx_multi_line_text_input_text_set](#gx_multi_line_text_input_text_set)
+- [gx_multi_line_text_input_up_arrow](#gx_multi_line_text_input_up_arrow)
+
+## Multi_Line_Text_View_Services
+- [gx_multi_line_text_view_create](#gx_multi_line_text_view_create)
+- [gx_multi_line_text_view_draw](#gx_multi_line_text_view_draw)
+- [gx_multi_line_text_view_event_process](#gx_multi_line_text_view_event_process)
+- [gx_multi_line_text_view_font_set](#gx_multi_line_text_view_font_set)
+- [gx_multi_line_text_view_line_space_set](#gx_multi_line_text_view_line_space_set)
+- [gx_multi_line_text_view_scroll_info_get](#gx_multi_line_text_view_scroll_info_get)
+- [gx_multi_line_text_view_text_color_set](#gx_multi_line_text_view_text_color_set)
+- [gx_multi_line_text_view_text_id_set](#gx_multi_line_text_view_text_id_set)
+- [gx_multi_line_text_view_text_set](#gx_multi_line_text_view_text_set)
+- [gx_multi_line_text_view_whitespace_set](#gx_multi_line_text_view_whitespace_set)
+
+## Numeric_Pixelmap_Services
+- [gx_numeric_pixelmap_prompt_create](#gx_numeric_pixelmap_prompt_create)
+- [gx_numeric_pixelmap_prompt_format_function_set](#gx_numeric_pixelmap_prompt_format_function_set)
+- [gx_numeric_pixelmap_prompt_value_set](#gx_numeric_pixelmap_prompt_value_set)
+
+## Numeric_Prompt_Services
+- [gx_numeric_prompt_create](#gx_numeric_prompt_create)
+- [gx_numeric_format_function_set](#gx_numeric_format_function_set)
+- [gx_numeric_prompt_value_set](#gx_numeric_prompt_value_set)
+
+## Numeric_Scroll_Services
+- [gx_numeric_scroll_wheel_create](#gx_numeric_scroll_wheel_create)
+- [gx_numeric_scroll_wheel_range_set](#gx_numeric_scroll_wheel_range_set)
+
+## Pixelmap_Scroll_Services
+- [gx_pixelmap_button_create](#gx_pixelmap_button_create)
+- [gx_pixelmap_button_draw](#gx_pixelmap_button_draw)
+- [gx_pixelmap_button_pxielmap_set](#gx_pixelmap_button_pxielmap_set)
+- [gx_pixelmap_prompt_create](#gx_pixelmap_prompt_create)
+- [gx_pixelmap_prompt_draw](#gx_pixelmap_prompt_draw)
+- [gx_pixelmap_prompt_pixelmap_set](#gx_pixelmap_prompt_pixelmap_set)
+- [gx_pixelmap_slider_create](#gx_pixelmap_slider_create)
+- [gx_pixelmap_slider_draw](#gx_pixelmap_slider_draw)
+- [gx_pixelmap_slider_event_process](#gx_pixelmap_slider_event_process)
+- [gx_pixelmap_slider_pixelmap_set](#gx_pixelmap_slider_pixelmap_set)
+
+## Progress_Bar_Services
+- [gx_progress_bar_background_draw](#gx_progress_bar_background_draw)
+- [gx_progress_bar_create](#gx_progress_bar_create)
+- [gx_progress_bar_draw](#gx_progress_bar_draw)
+- [gx_progress_bar_event_process](#gx_progress_bar_event_process)
+- [gx_progress_bar_font_set](#gx_progress_bar_font_set)
+- [gx_progress_bar_info_set](#gx_progress_bar_info_set)
+- [gx_progress_bar_pixelmap_set](#gx_progress_bar_pixelmap_set)
+- [gx_progress_bar_range_set](#gx_progress_bar_range_set)
+- [gx_progress_bar_text_color_set](#gx_progress_bar_text_color_set)
+- [gx_progress_bar_value_set](#gx_progress_bar_value_set)
+
+## Prompt_Services
+- [gx_prompt_create](#gx_prompt_create)
+- [gx_prompt_draw](#gx_prompt_draw)
+- [gx_prompt_event_process](#gx_prompt_event_process)
+- [gx_prompt_font_set](#gx_prompt_font_set)
+- [gx_prompt_text_color_set](#gx_prompt_text_color_set)
+- [gx_prompt_text_get](#gx_prompt_text_get)
+- [gx_prompt_text_id_set](#gx_prompt_text_id_set)
+- [gx_prompt_text_set](#gx_prompt_text_set)
+- [gx_prompt_text_set_ext](#gx_prompt_text_set_ext)
+
+## Radial_Progress_Bar_Services
+- [gx_radial_progress_bar_anchor_set](#gx_radial_progress_bar_anchor_set)
+- [gx_radial_progress_bar_background_draw](#gx_radial_progress_bar_background_draw)
+- [gx_radial_progress_bar_create](#gx_radial_progress_bar_create)
+- [gx_radial_progress_bar_draw](#gx_radial_progress_bar_draw)
+- [gx_radial_progress_bar_event_process](#gx_radial_progress_bar_event_process)
+- [gx_radial_progress_bar_font_set](#gx_radial_progress_bar_font_set)
+- [gx_radial_progress_bar_info_set](#gx_radial_progress_bar_info_set)
+- [gx_radial_progress_bar_text_color_set](#gx_radial_progress_bar_text_color_set)
+- [gx_radial_progress_bar_text_draw](#gx_radial_progress_bar_text_draw)
+- [gx_radial_progress_bar_value_set](#gx_radial_progress_bar_value_set)
+
+## Radial_Button_Services
+- [gx_radio_button_create](#gx_radio_button_create)
+- [gx_radio_button_draw](#gx_radio_button_draw)
+- [gx_radio_button_pixelmap_set](#gx_radio_button_pixelmap_set)
+
+## Radial_Slider_Services
+- [gx_radial_slider_anchor_angles_set](#gx_radial_slider_anchor_angles_set)
+- [gx_radial_slider_angle_set](#gx_radial_slider_angle_set)
+- [gx_radial_slider_animation_set](#gx_radial_slider_animation_set)
+- [gx_radial_slider_animation_start](#gx_radial_slider_animation_start)
+- [gx_radial_slider_create](#gx_radial_slider_create)
+- [gx_radial_slider_draw](#gx_radial_slider_draw)
+- [gx_radial_slider_event_process](#gx_radial_slider_event_process)
+- [gx_radial_slider_info_get](#gx_radial_slider_info_get)
+- [gx_radial_slider_info_set](#gx_radial_slider_info_set)
+- [gx_radial_slider_pixelmap_set](#gx_radial_slider_pixelmap_set)
+
+## Rich_Text_Services
+- [gx_rich_text_view_create](#gx_rich_text_view_create)
+- [gx_rich_text_view_draw](#gx_rich_text_view_draw)
+- [gx_rich_text_view_fonts_set](#gx_rich_text_view_fonts_set)
+- [gx_rich_text_view_text_draw](#gx_rich_text_view_text_draw)
+
+## Screen_Stack_Services
+- [gx_screen_stack_create](#gx_screen_stack_create)
+- [gx_screen_stack_push](#gx_screen_stack_push)
+- [gx_screen_stack_pop](#gx_screen_stack_pop)
+- [gx_screen_stack_reset](#gx_screen_stack_reset)
+
+## Scroll_Services
+- [gx_scroll_thumb_create](#gx_scroll_thumb_create)
+- [gx_scroll_thumb_event_process](#gx_scroll_thumb_event_process)
+- [gx_scroll_wheel_create](#gx_scroll_wheel_create)
+- [gx_scroll_wheel_event_process](#gx_scroll_wheel_event_process)
+- [gx_scroll_wheel_gradient_alpha_set](#gx_scroll_wheel_gradient_alpha_set)
+- [gx_scroll_wheel_selected_background_set](#gx_scroll_wheel_selected_background_set)
+- [gx_scroll_wheel_selected_get](#gx_scroll_wheel_selected_get)
+- [gx_scroll_wheel_selected_set](#gx_scroll_wheel_selected_set)
+- [gx_scroll_wheel_speed_set](#gx_scroll_wheel_speed_set)
+- [gx_scroll_wheel_total_rows_set](#gx_scroll_wheel_total_rows_set)
+- [gx_scrollbar_draw](#gx_scrollbar_draw)
+- [gx_scrollbar_event_process](#gx_scrollbar_event_process)
+- [gx_scrollbar_limit_check](#gx_scrollbar_limit_check)
+- [gx_scrollbar_reset](#gx_scrollbar_reset)
+- [gx_scrollbar_value_set](#gx_scrollbar_value_set)
+
+## Single_Line_Text_Input_Services
+- [gx_single_line_text_input_backspace](#gx_single_line_text_input_backspace)
+- [gx_single_line_text_input_buffer_clear](#gx_single_line_text_input_buffer_clear)
+- [gx_single_line_text_input_buffer_get](#gx_single_line_text_input_buffer_get)
+- [gx_single_line_text_input_character_delete](#gx_single_line_text_input_character_delete)
+- [gx_single_line_text_input_character_insert](#gx_single_line_text_input_character_insert)
+- [gx_single_line_text_input_create](#gx_single_line_text_input_create)
+- [gx_single_line_text_input_draw](#gx_single_line_text_input_draw)
+- [gx_single_line_text_input_draw_position_get](#gx_single_line_text_input_draw_position_get)
+- [gx_single_line_text_input_end](#gx_single_line_text_input_end)
+- [gx_single_line_text_input_event_process](#gx_single_line_text_input_event_process)
+- [gx_single_line_text_input_fill_color_set](#gx_single_line_text_input_fill_color_set)
+- [gx_single_line_text_input_home](#gx_single_line_text_input_home)
+- [gx_single_line_text_input_left_arrow](#gx_single_line_text_input_left_arrow)
+- [gx_single_line_text_input_position_get](#gx_single_line_text_input_position_get)
+- [gx_single_line_text_input_right_arrow](#gx_single_line_text_input_right_arrow)
+- [gx_single_line_text_input_style_add](#gx_single_line_text_input_style_add)
+- [gx_single_line_text_input_style_remove](#gx_single_line_text_input_style_remove)
+- [gx_single_line_text_input_style_set](#gx_single_line_text_input_style_set)
+- [gx_single_line_text_input_text_color_set](#gx_single_line_text_input_text_color_set)
+- [gx_single_line_text_input_text_select](#gx_single_line_text_input_text_select)
+- [gx_single_line_text_input_text_set](#gx_single_line_text_input_text_set)
+- [gx_single_line_text_input_text_set_ext](#gx_single_line_text_input_text_set_ext)
+
+## Slider_Services
+- [gx_slider_create](#gx_slider_create)
+- [gx_slider_draw](#gx_slider_draw)
+- [gx_slider_event_process](#gx_slider_event_process)
+- [gx_slider_needle_draw](#gx_slider_needle_draw)
+- [gx_slider_needle_position_get](#gx_slider_needle_position_get)
+- [gx_slider_tickmarks_draw](#gx_slider_tickmarks_draw)
+- [gx_slider_travel_get](#gx_slider_travel_get)
+- [gx_slider_value_calculate](#gx_slider_value_calculate)
+- [gx_slider_value_set](#gx_slider_value_set)
+
+## Sprite_Services
+- [gx_sprite_create](#gx_sprite_create)
+- [gx_sprite_frame_list_set](#gx_sprite_frame_list_set)
+- [gx_sprite_start](#gx_sprite_start)
+- [gx_sprite_stop](#gx_sprite_stop)
+
+## String_Scroll_Wheel_Services
+- [gx_string_scroll_wheel_create](#gx_string_scroll_wheel_create)
+- [gx_string_scroll_wheel_create_ext](#gx_string_scroll_wheel_create_ext)
+- [gx_string_scroll_wheel_event_process](#gx_string_scroll_wheel_event_process)
+- [gx_string_scroll_wheel_string_id_list_set](#gx_string_scroll_wheel_string_id_list_set)
+- [gx_string_scroll_wheel_string_list_set](#gx_string_scroll_wheel_string_list_set)
+- [gx_string_scroll_wheel_string_list_set_ext](#gx_string_scroll_wheel_string_list_set_ext)
+
+## Studio_Services
+- [gx_studio_widget_create](#gx_studio_widget_create)
+- [gx_studio_named_widget_create](#gx_studio_named_widget_create)
+- [gx_studio_display_configure](#gx_studio_display_configure)
+
+## System_Services
+- [gx_system_active_language_set](#gx_system_active_language_set)
+- [gx_system_animation_get](#gx_system_animation_get)
+- [gx_system_animation_free](#gx_system_animation_free)
+- [gx_system_bidi_text_disable](#gx_system_bidi_text_disable)
+- [gx_system_bidi_text_enable](#gx_system_bidi_text_enable)
+- [gx_system_canvas_refresh](#gx_system_canvas_refresh)
+- [gx_system_dirty_mark](#gx_system_dirty_mark)
+- [gx_system_dirty_partial_add](#gx_system_dirty_partial_add)
+- [gx_system_draw_context_get](#gx_system_draw_context_get)
+- [gx_system_event_fold](#gx_system_event_fold)
+- [gx_system_event_send](#gx_system_event_send)
+- [gx_system_focus_claim](#gx_system_focus_claim)
+- [gx_system_initialize](#gx_system_initialize)
+- [gx_system_language_table_get](#gx_system_language_table_get)
+- [gx_system_language_table_set](#gx_system_language_table_set)
+- [gx_system_memory_allocator_set](#gx_system_memory_allocator_set)
+- [gx_system_pen_configure](#gx_system_pen_configure)
+- [gx_system_screen_stack_create](#gx_system_screen_stack_create)
+- [gx_system_screen_stack_get](#gx_system_screen_stack_get)
+- [gx_system_screen_stack_pop](#gx_system_screen_stack_pop)
+- [gx_system_screen_stack_push](#gx_system_screen_stack_push)
+- [gx_system_screen_stack_reset](#gx_system_screen_stack_reset)
+- [gx_system_scroll_appearance_get](#gx_system_scroll_appearance_get)
+- [gx_system_scroll_appearance_set](#gx_system_scroll_appearance_set)
+- [gx_system_start](#gx_system_start)
+- [gx_system_string_get](#gx_system_string_get)
+- [gx_system_string_table_get](#gx_system_string_table_get)
+- [gx_system_string_width_get](#gx_system_string_width_get)
+- [gx_system_string_width_get_ext](#gx_system_string_width_get_ext)
+- [gx_system_text_render_style_set](#gx_system_text_render_style_set)
+- [gx_system_timer_start](#gx_system_timer_start)
+- [gx_system_timer_stop](#gx_system_timer_stop)
+- [gx_system_version_string_get](#gx_system_version_string_get)
+- [gx_system_version_string_get_ext](#gx_system_version_string_get_ext)
+- [gx_system_widget_find](#gx_system_widget_find)
+
+## Text_Services
+- [gx_text_button_create](#gx_text_button_create)
+- [gx_text_button_draw](#gx_text_button_draw)
+- [gx_text_button_event_process](#gx_text_button_event_process)
+- [gx_text_button_color_set](#gx_text_button_color_set)
+- [gx_text_button_font_set](#gx_text_button_font_set)
+- [gx_text_button_text_get](#gx_text_button_text_get)
+- [gx_text_button_text_get_ext](#gx_text_button_text_get_ext)
+- [gx_text_button_text_id_set](#gx_text_button_text_id_set)
+- [gx_text_button_text_set](#gx_text_button_text_set)
+- [gx_text_button_text_set_ext](#gx_text_button_text_set_ext)
+- [gx_text_input_cursor_blink_interval_set](#gx_text_input_cursor_blink_interval_set)
+- [gx_text_input_cursor_height_set](#gx_text_input_cursor_height_set)
+- [gx_text_input_cursor_width_set](#gx_text_input_cursor_width_set)
+- [gx_text_scroll_wheel_callback_set](#gx_text_scroll_wheel_callback_set)
+- [gx_text_scroll_wheel_callback_set_ext](#gx_text_scroll_wheel_callback_set_ext)
+- [gx_text_scroll_wheel_create](#gx_text_scroll_wheel_create)
+- [gx_text_scroll_wheel_draw](#gx_text_scroll_wheel_draw)
+- [gx_text_scroll_wheel_event_process](#gx_text_scroll_wheel_event_process)
+- [gx_text_scroll_wheel_font_set](#gx_text_scroll_wheel_font_set)
+- [gx_text_scroll_wheel_text_color_set](#gx_text_scroll_wheel_text_color_set)
+
+## Tree_View_Services
+- [gx_tree_view_create](#gx_tree_view_create)
+- [gx_tree_view_draw](#gx_tree_view_draw)
+- [gx_tree_view_event_process](#gx_tree_view_event_process)
+- [gx_tree_view_indentation_set](#gx_tree_view_indentation_set)
+- [gx_tree_view_position](#gx_tree_view_position)
+- [gx_tree_view_root_line_color_set](#gx_tree_view_root_line_color_set)
+- [gx_tree_view_root_pixelmap_set](#gx_tree_view_root_pixelmap_set)
+- [gx_tree_view_selected_get](#gx_tree_view_selected_get)
+- [gx_tree_view_selected_set](#gx_tree_view_selected_set)
+
+## Utility_Services
+- [gx_utility_canvas_to_bmp](#gx_utility_canvas_to_bmp)
+- [gx_utility_circle_point_get](#gx_utility_circle_point_get)
+- [gx_utility_gradient_create](#gx_utility_gradient_create)
+- [gx_utility_gradient_delete](#gx_utility_gradient_delete)
+- [gx_utility_ltoa](#gx_utility_ltoa)
+- [gx_utility_math_acos](#gx_utility_math_acos)
+- [gx_utility_math_asin](#gx_utility_math_asin)
+- [gx_utility_math_cos](#gx_utility_math_cos)
+- [gx_utility_math_sin](#gx_utility_math_sin)
+- [gx_utility_math_sqrt](#gx_utility_math_sqrt)
+- [gx_utility_bidi_paragraph_reorder](#gx_utility_bidi_paragraph_reorder)
+- [gx_utility_bidi_paragraph_reorder_ext](#gx_utility_bidi_paragraph_reorder_ext)
+- [gx_utility_bidi_resolved_text_info_delete](#gx_utility_bidi_resolved_text_info_delete)
+- [gx_utility_pixelmap_resize](#gx_utility_pixelmap_resize)
+- [gx_utility_pixelmap_rotate](#gx_utility_pixelmap_rotate)
+- [gx_utility_pixelmap_simple_rotate](#gx_utility_pixelmap_simple_rotate)
+- [gx_utility_rectangle_center](#gx_utility_rectangle_center)
+- [gx_utility_rectangle_center_find](#gx_utility_rectangle_center_find)
+- [gx_utility_rectangle_combine](#gx_utility_rectangle_combine)
+- [gx_utility_rectangle_compare](#gx_utility_rectangle_compare)
+- [gx_utility_rectangle_define](#gx_utility_rectangle_define)
+- [gx_utility_rectangle_overlap_detect](#gx_utility_rectangle_overlap_detect)
+- [gx_utility_rectangle_point_detect](#gx_utility_rectangle_point_detect)
+- [gx_utility_rectangle_resize](#gx_utility_rectangle_resize)
+- [gx_utility_rectangle_shift](#gx_utility_rectangle_shift)
+- [gx_utility_string_to_alphamap](#gx_utility_string_to_alphamap)
+- [gx_utility_string_to_alphamap_ext](#gx_utility_string_to_alphamap_ext)
+
+## Vertical_List_Services
+- [gx_vertical_list_children_position](#gx_vertical_list_children_position)
+- [gx_vertical_list_create](#gx_vertical_list_create)
+- [gx_vertical_list_event_process](#gx_vertical_list_event_process)
+- [gx_vertical_list_page_index_set](#gx_vertical_list_page_index_set)
+- [gx_vertical_list_selected_index_get](#gx_vertical_list_selected_index_get)
+- [gx_vertical_list_selecgted_widget_get](#gx_vertical_list_selecgted_widget_get)
+- [gx_vertical_list_selected_widget_get](#gx_vertical_list_selected_widget_get)
+- [gx_vertical_list_selected_set](#gx_vertical_list_selected_set)
+- [gx_vertical_list_total_rows_set](#gx_vertical_list_total_rows_set)
+
+## Widget_Services
+- [gx_widget_allocate](#gx_widget_allocate)
+- [gx_widget_attach](#gx_widget_attach)
+- [gx_widget_back_move](#gx_widget_back_move)
+- [gx_widget_block_move](#gx_widget_block_move)
+- [gx_widget_border_draw](#gx_widget_border_draw)
+- [gx_widget_border_style_set](#gx_widget_border_style_set)
+- [gx_widget_border_width_get](#gx_widget_border_width_get)
+- [gx_widget_canvas_get](#gx_widget_canvas_get)
+- [gx_widget_child_detect](#gx_widget_child_detect)
+- [gx_widget_children_draw](#gx_widget_children_draw)
+- [gx_widget_client_get](#gx_widget_client_get)
+- [gx_widget_create](#gx_widget_create)
+- [gx_widget_color_get](#gx_widget_color_get)
+- [gx_widget_created_test](#gx_widget_created_test)
+- [gx_widget_delete](#gx_widget_delete)
+- [gx_widget_detach](#gx_widget_detach)
+- [gx_widget_draw](#gx_widget_draw)
+- [gx_widget_draw_set](#gx_widget_draw_set)
+- [gx_widget_event_generate](#gx_widget_event_generate)
+- [gx_widget_event_process](#gx_widget_event_process)
+- [gx_widget_event_process_set](#gx_widget_event_process_set)
+- [gx_widget_event_to_parent](#gx_widget_event_to_parent)
+- [gx_widget_fill_color_set](#gx_widget_fill_color_set)
+- [gx_widget_find](#gx_widget_find)
+- [gx_widget_first_child_get](#gx_widget_first_child_get)
+- [gx_widget_focus_next](#gx_widget_focus_next)
+- [gx_widget_focus_previous](#gx_widget_focus_previous)
+- [gx_widget_font_get](#gx_widget_font_get)
+- [gx_widget_free](#gx_widget_free)
+- [gx_widget_front_move](#gx_widget_front_move)
+- [gx_widget_height_get](#gx_widget_height_get)
+- [gx_widget_hide](#gx_widget_hide)
+- [gx_widget_last_child_get](#gx_widget_last_child_get)
+- [gx_widget_next_sibling_get](#gx_widget_next_sibling_get)
+- [gx_widget_parent_get](#gx_widget_parent_get)
+- [gx_widget_pixelmap_get](#gx_widget_pixelmap_get)
+- [gx_widget_previous_sibling_get](#gx_widget_previous_sibling_get)
+- [gx_widget_resize](#gx_widget_resize)
+- [gx_widget_shift](#gx_widget_shift)
+- [gx_widget_show](#gx_widget_show)
+- [gx_widget_status_add](#gx_widget_status_add)
+- [gx_widget_status_get](#gx_widget_status_get)
+- [gx_widget_status_remove](#gx_widget_status_remove)
+- [gx_widget_status_test](#gx_widget_status_test)
+- [gx_widget_string_get](#gx_widget_string_get)
+- [gx_widget_string_get_ext](#gx_widget_string_get_ext)
+- [gx_widget_style_add](#gx_widget_style_add)
+- [gx_widget_style_get](#gx_widget_style_get)
+- [gx_widget_style_remove](#gx_widget_style_remove)
+- [gx_widget_style_set](#gx_widget_style_set)
+- [gx_widget_text_blend](#gx_widget_text_blend)
+- [gx_widget_text_blend_ext](#gx_widget_text_blend_ext)
+- [gx_widget_text_draw](#gx_widget_text_draw)
+- [gx_widget_text_draw_ext](#gx_widget_text_draw_ext)
+- [gx_widget_text_id_draw](#gx_widget_text_id_draw)
+- [gx_widget_top_visible_child_find](#gx_widget_top_visible_child_find)
+- [gx_widget_type_find](#gx_widget_type_find)
+- [gx_widget_width_get](#gx_widget_width_get)
+
+## Window_Services
+- [gx_window_background_draw](#gx_window_background_draw)
+- [gx_window_client_height_get](#gx_window_client_height_get)
+- [gx_window_client_scroll](#gx_window_client_scroll)
+- [gx_window_client_width_get](#gx_window_client_width_get)
+- [gx_window_close](#gx_window_close)
+- [gx_window_create](#gx_window_create)
+- [gx_window_draw](#gx_window_draw)
+- [gx_window_event_process](#gx_window_event_process)
+- [gx_window_execute](#gx_window_execute)
+- [gx_window_root_create](#gx_window_root_create)
+- [gx_window_root_delete](#gx_window_root_delete)
+- [gx_window_root_event_process](#gx_window_root_event_process)
+- [gx_window_root_find](#gx_window_root_find)
+- [gx_window_scroll_info_get](#gx_window_scroll_info_get)
+- [gx_window_scrollbar_find](#gx_window_scrollbar_find)
+- [gx_window_wallpaper_get](#gx_window_wallpaper_get)
+- [gx_window_wallpaper_set](#gx_window_wallpaper_set)
 
 ## gx_accordion_menu_create
 
@@ -104,15 +685,7 @@ The demo application demo_guix_widget_types, provided as part of the GUIX Studio
 
 ### See Also
 
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Accordion Menu Services](#Accordion_Menu_Services)
 
 ## gx_accordion_menu_draw
 
@@ -157,15 +730,7 @@ VOID my_accordion_menu_draw(GX_ACCORDION_MENU *accordion)
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Accordion Menu Services](#Accordion_Menu_Services)
 
 ## gx_accordion_menu_event_process
 
@@ -227,15 +792,7 @@ UINT custom_accordion_event_process(GX_ACCORDION_MENU *accordion, GX_EVENT *even
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Accordion Menu Services](#Accordion_Menu_Services)
 
 ## gx_accordion_menu_position
 
@@ -269,7 +826,7 @@ Initialization and threads
 
 ```C
 /* Position menu items in the accordion menu "my_accordion". */
-status = gx_accordion_menu_position (&my_accordion);
+status = gx_accordion_menu_position(&my_accordion);
 
 /* If status is GX_SUCCESS the children in the accordion menu
 "my_accordion" are positioned. */
@@ -278,15 +835,7 @@ status = gx_accordion_menu_position (&my_accordion);
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Accordion Menu Services](#Accordion_Menu_Services)
 
 ## gx_animation_canvas_define
 
@@ -364,13 +913,7 @@ if (status == GX_SUCCESS)
 
 ### See Also
 
-- gx_animation_create
-- gx_animation_delete
-- gx_animation_drag_disable
-- gx_animation_drag_enable
-- gx_animation_landing_speed_set
-- gx_animation_start
-- gx_animation_stop
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_create
 
@@ -422,15 +965,7 @@ if (animation)
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_delete
-- gx_animation_drag_disable
-- gx_animation_drag_enable
-- gx_animation_start
-- gx_animation_landing_speed_set
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_delete
 
@@ -495,15 +1030,7 @@ status = gx_animation_delete(GX_NULL, parent);
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_drag_disable
-- gx_animation_drag_enable
-- gx_animation_start
-- gx_animation_landing_speed_set
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_drag_disable
 
@@ -553,15 +1080,7 @@ status = gx_animation_drag_disable(&animation, animation_parent);
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_delete
-- gx_animation_drag_enable
-- gx_animation_landing_speed_set
-- gx_animation_start
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_drag_enable
 
@@ -634,15 +1153,7 @@ status = gx_animation_drag_enable(&animation, animation_parent,
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_delete
-- gx_animation_drag_disable
-- gx_animation_landing_speed_set
-- gx_animation_start
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_landing_speed_set
 
@@ -686,15 +1197,7 @@ status = gx_animation_landing_peed_set(&my_animation, 20);
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_delete
-- gx_animation_slide_disable
-- gx_animation_slide_enable
-- gx_animation_start
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_start
 
@@ -768,14 +1271,7 @@ if (animation)
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_slide_disable
-- gx_animation_slide_enable
-- gx_animation_landing_speed_set
-- gx_animation_stop
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_animation_stop
 
@@ -819,14 +1315,7 @@ status = gx_animation_stop(&animation);
 
 ### See Also
 
-- gx_animation_canvas_define
-- gx_animation_create
-- gx_animation_delete
-- gx_animation_drag_disable
-- gx_animation_drag_enable
-- gx_animation_start
-- gx_system_animation_get
-- gx_system_animation_free
+- [Guix Animation Services](#Animation_Services)
 
 ## gx_binres_font_load
 
@@ -881,7 +1370,7 @@ status = gx_binres_font_load(root_address, 0, buffer, &buffer_size);
 
 ### See Also
 
-- gx_binres_pixelmap_load
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_language_count_get
 
@@ -930,7 +1419,7 @@ status = gx_binres_language_count_get(root_address, &language_count);
 
 ### See Also
 
-- gx_binres_language_info_load
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_language_info_load
 
@@ -997,7 +1486,7 @@ status = gx_binres_language_info_load(root_address,
 
 ### See Also
 
-- gx_binres_language_count_get
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_language_table_load
 
@@ -1055,7 +1544,7 @@ status = gx_binres_language_table_load(root_address, &language_table);
 
 ### See Also
 
-- gx_binres_language_table_load_ext
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_language_table_load_ext
 
@@ -1109,7 +1598,7 @@ status = gx_binres_language_table_load_ext(root_address, &language_table);
 
 ### See Also
 
-- gx_binres_theme_load
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_pixelmap_load
 
@@ -1163,7 +1652,7 @@ status = gx_binres_pixelmap_load(root_address, 0, &pixelmap);
 
 ### See Also
 
-- gx_binres_font_load
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_binres_theme_load
 
@@ -1215,7 +1704,7 @@ status = gx_binres_theme_load(root_address, theme_id, &theme);
 
 ### See Also
 
-- gx_binres_language_table_read
+- [Guix Binres Services](#Binres_Services)
 
 ## gx_brush_default
 Set the default brush
@@ -1254,8 +1743,7 @@ status = gx_brush_default(&my_brush);
 
 ### See Also
 
-- gx_brush_define
-
+- [Guix Brush Services](#Brush_Services)
 
 ## gx_brush_define
 
@@ -1303,7 +1791,7 @@ status = gx_brush_define(&my_brush, GX_COLOR_BLACK, GX_COLOR_BLACK,
 
 ### See Also
 
-- gx_brush_default
+- [Guix Brush Services](#Brush_Services)
 
 ## gx_button_background_draw
 
@@ -1348,19 +1836,7 @@ VOID custom_button_draw(GX_BUTTON *button)
 
 ### See Also
 
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_button_create
 
@@ -1419,19 +1895,7 @@ status = gx_button_create(&my_stop_button, "my stop button",
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_button_deselect
 
@@ -1483,19 +1947,7 @@ status = gx_button_deselect(&my_stop_button, GX_TRUE);
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_button_draw
 
@@ -1539,19 +1991,7 @@ VOID custom_button_draw(GX_BUTTON *button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_event_process
-- gx_button_select
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_button_event_process
 
@@ -1610,19 +2050,7 @@ UINT custom_button_event_process(GX_BUTTON *button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_select
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_button_select
 
@@ -1672,19 +2100,7 @@ status = gx_button_select(&my_stop_button);
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Button Services](#Button_Services)
 
 ## gx_canvas_aligned_text_draw
 
@@ -1747,20 +2163,7 @@ status = gx_canvas_aligned_text_draw(&string, &rectangle, GX_STYLE_TEXT_CENTER);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_rotated_text_draw
-- gx_canvas_rotated_text_draw_ext
-- gx_canvas_text_draw
-- gx_canvas_text_draw_ext
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_alpha_set
 
@@ -1811,14 +2214,7 @@ status = gx_canvas_alpha_set(&my_canvas, GX_ALPHA_VALUE_OPAQUE);
 
 ### See Also
 
-- gx_canvas_create
-- gx_canvas_drawing_complete
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
-- gx_canvas_hardware_layer_bind
-- gx_canvas_show
-- gx_canvas_hide
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_arc_draw
 
@@ -1869,17 +2265,7 @@ status = gx_canvas_arc_draw(100, 100, 50, 0, 90);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_block_move
 
@@ -1935,17 +2321,7 @@ status = gx_canvas_block_move(&move, 10, 0, &invalid);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_circle_draw
 
@@ -1994,17 +2370,7 @@ status = gx_canvas_circle_draw(100, 100, 50);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 
 ## gx_canvas_create
@@ -2079,9 +2445,7 @@ status = gx_canvas_create(&my_canvas, "my canvas", &my_display,
 
 ### See Also
 
-- gx_canvas_delete
-- gx_canvas_hardware_layer_bind
-- gx_canvas_memory_define
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_delete
 
@@ -2123,12 +2487,7 @@ status = gx_canvas_delete (&my_canvas);
 
 ### See Also
 
-- gx_canvas_alpha_set
-- gx_canvas_drawing_complete
-- gx_canvas_create
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_drawing_complete
 
@@ -2176,11 +2535,7 @@ status = gx_canvas_drawing_complete(&my_canvas, GX_TRUE);
 
 ### See Also
 
-- gx_canvas_alpha_set
-- gx_canvas_create
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_drawing_initiate
 
@@ -2230,11 +2585,7 @@ status = gx_canvas_drawing_initiate(&my_canvas, &my_widget, &my_widget.gx_widget
 
 ### See Also
 
-- gx_canvas_alpha_set
-- gx_canvas_create
-- gx_canvas_drawing_complete
-- gx_canvas_offset_set
-- gx_canvas_shift
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_ellipse_draw
 
@@ -2284,17 +2635,7 @@ status = gx_canvas_ellipse_draw(200, 200, 100, 50);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_hardware_layer_bind
 
@@ -2345,8 +2686,7 @@ status = gx_canvas_hardware_layer_bind(&my_canvas, 1);
 
 ### See Also
 
-- gx_canvas_create
-- gx_canvas_memory_define
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_hide
 
@@ -2389,14 +2729,7 @@ status = gx_canvas_hide(&my_canvas);
 
 ### See Also
 
-- gx_canvas_create
-- gx_canvas_drawing_complete
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
-- gx_canvas_hardware_layer_bind
-- gx_canvas_show
-- gx_canvas_hide
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_line_draw
 
@@ -2445,17 +2778,7 @@ status = gx_canvas_line_draw(0, 1, 320, 480);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_memory_define
 
@@ -2505,8 +2828,7 @@ status = gx_canvas_memory_define(canvas,
 
 ### See Also
 
-- gx_canvas_create
-- gx_canvas_hardware_layer_bind
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_mouse_define
 
@@ -2556,8 +2878,7 @@ set successfully. */
 
 ### See Also
 
-- gx_canvas_mouse_show
-- gx_canvas_mouse_hide
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_mouse_hide
 
@@ -2601,8 +2922,7 @@ hidden successfully. */
 
 ### See Also
 
-- gx_canvas_mouse_show
-- gx_canvas_mouse_define
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_mouse_show
 
@@ -2645,8 +2965,7 @@ hidden successfully. */
 
 ### See Also
 
-- gx_canvas_mouse_show
-- gx_canvas_mouse_define
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_offset_set
 
@@ -2697,14 +3016,7 @@ position 20,30. */
 
 ### See Also
 
-- gx_canvas_alpha_set
-- gx_canvas_create
-- gx_canvas_drawing_complete
-- gx_canvas_initiate
-- gx_canvas_shift
-- gx_canvas_show
-- gx_canvas_hide
-- gx_canvas_hardware_layer_bind
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pie_draw
 
@@ -2756,17 +3068,7 @@ status = gx_canvas_pie_draw(100, 100, 50, 0, 90);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixel_draw
 
@@ -2828,9 +3130,7 @@ gx_canvas_drawing_complete(mycanvas, GX_TRUE);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_pixelmap_tile
-- gx_canvas_pixelmap_blend
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixelmap_blend
 
@@ -2883,10 +3183,7 @@ status = gx_canvas_pixelmap_blend(10, 20, map, 128);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_pixelmap_get
-- gx_canvas_pixelmap_tile
-- gx_canvas_pixelmap_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixelmap_draw
 
@@ -2933,10 +3230,7 @@ status = gx_canvas_pixelmap_draw(10, 20, &my_pixelmap);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_pixelmap_get
-- gx_canvas_pixelmap_tile
-- gx_canvas_pixelmap_blend
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixelmap_get
 
@@ -2979,9 +3273,7 @@ status = gx_canvas_pixelmap_get(map);
 
 ### See Also
 
-- gx_canvas_pixelmap_blend
-- gx_canvas_pixelmap_tile
-- gx_canvas_pixelmap_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixelmap_rotate
 
@@ -3041,10 +3333,7 @@ status = gx_canvas_pixelmap_rotate(10, 20, &my_pixelmap, 30, -1, -1);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_pixelmap_get
-- gx_canvas_pixelmap_tile
-- gx_canvas_pixelmap_blend
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_pixelmap_tile
 
@@ -3090,10 +3379,7 @@ status = gx_canvas_pixelmap_tile(&tile_area, &my_pixelmap);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_pixelmap_get
-- gx_canvas_pixelmap_blend
-- gx_canvas_pixelmap_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_polygon_draw
 
@@ -3147,17 +3433,7 @@ status = gx_canvas_polygon_draw(&my_polygon, 4);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_rectangle_draw
 
@@ -3200,17 +3476,7 @@ status = gx_canvas_rectangle_draw(&my_rectangle);
 
 ### See Also
 
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_display_create
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_rotated_text_draw
 
@@ -3285,16 +3551,7 @@ void my_window_draw(GX_WINDOW *window)
 
 ### See Also
 
-- gx_canvas_aligned_text_draw
-- gx_canvas_alpha_set
-- gx_canvas_drawing_complete
-- gx_canvas_create
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
-- gx_canvas_rotated_text_draw_ext
-- gx_canvas_text_draw
-- gx_canvas_text_draw_ext
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_rotated_text_draw_ext
 
@@ -3372,17 +3629,7 @@ void my_window_draw(GX_WINDOW *window)
 
 ### See Also
 
-- gx_canvas_aligned_text_draw
-- gx_canvas_alpha_set
-- gx_canvas_drawing_complete
-- gx_canvas_create
-- gx_canvas_drawing_initiate
-- gx_canvas_offset_set
-- gx_canvas_shift
-- gx_canvas_rotated_text_draw
-- gx_canvas_rotated_text_draw_ext
-- gx_canvas_text_draw
-- gx_canvas_text_draw_ext
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_shift
 
@@ -3430,11 +3677,7 @@ status = gx_canvas_shift(&my_canvas, 10, 15);
 
 ### See Also
 
-- gx_canvas_drawing_complete
-- gx_canvas_initiate
-- gx_canvas_alpha_set
-- gx_canvas_create
-- gx_canvas_offset_set
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_show
 
@@ -3477,13 +3720,7 @@ status = gx_canvas_show(&my_canvas);
 
 ### See Also
 
-- gx_canvas_alpha_set
-- gx_canvas_create
-- gx_canvas_drawing_complete
-- gx_canvas_initiate
-- gx_canvas_shift
-- gx_canvas_hide
-- gx_canvas_hardware_layer_bind
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_text_draw
 
@@ -3537,20 +3774,7 @@ status = gx_canvas_text_draw(10, 40, string_ptr, -1);
 
 ### See Also
 
-- gx_canvas_aligned_text_draw
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_rotated_text_draw
-- gx_canvas_rotated_text_draw_ext
-- gx_canvas_text_draw_ext
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_canvas_text_draw_ext
 
@@ -3605,20 +3829,7 @@ status = gx_canvas_text_draw_ext(10, 20, &string);
 
 ### See Also
 
-- gx_canvas_aligned_text_draw
-- gx_canvas_arc_draw
-- gx_canvas_block_move
-- gx_canvas_circle_draw
-- gx_canvas_ellipse_draw
-- gx_canvas_line_draw
-- gx_canvas_pie_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_rotated_text_draw
-- gx_canvas_rotated_text_draw_ext
-- gx_canvas_text_draw
+- [Guix Canvas Services](#Canvas_Services)
 
 ## gx_checkbox_create
 
@@ -3677,9 +3888,7 @@ status = gx_checkbox_create(&my_checkbox, "my_checkbox",
 ```
 ### See Also
 
-- gx_checkbox_draw
-- gx_checkbox_event_process
-- gx_checkbox_select
+- [Guix Checkbox Services](#Checkbox_Services)
 
 ## gx_checkbox_draw
 
@@ -3722,9 +3931,7 @@ VOID custom_checkbox_draw(GX_CHECKBOX *checkbox)
 
 ### See Also
 
-- gx_checkbox_create
-- gx_checkbox_event_process
-- gx_checkbox_select
+- [Guix Checkbox Services](#Checkbox_Services)
 
 ## gx_checkbox_event_process
 
@@ -3784,9 +3991,7 @@ UINT custom_checkbox_event_process(GX_CHECKBOX *checkbox, GX_EVENT *event)
 
 ### See Also
 
-- gx_checkbox_create
-- gx_checkbox_draw
-- gx_checkbox_select
+- [Guix Checkbox Services](#Checkbox_Services)
 
 ## gx_checkbox_pixelmap_set
 
@@ -3840,9 +4045,7 @@ status = gx_checkbox_pixelmap_set(&my_checkbox,
 
 ### See Also
 
-- gx_checkbox_create
-- gx_checkbox_draw
-- gx_checkbox_event_process
+- [Guix Checkbox Services](#Checkbox_Services)
 
 ## gx_checkbox_select
 
@@ -3885,9 +4088,7 @@ status = gx_checkbox_select(&my_checkbox);
 
 ### See Also
 
-- gx_checkbox_create
-- gx_checkbox_draw
-- gx_checkbox_event_process
+- [Guix Checkbox Services](#Checkbox_Services)
 
 ## gx_circular_gauge_angle_get
 
@@ -3933,12 +4134,7 @@ status = gx_circular_gauge_angle_get(&my_gauge, &current_angle);
 
 ### See Also
 
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_create
-- gx_circular_gauge_draw
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_angle_set
 
@@ -3983,12 +4179,7 @@ status = gx_circular_gauge_angle_set(&my_gauge, 180);
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_create
-- gx_circular_gauge_draw
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_animation_set
 
@@ -4038,12 +4229,7 @@ status = gx_circular_gauge_animation_set(&my_gauge, 30, 1);
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_create
-- gx_circular_gauge_draw
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_background_draw
 
@@ -4081,12 +4267,7 @@ gx_circular_gauge_background_draw(&my_circular_gauge);
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_create
-- gx_circular_gauge_draw
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_create
 
@@ -4160,12 +4341,7 @@ status = gx_circular_gauge_create(&my_gauge, "my_gauge",
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_draw
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_draw
 
@@ -4208,12 +4384,7 @@ VOID custom_gauge_draw(GX_CIRCULAR_GAUGE *gauge)
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_create
-- gx_circular_gauge_event_process
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_circular_gauge_event_process
 
@@ -4272,12 +4443,7 @@ return status;
 
 ### See Also
 
-- gx_circular_gauge_angle_get
-- gx_circular_gauge_angle_set
-- gx_circular_gauge_animation_set
-- gx_circular_gauge_background_draw
-- gx_circular_gauge_create
-- gx_circular_gauge_draw
+- [Guix Circular Gauge Services](#Circular_Gauge_Services)
 
 ## gx_context_brush_default
 
@@ -4319,19 +4485,7 @@ status = gx_context_brush_default(&my_context);
 
 ### See Also
 
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_style_set
-- gx_context_brush_pattern_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_define
 
@@ -4380,19 +4534,7 @@ status = gx_context_brush_define(GX_COLOR_BLACK_ID,
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_get
 
@@ -4436,19 +4578,7 @@ status = gx_context_brush_get(&my_brush);
 
 ### See Also
 
-- gx_context_brush_set
-- gx_context_brush_style_set
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_pattern_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_pattern_set
 
@@ -4494,18 +4624,7 @@ has been set to the specified pattern. */
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_set
 
@@ -4570,19 +4689,7 @@ status = gx_context_brush_set(my_brush);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_style_set
 
@@ -4623,19 +4730,7 @@ status = gx_context_brush_style_set(GX_BRUSH_ALIAS);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_brush_width_set
 
@@ -4677,19 +4772,7 @@ If status is GX_SUCCESS the brush width of the current context has been set to 1
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_color_get
 
@@ -4735,19 +4818,7 @@ status = gx_context_color_get(MY_BLACK_COLOR_ID, &color_value);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_fill_color_set
 
@@ -4788,19 +4859,7 @@ status = gx_context_fill_color_set(MY_BLACK_COLOR_ID);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_font_get
 
@@ -4847,19 +4906,7 @@ status = gx_context_font_get(MY_MIDSIZE_FONT, &my_font);
 
 ### See Also
 
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_font_set
 
@@ -4900,19 +4947,7 @@ status = gx_context_font_set(MY_FONT_ID);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_line_color_set
 
@@ -4953,19 +4988,7 @@ status = gx_context_line_color_set(GX_COLOR_BLACK_ID);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_pixelmap_get
 
@@ -5012,19 +5035,7 @@ status = gx_context_pixelmap_get(MY_PIXELMAP_ID, &map);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_pixelmap_set
 
@@ -5065,19 +5076,7 @@ status = gx_context_pixelmap_set(MY_PIXELMAP_ID);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_raw_brush_define
 
@@ -5122,19 +5121,7 @@ status = gx_context_raw_brush_define(GX_COLOR_BLACK, GX_COLOR_BLACK, GX_STYLE_BO
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_fill_color_set
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_raw_fill_color_set
 
@@ -5175,19 +5162,7 @@ status = gx_context_raw_fill_color_set(GX_COLOR_BLACK);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_line_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_raw_line_color_set
 
@@ -5225,19 +5200,7 @@ status = gx_context_raw_line_color_set(GX_COLOR_BLACK);
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_string_get
 
@@ -5281,7 +5244,7 @@ status = gx_context_string_get(GX_ID_ERROR, &text);
 
 ### See Also
 
-- gx_context_string_get_ext
+- [Guix Context Services](#Context_Services)
 
 ## gx_context_string_get_ext
 
@@ -5328,19 +5291,7 @@ string.gx_string_length values have been returned. */
 
 ### See Also
 
-- gx_context_brush_default
-- gx_context_brush_define
-- gx_context_brush_get
-- gx_context_brush_set
-- gx_context_brush_pattern_set
-- gx_context_brush_style_set
-- gx_context_brush_width_set
-- gx_context_fill_color_set
-- gx_context_font_set
-- gx_context_line_color_set
-- gx_context_pixelmap_set
-- gx_context_raw_brush_define
-- gx_context_raw_fill_color_set
+- [Guix Context Services](#Context_Services)
 
 ## gx_display_active_language_set
 
@@ -5386,8 +5337,7 @@ status = gx_display_active_language_set(&my_display, LANGUAGE_ENGLISH);
 
 ### See Also
 
-- gx_display_language_table_set
-- gx_studio_display_configure
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_color_set
 
@@ -5434,7 +5384,7 @@ status = gx_display_color_set(&my_display, MY_COLOR_ID, 0x5454);
 
 ### See Also
 
-- gx_display_color_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_color_table_set
 
@@ -5483,7 +5433,7 @@ status = gx_display_color_table_set(&my_display, default_table, 32);
 
 ### See Also
 
-- gx_display_color_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_create
 
@@ -5545,7 +5495,7 @@ status = gx_display_create(&my_display, "my display",
 
 ### See Also
 
-- gx_display_delete
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_delete
 
@@ -5596,14 +5546,7 @@ status = gx_display_delete(&my_display, driver_cleanup_callback);
 
 ### See Also
 
-- gx_canvas_block_move
-- gx_canvas_line_draw
-- gx_canvas_pixelmap_draw
-- gx_canvas_pixelmap_tile
-- gx_canvas_polygon_draw
-- gx_canvas_rectangle_draw
-- gx_canvas_text_draw
-- gx_display_create
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_font_table_set
 
@@ -5651,9 +5594,7 @@ status = gx_display_font_table_set(&my_display, font_table, 32);
 
 ### See Also
 
-- gx_display_color_set
-- gx_display_color_table_set
-- gx_display_pixelmap_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_language_direction_table_set
 
@@ -5712,10 +5653,7 @@ status = gx_display_language_direction_table_set(&my_display, language_direction
 
 ### See Also
 
-- gx_display_language_table_set
-- gx_display_active_language_set
-- gx_display_string_get
-- gx_display_language_table_get_ext
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_language_table_get
 
@@ -5770,11 +5708,7 @@ status = gx_display_language_table_get(&my_display,
 
 ### See Also
 
-- gx_display_language_direction_table_set
-- gx_display_language_table_set
-- gx_display_active_langauge_set
-- gx_display_string_get
-- gx_display_language_table_get_ext
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_language_table_get_ext
 
@@ -5826,9 +5760,7 @@ status = gx_display_language_table_get_ext(&my_display, &language_table, &langua
 
 ### See Also
 
-- gx_display_language_table_set_ext
-- gx_display_active_langauge_set
-- gx_display_string_get_ext
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_language_table_set
 
@@ -5880,8 +5812,7 @@ status = gx_display_language_table_set(&my_display, language_table, 5, 232);
 
 ### See Also
 
-- gx_display_active_language_set
-- gx_display_string_get
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_language_table_set_ext
 
@@ -5934,8 +5865,7 @@ status = gx_display_language_table_set_ext(&my_display, language_table, 5, 132);
 
 ### See Also
 
-- gx_display_active_language_set
-- gx_display_string_get
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_pixelmap_table_set
 
@@ -5983,9 +5913,7 @@ status = gx_display_pixelmap_table_set(&my_display, pixelmap_table, 32);
 
 ### See Also
 
-- gx_display_color_set
-- gx_display_color_table_set
-- gx_display_font_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_string_get
 
@@ -6039,8 +5967,7 @@ status = gx_display_string_get(&my_display, GX_STRING_ID_MONDAY, &string);
 
 ### See Also
 
-- gx_display_active_language_set
-- gx_display_language_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_string_get_ext
 
@@ -6091,8 +6018,7 @@ status = gx_display_string_get_ext(&my_display, GX_STRING_ID_MONDAY, &string);
 
 ### See Also
 
-- gx_display_active_language_set
-- gx_display_language_table_set
+- [Guix Display Services](#Display_Services)
 
 
 ## gx_display_string_table_get
@@ -6149,9 +6075,7 @@ status = gx_display_string_table_get(&my_display, LANGUAGE_ENGLISH,
 
 ### See Also
 
-- gx_display_color_set
-- gx_display_color_table_set
-- gx_display_pixelmap_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_string_table_get_ext
 
@@ -6205,9 +6129,7 @@ status = gx_display_string_table_get_ext(&my_display,
 
 ### See Also
 
-- gx_display_color_set
-- gx_display_color_table_set
-- gx_display_pixelmap_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_display_theme_install
 
@@ -6297,9 +6219,7 @@ status = gx_display_theme_install(&my_display, theme_table);
 
 ### See Also
 
-- gx_display_color_set
-- gx_display_color_table_set
-- gx_display_font_table_set
+- [Guix Display Services](#Display_Services)
 
 ## gx_drop_list_close
 
@@ -6341,11 +6261,7 @@ status = gx_drop_list_close(&drop_list);
 
 ### See Also
 
-- gx_drop_list_create
-- gx_drop_list_event_process
-- gx_drop_list_open
-
-gx_drop_list_pixelmap_set, gx_drop_list_popup_get
+- [Guix Drop List Services](#Drop_List_Services)
 
 ## gx_drop_list_create
 
@@ -6432,11 +6348,7 @@ status = gx_drop_list_create(&my_drop_list,
 
 ### See Also:
 
-- gx_drop_list_close
-- gx_drop_list_event_process
-- gx_drop_list_open
-- gx_drop_list_pixelmap_set
-- gx_drop_list_popup_get
+- [Guix Drop List Services](#Drop_List_Services)
 
 ## gx_drop_list_event_process
 
@@ -6496,11 +6408,7 @@ UINT custom_drop_list_event_process(GX_DROP_LIST *drop_list,
 
 ### See Also
 
-- gx_drop_list_close
-- gx_drop_list_create
-- gx_drop_list_open
-- gx_drop_list_pixelmap_set
-- gx_drop_list_popup_get
+- [Guix Drop List Services](#Drop_List_Services)
 
 ## gx_drop_list_open
 
@@ -6544,11 +6452,7 @@ status = gx_drop_list_open(&mylist);
 
 ### See Also
 
-- gx_drop_list_close
-- gx_drop_list_create
-- gx_drop_list_event_process
-- gx_drop_list_pixelmap_set
-- gx_drop_list_popup_get
+- [Guix Drop List Services](#Drop_List_Services)
 
 ## gx_drop_list_pixelmap_set
 
@@ -6598,12 +6502,7 @@ status = gx_drop_list_pixelmap_set(&mylist,
 
 ### See Also:
 
-- gx_drop_list_close
-- gx_drop_list_create
-- gx_drop_list_event_process
-- gx_drop_list_open
-- gx_drop_list_popup_get
-
+- [Guix Drop List Services](#Drop_List_Services)
 ## gx_drop_list_popup_get
 
 
@@ -6649,10 +6548,7 @@ status = gx_drop_list_popup_get(&drop_list, &vertical_list)
 
 ### See Also:
 
-- gx_drop_list_close
-- gx_drop_list_create
-- gx_drop_list_open
-- gx_drop_list_pixelmap_set
+- [Guix Drop List Services](#Drop_List_Services)
 
 ## gx_generic_scroll_wheel_children_position
 
@@ -6695,17 +6591,7 @@ status = gx_generic_scroll_wheel_children_position (&wheel);
 
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_create
-- gx_generic_scroll_wheel_draw
-- gx_generic_scroll_wheel_event_process
-- gx_generic_scroll_wheel_row_height_set
-- gx_generic_scroll_wheel_total_rows_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_generic_scroll_wheel_create
 
@@ -6803,17 +6689,7 @@ for(index = 0; index <= VISIBLE_ROWS; index++)
 
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_children_position
-- gx_generic_scroll_wheel_draw
-- gx_generic_scroll_wheel_event_process
-- gx_generic_scroll_wheel_row_height_set
-- gx_generic_scroll_wheel_total_rows_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_generic_scroll_wheel_draw
 
@@ -6859,17 +6735,7 @@ VOID my_custom_generic_scroll_wheel_draw(GX_GENERIC_SCROLL_WHEEL *wheel)
 
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_children_position
-- gx_generic_scroll_wheel_create
-- gx_generic_scroll_wheel_event_process
-- gx_generic_scroll_wheel_row_height_set
-- gx_generic_scroll_wheel_total_rows_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_generic_scroll_wheel_event_process
 
@@ -6932,17 +6798,7 @@ UINT custom_generic_scroll_wheel_event_process(GX_GENERIC_SCROLL_WHEEL *wheel,
 
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_children_position
-- gx_generic_scroll_wheel_create
-- gx_generic_scroll_wheel_draw
-- gx_generic_scroll_wheel_row_height_set
-- gx_generic_scroll_wheel_total_rows_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_generic_scroll_wheel_row_height_set
 
@@ -6988,17 +6844,7 @@ status = gx_generic_scroll_wheel_row_height_set(&wheel, 40);
 
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_children_position
-- gx_generic_scroll_wheel_create
-- gx_generic_scroll_wheel_draw
-- gx_generic_scroll_wheel_event_process
-- gx_generic_scroll_wheel_total_rows_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_generic_scroll_wheel_total_rows_set
 
@@ -7043,17 +6889,7 @@ status = gx_generic_scroll_wheel_total_rows_set(&wheel, 20);
 ```
 ### See Also
 
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_generic_scroll_wheel_children_position
-- gx_generic_scroll_wheel_create
-- gx_generic_scroll_wheel_draw
-- gx_generic_scroll_wheel_event_process
-- gx_generic_scroll_wheel_row_height_set
+- [Guix Generic Scroll Wheel Services](#Generic_Scroll_Wheel_Services)
 
 ## gx_horizontal_list_children_position
 
@@ -7095,13 +6931,7 @@ status = gx_horizontal_list_children_position (&horizontal_list);
 
 ### See Also
 
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_create
 
@@ -7163,13 +6993,7 @@ status = gx_horizontal_list_create(&my_list, "my_list", &my_parent,
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_event_process
 
@@ -7232,13 +7056,7 @@ UINT custom_list_event_process(
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_page_index_set
 
@@ -7284,13 +7102,7 @@ status = gx_horizontal_list_page_index_set(&my_list, 1);
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_selected_index_get
 
@@ -7337,13 +7149,7 @@ status = gx_horizontal_list_selected_index_get(&my_list,
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_selected_set
 
@@ -7390,13 +7196,7 @@ status = gx_horizontal_list_selected_set(&my_list, 12);
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_total_columns_set
+-- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_selected_widget_get
 
@@ -7444,13 +7244,7 @@ status = gx_horizontal_list_selected_widget_get(&my_list, &current_list_entry);
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horizontal_list_selected_set
-- gx_horizontal_list_total_columns_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_list_total_columns_set
 
@@ -7496,13 +7290,7 @@ status = gx_horizontal_list_total_columns_set(&my_list, 20);
 
 ### See Also
 
-- gx_horizontal_list_children_position
-- gx_horizontal_list_create
-- gx_horizontal_list_event_process
-- gx_horizontal_list_page_index_set
-- gx_horizontal_list_selected_index_get
-- gx_horinzontal_list_selected_widget_get
-- gx_horizontal_list_selected_set
+- [Guix Horizontal List Services](#Horizontal_List_Services)
 
 ## gx_horizontal_scrollbar_create
 
@@ -7556,11 +7344,7 @@ status = gx_horizontal_scrollbar_create(&my_scrollbar,
 
 ### See Also
 
-- gx_scrollbar_draw
-- gx_scrollbar_event_process
-- gx_scrollbar_limit_check
-- gx_scrollbar_reset
-- gx_vertical_scrollbar_create
+- [Guix Horizontal Scrollbar Services](#Horizontal_Scrollbar_Services)
 
 ## gx_icon_button_create
 
@@ -7622,21 +7406,7 @@ status = gx_icon_button_create(&my_icon_button, "my_icon_button",
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_create
-- gx_icon_draw
-- gx_icon_pixelmap_set
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_radio_button_create
-- gx_radio_button_draw gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_button_draw
 
@@ -7680,21 +7450,7 @@ void MyIconButtonDraw(GX_ICON_BUTTON *button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_create
-- gx_icon_draw
-- gx_icon_pixelmap_set
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_radio_button_create
-- gx_radio_button_draw gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_button_pixelmap_set
 
@@ -7740,21 +7496,7 @@ status = gx_icon_button_pixelmap_set(&my_icon_button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_create
-- gx_icon_draw
-- gx_icon_pixelmap_set
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_radio_button_create
-- gx_radio_button_draw gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_background_draw
 
@@ -7801,10 +7543,7 @@ void MyIconButtonDraw(GX_ICON *icon)
 
 ### See Also
 
-- gx_icon_create
-- gx_icon_draw
-- gx_icon_event_process
-- gx_icon_pixelmap_set
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_create
 
@@ -7865,9 +7604,7 @@ status = gx_icon_create(&my_icon, "my_icon", &my_parent,
 
 ### See Also
 
-- gx_icon_button_create
-- gx_icon_draw
-- gx_icon_pixelmap_set
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_draw
 
@@ -7912,9 +7649,7 @@ VOID my_icon_draw(GX_MENU *menu)
 
 ### See Also
 
-- gx_icon_button_create
-- gx_icon_create
-- gx_icon_pixelmap_set
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_event_process
 
@@ -7963,9 +7698,7 @@ case GX_EVENT_SHOW:
 
 ### See Also
 
-- gx_icon_button_create
-- gx_icon_create
-- gx_icon_pixelmap_set
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_icon_pixelmap_set
 
@@ -8014,9 +7747,7 @@ status = gx_icon_pixelmap_set(&my_icon,
 
 ### See Also
 
-- gx_icon_button_create
-- gx_icon_create
-- gx_icon_draw
+- [Guix Icon Services](#Icon_Services)
 
 ## gx_image_reader_create
 
@@ -8078,8 +7809,7 @@ status = gx_image_reader_create(&my_image_reader, decoder_data,
 
 ### See Also
 
-- gx_image_reader_start
-- gx_image_reader_palette_set
+- [Guix Image Reader Services](#Image_Reader_Services)
 
 ## gx_image_reader_palette_set
 
@@ -8127,8 +7857,7 @@ status = gx_image_reader_palette_set(&my_image_reader, my_palette,
 
 ### See Also
 
-- gx_image_reader_create
-- gx_image_reader_start
+- [Guix Image Reader Services](#Image_Reader_Services)
 
 ## gx_image_reader_start
 
@@ -8179,8 +7908,7 @@ status = gx_image_reader_start(&my_image_reader, output_map)
 
 ### See Also
 
-- gx_image_reader_create
-- gx_image_reader_palette_set
+- [Guix Image Reader Services](#Image_Reader_Services)
 
 ## gx_line_chart_axis_draw
 
@@ -8233,11 +7961,7 @@ VOID my_chart_draw(GX_LINE_CHART *chart)
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_data_draw
-- gx_line_chart_draw
-- gx_line_chart_update
-- gx_line_chart_y_scale_calculate
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_line_chart_create
 
@@ -8320,11 +8044,7 @@ status = gx_line_chart_create(&chart, "Line Chart", root_window,
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_data_draw
-- gx_line_chart_draw
-- gx_line_chart_update
-- gx_line_chart_y_scale_calculate
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_line_chart_data_draw
 
@@ -8377,10 +8097,7 @@ VOID my_chart_draw(GX_LINE_CHART *chart)
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_draw
-- gx_line_chart_update
-- gx_line_chart_y_scale_calculate
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_line_chart_draw
 
@@ -8425,10 +8142,7 @@ VOID my_chart_draw(GX_LINE_CHART *chart)
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_draw
-- gx_line_chart_update
-- gx_line_chart_y_scale_calculate
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_line_chart_update
 
@@ -8478,10 +8192,7 @@ status = gx_line_chart_update(&chart, chart_data, 100);
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_data_draw
-- gx_line_chart_draw
-- gx_line_chart_y_scale_calculate
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_line_chart_y_scale_calculate
 
@@ -8528,10 +8239,7 @@ status = gx_line_chart_y_scale_calculate(&chart, &y_scale);
 
 ### See Also
 
-- gx_line_chart_create
-- gx_line_chart_data_draw
-- gx_line_chart_draw
-- gx_line_chart_update
+- [Guix Line Chart Services](#Line_Chart_Services)
 
 ## gx_menu_create
 
@@ -8595,16 +8303,7 @@ status = gx_menu_create(&my_menu, "my_menu", parent, MY_TEXT_ID,
 
 ### See Also
 
-- gx_accordion_meu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_draw
-- gx_menu_event_process
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_draw
 
@@ -8649,16 +8348,7 @@ VOID my_menu_draw(GX_MENU *menu)
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_event_process
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_event_process
 
@@ -8721,12 +8411,7 @@ UINT custom_menu_event_process(GX_MENU *menu, GX_EVENT *event)
 
 ### See Also
 
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_insert
 
@@ -8771,16 +8456,7 @@ status = gx_menu_insert(&my_menu, &my_widget);
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_event_process
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_remove
 
@@ -8825,16 +8501,7 @@ status = gx_menu_remove(&my_menu, &my_widget);
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_event_process
-- gx_menu_insert
-- gx_menu_text_draw
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_text_draw
 
@@ -8883,16 +8550,7 @@ VOID my_menu_draw(GX_MENU *menu)
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_event_process
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_offset_set
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_menu_text_offset_set
 
@@ -8939,16 +8597,7 @@ status = gx_menu_text_offset_set(&my_menu, 20, 10);
 
 ### See Also
 
-- gx_accordion_menu_create
-- gx_accordion_menu_draw
-- gx_accordion_menu_event_process
-- gx_accordion_menu_position
-- gx_menu_create
-- gx_menu_draw
-- gx_menu_event_process
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
+- [Guix Menu Services](#Menu_Services)
 
 ## gx_multi_line_text_button_create
 
@@ -9010,12 +8659,7 @@ status = gx_multi_line_text_button_create(&my_text_button, "my text button",
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_draw
 
@@ -9059,12 +8703,7 @@ void MyButtonDraw(GX_MULTI_LINE_TEXT_BUTTON *button)
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_event_process
 
@@ -9120,12 +8759,7 @@ UINT MyEventHandler(GX_MULTI_LINE_TEXT_BUTTON *button,
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_text_draw
 
@@ -9172,13 +8806,7 @@ VOID my_button_draw(GX_MULTI_LINE_TEXT_BUTTON *button)
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
-
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_text_id_set
 
@@ -9224,12 +8852,7 @@ status = gx_multi_line_text_button_text_id_set(
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_text_set
 
@@ -9280,12 +8903,7 @@ status = gx_multi_line_text_button_text_set(&my_text_button, text);
 
 ### See Also
 
-- gx_text_button_create
-- gx_button_create
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_button_text_set_ext
 
@@ -9338,10 +8956,7 @@ status = gx_multi_line_text_button_text_set_ext(&my_text_button, string);
 
 ### See Also
 
-- gx_multi_line_text_button_draw
-- gx_multi_line_text_button_event_process
-- gx_multi_line_text_button_text_set
-- gx_multi_line_text_button_text_id_set
+- [Guix Multi Line Text Button Services](#Multi_Line_Text_Button_Services)
 
 ## gx_multi_line_text_input_backspace
 
@@ -9386,36 +9001,7 @@ status = gx_multi_line_text_input_backspace(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_buffer_clear
 
@@ -9457,36 +9043,7 @@ status = gx_multi_line_text_input_clear(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_buffer_get
 
@@ -9541,36 +9098,7 @@ status = gx_multi_line_text_input_buffer_get(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_char_insert
 
@@ -9625,7 +9153,7 @@ status = gx_multi_line_text_input_char_insert(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_char_insert_ext
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_char_insert_ext
 
@@ -9679,36 +9207,7 @@ status = gx_multi_line_text_input_char_insert_ext(&my_text_input, &string);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_create
 
@@ -9777,36 +9276,7 @@ status = gx_multi_line_text_input_create(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_cursor_pos_get
 
@@ -9853,37 +9323,7 @@ status = gx_multi_line_text_input_cursor_pos_get(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_delete
 
@@ -9927,36 +9367,7 @@ status = gx_multi_line_text_input_delete(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_down_arrow
 
@@ -10000,36 +9411,7 @@ status = gx_multi_line_text_input_down_arrow(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_end
 
@@ -10072,36 +9454,7 @@ status = gx_multi_line_text_input_end(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_event_process
 
@@ -10158,36 +9511,7 @@ UINT MyEventHandler(GX_MULTI_LINE_TEXT_INPUT *input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_fill_color_set
 
@@ -10243,36 +9567,7 @@ status = gx_multi_line_text_input_fill_color_set(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_home
 
@@ -10315,36 +9610,7 @@ status = gx_multi_line_text_input_home(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_left_arrow
 
@@ -10389,36 +9655,7 @@ status = gx_multi_line_text_input_left_arrow(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_right_arrow
 
@@ -10461,36 +9698,7 @@ status = gx_multi_line_text_input_right_arrow(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_style_add
 
@@ -10536,36 +9744,7 @@ status = gx_multi_line_text_input_style_add(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_style_remove
 
@@ -10611,36 +9790,7 @@ status = gx_multi_line_text_input_style_remove(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_style_set
 
@@ -10685,36 +9835,7 @@ status = gx_multi_line_text_input_style_set(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_text_color_set
 
@@ -10769,36 +9890,7 @@ status = gx_multi_line_text_input_text_color_set(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_text_select
 
@@ -10848,36 +9940,7 @@ status = gx_multi_line_text_input_text_select(&my_text_input,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_text_set
 
@@ -10976,36 +10039,7 @@ status = gx_multi_line_text_input_text_set_ext(&my_text_input, &string);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_input_up_arrow
 
@@ -11049,36 +10083,7 @@ status = gx_multi_line_text_input_up_arrow(&my_text_input);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text Input Services](#Multi_Line_Text_Input_Services)
 
 ## gx_multi_line_text_view_create
 
@@ -11139,36 +10144,7 @@ status = gx_multi_line_text_view_create(&my_text_view,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_draw
 
@@ -11213,36 +10189,7 @@ VOID my_multi_line_text_view_draw(GX_MULTI_LINE_TEXT_VIEW *view)
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_event_process
 
@@ -11299,36 +10246,7 @@ UINT my_event_handler(GX_MULTI_LINE_TEXT_VIEW *view, GX_EVENT *event_ptr)
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_font_set
 
@@ -11373,36 +10291,7 @@ status = gx_multi_line_text_view_font_set(&my_text_view, FONT_ID);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_line_space_set
 
@@ -11445,36 +10334,7 @@ status = gx_multi_line_text_view_line_space_set(&my_text_view, 2);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_scroll_info_get
 
@@ -11523,36 +10383,7 @@ status = gx_multi_line_text_view_scroll_info_get(&my_text_view,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_text_color_set
 
@@ -11604,36 +10435,7 @@ status = gx_multi_line_text_view_text_color_set(&my_text_view,
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_text_id_set
 
@@ -11678,36 +10480,7 @@ status = gx_multi_line_text_view_text_id_set(&my_text_view, STRING_ID);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_text_set
 
@@ -11755,37 +10528,7 @@ status = gx_multi_line_text_view_text_set(&my_text_view, "my string");
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set_ext
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_text_set_ext
 
@@ -11836,36 +10579,7 @@ status = gx_multi_line_text_view_text_set(&my_text_view, &string);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_whitespace_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_multi_line_text_view_whitespace_set
 
@@ -11910,36 +10624,7 @@ status = gx_multi_line_text_view_whitespace_set(&my_text_view, 2);
 
 ### See Also
 
-- gx_multi_line_text_input_backspace
-- gx_multi_line_text_input_buffer_clear
-- gx_multi_line_text_input_buffer_get
-- gx_multi_line_text_input_char_insert
-- gx_multi_line_text_input_create
-- gx_multi_line_text_input_cursor_pos_get
-- gx_multi_line_text_input_delete
-- gx_multi_line_text_input_down_arrow
-- gx_multi_line_text_input_end
-- gx_multi_line_text_input_event_process
-- gx_multi_line_text_input_fill_color_set
-- gx_multi_line_text_input_home
-- gx_multi_line_text_input_left_arrow
-- gx_multi_line_text_input_right_arrow
-- gx_mutli_line_text_input_style_add
-- gx_multi_line_text_input_style_remove
-- gx_multi_line_text_input_style_set
-- gx_multi_line_text_input_text_color_set
-- gx_multi_line_text_input_text_select
-- gx_multi_line_text_input_text_set
-- gx_multi_line_text_input_up_arrow
-- gx_multi_line_text_view_create
-- gx_multi_line_text_view_draw
-- gx_multi_line_text_view_event_process
-- gx_multi_line_text_view_font_set
-- gx_multi_line_text_view_line_space_set
-- gx_multi_line_text_view_scroll_info_get
-- gx_multi_line_text_view_text_color_set
-- gx_multi_line_text_view_text_id_set
-- gx_multi_line_text_view_text_set
+- [Guix Multi Line Text View Services](#Multi_Line_Text_View_Services)
 
 ## gx_numeric_pixelmap_prompt_create
 
@@ -12001,8 +10686,7 @@ status = gx_numeric_pixelmap_prompt_create(&my_numeric_pix_prompt,
 
 ### See Also
 
-- gx_numeric_pixelmap_format_function_set
-- gx_numeric_pixelmap_prompt_value_set
+- [Guix Numeric Pixelmap Services](#Numeric_Pixelmap_Services)
 
 ## gx_numeric_pixelmap_prompt_format_function_set
 
@@ -12065,8 +10749,7 @@ status = gx_numeric_pixelmap_prompt_format_function_set(
 
 ### See Also
 
-- gx_numeric_pixelmap_prompt_create
-- gx_numeric_pixelmap_prompt_value_set
+- [Guix Numeric Pixelmap Services](#Numeric_Pixelmap_Services)
 
 ## gx_numeric_pixelmap_prompt_value_set
 
@@ -12111,8 +10794,7 @@ status = gx_numeric_pixelmap_prompt_value_set(&my_numeric_pix_prompt, 1000);
 
 ### See Also
 
-- gx_numeric_pixelmap_prompt_create
-- gx_numeric_pixelmap_format_function_set
+- [Guix Numeric Pixelmap Services](#Numeric_Pixelmap_Services)
 
 ## gx_numeric_prompt_create
 
@@ -12172,8 +10854,7 @@ status = gx_numeric_prompt_create(&my_numeric_prompt,
 
 ### See Also
 
-- gx_numeric_format_function_set
-- gx_numeric_prompt_value_set
+- [Guix Numeric Prompt Services](#Numeric_Prompt_Services)
 
 ## gx_numeric_prompt_format_function_set
 
@@ -12233,8 +10914,7 @@ status = gx_numeric_prompt_format_function_set(&my_numeric_prompt,
 
 ### See Also
 
-- gx_numeric_prompt_create
-- gx_numeric_prompt_value_set
+- [Guix Numeric Prompt Services](#Numeric_Prompt_Services)
 
 ## gx_numeric_prompt_value_set
 
@@ -12279,8 +10959,7 @@ status = gx_numeric_prompt_value_set(&my_numeric_prompt, 1000);
 
 ### See Also
 
-- gx_numeric_prompt_create
-- gx_numeric_format_function_set
+- [Guix Numeric Prompt Services](#Numeric_Prompt_Services)
 
 ## gx_numeric_scroll_wheel_create
 
@@ -12365,22 +11044,7 @@ status = gx_numeric_scroll_wheel_create(&year_wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_text_get
+- [Guix Numeric Scroll Services](#Numeric_Scroll_Services)
 
 ## gx_numeric_scroll_wheel_range_set
 
@@ -12432,23 +11096,7 @@ status = gx_numeric_scroll_wheel_range_set(&year_wheel, 0, 200);
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Numeric Scroll Services](#Numeric_Scroll_Services)
 
 ## gx_pixelmap_button_create
 
@@ -12516,26 +11164,7 @@ status = gx_pixelmap_button_create(&my_pixelmap_button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pxielmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_button_draw
 
@@ -12580,26 +11209,7 @@ VOID my_pixelmap_button_draw(GX_PIXELMAP_BUTTON *button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_create
-- gx_pixelmap_button_pxielmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_button_event_process
 
@@ -12649,26 +11259,7 @@ switch(event_ptr->gx_event_type)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_create
-- gx_pixelmap_button_pxielmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_button_pixelmap_set
 
@@ -12719,26 +11310,7 @@ status = gx_pixelmap_button_pixelmap_set (&my_pixelmap_button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_prompt_create
 
@@ -12802,20 +11374,7 @@ status = gx_pixelmap_prompt_create(&my_pixelmap_prompt,
 
 ### See Also
 
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_set
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_prompt_draw
 
@@ -12860,20 +11419,7 @@ VOID my_pixelmap_button_draw(GX_PIXELMAP_PROMPT *prompt)
 
 ### See Also
 
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_set
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_prompt_pixelmap_set
 
@@ -12930,26 +11476,7 @@ status = gx_pixelmap_prompt_pixelmap_set (&my_prompt,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_slider_create
 
@@ -13032,24 +11559,7 @@ status = gx_pixelmap_slider_create(&my_pixelmap_slider,
 
 ### See Also
 
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_slider_draw
 
@@ -13094,25 +11604,7 @@ VOID my_pixelmap_slider_draw(GX_PIXELMAP_SLIDER *pixelmap_slider)
 
 ### See Also
 
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_slider_event_process
 
@@ -13173,25 +11665,7 @@ UINT my_event_hanlder(GX_PIXELMAP_SLIDER *pixelmap_slider, GX_EVENT *event_ptr)
 
 ### See Also
 
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_button_pixelmap_set
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_pixelmap_slider_pixelmap_set
 
@@ -13247,26 +11721,7 @@ status = gx_pixelmap_slider _pixelmap_set (&my_pixelmap_slider,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_radio_button_create
-- gx_radio_button_draw
-- gx_icon_button_create
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
+- [Guix Pixelmap Scroll Services](#Pixelmap_Scroll_Services)
 
 ## gx_progress_bar_background_draw
 
@@ -13314,15 +11769,7 @@ VOID my_progress_bar_draw(GX_PROGRESS_BAR *progress_bar)
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_create
 
@@ -13398,15 +11845,7 @@ status = gx_progress_bar_create(&my_progress_bar, GX_NULL, GX_NULL,
 
 ### See Also
 
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_draw
 
@@ -13451,15 +11890,7 @@ VOID my_progress_bar_draw(GX_PROGRESS_BAR *progress_bar)
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_event_process
 
@@ -13520,15 +11951,7 @@ UINT my_event_process (GX_PROGRESS_BAR *progress_bar, GX_EVENT *event_ptr)
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_event_draw
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_font_set
 
@@ -13573,15 +11996,7 @@ UINT status = gx_progress_bar_font_set(&progress_bar,
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_info_set
 
@@ -13635,15 +12050,7 @@ status = gx_progress_bar_info_set(&progress_bar, &info);
 
 ### See Also
 
-- gx_progress_bar_info_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_pixelmap_set
 
@@ -13688,15 +12095,7 @@ UINT status = gx_progress_bar_pixelmap_set(&progress_bar,
 
 ### See Also
 
-- gx_progress_bar_pixelmap_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_range_set
 
@@ -13742,15 +12141,7 @@ UINT status = gx_progress_bar_range_set(progress_bar, 0, 100);
 
 ### See Also
 
-- gx_progress_bar_range_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_text_color_set
 
@@ -13802,15 +12193,7 @@ UINT status = gx_progress_bar_text_color_set(&my_progress_bar,
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_draw
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_text_draw
 
@@ -13858,15 +12241,7 @@ VOID my_progress_bar_draw(GX_PROGRESS_BAR *progress_bar)
 
 ### See Also
 
-- gx_progress_bar_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_value_set
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_progress_bar_value_set
 
@@ -13910,15 +12285,7 @@ UINT status = gx_progress_bar_value_set(progress_bar, 50);
 
 ### See Also
 
-- gx_progress_bar_value_create
-- gx_progress_bar_draw
-- gx_progress_bar_event_process
-- gx_progress_bar_font_set
-- gx_progress_bar_info_set
-- gx_progress_bar_pixelmap_set
-- gx_progress_bar_range_set
-- gx_progress_bar_text_color_set
-- gx_progress_bar_text_draw
+- [Guix Progress Bar Services](#Progress_Bar_Services)
 
 ## gx_prompt_create
 
@@ -13977,16 +12344,7 @@ status = gx_prompt_create(&my_prompt, "my_promPt", &my_parent,
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_draw
 
@@ -14031,16 +12389,7 @@ VOID my_prompt_draw(GX_PROMPT *prompt)
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_event_process
 
@@ -14099,16 +12448,7 @@ UINT custom_prompt_event_process(GX_PROMPT *prompt, GX_EVENT *event)
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_font_set
 
@@ -14154,16 +12494,7 @@ status = gx_prompt_font_set(&my_prompt, MY_PROMPT_FONT_ID);
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_text_color_set
-- gx_prompt_text_get
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_color_set
 
@@ -14216,16 +12547,7 @@ status = gx_prompt_text_color_set(&my_prompt,
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_get
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_draw
 
@@ -14272,16 +12594,7 @@ VOID my_prompt_draw(GX_PROMPT *prompt)
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_get
 
@@ -14331,16 +12644,7 @@ status = gx_prompt_text_get(&my_prompt, &my_prompt_text);
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_get_ext
 
@@ -14388,16 +12692,7 @@ status = gx_prompt_text_get_ext(&my_prompt, &my_prompt_string);
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_id_set
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_id_set
 
@@ -14443,15 +12738,7 @@ status = gx_prompt_text_id_set(&my_prompt, MY_STRING_ID);
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_get
-- gx_prompt_text_set
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_set
 
@@ -14502,16 +12789,7 @@ status = gx_prompt_text_set(&my_prompt, "my_text");
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_id_set
-- gx_prompt_text_get
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_prompt_text_set_ext
 
@@ -14563,16 +12841,7 @@ status = gx_prompt_text_set(&my_prompt, &new_string);
 
 ### See Also
 
-- gx_pixelmap_prompt_create
-- gx_pixelmap_prompt_draw
-- gx_pixelmap_prompt_pixelmap_set
-- gx_prompt_create
-- gx_prompt_draw
-- gx_prompt_event_process
-- gx_prompt_font_set
-- gx_prompt_text_color_set
-- gx_prompt_text_id_set
-- gx_prompt_text_get
+- [Guix Prompt Services](#Prompt_Services)
 
 ## gx_radial_progress_bar_anchor_set
 
@@ -14620,15 +12889,7 @@ status = gx_radial_progress_bar_anchor_set(&my_progress_bar, start_angle);
 
 ### See Also
 
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_background_draw
 
@@ -14675,15 +12936,7 @@ VOID my_radial_progress_bar_draw(GX_RADIAL_PROGRESS_BAR *radial_progress)
 ```
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_create
 
@@ -14767,15 +13020,7 @@ status = gx_radial_progress_bar_create(&my_progress_bar,
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_draw
 
@@ -14823,16 +13068,7 @@ VOID my_radial_progress_bar_draw(GX_RADIAL_PROGRESS_BAR *radial_progress)
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_size_calculate
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_event_process
 
@@ -14893,15 +13129,7 @@ UINT my_event_process (GX_RADIAL_PROGRESS_BAR *radial_progress, GX_EVENT *event_
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_font_set
 
@@ -14947,15 +13175,7 @@ status = gx_radial_progress_bar_font_set(&my_progress_bar, font);
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_info_set
 
@@ -15022,15 +13242,7 @@ status = gx_radial_progress_bar_info_set(&my_progress_bar, &info);
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_text_color_set
 
@@ -15083,15 +13295,7 @@ status = gx_radial_progress_bar_text_color_set(&my_progress_bar,
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_draw
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_text_draw
 
@@ -15143,15 +13347,7 @@ VOID my_radial_progress_bar_draw(GX_RADIAL_PROGRESS_BAR *radial_progress)
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_value_set
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radial_progress_bar_value_set
 
@@ -15204,15 +13400,7 @@ status = gx_radial_progress_bar_value_set(&my_progress_bar,
 
 ### See Also
 
-- gx_radial_progress_bar_anchor_set
-- gx_radial_progress_bar_background_draw
-- gx_radial_progress_bar_create
-- gx_radial_progress_bar_draw
-- gx_radial_progress_bar_event_process
-- gx_radial_progress_bar_font_set
-- gx_radial_progress_bar_info_set
-- gx_radial_progress_bar_text_color_set
-- gx_radial_progress_bar_text_draw
+- [Guix Radial Progress Bar Services](#Radial_Progress_Bar_Services)
 
 ## gx_radio_button_create
 
@@ -15270,19 +13458,7 @@ status = gx_radio_button_create(&my_radio_button, "my_radio_button", &my_parent,
 ```
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
-- gx_radio_button_draw
+- [Guix Radial Button Services](#Radial_Button_Services)
 
 ## gx_radio_button_draw
 
@@ -15330,19 +13506,7 @@ VOID my_radio_button_draw(GX_RADIO_BUTTON *radio_button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
-- gx_radio_button_create
+- [Guix Radial Button Services](#Radial_Button_Services)
 
 ## gx_radio_button_pixelmap_set
 
@@ -15397,19 +13561,7 @@ status = gx_radio_button_pixelmap_set(&my_radio_button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_color_set
-- gx_text_button_draw
-- gx_radio_button_create
+- [Guix Radial Button Services](#Radial_Button_Services)
 
 ## gx_radial_slider_anchor_angles_set
 
@@ -15467,15 +13619,7 @@ status = gx_radial_slider_anchor_angles_set(&my_radial_slider,
 
 ### See Also
 
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_angle_set
 
@@ -15520,15 +13664,7 @@ status = gx_radial_slider_angle_set(&my_radial_slider, 0);
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_animation_set
 
@@ -15623,15 +13759,7 @@ status = gx_radial_slider_animation_set(&my_radial_slider, 0, 0,
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_animation_start
 
@@ -15678,15 +13806,7 @@ status = gx_radial_slider_animation_start(&my_radial_slider, 90);
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_create
 
@@ -15786,15 +13906,7 @@ status = gx_radial_slider_create(&my_radial_slider,
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_draw
 
@@ -15839,16 +13951,7 @@ VOID my_radial_slider_draw(GX_RADIAL_SLIDER *radial_slider)
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_event_process
 
@@ -15909,15 +14012,7 @@ UINT my_event_process(GX_RADIAL_SLIDER *slider,
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_info_get
 
@@ -15965,15 +14060,7 @@ status = gx_radial_slider_info_get(&my_radial_slider,
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_set
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_info_set
 
@@ -16054,15 +14141,7 @@ status = gx_radial_slider_info_set(&my_radial_slider, &info);
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_pixelmap_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_radial_slider_pixelmap_set
 
@@ -16110,15 +14189,7 @@ status = gx_radial_slider_pixelmap_set(&my_radial_slider, GX_PIXELMAP_ID_BG, GX_
 
 ### See Also
 
-- gx_radial_slider_anchor_angles_set
-- gx_radial_slider_angle_set
-- gx_radial_slider_animation_set
-- gx_radial_slider_animation_start
-- gx_radial_slider_create
-- gx_radial_slider_draw
-- gx_radial_slider_event_process
-- gx_radial_slider_info_get
-- gx_radial_slider_info_set
+- [Guix Radial Slider Services](#Radial_Slider_Services)
 
 ## gx_rich_text_view_create
 
@@ -16154,13 +14225,15 @@ This service creates a rich text view as specified.
 
 **Examples of formatting tag usage:**
 
-- \<b>This is bold text<\b>
-- \<i>This is italic text<\i>
-- \<u>This is text with underline<\u>
-- \<f 0>This text font ID is set to 0<\f>
-- \<c 1>This text color ID is set to 1<\c>
-- \<hc 2>This text highlight color ID is set to 2<\hc>
-- \<align left> This text is left aligned<\align>
+```C
+- <b>This is bold text<\b>
+- <i>This is italic text<\i>
+- <u>This is text with underline<\u>
+- <f 0>This text font ID is set to 0<\f>
+- <c 1>This text color ID is set to 1<\c>
+- <hc 2>This text highlight color ID is set to 2<\hc>
+- <align left> This text is left aligned<\align>
+```
 
 ### Parameters
 
@@ -16216,9 +14289,7 @@ The demo application demo_guix_widget_types, provided as part of the GUIX Studio
 
 ### See Also
 
-- gx_rich_text_view_draw
-- gx_rich_text_view_fonts_set
-- gx_rich_text_view_text_draw
+- [Guix Rich Text Services](#Rich_Text_Services)
 
 ## gx_rich_text_view_draw
 
@@ -16263,9 +14334,7 @@ VOID my_rich_text_view_draw(GX_RICH_TEXT_VIEW *text_view)
 
 ### See Also
 
-- gx_rich_text_view_create
-- gx_rich_text_view_fonts_set
-- gx_rich_text_view_text_draw
+- [Guix Rich Text Services](#Rich_Text_Services)
 
 ## gx_rich_text_view_fonts_set
 
@@ -16316,9 +14385,7 @@ status = gx_rich_text_view_fonts_set(&my_rich_view, &fonts);
 
 ### See Also
 
-- gx_rich_text_view_create
-- gx_rich_text_view_draw
-- gx_rich_text_view_text_draw
+- [Guix Rich Text Services](#Rich_Text_Services)
 
 ## gx_rich_text_view_text_draw
 
@@ -16366,9 +14433,7 @@ VOID my_rich_text_view_draw(GX_RICH_TEXT_VIEW *text_view)
 
 ### See Also
 
-- gx_rich_text_view_create
-- gx_rich_text_view_draw
-- gx_rich_text_view_fonts_set
+- [Guix Rich Text Services](#Rich_Text_Services)
 
 ## gx_screen_stack_create
 
@@ -16423,9 +14488,7 @@ status = gx_screen_stack_create(&my_stack_control, screen_stack,
 
 ### See Also
 
-- gx_screen_stack_push
-- gx_screen_stack_pop
-- gx_screen_stack_reset
+- [Guix Screen Stack Services](#Screen_Stack_Services)
 
 ## gx_screen_stack_pop
 
@@ -16471,9 +14534,7 @@ status = gx_screen_stack_pop(&my_stack_control);
 
 ### See Also
 
-- gx_screen_stack_create
-- gx_screen_stack_push
-- gx_screen_stack_reset
+- [Guix Screen Stack Services](#Screen_Stack_Services)
 
 ## gx_screen_stack_push
 
@@ -16524,9 +14585,7 @@ status = gx_screen_stack_push(&my_stack_control,
 
 ### See Also
 
-- gx_screen_stack_create
-- gx_screen_stack_push
-- gx_screen_stack_reset
+- [Guix Screen Stack Services](#Screen_Stack_Services)
 
 ## gx_screen_stack_reset
 
@@ -16569,9 +14628,7 @@ status = gx_screen_stack_reset(&my_stack_control);
 
 ### See Also
 
-- gx_screen_stack_create
-- gx_screen_stack_push
-- gx_screen_stack_pop
+- [Guix Screen Stack Services](#Screen_Stack_Services)
 
 ## gx_scroll_thumb_create
 
@@ -16623,8 +14680,7 @@ status = gx_scroll_thumb_create(&my_scroll_thumb, &my_scrollbar,
 
 ### See Also
 
-- gx_scroll_thumb_draw
-- gx_scroll_thumb_event_process
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_thumb_draw
 
@@ -16669,8 +14725,7 @@ VOID my_scroll_thumb_draw(GX_SCROLL_THUMB *thumb)
 
 ### See Also
 
-- gx_scroll_thumb_create
-- gx_scroll_thumb_event_process
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_thumb_event_process
 
@@ -16730,8 +14785,7 @@ UINT my_event_process (GX_SCROLL_THUMB *thumb, GX_EVENT *event_ptr)
 
 ### See Also
 
-- gx_scroll_thumb_create
-- gx_scroll_thumb_draw
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_create
 
@@ -16806,24 +14860,7 @@ UINT custom_scroll_wheel_create(CUSTOM_SCROLL_WHEEL *wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_event_process
 
@@ -16886,24 +14923,7 @@ UINT custom_scroll_wheel_event_process(CUSTOM_SCROLL_WHEEL *wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_gradient_alpha_set
 
@@ -16956,24 +14976,7 @@ Successfully assigned. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_row_height_set
 
@@ -17019,24 +15022,7 @@ pixels. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_gradient_alpha_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_selected_background_set
 
@@ -17083,24 +15069,7 @@ assigned. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_selected_get
 
@@ -17147,24 +15116,7 @@ the row variable. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_selected_set
 
@@ -17209,24 +15161,7 @@ status = gx_scroll_wheel_selected_set(&wheel, 20);
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_speed_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_speed_set
 
@@ -17280,24 +15215,7 @@ successfully set. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scroll_wheel_total_rows_set
 
@@ -17342,23 +15260,7 @@ status = gx_scroll_wheel_total_rows_set(&wheel, 100);
 ```
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_speed_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_text_get
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scrollbar_draw
 
@@ -17403,11 +15305,7 @@ VOID my_scrollbar_draw(GX_SCROLLBAR *scrollbar)
 
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_event_process
-- gx_scrollbar_limit_check
-- gx_scrollbar_reset
-- gx_vertical_scrollbar_create
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scrollbar_event_process
 
@@ -17465,11 +15363,7 @@ UINT custom_scrollbar_event_process(GX_SCROLLBAR *scrollbar,
 
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_draw
-- gx_scrollbar_limit_check
-- gx_scrollbar_reset
-- gx_vertical_scrollbar_create
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scrollbar_limit_check
 
@@ -17512,11 +15406,7 @@ status = gx_scrollbar_limit_check(&my_scrollbar);
 
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_draw
-- gx_scrollbar_event_process
-- gx_scrollbar_reset
-- gx_vertical_scrollbar_create
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scrollbar_reset
 
@@ -17572,11 +15462,7 @@ status = gx_scrollbar_reset(&my_scrollbar, &my_info);
 
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_draw
-- gx_scrollbar_event_process
-- gx_scrollbar_limit_check
-- gx_vertical_scrollbar_create
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_scrollbar_value_set
 
@@ -17624,11 +15510,7 @@ status = gx_scrollbar_value_set(&my_scrollbar, 0);
 
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_draw
-- gx_scrollbar_limit_check
-- gx_scrollbar_reset
-- gx_vertical_scrollbar_create
+- [Guix Scroll Services](#Scroll_Services)
 
 ## gx_single_line_text_input_backspace
 
@@ -17671,26 +15553,7 @@ status = gx_single_line_text_input_backspace(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_buffer_clear
 
@@ -17734,26 +15597,7 @@ status = gx_single_line_text_input_clear(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_buffer_backspace
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_buffer_get
 
@@ -17808,25 +15652,7 @@ status = gx_single_line_text_input_buffer_get(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_character_delete
 
@@ -17870,27 +15696,7 @@ status = gx_single_line_text_input_character_delete(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_multi_line_text_input_create
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_character_insert
 
@@ -17942,26 +15748,7 @@ status = gx_single_line_text_input_character_insert(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_create
 
@@ -18028,26 +15815,7 @@ status = gx_single_line_text_input_create(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_draw
 
@@ -18092,26 +15860,7 @@ VOID my_sl_text_input_draw(GX_SINGLE_LINE_TEXT_INPUT *input)
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_draw_position_get
 
@@ -18170,25 +15919,7 @@ GX_VALUE ypos;
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_end
 
@@ -18231,26 +15962,7 @@ status = gx_single_line_text_input_end(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_event_process
 
@@ -18312,26 +16024,7 @@ UINT custom_sl_text_input_event_process(
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_fill_color_set
 
@@ -18388,26 +16081,7 @@ set. */
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_home
 
@@ -18449,26 +16123,8 @@ status = gx_single_line_text_input_home(&my_text_input);
 ```
 
 ### See Also
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_left_arrow
 
@@ -18511,26 +16167,7 @@ status = gx_single_line_text_input_left_arrow(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_position_get
 
@@ -18576,26 +16213,7 @@ status = gx_single_line_text_input_position_get(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_right_arrow
 
@@ -18639,25 +16257,7 @@ status = gx_single_line_text_input_right_arrow(&my_text_input);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_style_add
 
@@ -18704,25 +16304,7 @@ GX_STYLE_CURSOR_AWAYS);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gax_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_style_remove
 
@@ -18768,24 +16350,7 @@ GX_STYLE_CURSOR_BLINK);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_home
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_style_set
 
@@ -18832,24 +16397,7 @@ status = gx_single_line_text_input_style_set(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_signle_line_text_input_event_process
-- gx_single_line_text_input_home
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_text_color_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_text_color_set
 
@@ -18905,26 +16453,7 @@ status = gx_single_line_text_input_text_color_set(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_select
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_text_select
 
@@ -18971,25 +16500,7 @@ status = gx_single_line_text_input_text_select(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_set
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_text_set
 
@@ -19041,7 +16552,7 @@ status = gx_single_line_text_input_text_set(&my_text_input,
 
 ### See Also
 
-- gx_single_line_text_input_text_set_ext
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_single_line_text_input_text_set_ext
 
@@ -19092,26 +16603,7 @@ status = gx_single_line_text_input_text_set_ext(&my_text_input, &new_string);
 
 ### See Also
 
-- gx_single_line_text_input_backspace
-- gx_single_line_text_input_buffer_clear
-- gx_single_line_text_input_buffer_get
-- gx_single_line_text_input_character_delete
-- gx_single_line_text_input_character_insert
-- gx_single_line_text_input_create
-- gx_single_line_text_input_draw
-- gx_single_line_text_draw_position_get
-- gx_single_line_text_input_end
-- gx_single_line_text_input_event_process
-- gx_single_line_text_input_fill_color_set
-- gx_single_line_text_input_home
-- gx_single_line_text_input_left_arrow
-- gx_single_line_text_input_position_get
-- gx_single_line_text_input_right_arrow
-- gx_single_line_text_input_style_add
-- gx_single_line_text_input_style_remove
-- gx_single_line_text_input_style_set
-- gx_single_line_text_input_text_set_ext
-
+- [Guix Single Line Text Input Services](#Single_Line_Text_Input_Services)
 
 ## gx_slider_create
 
@@ -19186,19 +16678,7 @@ status = gx_slider_create(&my_slider, "my_slider",
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_draw
 
@@ -19241,19 +16721,7 @@ VOID my_slider_draw(GX_SLIDER *slider)
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_event_process
 
@@ -19312,19 +16780,7 @@ UINT custom_slider_event_process(GX_SLIDER *slider,
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_info_set
 
@@ -19382,19 +16838,7 @@ status = gx_slider_info_set (&my_slider, &my_slider_info);
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_needle_draw
 
@@ -19440,19 +16884,7 @@ VOID my_slider_draw(GX_SLIDER *slider)
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_needle_position_get
 
@@ -19501,19 +16933,7 @@ status = gx_slider_needle_posistion_get(&my_slider, &slider_info, &needle_positi
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_tickmarks_draw
 
@@ -19559,19 +16979,7 @@ VOID my_slider_draw(GX_SLIDER *slider)
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_travel_get
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_travel_get
 
@@ -19622,19 +17030,7 @@ status = gx_slider_travel_get(&my_slider, &info,
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_value_calculate
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_value_calculate
 
@@ -19684,19 +17080,7 @@ status = gx_slider_value_calculate(&my_slider,
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_set
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_slider_value_set
 
@@ -19744,19 +17128,7 @@ status = gx_slider_value_set(&my_slider,
 
 ### See Also
 
-- gx_pixelmap_slider_create
-- gx_pixelmap_slider_draw
-- gx_pixelmap_slider_event_process
-- gx_pixelmap_slider_pixelmap_set
-- gx_slider_create
-- gx_slider_draw
-- gx_slider_event_process
-- gx_slider_needle_draw
-- gx_slider_needle_position_get
-- gx_slider_needle_position_get
-- gx_slider_tickmarks_draw
-- gx_slider_travel_get
-- gx_slider_value_calculate
+- [Guix Slider Services](#Slider_Services)
 
 ## gx_sprite_create
 
@@ -19821,10 +17193,7 @@ status = gx_sprite_create(&my_sprite, "my_sprite",
 
 ### See Also
 
-- gx_sprite_start
-- gx_sprite_stop
-- gx_sprite_current_frame_set
-- gx_sprite_frame_list_set
+- [Guix Sprite Services](#Sprite_Services)
 
 ## gx_sprite_current_frame_set
 
@@ -19869,10 +17238,7 @@ status = gx_sprite_current_frame_set(&my_sprite, 3);
 
 ### See Also
 
-- gx_sprite_start
-- gx_sprite_stop
-- gx_sprite_create
-- gx_sprite_frame_list_set
+- [Guix Sprite Services](#Sprite_Services)
 
 ## gx_sprite_frame_list_set
 
@@ -19919,10 +17285,7 @@ status = gx_sprite_frame_list_set(&my_sprite, framelist_1, 10);
 
 ### See Also
 
-- gx_sprite_current_frame_set
-- gx_sprite_stop
-- gx_sprite_create
-- gx_sprite_create
+- [Guix Sprite Services](#Sprite_Services)
 
 ## gx_sprite_start
 
@@ -19967,10 +17330,7 @@ status = gx_sprite_start(&my_sprite, 0);
 
 ### See Also
 
-- gx_sprite_current_frame_set
-- gx_sprite_stop
-- gx_sprite_create
-- gx_sprite_frame_list_set
+- [Guix Sprite Services](#Sprite_Services)
 
 ## gx_sprite_stop
 
@@ -20012,10 +17372,7 @@ status = gx_sprite_stop(&my_sprite);
 
 ### See Also
 
-- gx_sprite_current_frame_set
-- gx_sprite_start
-- gx_sprite_create
-- gx_sprite_frame_list_set
+- [Guix Sprite Services](#Sprite_Services)
 
 ## gx_string_scroll_wheel_create
 
@@ -20098,23 +17455,7 @@ status = gx_string_scroll_wheel_create(&wheel, "Day Wheel",
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_id_list_set
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_string_scroll_wheel_create_ext
 
@@ -20197,23 +17538,7 @@ status = gx_string_scroll_wheel_create(&wheel, "Day Wheel",
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_id_list_set
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_string_scroll_wheel_event_process
 
@@ -20275,23 +17600,7 @@ UINT custom_string_scroll_wheel_event_process(GX_STRING_SCROLL_WHEEL *wheel, GX_
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_id_list_set
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+-- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_string_scroll_wheel_string_id_list_set
 
@@ -20351,23 +17660,7 @@ status = gx_string_scroll_wheel_string_id_list_set(&wheel, wheel_ids, 7);
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_string_scroll_wheel_string_list_set
 
@@ -20432,23 +17725,7 @@ status = gx_string_scroll_wheel_string_list_set(&wheel, days, 7);
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_list_set_ext
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_string_scroll_wheel_string_list_set_ext
 
@@ -20512,23 +17789,7 @@ status = gx_string_scroll_wheel_string_list_set_ext(&wheel, days, 7);
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_create
-- gx_string_scroll_wheel_event_process
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix String Scroll Wheel Services](#String_Scroll_Wheel_Services)
 
 ## gx_studio_widget_create
 
@@ -20586,7 +17847,7 @@ widget = gx_studio_widget_create(GX_NULL,
 
 ### See Also
 
-- gx_studio_named_widget_create
+- [Guix Studio Services](#Studio_Services)
 
 ## gx_studio_named_widget_create
 
@@ -20639,7 +17900,7 @@ status = gx_studio_named_widget_create("main_menu",
 
 ### See Also
 
-- gx_studio_widget_create
+- [Guix Studio Services](#Studio_Services)
 
 ## gx_studio_display_configure
 
@@ -20698,15 +17959,7 @@ the requested language and theme have been installed.
 
 ### See Also
 
-- gx_display_create
-- gx_display_color_table_set
-- gx_display_font_table_set
-- gx_display_pixelmap_table_set
-- gx_system_language_table_set
-- gx_system_active_language_set
-- gx_system_scroll_appearance_set
-- gx_canvas_create
-- gx_window_root_create
+- [Guix Studio Services](#Studio_Services)
 
 ## gx_system_active_language_set
 
@@ -20748,9 +18001,7 @@ status = gx_system_active_language_set(ID_LANGUAGE_ENGLISH);
 
 ### See Also
 
-- gx_display_language_table_set
-- gx_display_active_langauge_set
-- gx_display_string_get
+- [Guix System Services](#System_Services)
 
 ## gx_system_animation_get
 
@@ -20799,10 +18050,7 @@ if (status == GX_SUCCESS)
 
 ### See Also
 
-- gx_animation_create
-- gx_animation_start
-- gx_animation_stop
-- gx_system_animation_free
+- [Guix System Services](#System_Services)
 
 ## gx_system_animation_free
 
@@ -20860,10 +18108,7 @@ if (status == GX_SUCCESS)
 
 ### See Also
 
-- gx_animation_create
-- gx_animation_start
-- gx_animation_stop
-- gx_system_animation_get
+- [Guix System Services](#System_Services)
 
 ## gx_system_bidi_text_disable
 
@@ -20945,7 +18190,7 @@ status = gx_system_bidi_text_enable();
 
 ### See Also
 
-- gx_system_bidi_text_disable
+- [Guix System Services](#System_Services)
 
 ## gx_system_canvas_refresh
 
@@ -20986,29 +18231,7 @@ status = gx_system_canvas_refresh();
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_dirty_mark
 
@@ -21051,29 +18274,7 @@ status = gx_system_dirty_mark(&my_widget);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_dirty_partial_add
 
@@ -21122,29 +18323,7 @@ associated with "my_widget" has been marked as dirty. */
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_draw_context_get
 
@@ -21188,29 +18367,7 @@ status = gx_system_draw_context_get(&current_context);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_event_fold
 
@@ -21262,29 +18419,7 @@ status = gx_system_event_fold(&my_event);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_event_send
 
@@ -21337,29 +18472,7 @@ status = gx_system_event_send(&new_event);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_focus_claim
 
@@ -21403,29 +18516,7 @@ status = gx_system_claim_focus(&my_widget);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_initialize
 
@@ -21466,29 +18557,7 @@ status = gx_system_initialize();
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_language_table_get
 
@@ -21539,8 +18608,7 @@ status = gx_system_language_table_get(&language_table, &language_count, &string_
 
 ### See Also
 
-- gx_display_language_table_get
-- gx_display_language_table_set
+- [Guix System Services](#System_Services)
 
 ## gx_system_language_table_set
 
@@ -21586,9 +18654,7 @@ status = gx_system_language_table_set(language_table,
 
 ### See Also
 
-- gx_display_language_table_set
-- gx_display_language_table_get
-- gx_display_active_language_set
+- [Guix System Services](#System_Services)
 
 ## gx_system_memory_allocator_set
 
@@ -21681,29 +18747,7 @@ VOID tx_application_define(void *first_unused_memory)
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_pen_configure
 
@@ -21813,10 +18857,7 @@ and ready for use. */
 
 ### See Also
 
-- gx_system_screen_stack_get
-- gx_system_screen_stack_pop
-- gx_system_screen_stack_push
-- gx_system_screen_stack_reset
+- [Guix System Services](#System_Services)
 
 ## gx_system_screen_stack_get
 
@@ -21868,10 +18909,7 @@ popped_screen hold the topmost screen stack pointers. */
 
 ### See Also
 
-- gx_system_screen_stack_create
-- gx_system_screen_stack_pop
-- gx_system_screen_stack_push
-- gx_system_screen_stack_reset
+- [Guix System Services](#System_Services)
 
 ## gx_system_screen_stack_pop
 
@@ -21916,10 +18954,7 @@ popped from the stack and re-attached to the previous parent. */
 
 ### See Also
 
-- gx_system_screen_stack_get
-- gx_system_screen_stack_create
-- gx_system_screen_stack_push
-- gx_system_screen_stack_reset
+- [Guix System Services](#System_Services)
 
 ## gx_system_screen_stack_push
 
@@ -21962,10 +18997,7 @@ ponter. */
 
 ### See Also
 
-- gx_system_screen_stack_get
-- gx_system_screen_stack_pop
-- gx_system_screen_stack_create
-- gx_system_screen_stack_reset
+- [Guix System Services](#System_Services)
 
 ## gx_system_screen_stack_reset
 
@@ -22007,10 +19039,7 @@ of entries. */
 
 ### See Also
 
-- gx_system_screen_stack_get
-- gx_system_screen_stack_pop
-- gx_system_screen_stack_push
-- gx_system_screen_stack_create
+- [Guix System Services](#System_Services)
 
 ## gx_system_scroll_appearance_get
 
@@ -22058,29 +19087,7 @@ appearance. */
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_scroll_appearance_set
 
@@ -22139,28 +19146,7 @@ status = gx_system_scroll_appearance_set(GX_SCROLLBAR_VERTICAL, &my_appearance);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_scroll_appearance_get
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_start
 
@@ -22200,29 +19186,7 @@ status = gx_system_start();
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_string_get
 
@@ -22269,9 +19233,7 @@ status = gx_system_string_get(MY_STRING_RESOURCE_ID, &my_string);
 
 ### See Also
 
-- gx_display_string_get
-- gx_display_string_table_get
-- gx_display_language_table_set
+- [Guix System Services](#System_Services)
 
 ## gx_system_string_table_get
 
@@ -22321,10 +19283,7 @@ been obtained. */
 
 ### See Also
 
-- gx_display_string_table_get
-- gx_display_string_get
-- gx_display_active_language_set
-- gx_display_language_table_set
+- [Guix System Services](#System_Services)
 
 ## gx_system_string_width_get
 
@@ -22378,7 +19337,7 @@ status = gx_system_string_width_get(&my_font, &my_string,
 
 ### See Also
 
-- gx_system_string_width_get_ext
+- [Guix System Services](#System_Services)
 
 ## gx_system_string_width_get_ext
 
@@ -22433,22 +19392,7 @@ status = gx_system_string_width_get_ext(&my_font,
 
 ### See Also
 
-- gx_system_event_fold
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_text_render_style_set
 
@@ -22491,22 +19435,7 @@ status = gx_system_text_render_style_set(GX_TEXT_RENDER_THAI_GLYPH_SHAPING);
 
 ### See Also
 
-- gx_system_event_fold
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_timer_start
 
@@ -22558,22 +19487,7 @@ started. */
 
 ### See Also
 
-- gx_system_event_fold
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_timer_stop
 
@@ -22620,22 +19534,7 @@ stopped. */
 
 ### See Also
 
-- gx_system_event_fold
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_pen_configure
-- gx_system_version_string_get
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_version_string_get
 
@@ -22678,7 +19577,7 @@ status = gx_system_verrsion_string_get(&version);
 
 ### See Also
 
-- gx_system_version_string_get_ext()
+- [Guix System Services](#System_Services)
 
 ## gx_system_version_string_get_ext
 
@@ -22720,29 +19619,7 @@ status = gx_system_version_string_get_ext(&version);
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_widget_find
+- [Guix System Services](#System_Services)
 
 ## gx_system_widget_find
 
@@ -22793,29 +19670,7 @@ status = gx_system_widget_find(MY_WIDGET_ID,
 
 ### See Also
 
-- gx_system_active_language_set
-- gx_system_canvas_refresh
-- gx_system_dirty_mark
-- gx_system_dirty_partial_add
-- gx_system_draw_context_get
-- gx_system_event_fold
-- gx_system_event_send
-- gx_system_focus_claim
-- gx_system_initialize
-- gx_system_initialize
-- gx_system_language_table_get
-- gx_system_language_table_set
-- gx_system_memory_allocator_set
-- gx_system_scroll_appearance_get
-- gx_system_scroll_appearance_set
-- gx_system_start
-- gx_system_string_get
-- gx_system_string_table_get
-- gx_system_string_width_get
-- gx_system_timer_start
-- gx_system_timer_stop
-- gx_system_pen_configure
-- gx_system_version_string_get
+- [Guix System Services](#System_Services)
 
 ## gx_text_button_create
 
@@ -22887,22 +19742,7 @@ created. */
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_color_set
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_get
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_draw
 
@@ -22946,22 +19786,7 @@ VOID my_text_button_draw(GX_TEXT_BUTTON *text_button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_event_process
-- gx_text_button_color_set
-- gx_text_button_font_set
-- gx_text_button_text_get
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_event_process
 
@@ -23020,22 +19845,7 @@ UINT custom_text_button_event_process(GX_TEXT_BUTTON *text_button, GX_EVENT *eve
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_color_set
-- gx_text_button_font_set
-- gx_text_button_text_get
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_font_set
 
@@ -23081,22 +19891,7 @@ status = gx_text_button_font_set(&my_text_button, MY_FONT);
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create
-- gx_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_color_set
-- gx_text_button_text_get
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_color_set
 
@@ -23149,21 +19944,7 @@ set. */
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create, x_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_get
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_draw
 
@@ -23210,21 +19991,7 @@ VOID my_button_draw(GX_TEXT_BUTTON *button)
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create, x_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_color_set
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_get
 
@@ -23274,7 +20041,7 @@ status = gx_text_button_text_get(&my_text_button, &string);
 
 ### See Also
 
-- gx_text_button_text_get_ext
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_get_ext
 
@@ -23322,21 +20089,7 @@ status = gx_text_button_text_get_ext(&my_text_button, &string);
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create, x_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_color_set
-- gx_text_button_text_set
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_id_set
 
@@ -23385,20 +20138,7 @@ status = gx_text_button_text_id_set(&my_text_button,
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create, x_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_color_set
-- gx_text_button_text_get
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_set
 
@@ -23450,9 +20190,7 @@ status = gx_text_button_text_set(&my_text_button, "my string");
 
 ### See Also
 
-- gx_text_button_event_process
-- gx_text_button_text_set_ext
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_button_text_set_ext
 
@@ -23506,21 +20244,7 @@ status = gx_text_button_text_set_ext(&my_text_button, &new_string);
 
 ### See Also
 
-- gx_button_background_draw
-- gx_button_create
-- gx_button_deselect
-- gx_button_draw
-- gx_button_event_process
-- gx_button_select
-- gx_icon_button_create, x_pixelmap_button_create
-- gx_pixelmap_button_draw
-- gx_text_button_create
-- gx_text_button_draw
-- gx_text_button_event_process
-- gx_text_button_font_set
-- gx_text_button_text_color_set
-- gx_text_button_text_get
-- gx_text_button_text_id_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_input_cursor_blink_interval_set
 
@@ -23572,8 +20296,7 @@ status = gx_text_input_cursor_blink_interval_set(input_cursor, 2);
 
 ### See Also
 
-- gx_text_input_cursor_height_set
-- gx_text_input_cursor_width_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_input_cursor_height_set
 
@@ -23625,8 +20348,7 @@ been successfully set to 15. */
 
 ### See Also
 
-- gx_text_input_cursor_blink_interval_set
-- gx_text_input_cursor_width_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_input_cursor_width_set
 
@@ -23679,8 +20401,7 @@ successfully set to 2. */
 
 ### See Also
 
-- gx_text_input_cursor_blink_interval_set
-- gx_text_input_cursor_height_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_callback_set
 
@@ -23755,21 +20476,7 @@ been set. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_callback_set_ext
 
@@ -23848,21 +20555,7 @@ been set. */
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_create
 
@@ -23946,23 +20639,7 @@ UINT my_scroll_wheel_create(MY_SCROLL_WHEEL *wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_string_scroll_wheel_string_id_list_set
-- gx_string_scroll_wheel_string_list_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_draw
 
@@ -24007,21 +20684,7 @@ UINT my_wheel_draw(GX_TEXT_SCROLL_WHEEL *wheel)
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_event_process
 
@@ -24080,21 +20743,7 @@ UINT custom_text_scroll_wheel_event_process(GX_TEXT_SCROLL_WHEEL *wheel, GX_EVEN
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_font_set
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_font_set
 
@@ -24142,21 +20791,7 @@ status = gx_text_scroll_wheel_font_set(&wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_text_color_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_text_scroll_wheel_text_color_set
 
@@ -24209,21 +20844,7 @@ UINT status = gx_text_scroll_wheel_text_color_set(&wheel,
 
 ### See Also
 
-- gx_numeric_scroll_wheel_create
-- gx_numeric_scroll_wheel_range_set
-- gx_scroll_wheel_create
-- gx_scroll_wheel_event_process
-- gx_scroll_wheel_gradient_alpha_set
-- gx_scroll_wheel_row_height_set
-- gx_scroll_wheel_selected_background_set
-- gx_scroll_wheel_selected_get
-- gx_scroll_wheel_selected_set
-- gx_scroll_wheel_total_rows_set
-- gx_text_scroll_wheel_callback_set
-- gx_text_scroll_wheel_create
-- gx_text_scroll_wheel_draw
-- gx_text_scroll_wheel_event_process
-- gx_text_scroll_wheel_font_set
+- [Guix Text Services](#Text_Services)
 
 ## gx_tree_view_create
 
@@ -24282,19 +20903,7 @@ status = gx_tree_view_create(&my_tree_view,
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_draw
 
@@ -24337,19 +20946,7 @@ UINT my_tree_view_draw(GX_TREE_VIEW *tree_view)
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_event_process
 
@@ -24410,19 +21007,7 @@ return status;
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_indentation_set
 
@@ -24468,19 +21053,7 @@ has been set to 10. */
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixemlap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_position
 
@@ -24523,19 +21096,7 @@ been positioned. */
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_root_line_color_set
 
@@ -24583,19 +21144,7 @@ status = gx_tree_view_root_line_color_set(&my_tree,
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_root_pixelmap_set
 
@@ -24646,18 +21195,7 @@ status = gx_tree_view_root_pixelmap_set(&my_tree,
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_selected_get
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_selected_get
 
@@ -24705,19 +21243,7 @@ has been retrieved. */
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_set
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_tree_view_selected_set
 
@@ -24763,19 +21289,7 @@ been set to "tree_view_item". */
 
 ### See Also
 
-- gx_menu_draw
-- gx_menu_insert
-- gx_menu_remove
-- gx_menu_text_draw
-- gx_menu_text_offset_set
-- gx_tree_view_create
-- gx_tree_view_draw
-- gx_tree_view_event_process
-- gx_tree_view_indentation_set
-- gx_tree_view_position
-- gx_tree_view_root_line_color_set
-- gx_tree_view_root_pixelmap_set
-- gx_tree_view_selected_get
+- [Guix Tree View Services](#Tree_View_Services)
 
 ## gx_utility_canvas_to_bmp
 
@@ -24848,20 +21362,7 @@ VOID scroll_wheel_screen_draw(GX_WINDOW *window)
 
 ### See Also
 
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_circle_point_get
 
@@ -24917,22 +21418,7 @@ GX_POINT point;
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_asin
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_gradient_create
 
@@ -25001,22 +21487,7 @@ status = gx_utiity_gradient_create(&gradient, 3, 40,
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_asin
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_gradient_delete
 
@@ -25061,22 +21532,7 @@ status = gx_utility_gradient_delete(&gradient);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_asin
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_ltoa
 
@@ -25129,20 +21585,7 @@ representation of "my_value". */
 
 ### See Also
 
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_math_acos
 
@@ -25195,22 +21638,7 @@ angle = gx_utility_math_acos(x);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_asin
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_math_asin
 
@@ -25263,22 +21691,7 @@ angle = gx_utility_math_asin(x);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_acos
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_math_cos
 
@@ -25335,22 +21748,7 @@ my_angle_cosine = gx_utility_math_cos(scaled_angle);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_acos
-- gx_utility_math_asin
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_math_sin
 
@@ -25407,22 +21805,7 @@ my_angle_sine = gx_utility_math_sin(scaled_angle);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_acos
-- gx_utility_asin
-- gx_utility_math_cos
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_math_sqrt
 
@@ -25461,20 +21844,7 @@ my_square_root = gx_utility_math_sqrt(my_value);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_bidi_paragraph_reorder
 
@@ -25643,7 +22013,7 @@ VOID custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_utility_bidi_resolved_text_info_delete
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_bidi_paragraph_reorder_ext
 
@@ -25842,7 +22212,7 @@ VOID custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_utility_bidi_resolved_text_info_delete
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_bidi_resolved_text_info_delete
 
@@ -25903,7 +22273,7 @@ VOID custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_utility_bidi_paragraph_reorder
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_pixelmap_resize
 
@@ -25959,21 +22329,7 @@ resulting pixelmap of resize. */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
-- gx_canvas_pixelmap_rotate
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_pixelmap_rotate
 
@@ -26033,21 +22389,7 @@ resulting pixelmap of rotation. */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
-- gx_canvas_pixelmap_rotate
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_pixelmap_simple_rotate
 
@@ -26105,20 +22447,7 @@ resulting pixelmap of rotation. */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_center
 
@@ -26166,20 +22495,7 @@ within "my_other_rectangle". */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_center_find
 
@@ -26234,20 +22550,7 @@ of "my_rectangle" (50, 50). */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_combine
 
@@ -26300,20 +22603,7 @@ of the original "rect_a" and "rect_b". */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_compare
 
@@ -26356,20 +22646,7 @@ result = gx_utility_rectangle_compare(&my_rectangle_a,
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_define
 
@@ -26423,20 +22700,7 @@ status = gx_utility_rectangle_define(&my_rect, 10, 5, 200, 100);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_overlap_detect
 
@@ -26483,20 +22747,7 @@ rectangles overlap. */
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_point_detect
 
@@ -26547,20 +22798,7 @@ result = gx_utility_rectangle_point_detect(&my_rectangle,
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_resize
 
@@ -26605,20 +22843,7 @@ status = gx_utility_rectangle_resize(&my_rectangle, 20);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
-- gx_utility_rectangle_shift
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_rectangle_shift
 
@@ -26666,20 +22891,7 @@ status = gx_utility_rectangle_shift(&my_rectangle, 10, 20);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_string_to_alphamap
 
@@ -26758,7 +22970,7 @@ gx_canvas_pixelmap_draw(200, 200, &rotated_text);
 
 ### See Also
 
-- gx_utility_string_to_alphamap_ext
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_utility_string_to_alphamap_ext
 
@@ -26839,20 +23051,7 @@ gx_canvas_pixelmap_draw(200, 200, &rotated_text);
 
 ### See Also
 
-- gx_utility_ltoa
-- gx_utility_math_cos
-- gx_utility_math_sin
-- gx_utility_math_sqrt
-- gx_utility_pixelmap_rotate
-- gx_utility_pixelmap_simple_rotate
-- gx_utility_rectangle_center
-- gx_utility_rectangle_center_find
-- gx_utility_rectangle_combine
-- gx_utility_rectangle_compare
-- gx_utility_rectangle_define
-- gx_utility_rectangle_grow
-- gx_utility_rectangle_overlap_detect
-- gx_utility_rectangle_point_detect
+- [Guix Utility Services](#Utility_Services)
 
 ## gx_vertical_list_children_position
 
@@ -26895,14 +23094,7 @@ status = gx_vertical_list_children_position (&vertical_list);
 
 ### See Also
 
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selecgted_widget_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_create
 
@@ -26964,13 +23156,7 @@ status = gx_vertical_list_create(&my_list, "my_list", &my_parent,
 
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_event_process
 
@@ -27014,13 +23200,7 @@ status = gx_vertical_list_event_process(&my_list, &my_event);
 
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_selected_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_page_index_set
 
@@ -27065,13 +23245,7 @@ been set to 4. */
 ```
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_selected_index_get
 
@@ -27115,13 +23289,7 @@ status = gx_vertical_list_selected_index_get(&my_list, &current_selected_index);
 ```
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_selected_set
 
@@ -27166,13 +23334,7 @@ status = gx_vertical_list_selected_set(&my_list, 12);
 ```
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_get
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_selected_widget_get
 
@@ -27218,13 +23380,7 @@ status = gx_vertical_list_selected_widget_get(&my_list, &current_selected_widget
 
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_set
-- gx_vertical_list_total_rows_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_list_total_rows_set
 
@@ -27268,13 +23424,7 @@ status = gx_vertical_list_total_rows_set(&my_list, 20);
 ```
 ### See Also
 
-- gx_vertical_list_children_position
-- gx_vertical_list_create
-- gx_vertical_list_event_process
-- gx_vertical_list_page_index_set
-- gx_vertical_list_selected_index_get
-- gx_vertical_list_selected_widget_get
-- gx_vertical_list_selected_set
+- [Guix Vertical List Services](#Vertical_List_Services)
 
 ## gx_vertical_scrollbar_create
 
@@ -27328,12 +23478,9 @@ status = gx_vertical_scrollbar_create(&my_scrollbar,
 ```
 ### See Also
 
-- gx_horizontal_scrollbar_create
-- gx_scrollbar_draw
-- gx_scrollbar_event_process
-- gx_scrollbar_limit_check
-- gx_scrollbar_reset
+- [Guix Vertical List Services](#Vertical_List_Services)
 
+Widget_Services
 ## gx_widget_allocate
 
 Allocate a widget control block
@@ -27377,42 +23524,7 @@ status = gx_widget_allocate(&button, sizeof(GX_TEXT_BUTTON));
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_attach
 
@@ -27458,42 +23570,7 @@ status = gx_widget_attach(&my_parent, &my_widget);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_background_draw
 
@@ -27538,42 +23615,7 @@ VOID my_widget_draw(GX_WIDGET * widget)
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_back_attach
 
@@ -27618,42 +23660,7 @@ status = gx_widget_back_attach(&my_parent, &my_widget);
 ```
 ### See Also
 
-- gx_widget_back_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_back_move
 
@@ -27697,41 +23704,7 @@ status = gx_widget_back_move(&my_widget, &moved_flag);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_block_move
 
@@ -27781,41 +23754,7 @@ status = gx_widget_block_move(&my_widget, &size, 20, 0);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_border_draw
 
@@ -27872,41 +23811,7 @@ VOID my_widget_draw(GX_WIDGET * widget)
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_border_style_set
 
@@ -27951,41 +23856,7 @@ status = gx_widget_border_style_set(&my_widget,
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_border_width_get
 
@@ -28031,41 +23902,7 @@ status = gx_widget_border_width_get(&my_widget, &my_width);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_canvas_get
 
@@ -28109,42 +23946,7 @@ status = gx_widget_canvas_get(&my_widget, &my_canvas);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_child_detect
 
@@ -28191,41 +23993,7 @@ status = gx_widget_child_detect(&my_widget, &my_child, &detected);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_children_draw
 
@@ -28271,41 +24039,7 @@ VOID my_widget_draw(GX_WIDGET * widget)
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_client_get
 
@@ -28352,41 +24086,7 @@ status = gx_widget_client_get(&my_widget, my_widget_width,
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_color_get
 
@@ -28436,8 +24136,7 @@ status = gx_widget_color_get(my_widget, MY_FIRST_COLOR_RESOURCE_ID,
 ```
 ### See Also
 
-- gx_widget_font_get
-- gx_widget_pixelmap_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_create
 
@@ -28496,41 +24195,7 @@ status = gx_widget_create(&my_widget, "my widget",
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_created_test
 
@@ -28574,41 +24239,7 @@ GX_TRUE, the widget "my_widget" has been created. */
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_delete
 
@@ -28649,41 +24280,7 @@ status = gx_widget_delete(&my_widget);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_detach
 
@@ -28723,41 +24320,7 @@ status = gx_widget_detach(&my_widget);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_draw
 
@@ -28800,41 +24363,7 @@ VOID my_custom_widget_draw(GX_WIDGET *widget)
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_draw_set
 
@@ -28884,41 +24413,7 @@ status = gx_widget_draw_set(&my_widget, my_drawing_function);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_event_generate
 
@@ -28967,42 +24462,7 @@ status = gx_widget_event_generate(&my_widget, GX_EVENT_REDRAW, 0);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
-- gx_system_event_send
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_event_process
 
@@ -29046,41 +24506,7 @@ status = gx_widget_event_process(&my_widget, &my_event);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_event_process_set
 
@@ -29143,41 +24569,7 @@ status = gx_widget_event_process_set((GX_WIDGET *)&my_tree_view,
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_event_to_parent
 
@@ -29219,41 +24611,7 @@ status = gx_widget_event_to_parent(&my_widget, my_event);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_fill_color_set
 
@@ -29304,41 +24662,7 @@ status = gx_widget_fill_color_set(&my_widget,
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_create
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_find
 
@@ -29388,41 +24712,7 @@ status = gx_widget_find(&my_widget, GX_SEARCH_DEPTH_INFINITE
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_first_child_get
 
@@ -29474,11 +24764,7 @@ GX_WIDGET *get_child_widget(GX_WIDGET *parent)
 ```
 ### See Also
 
-- gx_widget_last_child_get
-- gx_widget_next_sibling_get
-- gx_widget_parent_get
-- gx_widget_previous_sibling_get
-- gx_widget_top_visible_child_find
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_focus_next
 
@@ -29520,7 +24806,7 @@ status = gx_widget_focus_next(&my_widget);
 ```
 ### See Also
 
-- gx_widget_focus_previous
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_focus_previous
 
@@ -29560,7 +24846,7 @@ previous widget. */
 ```
 ### See Also
 
-- gx_widget_focus_next
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_font_get
 
@@ -29606,8 +24892,7 @@ status = gx_widget_font_get(widget, MY_FONT_RESOURCE_ID, &my_font);
 ```
 ### See Also
 
-- gx_widget_color_get
-- gx_widget_pixelmap_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_free
 
@@ -29657,41 +24942,7 @@ if (status == GX_SUCCESS)
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_front_move
 
@@ -29739,41 +24990,7 @@ widget "my_widget" was moved to the front . */
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_height_get
 
@@ -29820,41 +25037,7 @@ status = gx_widget_height_get(&my_widget, &widget_height);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_hide
 
@@ -29895,41 +25078,7 @@ status = gx_widget_hide(&my_widget);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_style_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_last_child_get
 
@@ -29982,11 +25131,7 @@ GX_WIDGET *get_last_child_widget(GX_WIDGET *parent)
 ```
 ### See Also
 
-- gx_widget_first_child_get
-- gx_widget_next_sibling_get
-- gx_widget_parent_get
-- gx_widget_previous_sibling_get
-- gx_widget_top_visible_child_find
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_next_sibling_get
 
@@ -30038,11 +25183,7 @@ GX_WIDGET *get_next(GX_WIDGET *current)
 ```
 ### See Also
 
-- gx_widget_first_child_get
-- gx_widget_last_child_get
-- gx_widget_parent_get
-- gx_widget_previous_sibling_get
-- gx_widget_top_visible_child_find
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_parent_get
 
@@ -30094,11 +25235,7 @@ GX_WIDGET *get_parent(GX_WIDGET *current)
 ```
 ### See Also
 
-- gx_widget_first_child_get
-- gx_widget_last_child_get
-- gx_widget_next_sibling_get
-- gx_widget_previous_sibling_get
-- gx_widget_top_visible_child_find
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_pixelmap_get
 
@@ -30148,8 +25285,7 @@ status = gx_widget_pixelmap_get(widget, MY_PIXELMAP_RESOURCE_ID,
 ```
 ### See Also
 
-- gx_widget_color_get
-- gx_widget_font_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_previous_sibling_get
 
@@ -30202,11 +25338,7 @@ GX_WIDGET *get_previous(GX_WIDGET *current)
 ```
 ### See Also
 
-- gx_widget_first_child_get
-- gx_widget_last_child_get
-- gx_widget_next_sibling_get
-- gx_widget_parent_get
-- gx_widget_top_visible_child_find
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_resize
 
@@ -30253,41 +25385,7 @@ status = gx_widget_resize(&my_widget, &new_size);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_shift
 
@@ -30335,41 +25433,7 @@ status = gx_widget_shift(&my_widget, 10, 20, GX_FALSE);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_show
 
@@ -30410,41 +25474,7 @@ status = gx_widget_show(&my_widget);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_status_add
 
@@ -30487,41 +25517,7 @@ status = gx_widget_status_add(&my_widget, status_to_add);
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_status_get
 
@@ -30567,40 +25563,7 @@ saved to "get_status". */
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_status_remove
 
@@ -30644,41 +25607,7 @@ widget "my_widget". */
 ```
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_status_test
 
@@ -30726,13 +25655,7 @@ and the result in "test_result". */
 ```
 ### See Also
 
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_string_get
 
@@ -30782,8 +25705,7 @@ status = gx_widget_string_get(&my_widget, GX_STRING_ID_SHUTDOWN,
 ```
 ### See Also
 
-- gx_display_string_get
-- gx_display_active_langauge_set
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_string_get_ext
 
@@ -30833,8 +25755,7 @@ status = gx_widget_string_get_ext(&my_widget,
 
 ### See Also
 
-- gx_display_string_get
-- gx_display_active_langauge_set
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_style_add
 
@@ -30889,41 +25810,7 @@ status = gx_widget_style_add(&my_widget, GX_STYLE_BORDER_RAISED);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_style_get
 
@@ -30969,41 +25856,7 @@ status = gx_widget_style_get(&my_widget, &style);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_remove
-- gx_widget_style_add
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_style_remove
 
@@ -31059,41 +25912,7 @@ status = gx_widget_style_remove(&my_widget,
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_style_set
 
@@ -31149,41 +25968,7 @@ status = gx_widget_style_set(&my_widget, GX_STYLE_TRANSPARENT);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_set
-- gx_widget_width_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_text_blend
 
@@ -31243,7 +26028,7 @@ status = gx_widget_text_blend(&my_widget, my_text_color, my_font_id,
 
 ### See Also
 
-- gx_widget_text_blend_ext
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_text_blend_ext
 
@@ -31311,7 +26096,7 @@ status = gx_widget_text_blend_ext(&my_widget,
 
 ### See Also
 
-- gx_widget_text_draw_ext
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_text_draw
 
@@ -31370,8 +26155,7 @@ VOID my_custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_widget_text_blend
-- gx_widget_text_id_draw
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_text_draw_ext
 
@@ -31432,8 +26216,7 @@ VOID my_custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_widget_text_blend
-- gx_widget_text_id_draw
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_text_id_draw
 
@@ -31489,8 +26272,7 @@ VOID my_custom_widget_draw(GX_WIDGET *widget)
 
 ### See Also
 
-- gx_widget_text_blend
-- gx_widget_text_draw
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_top_visible_child_find
 
@@ -31546,11 +26328,7 @@ GX_WIDGET *get_top_window(GX_WINDOW_ROOT *root)
 
 ### See Also
 
-- gx_widget_first_child_get
-- gx_widget_last_child_get
-- gx_widget_next_sibling_get
-- gx_widget_parent_get
-- gx_widget_previous_sibling_get
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_type_find
 
@@ -31598,41 +26376,7 @@ status = gx_widget_type_find(&parent_widget,
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_widget_width_get
 
@@ -31679,41 +26423,7 @@ status = gx_widget_width_get(&my_widget, &my_widget_width);
 
 ### See Also
 
-- gx_widget_attach
-- gx_widget_back_move
-- gx_widget_background_set
-- gx_widget_border_draw
-- gx_widget_border_style_set
-- gx_widget_border_width_get
-- gx_widget_canvas_get
-- gx_widget_child_detect
-- gx_widget_children_draw
-- gx_widget_client_get
-- gx_widget_created
-- gx_widget_created_test
-- gx_widget_delete
-- gx_widget_detach
-- gx_widget_draw
-- gx_widget_draw_set
-- gx_widget_event_generate
-- gx_widget_event_process
-- gx_widget_event_process_set
-- gx_widget_event_to_parent
-- gx_widget_find
-- gx_widget_front_move
-- gx_widget_height_get
-- gx_widget_hide
-- gx_widget_resize
-- gx_widget_shift
-- gx_widget_show
-- gx_widget_status_add
-- gx_widget_status_get
-- gx_widget_status_remove
-- gx_widget_status_test
-- gx_widget_style_add
-- gx_widget_style_get
-- gx_widget_style_remove
-- gx_widget_style_set
+- [Guix Widget Services](#Widget_Services)
 
 ## gx_window_background_draw
 
@@ -31759,7 +26469,7 @@ VOID my_window_draw(GX_WINDOW *window)
 ```
 ### See Also
 
-- gx_window_draw
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_client_height_get
 
@@ -31806,20 +26516,7 @@ status = gx_window_client_height_get(&my_window,
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- x_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_client_scroll
 
@@ -31866,19 +26563,7 @@ status = gx_window_client_scroll(&my_window, 10, 0);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_client_width_get
 
@@ -31925,19 +26610,7 @@ status = gx_window_client_width_get(&my_window, &my_client_width);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_close
 
@@ -31980,20 +26653,7 @@ status = gx_window_close(&my_window);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_create
 
@@ -32055,20 +26715,7 @@ status = gx_window_create(&my_window, "my window",
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_draw
 
@@ -32114,20 +26761,7 @@ VOID my_custom_window_draw(GX_WINDOW *window)
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_event_process
 
@@ -32187,20 +26821,7 @@ UINT custom_window_event_process(GX_WINDOW *window,
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_execute
 
@@ -32254,20 +26875,7 @@ status = gx_window_execute(&my_window, &return_code);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_root_create
 
@@ -32322,9 +26930,7 @@ GX_STYLE_BORDER_NONE, GX_NULL, &size);
 
 ### See Also
 
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_root_delete
 
@@ -32367,20 +26973,7 @@ status = gx_window_root_delete(&root_window);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_root_event_process
 
@@ -32439,20 +27032,7 @@ UINT custom_root_window_event_process(GX_ROOT_WINDOW *root,
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_root_find
 
@@ -32497,20 +27077,7 @@ status = gx_window_root_find(&my_window, &root_window);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_scroll_info_get
 
@@ -32559,20 +27126,7 @@ status = gx_window_scroll_info_get(&my_window,
 ```
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_scrollbar_find
 
@@ -32621,20 +27175,7 @@ status = gx_window_scrollbar_find(&my_window,
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_wallpaper_get
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_wallpaper_get
 
@@ -32680,20 +27221,7 @@ status = gx_window_wallpaper_get(&my_window, &my_window_wallpaper);
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
-- gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_set
+- [Guix Window Services](#Window_Services)
 
 ## gx_window_wallpaper_set
 
@@ -32742,17 +27270,4 @@ status = gx_window_wallpaper_set(&my_window,
 
 ### See Also
 
-- gx_window_canvas_set
-- gx_window_client_height_get
-- gx_window_client_scroll
-- gx_window_client_width_get
-- gx_window_create
-- gx_window_draw
-- gx_window_event_process
-- gx_window_root_create
-- gx_window_root_delete
-- gx_window_root_event_process
-- gx_window_root_find
--  gx_window_scroll_info_get
-- gx_window_scrollbar_find
-- gx_window_wallpaper_get
+- [Guix Window Services](#Window_Services)

@@ -7,15 +7,16 @@ description: The LevelX NOR APIs available to the application.
 
 The LevelX NOR API functions available to the application are as follows.
 
-- ***lx_nor_flash_close***: *Close NOR flash instance*
-- ***lx_nor_flash_defragment***: *Defragment NOR flash instance*
-- ***lx_nor_flash_extended_cache_enable***: *Enable/disable extended NOR cache*
-- ***lx_nor_flash_initialize***: *Initialize NOR flash support*
-- ***lx_nor_flash_open***: *Open NOR flash instance*
-- ***lx_nor_flash_partial_defragment***: *Partial defragment of NOR flash instance*
-- ***lx_nor_flash_sector_read***: *Read NOR flash sector*
-- ***lx_nor_flash_sector_release***: *Release NOR flash sector*
-- ***lx_nor_flash_sector_write***: *Write NOR flash sector*
+## NOR_Services
+- [lx_nor_flash_close](#lx_nor_flash_close)
+- [lx_nor_flash_defragment](#lx_nor_flash_defragment)
+- [lx_nor_flash_extended_cache_enable](#lx_nor_flash_extended_cache_enable)
+- [lx_nor_flash_initialize](#lx_nor_flash_initialize)
+- [lx_nor_flash_open](#lx_nor_flash_open)
+- [lx_nor_flash_partial_defragment](#lx_nor_flash_partial_defragment)
+- [lx_nor_flash_sector_read](#lx_nor_flash_sector_read)
+- [lx_nor_flash_sector_release](#lx_nor_flash_sector_release)
+- [lx_nor_flash_sector_write](#lx_nor_flash_sector_write)
 
 ## lx_nor_flash_close
 
@@ -55,14 +56,7 @@ status = lx_nor_flash_close(&my_nor_flash);
 
 ### See Also
 
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_defragment
 
@@ -102,14 +96,7 @@ status = lx_nor_flash_defragment(&my_nor_flash);
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_extended_cache_enable
 
@@ -156,14 +143,7 @@ status = lx_nor_flash_extended_cache_enable(&my_nor_flash,
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_initialize
 
@@ -203,14 +183,7 @@ status = lx_nor_flash_initialize();
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_open
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_open
 
@@ -257,14 +230,7 @@ status = lx_nor_flash_open(&my_nor_flash,"my NOR flash",
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_partial_defragment
 
@@ -307,14 +273,7 @@ status = lx_nor_flash_partial_defragment(&my_nor_flash, 1);
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_sector_read
 
@@ -359,14 +318,7 @@ status = lx_nor_flash_sector_read(&my_nor_flash, 20, buffer);
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_release
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_sector_release
 
@@ -409,14 +361,7 @@ status = lx_nor_flash_sector_release(&my_nor_flash, 20);
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_write
+- [levelx NOR Services](#NOR_Services)
 
 ## lx_nor_flash_sector_write
 
@@ -462,11 +407,4 @@ status = lx_nor_flash_sector_write(&my_nor_flash, 20, buffer);
 
 ### See Also
 
-- lx_nor_flash_close
-- lx_nor_flash_defragment
-- lx_nor_flash_extended_cache_enable
-- lx_nor_flash_initialize
-- lx_nor_flash_open
-- lx_nor_flash_partial_defragment
-- lx_nor_flash_sector_read
-- lx_nor_flash_sector_release
+- [levelx NOR Services](#NOR_Services)
