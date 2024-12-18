@@ -83,7 +83,7 @@ The following NX_IP_DRIVER members are used for the disable link request.
 | nx_ip_driver_status    | Completion status. If the driver is not able to disable the specified interface in the IP instance, it will return a non-zero error status. |
 
 ### Uninitialize Link   
-This request is made by NetX Duo during the deletion of an IP instance by the ***nx_ip_delete*** service. This request uninitialize the interface, and release any resources created during initialization phase. Typically it is a reverse operation of the ***Initialize Link*** operation. After the interface is uninitalized, the device cannot be used until the interface is initialized again.
+This request is made by NetX Duo during the deletion of an IP instance by the ***nx_ip_delete*** service. This request uninitialized the interface, and release any resources created during initialization phase. Typically it is a reverse operation of the ***Initialize Link*** operation. After the interface is uninitialized, the device cannot be used until the interface is initialized again.
 
 The following NX_IP_DRIVER members are used for the disable link request.
 
@@ -567,7 +567,7 @@ the driver entry:
 UINT nx_driver_shaper_cbs_entry(NX_SHAPER_DRIVER_PARAMETER *parameter)
 
 ```
-Data structure of driver entry paramter:
+Data structure of driver entry parameter:
 ```C
 typedef struct NX_SHAPER_DRIVER_PARAMETER_STRUCT
 {
@@ -594,7 +594,7 @@ the driver entry parameter:
 | parameter -> nx_shaper_driver_command       |  Description                                                     |
 | ------------------------------------------- | -----------------------------------------------------------------|
 | ***NX_SHAPER_COMMAND_INIT***                | initialization of enabling CBS,                                  |
-| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capablity of CBS,                |
+| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capability of CBS,                |
 | ***NX_SHAPER_COMMAND_PARAMETER_SET***       | set parameter passed from application to driver,                 |
 
 
@@ -627,7 +627,7 @@ the driver entry parameter:
 | parameter -> nx_shaper_driver_command       |  Description                                                     |
 | ------------------------------------------- | -----------------------------------------------------------------|
 | ***NX_SHAPER_COMMAND_INIT***                | initialization of enabling TAS,                                  |
-| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capablity of TAS,                |
+| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capability of TAS,                |
 | ***NX_SHAPER_COMMAND_PARAMETER_SET***       | set parameter passed from application to driver,                 |
 
 ### Frame preemption (FPE) - 802.1Qbu
@@ -640,7 +640,7 @@ UINT nx_driver_shaper_fpe_entry(NX_SHAPER_DRIVER_PARAMETER *parameter)
 
 ```
 
-Data stucture of TAS parameter which define the necessary parameters that TAS driver needs.
+Data structure of TAS parameter which define the necessary parameters that TAS driver needs.
 ```C
 typedef struct NX_SHAPER_FP_PARAMETER_STRUCT
 {
@@ -657,5 +657,5 @@ the driver entry parameter:
 | parameter -> nx_shaper_driver_command       |  Description                                                     |
 | ------------------------------------------- | -----------------------------------------------------------------|
 | ***NX_SHAPER_COMMAND_INIT***                | initialization of enabling FPE,                                  |
-| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capablity of FPE,                |
+| ***NX_SHAPER_COMMAND_CONFIG***              | set hardware queue priority and capability of FPE,                |
 | ***NX_SHAPER_COMMAND_PARAMETER_SET***       | set parameter passed from application to driver,                 |
