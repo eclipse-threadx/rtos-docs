@@ -1,11 +1,11 @@
 ---
 title: 'Chapter 3 - Description of NetX Duo HTTP Services'
-description: 'This chapter contains a description of all NetX Duo HTTP services (listed below) in alphabetical order except for the 'NetX' (IPv4 only) equivalent of the same service are paired together).'
+description: 'This chapter contains a description of all NetX Duo HTTP services (listed below) in alphabetical order except for the NetX (IPv4 only) equivalent of the same service are paired together.'
 ---
 
 # Chapter 3 - Description of NetX Duo HTTP Services
 
-This chapter contains a description of all NetX Duo HTTP services (listed below) in alphabetical order except for the 'NetX' (IPv4 only) equivalent of the same service are paired together).
+This chapter contains a description of all NetX Duo HTTP services (listed below) in alphabetical order except for the \'NetX\' (IPv4 only) equivalent of the same service are paired together.
 
 In the **Return Values** section in the following API descriptions, values in BOLD are not affected by the **NX_DISABLE_ERROR_CHECKING** define that is used to disable API error checking, while non-bold values are completely disabled.
 
@@ -1467,7 +1467,7 @@ UINT nx_http_server_content_get_extended(
 
 ### Description
 
-This service is almost identical to ***nx_http_server_content_get*** it attempts to retrieve the specified amount of content from the POST or PUT HTTP Client request. However it handles requests with Content Length of zero value ('empty request') as a valid request. It should be called from the application's request notify callback specified during HTTP Server creation (***nx_http_server_create***).
+This service is almost identical to ***nx_http_server_content_get*** it attempts to retrieve the specified amount of content from the POST or PUT HTTP Client request. However it handles requests with Content Length of zero value (\'empty request\') as a valid request. It should be called from the application's request notify callback specified during HTTP Server creation (***nx_http_server_create***).
 
 This service replaces ***nx_http_server_content_get***. This version requires caller to supply additional length information.
 
@@ -1559,7 +1559,7 @@ UINT nx_http_server_content_length_get_extended(
 
 ### Description
 
-This service is similar to ***nx_http_server_content_length_get**;* attempts to retrieve the HTTP content length in the supplied packet. However, the return value indicates successful completion status, and the actual length value is returned in the input pointer *content_length*. If there is no HTTP content/Content Length = 0, this routine still returns a successful completion status and the content_length input pointer points to a valid length (zero). It should be called from the application's request notify callback specified during HTTP Server creation (***nx_http_server_create***).
+This service is similar to ***nx_http_server_content_length_get*** and attempts to retrieve the HTTP content length in the supplied packet. However, the return value indicates successful completion status, and the actual length value is returned in the input pointer *content_length*. If there is no HTTP content/Content Length = 0, this routine still returns a successful completion status and the content_length input pointer points to a valid length (zero). It should be called from the application's request notify callback specified during HTTP Server creation (***nx_http_server_create***).
 
 This service replaces ***nx_http_server_content_length_get***.
 
