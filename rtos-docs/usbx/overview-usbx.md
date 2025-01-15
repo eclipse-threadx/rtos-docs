@@ -4,7 +4,7 @@ description: USBX is a high-performance USB host, device, and on-the-go (OTG) em
 ---
 # Overview of USBX
 
-USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack. USBX is fully integrated with ThreadX and available for all ThreadX–supported processors. Like ThreadX, USBX is designed to have a small footprint and high performance, making it ideal for deeply embedded applications that require an interface with USB devices.
+USBX is a high-performance USB host, device, and on-the-go (OTG) embedded stack. USBX is fully integrated with ThreadX and available for all ThreadX–supported processors. Like ThreadX, USBX is designed to have a small footprint and high performance, making it ideal for deeply embedded applications that require an interface with USB devices. USBX can also run in standalone mode without an RTOS for some class.
 
 ## Host, Device, OTG & Extensive Class Support
 
@@ -31,11 +31,11 @@ USBX supports popular USB device controllers from Analog Devices, Atmel, Microch
 
 ### Extensive Host Class support
 
-USBX Host provides support for most popular classes, including ASIX, AUDIO, CDC/ACM, CDC/ECM, GSER, HID (keyboard, mouse, and remote control), HUB, PIMA (PTP/MTP), PRINTER, PROLIFIC, and STORAGE.
+USBX Host provides support for most popular classes, including ASIX, AUDIO (1.0/2.0), CDC/ACM, CDC/ECM, GSER, HID (keyboard, mouse, and remote control), HUB, PIMA (PTP/MTP), PRINTER, PROLIFIC, STORAGE and VIDEO.
 
 ### Extensive USB Device Class support
 
-USBX Device provides support for most popular classes, including CDC/ACM, CDC/ECM, DFU, HID, PIMA (PTP/MTP) (w/MTP), RNDIS, and STORAGE. Support for custom classes is also available.
+USBX Device provides support for most popular classes, including AUDIO (1.0/2.0), CDC/ACM, CDC/ECM, DFU, HID, PIMA (PTP/MTP) (w/MTP), RNDIS, STORAGE, PRINTER, CCID and VIDEO. Support for custom classes is also available.
 
 ### Pictbridge support
 
@@ -58,30 +58,35 @@ USBX Host and Device support custom classes. An example custom class is provided
 
 ### USBX Host API
 
-The USBX Host API is an intuitive and consistent API, following a noun-verb naming convention. All APIs have leading ux_host_* to easily identify as USBX. Any blocking APIs have optional thread timeout.
+The USBX Host API is an intuitive and consistent API, following a noun-verb naming convention. All APIs have leading ux_host_* to easily identify as USBX. Any blocking APIs have optional thread timeout. Please see [USBX Host User Guide](usbx-host-stack-about.md) for more details.
 
 * ASIX
     - Minimal 0.3 KB FLASH, 4 KB RAM
-    - Automatic scalingSystem-level trace via TraceX
+    - Automatic scaling
+    - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_asix_**
-* AUDIO
+* AUDIO (1.0/2.0)
     - Minimal 1.2 KB FLASH, 4 KB RAM
     - Automatic scaling
+    - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_audio_**
 * CDC/ACM
     - Minimal 1.4 KB FLASH, 4 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_cdc_acm_**
 * HID
     - Minimal 0.3 KB FLASH, 4 KB RAM
     - Keyboard, mouse, and remote support
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_hid_** 
 * HUB
     - Minimal 1.7 KB FLASH, 2 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_hub_**
 * PIMA (PTP/MTP)
@@ -92,8 +97,9 @@ The USBX Host API is an intuitive and consistent API, following a noun-verb nami
 * PRINTER
     - Minimal 0.8 KB FLASH, 8 KB RAM
     - Automatic scaling
-    -  System-level trace via TraceX
-    -  Intuitive USBX host APIs in this form: *ux_host_class_printer_**
+    - Support of standalone mode
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_host_class_printer_**
 * PROLIFIC
     - Minimal 1.5 KB FLASH, 4 KB RAM
     - Automatic scaling
@@ -101,48 +107,60 @@ The USBX Host API is an intuitive and consistent API, following a noun-verb nami
     - Intuitive USBX host APIs in this form: *ux_host_class_prolific_**
 * STORAGE
     - Minimal 5.6 KB FLASH, 4 KB RAM
-    - Automatic scaling<br> Integrated with FileX
+    - Automatic scaling
+    - Support of standalone mode
+    - Integrated with FileX
     - System-level trace via TraceX
     - Intuitive USBX host APIs in this form: *ux_host_class_storage_**
+* VIDEO
+    - Minimal 0.8 KB FLASH, 8 KB RAM
+    - Automatic scaling
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_host_class_video_**
 * USB Host STACK
     - Supports many host controllers
     - Minimal 18 KB FLASH, 25 KB RAM
     - Automatic scaling
     - Support for multiple host controllers on same platform
-    -  USB low, full, and high-speed support
-    -  System-level trace via TraceX
-    -  Intuitive USBX host APIs in this form: *ux_host_stack_* * 
+    - USB low, full, and high-speed support
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_host_stack_** 
 * OHCI, EHCI, PROPRIETARY Host CONTROLLERS 
 
 ### USBX Device API
 
-The USBX Device API is an intuitive and consistent API following a noun-verb naming convention. All APIs have leading ux_device_* to easily identify as USBX. Blocking APIs have optional thread timeout. Please see [USBX Host User Guide](usbx-host-stack-about.md) for more details.
+The USBX Device API is an intuitive and consistent API following a noun-verb naming convention. All APIs have leading ux_device_* to easily identify as USBX. Blocking APIs have optional thread timeout. Please see [USBX Device User Guide](usbx-device-stack-about.md) for more details.
 
+* AUDIO (1.0/2.0)
+    - Minimal xx KB FLASH, x KB RAM
+    - Automatic scaling
+    - Support of standalone mode
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_device_class_audio_**
 * CDC/ACM
     - Minimal 0.8 KB FLASH, 2 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
-    - Intuitive USBX device APIs in this form: *ux_device_class_cdc_acm_**.
+    - Intuitive USBX device APIs in this form: *ux_device_class_cdc_acm_**
 * CDC/ECM
     - Minimal 1.5 KB FLASH, 4 KB to 8 KB RAM
     - Automatic scaling
-    - System-level trace via TraceX<br> Intuitive USBX device APIs in this form: *ux_device_class_cdc_ecm_**.
+    - System-level trace via TraceX
+    - Intuitive USBX device APIs in this form: *ux_device_class_cdc_ecm_**
 * DFU
     - Minimal 1.1 KB FLASH, 2 KB RAM
-    -  Automatic scaling
-    -  System-level trace via TraceX
-    - Intuitive USBX device APIs in this form: *ux_device_class_dfu_** 
-* GSER
-    - Minimal 0.6 KB FLASH, 4 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
-    - Intuitive USBX device APIs in this form: *ux_device_class_gser_**
+    - Intuitive USBX device APIs in this form: *ux_device_class_dfu_** 
 * HID
     - Minimal 0.9 KB FLASH, 2 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
     - Intuitive USBX device APIs in this form: *ux_device_class_hid_** 
-PIMA (PTP/MTP)
+* PIMA (PTP/MTP)
     - Minimal 5.2 KB FLASH, 8 KB RAM
     - Automatic scaling
     - System-level trace via TraceX
@@ -150,6 +168,7 @@ PIMA (PTP/MTP)
 * STORAGE
     - Minimal 2.3 KB FLASH, 4 KB RAM
     - Automatic scaling
+    - Support of standalone mode
     - System-level trace via TraceX
     - Intuitive USBX device APIs in this form: *ux_device_class_storage_**
 * RNDIS
@@ -157,13 +176,31 @@ PIMA (PTP/MTP)
     - Automatic scaling
     - Integrated with NetX Duo
     - System-level trace via TraceX
-    - Intuitive USBX device APIs in this form: *ux_device_class_rndls_**
+    - Intuitive USBX device APIs in this form: *ux_device_class_rndis_**
+* PRINTER
+    - Minimal xx KB FLASH, x KB RAM
+    - Automatic scaling
+    - Support of standalone mode
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_device_class_printer_**
+* VIDEO
+    - Minimal xx KB FLASH, x KB RAM
+    - Automatic scaling
+    - Support of standalone mode
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_device_class_video_**
+* CCID
+    - Minimal xx KB FLASH, x KB RAM
+    - Automatic scaling
+    - Support of standalone mode
+    - System-level trace via TraceX
+    - Intuitive USBX host APIs in this form: *ux_device_class_ccid_**
 * USBX Device STACK
     - Minimal 2.3 KB FLASH, 4 KB RAM
     - Automatic scaling
     - System-level trace via TraceX
-    - Intuitive USBX device APIs in this form: *ux_device_class_storage_**
-* PROPRIETARY Host CONTROLLERS
+    - Intuitive USBX device APIs in this form: *ux_device_stack_**
+* PROPRIETARY Device CONTROLLERS
 
 ## Next steps
 
