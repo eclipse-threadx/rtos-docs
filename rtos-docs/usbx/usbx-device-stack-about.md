@@ -9,19 +9,15 @@ This guide provides comprehensive information about USBX, the high performance U
 
 It is intended for the embedded real-time software developer. The developer should be familiar with standard real-time operating system functions, the USB specification, and the C programming language.
 
-For technical information related to USB, see the USB specification and USB Class specifications that can be downloaded at https://www.USB.org/developers.
+For technical information related to USB, see the USB specification and USB Class specifications that can be downloaded at https://www.usb.org/developers.
 
 ## Organization
 
-- [**Chapter 1**](usbx-device-stack-1.md) - contains an introduction to USBX
-
-- [**Chapter 2**](usbx-device-stack-2.md) - gives the basic steps to install and use USBX with your ThreadX application
-
-- [**Chapter 3**](usbx-device-stack-3.md) - describes the functional components of the USBX device stack
-
-- [**Chapter 4**](usbx-device-stack-4.md) - describes the USBX device stack services
-
-- [**Chapter 5**](usbx-device-stack-5.md) - describes each USBX device class including their APIs
+- [**Chapter 1**](usbx-device-stack-1.md) - contains an introduction to USBX.
+- [**Chapter 2**](usbx-device-stack-2.md) - gives the basic steps to install and use USBX.
+- [**Chapter 3**](usbx-device-stack-3.md) - describes the functional components of the USBX device stack.
+- [**Chapter 4**](usbx-device-stack-4.md) - describes the USBX device stack services.
+- [**Chapter 5**](usbx-device-stack-5.md) - describes each USBX device class including their APIs.
 
 ## Troubleshooting
 

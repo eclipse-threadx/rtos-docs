@@ -5,9 +5,21 @@ description: The USB device RNDIS class allows for a USB host system to communic
 
 # Chapter 2 - USBX Device Class Considerations
 
-## USB Device RNDIS Class
+USB Device Classes :
+- [USB Device RNDIS Class](#usb_device_rndis_class)
+- [USB Device DFU Class](#usb_device_dfu_class)
+- [USB Device PIMA Class](#usb_device_pima_class)
+- [USB Device AUDIO Class](#usb_device_audio_class)
+- [USB Device PRINTER Class](#usb_device_printer_class)
+
+# usb_device_rndis_class
 
 The USB device RNDIS class allows for a USB host system to communicate with the device as a ethernet device. This class is based on the Microsoft implementation and is specific to Windows platforms.
+
+- [RNDIS Class Initialize](#rndis_class_initialize)
+- [RNDIS Class Configuration Options](#rndis_class_configuration_options)
+
+## rndis_class_initialize
 
 A RNDIS compliant device framework needs to be declared by the device stack. An example is found below.
 
@@ -106,39 +118,35 @@ The RNDIS class uses a very similar device descriptor approach to the CDC-ACM an
 The activation of the RNDIS class is as follows.
 
 ```C
-/* Set the parameters for callback when insertion/extraction of a CDC device. Set to NULL.*/
+UX_SLAVE_CLASS_RNDIS_PARAMETER       rndis_parameter;
 
-parameter.ux_slave_class_rndis_instance_activate = UX_NULL;
-parameter.ux_slave_class_rndis_instance_deactivate = UX_NULL;
+/* Set the parameters for callback when insertion/extraction of a CDC device. */
+rndis_parameter.ux_slave_class_rndis_instance_activate   =  demo_rndis_instance_activate;
+rndis_parameter.ux_slave_class_rndis_instance_deactivate =  demo_rndis_instance_deactivate;
+    
+/* Define a local NODE ID.  */
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[0] = 0x00;
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[1] = 0x1e;
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[2] = 0x58;
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[3] = 0x41;
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[4] = 0xb8;
+rndis_parameter.ux_slave_class_rndis_parameter_local_node_id[5] = 0x78;
 
-/* Define a local NODE ID. */
+/* Define a remote NODE ID.  */
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[0] = 0x00;
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[1] = 0x1e;
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[2] = 0x58;
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[3] = 0x41;
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[4] = 0xb8;
+rndis_parameter.ux_slave_class_rndis_parameter_remote_node_id[5] = 0x79;
 
-parameter.ux_slave_class_rndis_parameter_local_node_id[0] = 0x00;
-parameter.ux_slave_class_rndis_parameter_local_node_id[1] = 0x1e;
-parameter.ux_slave_class_rndis_parameter_local_node_id[2] = 0x58;
-parameter.ux_slave_class_rndis_parameter_local_node_id[3] = 0x41;
-parameter.ux_slave_class_rndis_parameter_local_node_id[4] = 0xb8;
-parameter.ux_slave_class_rndis_parameter_local_node_id[5] = 0x78;
-
-/* Define a remote NODE ID. */
-
-parameter.ux_slave_class_rndis_parameter_remote_node_id[0] = 0x00;
-parameter.ux_slave_class_rndis_parameter_remote_node_id[1] = 0x1e;
-parameter.ux_slave_class_rndis_parameter_remote_node_id[2] = 0x58;
-parameter.ux_slave_class_rndis_parameter_remote_node_id[3] = 0x41;
-parameter.ux_slave_class_rndis_parameter_remote_node_id[4] = 0xb8;
-parameter.ux_slave_class_rndis_parameter_remote_node_id[5] = 0x79;
-
-/* Set extra parameters used by the RNDIS query command with certain OIDs. */
-
-parameter.ux_slave_class_rndis_parameter_vendor_id = 0x04b4 ;
-parameter.ux_slave_class_rndis_parameter_driver_version = 0x1127;
-ux_utility_memory_copy(parameter.ux_slave_class_rndis_parameter_vendor_description,
-    "ELOGIC RNDIS", 12);
+/* Set extra parameters used by the RNDIS query command with certain OIDs.  */
+rndis_parameter.ux_slave_class_rndis_parameter_vendor_id          =  0x04b4 ;
+rndis_parameter.ux_slave_class_rndis_parameter_driver_version     =  0x1127;
+ux_utility_memory_copy(rndis_parameter.ux_slave_class_rndis_parameter_vendor_description, "ELOGIC RNDIS", 12);
 
 /* Initialize the device rndis class. This class owns both interfaces. */
-status = ux_device_stack_class_register(_ux_system_slave_class_rndis_name,
-    ux_device_class_rndis_entry, 1,0, &parameter);
+status = ux_device_stack_class_register(_ux_system_slave_class_rndis_name, ux_device_class_rndis_entry, 1,0, &parameter);
 ```
 
 As for the CDC-ECM, the RNDIS class requires 2 nodes, one local and one remote but there is no requirement to have a string descriptor describing the remote node.
@@ -174,13 +182,26 @@ In the device framework of the RNDIS device, the PID/VID are stored in the devic
 
 When a USB host systems discovers the USB RNDIS device, it will mount a network interface and the device can be used with network protocol stack. See the host Operating System for reference.
 
-## USB Device DFU Class
+## rndis_class_configuration_options
+
+There are several configuration options for building USB Device RNDIS Class. All options are located in the ***ux_user.h***.
+
+|          Configuration Option                     | Description |
+| ------------------------------------------------- | ----------- |
+| **UX_DEVICE_CLASS_RNDIS_ZERO_COPY**               | This macro enables device RNDIS zero copy support (works if RNDIS owns endpoint buffer). Enabled, it requires that the NX IP default packet pool is in cache safe area, and buffer max size is larger than UX_DEVICE_CLASS_RNDIS_MAX_PACKET_TRANSFER_SIZE (1600). |
+
+## usb_device_dfu_class
 
 The USB device DFU class allows for a USB host system to update the device firmware based on a host application. The DFU class is a USB-IF standard class.
 
 USBX DFU class is relatively simple. It device descriptor does not require anything but a control endpoint. Most of the time, this class will be embedded into a USB composite device. The device can be anything such as a storage device or a comm device and the added DFU interface can inform the host that the device can have its firmware updated on the fly.
 
 The DFU class works in 3 steps. First the device mounts as normal using the class exported. An application on the host (Windows or Linux) will exercise the DFU class and send a request to reset the device into DFU mode. The device will disappear from the bus for a short time (enough for the host and the device to detect a RESET sequence) and upon restarting, the device will be exclusively in DFU mode, waiting for the host application to send a firmware upgrade. When the firmware upgrade has been completed, the host application resets the device and upon re-enumeration the device will revert to its normal operation with the new firmware.
+
+- [DFU Class Initialize](#dfu_class_initialize)
+- [DFU Class Configuration Options](#dfu_class_configuration_options)
+
+## dfu_class_initialize
 
 A DFU device framework will look like this.
 
@@ -210,48 +231,35 @@ In this example, the DFU descriptor is not associated with any other classes. It
 
 The description of the DFU capabilities are as follows.
 
-| Name             | Offset  | Size | type      | Description |
+| Name             | Offset   | Size | type      | Description |
 |------------------|----------|------|-----------|------------|
-| bmAttributes  | 2     | 1   | Bit field | Bit 3: device will perform a bus detach-attach sequence when it receives a DFU_DETACH request. The host must not issue a USB Reset. (bitWillDetach) 0 = no 1 = yes Bit 2: device is able to communicate via USB after Manifestation phase. (bitManifestationTolerant) 0 = no, must see bus reset 1 = yes Bit 1: upload capable (bitCanUpload) 0 = no 1 = yes Bit 0: download capable (bitCanDnload) 0 = no 1 = yes  |
-| wDetachTimeOut  | 3      | 2  | number    | Time, in milliseconds, that the device will wait after receipt of the DFU_DETACH request. If this time elapses without a USB reset, then the device will terminate the Reconfiguration phase and revert back to normal operation. This represents the maximum time that the device can wait (depending on its timers, etc.). USBX sets this value to 1000 ms.  |
-| wTransferSize  | 5      | 2  | number    | Maximum number of bytes that the device can accept per control\-write operation. USBX sets this value to 64 bytes. |
+| bmAttributes     | 2        | 1    | Bit field | Bit 3: device will perform a bus detach-attach sequence when it receives a DFU_DETACH request. The host must not issue a USB Reset. (bitWillDetach) 0 = no 1 = yes Bit 2: device is able to communicate via USB after Manifestation phase. (bitManifestationTolerant) 0 = no, must see bus reset 1 = yes Bit 1: upload capable (bitCanUpload) 0 = no 1 = yes Bit 0: download capable (bitCanDnload) 0 = no 1 = yes  |
+| wDetachTimeOut   | 3        | 2    | number    | Time, in milliseconds, that the device will wait after receipt of the DFU_DETACH request. If this time elapses without a USB reset, then the device will terminate the Reconfiguration phase and revert back to normal operation. This represents the maximum time that the device can wait (depending on its timers, etc.). USBX sets this value to 1000 ms.  |
+| wTransferSize    | 5        | 2    | number    | Maximum number of bytes that the device can accept per control\-write operation. USBX sets this value to 64 bytes. |
 
 The declaration of the DFU class is as follows:
 
 ```C
-/* Store the DFU parameters. */
+UX_SLAVE_CLASS_DFU_PARAMETER        dfu_parameter;
 
-dfu_parameter.ux_slave_class_dfu_parameter_instance_activate =
-    tx_demo_thread_dfu_activate;
+/* Store the DFU parameters.   */
+dfu_parameter.ux_slave_class_dfu_parameter_instance_activate               =  demo_dfu_activate;
+dfu_parameter.ux_slave_class_dfu_parameter_instance_deactivate             =  demo_dfu_deactivate;
+dfu_parameter.ux_slave_class_dfu_parameter_read                            =  demo_dfu_read;
+dfu_parameter.ux_slave_class_dfu_parameter_write                           =  demo_dfu_write; 
+dfu_parameter.ux_slave_class_dfu_parameter_get_status                      =  demo_dfu_get_status;
+dfu_parameter.ux_slave_class_dfu_parameter_notify                          =  demo_dfu_notify;
+#ifdef UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE
+dfu_parameter.ux_device_class_dfu_parameter_custom_request                 =  demo_dfu_custom_request;
+#endif
+dfu_parameter.ux_slave_class_dfu_parameter_framework                       =  device_framework_dfu;
+dfu_parameter.ux_slave_class_dfu_parameter_framework_length                =  DEVICE_FRAMEWORK_LENGTH_DFU;
 
-dfu_parameter.ux_slave_class_dfu_parameter_instance_deactivate =
-    tx_demo_thread_dfu_deactivate;
+/* Initialize the device dfu class. The class is connected with interface 1 on configuration 1. */
+status = ux_device_stack_class_register(_ux_system_slave_class_dfu_name, ux_device_class_dfu_entry, 1, 0, (VOID *)&dfu_parameter);
 
-dfu_parameter.ux_slave_class_dfu_parameter_read =
-    tx_demo_thread_dfu_read;
-
-dfu_parameter.ux_slave_class_dfu_parameter_write =
-    tx_demo_thread_dfu_write;
-
-dfu_parameter.ux_slave_class_dfu_parameter_get_status =
-    tx_demo_thread_dfu_get_status;
-
-dfu_parameter.ux_slave_class_dfu_parameter_notify =
-    tx_demo_thread_dfu_notify;
-
-dfu_parameter.ux_slave_class_dfu_parameter_framework =
-    device_framework_dfu;
-
-dfu_parameter.ux_slave_class_dfu_parameter_framework_length =
-    DEVICE_FRAMEWORK_LENGTH_DFU;
-
-/* Initialize the device dfu class. The class is connected with interface
-1 on configuration 1. */
-status = ux_device_stack_class_register(_ux_system_slave_class_dfu_name,
-    ux_device_class_dfu_entry, 1, 0,
-    (VOID *)&dfu_parameter);
-
-if (status!=UX_SUCCESS) return;
+if (status != UX_SUCCESS) 
+    return;
 ```
 
 The DFU class needs to work with a device firmware application specific to the target. Therefore it defines several call back to read and write blocks of firmware and to get status from the firmware update application. The DFU class also has a notify callback function to inform the application when a begin and end of transfer of the firmware occur.
@@ -297,12 +305,29 @@ dfu-util –R –t 64 -D file_to_download.hex
 
 The dfu-util should display the file download process until the firmware has been completely downloaded.
 
-## USB Device PIMA Class (PTP Responder)
+## dfu_class_configuration_options
+
+There are several configuration options for building USB Device DFU Class. All options are located in the ***ux_user.h***.
+
+|          Configuration Option                     | Description |
+| ------------------------------------------------- | ----------- |
+| **UX_DEVICE_CLASS_DFU_UPLOAD_DISABLE**            | This macro will disable DFU_UPLOAD support. |
+| **UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE**          | This macro will enable DFU_GETSTATUS and DFU_GETSTATE in dfuERROR. |
+| **UX_DEVICE_CLASS_DFU_STATUS_MODE**               | This macro  will change status mode. 0 - simple mode, status is queried from application in dfuDNLOAD-SYNC and dfuMANIFEST-SYNC state, no bwPollTimeout. 1 - status is queried from application once requested, b0-3 : media status, b4-7 : bStatus, b8-31: bwPollTimeout, bwPollTimeout supported |
+| **UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT**        | This value represents the default DFU status bwPollTimeout. The value is 3 bytes long (max 0xFFFFFFu). By default the bwPollTimeout is 1 (means 1ms). |
+| **UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE**     | This macro will enable custom request process callback. |
+
+# usb_device_pima_class
 
 The USB device PIMA class allows for a USB host system (Initiator) to connect to a
 
+- [PIMA Class Initialize](#pima_class_initialize)
+- [PIMA Class Configuration Options](#pima_class_configuration_options)
+- [PIMA Class APIs](#pima_class_apis)
+
 PIMA device (Responder) to transfer media files. USBX Pima Class is conforming to the USB-IF PIMA 15740 class also known as PTP class (for Picture Transfer Protocol).
 
+# pima_class_initialize
 USBX device side PIMA class supports the following operations.
 
 | Operation code                                    | Value | Description                       |
@@ -402,22 +427,15 @@ object_info -> ux_device_class_pima_object_format = UX_DEVICE_CLASS_PIMA_OFC_SCR
 object_info -> ux_device_class_pima_object_storage_id = 1;
 object_info -> ux_device_class_pima_object_handle_id = 2;
 
-ux_utility_string_to_unicode(_ux_pictbridge_ddiscovery_name,
-    object_info -> ux_device_class_pima_object_filename);
+ux_utility_string_to_unicode(_ux_pictbridge_ddiscovery_name, object_info -> ux_device_class_pima_object_filename);
 
 /* Initialize the head and tail of the notification round robin buffers.
    At first, the head and tail are pointing to the beginning of the array.
 */
 
-pictbridge -> ux_pictbridge_event_array_head =
-    pictbridge -> ux_pictbridge_event_array;
-
-pictbridge -> ux_pictbridge_event_array_tail =
-    pictbridge -> ux_pictbridge_event_array;
-
-pictbridge -> ux_pictbridge_event_array_end =
-    pictbridge -> ux_pictbridge_event_array +
-    UX_PICTBRIDGE_MAX_EVENT_NUMBER;
+pictbridge -> ux_pictbridge_event_array_head = pictbridge -> ux_pictbridge_event_array;
+pictbridge -> ux_pictbridge_event_array_tail = pictbridge -> ux_pictbridge_event_array;
+pictbridge -> ux_pictbridge_event_array_end = pictbridge -> ux_pictbridge_event_array + UX_PICTBRIDGE_MAX_EVENT_NUMBER;
 
 /* Initialize the pima device parameter. */
 pictbridge -> ux_pictbridge_pima_parameter.ux_device_class_pima_parameter_manufacturer =
@@ -485,12 +503,97 @@ pictbridge -> ux_pictbridge_pima_parameter.ux_device_class_pima_parameter_applic
 
 /* Initialize the device pima class. The class is connected with interface 0 */
 
-status = ux_device_stack_class_register(_ux_system_slave_class_pima_name,
-    ux_device_class_pima_entry, 1, 0, (VOID *)&pictbridge -> ux_pictbridge_pima_parameter);
+status = ux_device_stack_class_register(_ux_system_slave_class_pima_name, ux_device_class_pima_entry, 1, 0, (VOID *)&pictbridge -> ux_pictbridge_pima_parameter);
 
 /* Check status. */
 if (status != UX_SUCCESS)
+{
+    return;
+}
 ```
+
+The following example shows how to initialize the client side of PIMA. This example uses  PIMA.
+
+```C
+UX_SLAVE_CLASS_PIMA_PARAMETER       pima_device_parameter;
+
+/* Set the parameters for PIMA device.  */
+pima_device_parameter.ux_device_class_pima_instance_activate   =  test_pima_instance_activate;
+pima_device_parameter.ux_device_class_pima_instance_deactivate =  test_pima_instance_deactivate;
+
+/* Initialize the pima device parameter.  */
+pima_device_parameter.ux_device_class_pima_parameter_manufacturer                  = pima_device_info_vendor_name;
+pima_device_parameter.ux_device_class_pima_parameter_model                         = pima_device_info_product_name;
+pima_device_parameter.ux_device_class_pima_parameter_device_version                = pima_device_info_version;
+pima_device_parameter.ux_device_class_pima_parameter_serial_number                 = pima_device_info_serial_no;
+pima_device_parameter.ux_device_class_pima_parameter_storage_id                    = UX_TEST_PIMA_STORAGE_ID;
+pima_device_parameter.ux_device_class_pima_parameter_storage_type                  = UX_DEVICE_CLASS_PIMA_STC_FIXED_RAM;
+pima_device_parameter.ux_device_class_pima_parameter_storage_file_system_type      = UX_DEVICE_CLASS_PIMA_FSTC_GENERIC_FLAT;
+pima_device_parameter.ux_device_class_pima_parameter_storage_access_capability     = UX_DEVICE_CLASS_PIMA_AC_READ_WRITE;
+pima_device_parameter.ux_device_class_pima_parameter_storage_max_capacity_low      = ram_disk.fx_media_total_clusters * ram_disk.fx_media_sectors_per_cluster * ram_disk.fx_media_bytes_per_sector;
+pima_device_parameter.ux_device_class_pima_parameter_storage_max_capacity_high     = 0;
+pima_device_parameter.ux_device_class_pima_parameter_storage_free_space_low        = ram_disk.fx_media_available_clusters * ram_disk.fx_media_sectors_per_cluster * ram_disk.fx_media_bytes_per_sector;
+pima_device_parameter.ux_device_class_pima_parameter_storage_free_space_high       = 0;
+pima_device_parameter.ux_device_class_pima_parameter_storage_free_space_image      = 0xFFFFFFFF;
+pima_device_parameter.ux_device_class_pima_parameter_storage_description           = pima_parameter_volume_description;
+pima_device_parameter.ux_device_class_pima_parameter_storage_volume_label          = pima_parameter_volume_label;
+pima_device_parameter.ux_device_class_pima_parameter_device_properties_list        = pima_device_prop_supported;
+pima_device_parameter.ux_device_class_pima_parameter_supported_capture_formats_list= pima_device_supported_capture_formats;
+pima_device_parameter.ux_device_class_pima_parameter_supported_image_formats_list  = pima_device_supported_image_formats;
+pima_device_parameter.ux_device_class_pima_parameter_object_properties_list        = pima_device_object_prop_supported;
+
+/* Define the callbacks.  */
+pima_device_parameter.ux_device_class_pima_parameter_device_reset                  = pima_device_device_reset;
+pima_device_parameter.ux_device_class_pima_parameter_device_prop_desc_get          = pima_device_device_prop_desc_get;
+pima_device_parameter.ux_device_class_pima_parameter_device_prop_value_get         = pima_device_device_prop_value_get;
+pima_device_parameter.ux_device_class_pima_parameter_device_prop_value_set         = pima_device_device_prop_value_set;
+pima_device_parameter.ux_device_class_pima_parameter_storage_format                = pima_device_storage_format;
+pima_device_parameter.ux_device_class_pima_parameter_storage_info_get              = pima_device_storage_info_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_number_get             = pima_device_object_number_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_handles_get            = pima_device_object_handles_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_info_get               = pima_device_object_info_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_data_get               = pima_device_object_data_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_info_send              = pima_device_object_info_send;
+pima_device_parameter.ux_device_class_pima_parameter_object_data_send              = pima_device_object_data_send;
+pima_device_parameter.ux_device_class_pima_parameter_object_delete                 = pima_device_object_delete;
+pima_device_parameter.ux_device_class_pima_parameter_object_prop_desc_get          = pima_device_object_prop_desc_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_prop_value_get         = pima_device_object_prop_value_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_prop_value_set         = pima_device_object_prop_value_set;
+pima_device_parameter.ux_device_class_pima_parameter_object_references_get         = pima_device_object_references_get;
+pima_device_parameter.ux_device_class_pima_parameter_object_references_set         = pima_device_object_references_set;
+
+/* Store the instance owner.  */
+pima_device_parameter.ux_device_class_pima_parameter_application                   = (VOID *) 0;
+
+/* Initialize the device PIMA class.  */
+status = ux_device_stack_class_register(_ux_system_slave_class_pima_name, ux_device_class_pima_entry, 1, 0, &pima_device_parameter);
+
+if (status != UX_SUCCESS)
+{
+    return;
+}
+```
+
+## pima_class_configuration_options
+
+There are several configuration options for building USB Device PIMA Class. All options are located in the ***ux_user.h***.
+
+|          Configuration Option                     | Description |
+| ------------------------------------------------- | ----------- |
+| **UX_PIMA_WITH_MTP_SUPPORT**                      | This macro enables device/host PIMA MTP support. |
+
+## pima_class_apis
+
+The PIMA class API functions are defined below.
+
+- [ux_device_class_pima_object_add](#ux_device_class_pima_object_add)
+- [ux_device_class_pima_object_number_get](#ux_device_class_pima_object_number_get)
+- [ux_device_class_pima_object_handles_get](#ux_device_class_pima_object_handles_get)
+- [ux_device_class_pima_object_info_get](#ux_device_class_pima_object_info_get)
+- [ux_device_class_pima_object_data_get](#ux_device_class_pima_object_data_get)
+- [ux_device_class_pima_object_info_send](#ux_device_class_pima_object_info_send)
+- [ux_device_class_pima_object_data_send](#ux_device_class_pima_object_data_send)
+- [ux_device_class_pima_object_delete](#ux_device_class_pima_object_delete)
 
 ## ux_device_class_pima_object_add
 
@@ -517,7 +620,6 @@ This function is called when the PIMA class needs to add an object and inform th
 
 ```C
 /* Send the notification to the host that an object has been added. */
-
 status = ux_device_class_pima_object_add(pima, UX_PICTBRIDGE_OBJECT_HANDLE_CLIENT_REQUEST);
 ```
 
@@ -1020,9 +1122,13 @@ UINT ux_pictbridge_dpsclient_object_delete(UX_SLAVE_CLASS_PIMA *pima,
 }
 ```
 
-## USB Device Audio Class
+## usb_device_audio_class
 
 The USB device Audio class allows for a USB host system to communicate with the device as an audio device. This class is based on the USB standard and USB Audio Class 1.0 or 2.0 standard.
+
+- [AUDIO Class Initialize](#audio_class_initialize)
+- [AUDIO Class Configuration Options](#audio_class_configuration_options)
+- [AUDIO Class APIs](#audio_class_apis)
 
 A USB audio compliant device framework needs to be declared by the device stack. An example of an Audio 2.0 speaker follows:
 
@@ -1163,78 +1269,106 @@ The initialization of the Audio class expects the following parts.
 
 1. Audio class expects the following streaming parameters:
 
-   ```C
-   /* Set the parameters for Audio streams. */
-   /* Set the application-defined callback that is invoked when the
-      host requests a change to the alternate setting. */
-   audio_stream_parameter[0].ux_device_class_audio_stream_parameter_callbacks
-       .ux_device_class_audio_stream_change = demo_audio_read_change;
+```C
+UX_DEVICE_CLASS_AUDIO_STREAM_PARAMETER    audio_stream_parameter[2];
 
-   /* Set the application-defined callback that is invoked whenever
-      a USB packet (audio frame) is sent to or received from the host. */
-   audio_stream_parameter[0].ux_device_class_audio_stream_parameter_callbacks
-       .ux_device_class_audio_stream_frame_done = demo_audio_read_done;
+#if !defined(UX_DEVICE_STANDALONE)
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_entry = ux_device_class_audio_write_thread_entry;
+#else
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_task_function = _ux_device_class_audio_write_task_function;
+#endif
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_callbacks.ux_device_class_audio_stream_change = slave_audio_tx_stream_change;
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_callbacks.ux_device_class_audio_stream_frame_done = slave_audio_tx_done;
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_max_frame_buffer_size = 256;
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_max_frame_buffer_nb = 8;
 
-   /* Set the number of audio frame buffers in the FIFO. */
-   audio_stream_parameter[0].ux_device_class_audio_stream_parameter_max_frame _buffer_nb = UX_DEMO_FRAME_BUFFER_NB;
+#if defined(UX_DEVICE_CLASS_AUDIO_FEEDBACK_SUPPORT)
+#if !defined(UX_DEVICE_STANDALONE)
+    audio_stream_parameter[0].ux_device_class_audio_stream_parameter_feedback_thread_entry = ux_device_class_audio_feedback_thread_entry;
+#else
+    audio_stream_parameter[0].ux_device_class_audio_stream_parameter_feedback_task_function = _ux_device_class_audio_feedback_task_function;
+#endif
+#endif
 
-   /* Set the maximum size of each audio frame buffer in the FIFO. */
-   audio_stream_parameter[0].ux_device_class_audio_stream_parameter_max_frame _buffer_size = UX_DEMO_MAX_FRAME_SIZE;
+#if !defined(UX_DEVICE_STANDALONE)
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_thread_entry = ux_device_class_audio_read_thread_entry;
+#else
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_task_function = _ux_device_class_audio_read_task_function;
+#endif
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_callbacks.ux_device_class_audio_stream_change = slave_audio_rx_stream_change;
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_callbacks.ux_device_class_audio_stream_frame_done = slave_audio_rx_done;
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_max_frame_buffer_size = 256;
+audio_stream_parameter[1].ux_device_class_audio_stream_parameter_max_frame_buffer_nb = 8;
 
-   /* Set the internally-defined audio processing thread entry pointer. If the application wishes to receive audio from the host
-      (which is the case in this example), ux_device_class_audio_read_thread_entry should be used;
-      if the application wishes to send data to the host, ux_device_class_audio_write_thread_entry should be used. */
-   audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_entry = ux_device_class_audio_read_thread_entry;
-   ```
+```
 
 2. Audio class expects the following function parameters.
 
-   ```C
-   /* Set the parameters for Audio device. */
+```C
+UX_DEVICE_CLASS_AUDIO_PARAMETER           audio_parameter;
 
-   /* Set the number of streams. */
-   audio_parameter.ux_device_class_audio_parameter_streams_nb = 1;
+audio_parameter.ux_device_class_audio_parameter_callbacks.ux_slave_class_audio_instance_activate   = audio_activate;
+audio_parameter.ux_device_class_audio_parameter_callbacks.ux_slave_class_audio_instance_deactivate = audio_deactivate;
+audio_parameter.ux_device_class_audio_parameter_streams = audio_stream_parameter;
+audio_parameter.ux_device_class_audio_parameter_streams_nb = 2;
+audio_parameter.ux_device_class_audio_parameter_callbacks.ux_device_class_audio_control_process = audio_control_process;
+audio_parameter.ux_device_class_audio_parameter_callbacks.ux_device_class_audio_arg = UX_NULL;
 
-   /* Set the pointer to the first audio stream parameter.
-      Note that we initialized this parameter in the previous section.
-      Also note that for more than one streams, this should be an array. */
-   audio_parameter.ux_device_class_audio_parameter_streams = audio_stream_parameter;
+#if defined(UX_DEVICE_CLASS_AUDIO_INTERRUPT_SUPPORT)
+audio_parameter.ux_device_class_audio_parameter_status_queue_size = 2;
+audio_parameter.ux_device_class_audio_parameter_status_size = 6;
+#endif
 
-   /* Set the application-defined callback that is invoked when the audio class
-      is activated i.e. device is connected to host. */
-   audio_parameter.ux_device_class_audio_parameter_callbacks
-       .ux_slave_class_audio_instance_activate = demo_audio_instance_activate;
+/* Initialize the device Audio class. This class owns interfaces starting with 0, 1, 2. */
+status = ux_device_stack_class_register(_ux_system_slave_class_audio_name, ux_device_class_audio_entry, 1, 0, &audio_parameter);
 
-   /* Set the application-defined callback that is invoked when the audio class
-      is deactivated i.e. device is disconnected from host. */
+if(status!=UX_SUCCESS)
+    return;
+```
 
-   audio_parameter.ux_device_class_audio_parameter_callbacks
-       .ux_slave_class_audio_instance_deactivate = demo_audio_instance_deactivate;
+The application-defined control request callback (***ux_device_class_audio_control_process***; set in the previous example) is invoked when the stack receives a control request from the host. If the request is accepted and handled (acknowledged or stalled) the callback must return success, otherwise error should be returned.
 
-   /* Set the application-defined callback that is invoked when the stack receives a control request from the host.
-      See below for more details.
-   */
-   audio_parameter.ux_device_class_audio_parameter_callbacks
-       .ux_device_class_audio_control_process = demo_audio20_request_process;
+The class-specific control request process is defined as an application-defined callback because the control requests are very different between USB Audio versions and a large part of the request process relates to the device framework. The application should handle requests correctly to make the device functional.
 
-   /* Initialize the device Audio class. This class owns interfaces starting with 0. */
-   status = ux_device_stack_class_register(_ux_system_slave_class_audio_name,
-       ux_device_class_audio_entry, 1, 0, &audio_parameter);
-   if(status!=UX_SUCCESS)
-       return;
-   ```
-
-   The application-defined control request callback (***ux_device_class_audio_control_process***; set in the previous example) is invoked when the stack receives a control request from the host. If the request is accepted and handled (acknowledged or stalled) the callback must return success, otherwise error should be returned.
-
-   The class-specific control request process is defined as an application-defined callback because the control requests are very different between USB Audio versions and a large part of the request process relates to the device framework. The application should handle requests correctly to make the device functional.
-
-   Since for an audio device, volume, mute and sampling frequency are common control requests, simple, internally-defined callbacks for different USB audio versions are introduced in later sections for applications to use. Refer to ***ux_device_class_audio10_control_process*** and ***ux_device_class_audio_control_request*** for more details.
+Since for an audio device, volume, mute and sampling frequency are common control requests, simple, internally-defined callbacks for different USB audio versions are introduced in later sections for applications to use. Refer to ***ux_device_class_audio10_control_process*** and ***ux_device_class_audio_control_request*** for more details.
 
 In the device framework of the Audio device, the PID/VID are stored in the device descriptor (see the device descriptor declared above).
 
 When a USB host system discovers the USB Audio device and mounts the audio class, the device can be used with any audio player or recorder (depending on the framework). See the host Operating System for reference.
 
+## audio_class_configuration_options
+
+There are several configuration options for building USB Device AUDIO Class. All options are located in the ***ux_user.h***.
+
+|          Configuration Option                             | Description |
+| --------------------------------------------------------- | ----------- |
+| **UX_DEVICE_CLASS_AUDIO_FEEDBACK_SUPPORT**                | This macro enables device audio feedback endpoint support |
+| **UX_DEVICE_CLASS_AUDIO_FEEDBACK_ENDPOINT_BUFFER_SIZE**   | Works if UX_DEVICE_ENDPOINT_BUFFER_OWNER is 1. Defined, it represents feedback endpoint buffer size. It should be larger than feedback endpoint max packet size in framework. |
+| **UX_DEVICE_CLASS_AUDIO_INTERRUPT_SUPPORT**               | This macro enables device audio interrupt endpoint support. |
+
+## audio_class_apis
+
 The Audio class APIs are defined below.
+
+- [ux_device_class_audio_read_thread_entry](#ux_device_class_audio_read_thread_entry)
+- [ux_device_class_audio_write_thread_entry](#ux_device_class_audio_write_thread_entry)
+- [ux_device_class_audio_stream_get](#ux_device_class_audio_stream_get)
+- [ux_device_class_audio_reception_start](#ux_device_class_audio_reception_start)
+- [ux_device_class_audio_sample_read8](#ux_device_class_audio_sample_read8)
+- [ux_device_class_audio_sample_read16](#ux_device_class_audio_sample_read16)
+- [ux_device_class_audio_sample_read24](#ux_device_class_audio_sample_read24)
+- [ux_device_class_audio_sample_read32](#ux_device_class_audio_sample_read32)
+- [ux_device_class_audio_read_frame_get](#ux_device_class_audio_read_frame_get)
+- [ux_device_class_audio_read_frame_free](#ux_device_class_audio_read_frame_free)
+- [ux_device_class_audio_transmission_start](#ux_device_class_audio_transmission_start)
+- [ux_device_class_audio_frame_write](#ux_device_class_audio_frame_write)
+- [ux_device_class_audio_write_frame_get](#ux_device_class_audio_write_frame_get)
+- [ux_device_class_audio_write_frame_commit](#ux_device_class_audio_write_frame_commit)
+- [ux_device_class_audio10_control_process](#ux_device_class_audio10_control_process)
+- [ux_device_class_audio20_control_process](#ux_device_class_audio20_control_process)
+- [ux_device_class_audio_feedback_set](#ux_device_class_audio_feedback_set)
+- [ux_device_class_audio_feedback_get](#ux_device_class_audio_feedback_get)
+- [ux_device_class_audio_interrupt_send](#ux_device_class_audio_interrupt_send)
 
 ## ux_device_class_audio_read_thread_entry
 
@@ -1258,8 +1392,7 @@ This function is passed to the audio stream initialization parameter if reading 
 
 ```C
 /* Set parameter to initialize a stream for reading. */
-audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_entry
-     = ux_device_class_audio_read_thread_entry;
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_entry = ux_device_class_audio_read_thread_entry;
 ```
 
 ## ux_device_class_audio_write_thread_entry
@@ -1284,8 +1417,7 @@ This function is passed to the audio stream initialization parameter if writing 
 
 ```C
 /* Set parameter to initialize as stream for writing. */
-audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_en
-    try = ux_device_class_audio_write_thread_entry;
+audio_stream_parameter[0].ux_device_class_audio_stream_parameter_thread_entry = ux_device_class_audio_write_thread_entry;
 ```
 
 ## ux_device_class_audio_stream_get
@@ -1813,7 +1945,8 @@ if (status == UX_SUCCESS)
     {
         case UX_DEVICE_CLASS_AUDIO10_CONTROL_MUTE_CHANGED:
         case UX_DEVICE_CLASS_AUDIO10_CONTROL_VOLUME_CHANGED:
-        default: break;
+        default:
+            break;
     }
 }
 ```
@@ -1884,9 +2017,122 @@ if (status == UX_SUCCESS)
 }
 ```
 
-## USB Device printer Class
+## ux_device_class_audio_feedback_set
+
+Set encoded feedback from the Audio Stream.
+
+### Prototype
+```C
+UINT ux_device_class_audio_feedback_set(
+    UX_DEVICE_CLASS_AUDIO_STREAM *stream,
+    UCHAR *encoded_feedback)
+```
+
+### Description
+
+his function set encoded feedback of the Audio Stream. *UX_DEVICE_CLASS_AUDIO_FEEDBACK_SUPPORT* should be defined in *ux_user.h*
+
+### Parameters
+
+- **audio**: Address of audio class instance.
+- **encoded_feedback**: Feedback data (3 or 4 bytes).
+
+### Return Value
+
+- **UX_SUCCESS** (0x00) This operation was successful.
+- **UX_ERROR** (0xFF) Error from function
+
+### Example
+
+```C
+ULONG temp;
+
+audio_rx_stream->ux_device_class_audio_stream_feedback->ux_slave_endpoint_transfer_request.ux_slave_transfer_request_requested_length = 4;
+
+temp = 0x1234567;
+
+ux_device_class_audio_feedback_set(audio_rx_stream, (UCHAR *)&temp);
+```
+
+## ux_device_class_audio_feedback_get
+
+Obtain encoded feedback from the Audio Stream.
+
+### Prototype
+```C
+UINT ux_device_class_audio_feedback_get(
+    UX_DEVICE_CLASS_AUDIO_STREAM *stream,
+    UCHAR *encoded_feedback)
+```
+
+### Description
+
+This function obtain encoded feedback from the Audio Stream. *UX_DEVICE_CLASS_AUDIO_FEEDBACK_SUPPORT* should be defined in *ux_user.h*
+
+### Parameters
+
+- **audio**: Address of audio class instance.
+- **encoded_feedback**: Feedback data (3 or 4 bytes).
+
+### Return Value
+
+- **UX_SUCCESS** (0x00) This operation was successful.
+- **UX_ERROR** (0xFF) Error from function
+
+### Example
+
+```C
+ULONG   temp;
+
+status = ux_device_class_audio_feedback_get(audio, (UCHAR *)&temp);
+```
+
+## ux_device_class_audio_interrupt_send
+
+Set queues audio interrupt data.
+
+### Prototype
+```C
+UINT ux_device_class_audio_interrupt_send(
+    UX_DEVICE_CLASS_AUDIO_STREAM *stream,
+    UCHAR *int_data)
+```
+
+### Description
+
+This function queues audio interrupt data. *UX_DEVICE_CLASS_AUDIO_INTERRUPT_SUPPORT* should be defined in *ux_user.h*
+- for Audio 1.0 interrupt status word is 2 bytes.
+- for Audio 2.0 interrupt data message is 6 bytes.
+
+### Parameters
+
+- **audio**: Address of audio class instance.
+- **int_data**: Interrupt data (2 or 6 bytes).
+
+### Return Value
+
+- **UX_SUCCESS** (0x00) This operation was successful.
+- **UX_ERROR** (0xFF) Error from function
+
+### Example
+
+```C
+ /* Fill one duplicate status, success.  */
+ status_word[0] = 0;
+ status_word[1] = 0;
+
+ status = ux_device_class_audio_interrupt_send(audio, status_word);
+```
+
+## usb_device_printer_class
 
 The USB device printer class allows for a USB host system to communicate with the device as a printer. This class is based on the USB standard.
+
+- [PRINTER Class Initialize](#printer_class_initialize)
+- [PRINTER Class Configuration Options](#printer_class_configuration_options)
+- [PRINTER Class APIs](#printer_class_apis)
+
+## printer_class_initialize
 
 A printer compliant device framework needs to be declared by the device stack. An example is found here below.
 
@@ -1948,12 +2194,14 @@ The initialization of the printer class is as follows.
 
 ```c
 /* Set the parameters for callback when insertion/extraction of a printer device.  */
-_ux_utility_memory_set(&device_printer_parameter, 0, sizeof(device_printer_parameter));
-_ux_utility_short_put_big_endian(printer_device_id, sizeof(printer_device_id));
-device_printer_parameter.ux_device_class_printer_device_id           = printer_device_id;
-device_printer_parameter.ux_device_class_printer_instance_activate   = test_printer_instance_activate;
-device_printer_parameter.ux_device_class_printer_instance_deactivate = test_printer_instance_deactivate;
-device_printer_parameter.ux_device_class_printer_soft_reset          = test_printer_soft_reset;
+ux_utility_memory_set(&device_printer_parameter, 0, sizeof(device_printer_parameter));
+ux_utility_short_put_big_endian(printer_device_id, sizeof(printer_device_id));
+
+device_printer_parameter.ux_device_class_printer_device_id = printer_device_id;
+device_printer_parameter.ux_device_class_printer_instance_activate = demo_printer_instance_activate;
+device_printer_parameter.ux_device_class_printer_instance_deactivate = demo_printer_instance_deactivate;
+device_printer_parameter.ux_device_class_printer_soft_reset = demo_printer_soft_reset;
+
 /* Initialize the device printer class. This class owns both interfaces starting with 0. */
 status  = ux_device_stack_class_register(_ux_system_device_class_printer_name,
                                          ux_device_class_printer_entry,
@@ -1981,13 +2229,13 @@ In above example, The Generic/Text driver is selected, then RAW text will be tra
 The application would have in its body the 2 functions for activation and deactivation, as shown in the following example.
 
 ```c
-static VOID    test_printer_instance_activate(VOID *dummy_instance)
+static VOID demo_printer_instance_activate(VOID *dummy_instance)
 {
     if (device_printer == UX_NULL)
         device_printer = (UX_DEVICE_CLASS_PRINTER *)dummy_instance;
 }
 
-static VOID    test_printer_instance_deactivate(VOID *dummy_instance)
+static VOID demo_printer_instance_deactivate(VOID *dummy_instance)
 {
     if ((VOID*)device_printer == dummy_instance)
         device_printer = UX_NULL;
@@ -2006,7 +2254,24 @@ The USBX printer class supports the following standard printer commands from the
 | GET_PORT_STATUS  | 0x01  | Get the printer port status, the port status can be set by UX_DEVICE_CLASS_PRINTER_IOCTL_PORT_STATUS_SET |
 | SOFT_RESET       | 0x02  | Request to execute soft reset, the reset callback function is assigned by initialization parameter       |
 
+## printer_class_configuration_options
+
+There are several configuration options for building USB Device PRINTER Class. All options are located in the ***ux_user.h***.
+
+|          Configuration Option                     | Description |
+| ------------------------------------------------- | ----------- |
+| **UX_DEVICE_CLASS_PRINTER_ZERO_COPY**             | This macro enables zero copy support (works if PRINTER owns endpoint buffer). Defined, it enables zero copy for bulk in/out endpoints (write/read). In this case, the endpoint buffer is not allocated in class, application must provide the buffer for read/write, and the buffer must meet device controller driver (DCD) buffer requirements (e.g., aligned and cache safe if buffer is for DMA). |
+| **UX_DEVICE_CLASS_PRINTER_WRITE_AUTO_ZLP**        | class _write is pending ZLP automatically (complete transfer) after buffer is sent. |
+
+## printer_class_apis
+
 The printer class API functions are defined below.
+
+- [ux_device_class_printer_read](#ux_device_class_printer_read)
+- [ux_device_class_printer_read_run](#ux_device_class_printer_read_run)
+- [ux_device_class_printer_write](#ux_device_class_printer_write)
+- [_ux_device_class_printer_write_run](#_ux_device_class_printer_write_run)
+- [ux_device_class_printer_ioctl](#ux_device_class_printer_ioctl)
 
 ### ux_device_class_printer_read
 
@@ -2015,7 +2280,7 @@ Read from printer pipe
 ### Prototype
 
 ```c
-UINT _ux_device_class_printer_read(
+UINT ux_device_class_printer_read(
     UX_DEVICE_CLASS_PRINTER *printer,
     UCHAR *buffer,
     ULONG requested_length,
@@ -2052,6 +2317,61 @@ if (status != UX_SUCCESS)
     return;
 ```
 
+### ux_device_class_printer_read_run
+
+Read from printer pipe, It's for standalone mode.
+
+### Prototype
+
+```c
+UINT ux_device_class_printer_read_run(
+    UX_DEVICE_CLASS_PRINTER *printer,
+    UCHAR *buffer,
+    ULONG requested_length,
+    ULONG *actual_length);
+```
+
+### Description
+
+This function is called when an application needs to read from the OUT data pipe (OUT from the host, IN from the device). It is blocking.
+
+> **Note:** This functions reads raw bulk data from device, so it keeps pending until buffer is full or device terminates the transfer by a short packet (including Zero Length Packet). For more details, please refer to [**General Considerations for Bulk Transfer**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
+
+### Parameters
+
+- **printer**: Pointer to the printer class instance.
+- **buffer**: Buffer address where data will be stored.
+- **requested_length**: The maximum length we expect.
+- **actual_length**: The length returned into the buffer.
+
+### Return Value
+- **UX_STATE_NEXT** Transfer done, to next state.
+- **UX_STATE_EXIT** Abnormal, to reset state.
+- **(others)** Keep running, waiting.
+
+### Example
+
+```c
+/* Write to the printer class bulk in pipe. */
+status = ux_device_class_printer_read_run(device_printer, device_buffer, sizeof(device_buffer), &actual_length);
+
+if (status < UX_STATE_NEXT)
+    return;
+
+if (status == UX_STATE_NEXT)
+{
+    if (actual_length == 0)
+    {
+        printer_device_state = UX_STATE_RESET;
+        break;
+    }
+    write_length = actual_length;
+    printer_device_state = PRINTER_DEVICE_STATE_WRITE;
+    device_buffer_length = actual_length;
+}
+
+```
+
 ### ux_device_class_printer_write
 
 Write to a printer pipe
@@ -2059,7 +2379,7 @@ Write to a printer pipe
 ### Prototype
 
 ```c
-UINT _ux_device_class_printer_write(
+UINT ux_device_class_printer_write(
     UX_DEVICE_CLASS_PRINTER *printer,
     UCHAR *buffer,
     ULONG requested_length,
@@ -2092,6 +2412,56 @@ status = ux_device_class_printer_write(device_printer, device_buffer, device_buf
 
 if (status != UX_SUCCESS)
     return;
+```
+
+### ux_device_class_printer_write_run
+
+Write to a printer pipe, It's for standalone mode.
+
+### Prototype
+
+```c
+UINT ux_device_class_printer_write_run(
+    UX_DEVICE_CLASS_PRINTER *printer,
+    UCHAR *buffer,
+    ULONG requested_length,
+    ULONG *actual_length);
+```
+
+### Description
+
+This function is called when an application needs to write to the IN data pipe (IN from the host, OUT from the device). It is blocking.
+
+> **Note:** This function writes bulk data to host. The host keeps waiting until buffer is full or there is short packet. So if transfer size is multiple of max packet size of the IN endpoint, it's better to add another call with transfer size 0 to send ZLP, to tell host that all data is done. For more details, please refer to [**General Considerations for Bulk Transfer**](usbx-device-stack-5.md#general-considerations-for-bulk-transfer).
+
+### Parameters
+
+- **printer**: Pointer to the printer class instance.
+- **buffer**: Buffer address where data is stored.
+- **requested_length**: The length of the buffer to write.
+- **actual_length**: The length returned into the buffer after write is performed.
+
+### Return Value
+- **UX_STATE_NEXT** Transfer done, to next state.
+- **UX_STATE_EXIT** Abnormal, to reset state.
+- **(others)** Keep running, waiting.
+
+### Example
+
+```c
+
+status = ux_device_class_printer_write_run(device_printer, device_buffer, write_length, &actual_length);
+
+if (status < UX_STATE_NEXT)
+{
+    return;
+}
+if (status == UX_STATE_NEXT)
+{
+    printer_device_state = PRINTER_DEVICE_STATE_READ;
+    break;
+}
+
 ```
 
 ### ux_device_class_printer_ioctl

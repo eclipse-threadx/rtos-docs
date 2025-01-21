@@ -12,20 +12,20 @@ The regular controller driver functions (host or device) can still be found in t
 
 There are four categories of functions for an OTG controller in addition to the usual host/device functions.
 
-- VBUS specific functions
-- Start and Stop of the controller
-- USB role manager
-- Interrupt handlers
+- [VBUS specific functions](#vbus_specific_functions)
+- [Start and Stop the controller](#start_and_Stop_the_controller)
+- [USB role manager](#usb_role_manager)
+- [Interrupt handlers](#interrupt_handlers)
 
-## VBUS functions
+## vbus_specific_functions
 
 Each controller needs to have a VBUS manager to change the state of VBUS based on power management requirements. Usually, this function only performs turning on or off VBUS.
 
-## Start and Stop the controller
+## start_and_Stop_the_controller
 
 Unlike a regular USB implementation, OTG requires the host and/or the device stack to be activated and deactivated when the role changes.
 
-## USB role Manager
+## usb_role_manager
 
 The USB role manager receives commands to change the state of the USB. There are several states that need transitions to and from:
 
@@ -39,7 +39,7 @@ The USB role manager receives commands to change the state of the USB. There are
 | UX_OTG_SLAVE_TO_IDLE | 5     | Slave device is disconnected                          |
 | UX_OTG_SLAVE_TO_HOST | 6     | Role swap from Slave to Host                          |
 
-## Interrupt handlers
+## interrupt_handlers
 
 Both host and device controller drivers for OTG needs different interrupt handlers to monitor signals beyond traditional USB interrupts, in particular signals due to SRP and VBUS.
 
@@ -47,8 +47,7 @@ How to initialize a USB OTG controller. We use the NXP LPC3131 as an example her
 
 ```C
 /* Initialize the LPC3131 OTG controller. */
-status = ux_otg_lpc3131_initialize(0x19000000, lpc3131_vbus_function,
-    tx_demo_change_mode_callback);
+status = ux_otg_lpc3131_initialize(0x19000000, lpc3131_vbus_function, demo_change_mode_callback);
 ```
 
 In this example, we initialize the LPC3131 in OTG mode by passing a VBUS function and a callback for mode change (from host to slave or vice versa).
@@ -56,7 +55,8 @@ In this example, we initialize the LPC3131 in OTG mode by passing a VBUS functio
 The callback function should simply record the new mode and wake up a pending thread to act up the new state.
 
 ```C
-void tx_demo_change_mode_callback(ULONG mode) {
+void demo_change_mode_callback(ULONG mode) 
+{
     /* Simply save the otg mode. */
     otg_mode = mode;
 
@@ -95,6 +95,5 @@ For a slave device, there is no command to issue but the slave device can set a 
 ```C
 /* We are a B device, ask for role swap.
    The next GET_STATUS from the host will get the status change and do the HNP. */
-_ux_system_otg -> ux_system_otg_slave_role_swap_flag =
-    UX_OTG_HOST_REQUEST_FLAG;
+_ux_system_otg -> ux_system_otg_slave_role_swap_flag = UX_OTG_HOST_REQUEST_FLAG;
 ```

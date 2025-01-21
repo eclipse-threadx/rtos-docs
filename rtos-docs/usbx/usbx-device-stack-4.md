@@ -5,7 +5,30 @@ description: Learn about the USBX Device Services.
 
 # Description of USBX Device Services
 
-### ux_device_stack_alternate_setting_get
+This chapter contains a description of USBX device stack services in alphabetic order.
+
+The USBX device stack API functions available to the application are as follows.
+- [ux_device_stack_alternate_setting_get](#ux_device_stack_alternate_setting_get)
+- [ux_device_stack_alternate_setting_set](#ux_device_stack_alternate_setting_set)
+- [ux_device_stack_class_register](#ux_device_stack_class_register)
+- [ux_device_stack_class_unregister](#ux_device_stack_class_unregister)
+- [ux_device_stack_configuration_get](#ux_device_stack_configuration_get)
+- [ux_device_stack_configuration_set](#ux_device_stack_configuration_set)
+- [ux_device_stack_descriptor_send](#ux_device_stack_descriptor_send)
+- [ux_device_stack_disconnect](#ux_device_stack_disconnect)
+- [ux_device_stack_endpoint_stall](#ux_device_stack_endpoint_stall)
+- [ux_device_stack_host_wakeup](#ux_device_stack_host_wakeup)
+- [ux_device_stack_initialize](#ux_device_stack_initialize)
+- [ux_device_stack_interface_delete](#ux_device_stack_interface_delete)
+- [ux_device_stack_interface_get](#ux_device_stack_interface_get)
+- [ux_device_stack_interface_set](#ux_device_stack_interface_set)
+- [ux_device_stack_interface_start](#ux_device_stack_interface_start)
+- [ux_device_stack_transfer_request](#ux_device_stack_transfer_request)
+- [ux_device_stack_transfer_abort](#ux_device_stack_transfer_abort)
+- [ux_device_stack_uninitialize](#ux_device_stack_uninitialize)
+- [ux_device_stack_microsoft_extension_register](#ux_device_stack_microsoft_extension_register)
+
+## ux_device_stack_alternate_setting_get
 
 Get current alternate setting for an interface value
 
@@ -21,7 +44,7 @@ This function is used by the USB host to obtain the current alternate setting fo
 
 ### Input Parameter
 
-- *Interface_value*: Interface value for which the current alternate setting is queried
+- *interface_value*: Interface value for which the current alternate setting is queried
 
 ### Return Values
 
@@ -40,7 +63,7 @@ status = ux_device_stack_alternate_setting_get(interface_value);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_alternate_setting_set
+## ux_device_stack_alternate_setting_set
 
 Set current alternate setting for an interface value
 
@@ -76,7 +99,6 @@ The function starts status stage of the control transfer in background, and retu
 
 ```c
 ULONG interface_value;
-
 ULONG alternate_setting_value;
 
 /* The following example illustrates this service. */
@@ -85,7 +107,7 @@ status = ux_device_stack_alternate_setting_set(interface_value, alternate_settin
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_class_register
+## ux_device_stack_class_register
 
 Register a new USB device class
 
@@ -130,11 +152,10 @@ UINT status;
 /* The following example illustrates this service. */
 
 /* Initialize the device storage class. The class is connected with interface 1 */
-status = ux_device_stack_class_register(_ux_system_slave_class_storage_name ux_device_class_storage_entry,
-    1, 1, (VOID *)&parameter);
+status = ux_device_stack_class_register(_ux_system_slave_class_storage_name ux_device_class_storage_entry, 1, 1, (VOID *)&parameter);
 ```
 
-### ux_device_stack_class_unregister
+## ux_device_stack_class_unregister
 
 Unregister a USB device class
 
@@ -176,7 +197,7 @@ status = ux_device_stack_class_unregister(_ux_system_slave_class_storage_name, u
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_configuration_get
+## ux_device_stack_configuration_get
 
 Get the current configuration
 
@@ -209,7 +230,7 @@ status = ux_device_stack_configuration_get();
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_configuration_set
+## ux_device_stack_configuration_set
 
 Set the current configuration
 
@@ -245,7 +266,7 @@ status = ux_device_stack_configuration_set(configuration_value);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_descriptor_send
+## ux_device_stack_descriptor_send
 
 Send a descriptor to the host
 
@@ -334,7 +355,7 @@ Request endpoint Stall condition
 ### Prototype
 
 ```c
-UINT ux_device_stack_endpoint_stall(UX_SLAVE_ENDPOINT*endpoint);
+UINT ux_device_stack_endpoint_stall(UX_SLAVE_ENDPOINT *endpoint);
 ```
 
 ### Description
@@ -363,7 +384,7 @@ status = ux_device_stack_endpoint_stall(endpoint);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_host_wakeup
+## ux_device_stack_host_wakeup
 
 Wake up the host
 
@@ -400,7 +421,7 @@ status = ux_device_stack_host_wakeup();
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_initialize
+## ux_device_stack_initialize
 
 Initialize USB device stack
 
@@ -415,8 +436,8 @@ UINT ux_device_stack_initialize(
     UCHAR *string_framework,
     ULONG string_framework_length,
     UCHAR *language_id_framework,
-    ULONG language_id_framework_length),
-    UINT (*ux_system_slave_change_function)(ULONG)));
+    ULONG language_id_framework_length,
+    UINT (*ux_system_slave_change_function)(ULONG));
 ```
 
 ### Description
@@ -541,23 +562,23 @@ UINT status;
 
 /* The code below is required for installing the device portion of USBX. 
     There is no call back for device status change in this example. */
-status = ux_device_stack_initialize(&device_framework_high_speed,
-    DEVICE_FRAMEWORK_LENGTH_HIGH_SPEED, &device_framework_full_speed,
-    DEVICE_FRAMEWORK_LENGTH_FULL_SPEED, &string_framework,
-    STRING_FRAMEWORK_LENGTH, &language_id_framework,
-    LANGUAGE_ID_FRAMEWORK_LENGTH, UX_NULL);
+status = ux_device_stack_initialize(&device_framework_high_speed, DEVICE_FRAMEWORK_LENGTH_HIGH_SPEED,
+                                    &device_framework_full_speed, DEVICE_FRAMEWORK_LENGTH_FULL_SPEED,
+                                    &string_framework, STRING_FRAMEWORK_LENGTH,
+                                    &language_id_framework, LANGUAGE_ID_FRAMEWORK_LENGTH,
+                                    UX_NULL);
 
 /* If status equals UX_SUCCESS, initialization was successful. */
 ```
 
-### ux_device_stack_interface_delete
+## ux_device_stack_interface_delete
 
 Delete a stack interface
 
 ### Prototype
 
 ```c
-UINT ux_device_stack_interface_delete(UX_SLAVE_INTERFACE*interface);
+UINT ux_device_stack_interface_delete(UX_SLAVE_INTERFACE *ux_interface);
 ```
 
 ### Description
@@ -566,7 +587,7 @@ This function is called when an interface should be removed. An interface is eit
 
 ### Input Parameter
 
-- *interface*: Pointer to the interface to remove.
+- *ux_interface*: Pointer to the interface to remove.
 
 ### Return Value
 
@@ -583,7 +604,7 @@ status = ux_device_stack_interface_delete(interface);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_interface_get
+## ux_device_stack_interface_get
 
 Get the current interface value
 
@@ -621,7 +642,7 @@ status = ux_device_stack_interface_get(interface_value);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_interface_set
+## ux_device_stack_interface_set
 
 Change the alternate setting of the interface
 
@@ -654,26 +675,25 @@ This function starts status stage of the control transfer in background, and ret
 ### Example
 
 ```c
-UCHAR * device_framework
+UCHAR *device_framework
 ULONG device_framework_length;
 ULONG alternate_setting_value;
-UINT status;
+UINT  status;
 
 /* The following example illustrates this service. */
-status = ux_device_stack_interface_set(device_framework,
-    device_framework_length, alternate_setting_value);
+status = ux_device_stack_interface_set(device_framework, device_framework_length, alternate_setting_value);
 
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_interface_start
+## ux_device_stack_interface_start
 
 Start search for a class to own an interface instance
 
 ### Prototype
 
 ```c
-UINT ux_device_stack_interface_start(UX_SLAVE_INTERFACE*interface);
+UINT ux_device_stack_interface_start(UX_SLAVE_INTERFACE *ux_interface);
 ```
 
 ### Description
@@ -686,7 +706,7 @@ This function is not blocking and returns immediately.
 
 ### Input Parameter
 
-- *interface*: Pointer to the interface created.
+- *ux_interface*: Pointer to the interface created.
 
 ### Return Values
 
@@ -704,7 +724,7 @@ status = ux_device_stack_interface_start(interface);
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_transfer_request
+## ux_device_stack_transfer_request
 
 Request to transfer data to the host
 
@@ -766,7 +786,7 @@ while(total_length) {
 }
 ```
 
-### ux_device_stack_transfer_abort
+## ux_device_stack_transfer_abort
 
 Cancel a transfer request
 
@@ -803,9 +823,9 @@ status = ux_device_stack_transfer_abort(transfer_request, UX_TRANSFER_BUS_RESET)
 /* If status equals UX_SUCCESS, the operation was successful. */
 ```
 
-### ux_device_stack_uninitialize
+## ux_device_stack_uninitialize
 
-Unitialize stack
+Uninitialize stack
 
 ### Prototype
 
@@ -815,7 +835,7 @@ UINT ux_device_stack_uninitialize();
 
 ### Description
 
-This function is called when an application needs to unitialize the USBX device stack – all device stack resources are freed, and return immediately. This should be called after all classes have been unregistered via ux_device_stack_class_unregister.
+This function is called when an application needs to uninitialize the USBX device stack – all device stack resources are freed, and return immediately. This should be called after all classes have been unregistered via ux_device_stack_class_unregister.
 
 ### Parameters
 
@@ -824,3 +844,154 @@ None
 ### Return Value
 
 **UX_SUCCESS** (0x00) This operation was successful.
+
+## ux_device_stack_microsoft_extension_register
+
+Registers the Microsoft extensions
+
+### Prototype
+
+```c
+UINT ux_device_stack_microsoft_extension_register(
+    ULONG vendor_request, 
+    UINT (*vendor_request_function)(ULONG, ULONG, ULONG, ULONG, UCHAR *, ULONG *))
+```
+
+### Description
+
+This function registers the Microsoft extensions to support vendor commands before the device is configured.
+
+### Parameters
+
+- *vendor_request*: Vendor Command. 
+- *vendor_request_function*: Vendor Command application Callback.
+
+### Return Value
+
+**UX_SUCCESS** (0x00) This operation was successful.
+
+### Example
+
+```c
+#define UX_DEMO_VENDOR_REQUEST 0x54
+
+/* MS extensions.  */
+status = _ux_device_stack_microsoft_extension_register(UX_DEMO_VENDOR_REQUEST, pima_device_vendor_request);
+
+
+UINT pima_device_vendor_request(ULONG request, ULONG request_value, ULONG request_index, ULONG request_length,
+                       UCHAR *transfer_request_buffer,
+                       ULONG *transfer_request_length)
+{
+UINT    status;
+ULONG   length;
+
+    /* Do some sanity check.  The request must be our vendor request. */
+    if (request != UX_TEST_VENDOR_REQUEST)
+
+        /* Do not proceed.  */
+        return(UX_ERROR);
+
+    /* Check the wIndex value. Values can be :
+        0x0001 : Genre
+        0x0004 : Extended compatible ID
+        0x0005 : Extended properties */
+    switch (request_index)
+    {
+
+        case    0x0001 :
+
+            /* Not sure what this is for. Windows does not seem to request this. Drop it.  */
+            status = UX_ERROR;
+            break;
+
+        case    0x0004 :
+        case    0x0005 :
+
+            /* Length to return.  */
+            length = UX_MIN(0x28, request_length);
+
+            /* Length check.  */
+            UX_ASSERT(*transfer_request_length >= length);
+
+            /* At least length should be returned.  */
+            if (length < 4)
+            {
+                status = UX_ERROR;
+                break;
+            }
+            status = UX_SUCCESS;
+
+            /* Return the length.  */
+            *transfer_request_length = length;
+
+            /* Reset returned bytes.  */
+            ux_utility_memory_set(transfer_request_buffer, 0, length);
+
+            /* Build the descriptor to be returned.  This is not a composite descriptor. Single MTP.
+                First dword is length of the descriptor.  */
+            ux_utility_long_put(transfer_request_buffer, 0x0028);
+            length -= 4;
+
+            /* Then the version. fixed to 0x0100.  */
+            if (length < 2)
+                break;
+            ux_utility_short_put(transfer_request_buffer + 4, 0x0100);
+            length -= 2;
+
+            /* Then the descriptor ID. Fixed to 0x0004.  */
+            if (length < 2)
+                break;
+            ux_utility_short_put(transfer_request_buffer + 6, 0x0004);
+            length -= 2;
+
+            /* Then the bcount field. Fixed to 0x0001.  */
+            if (length < 1)
+                break;
+            *(transfer_request_buffer + 8) = 0x01;
+            length -= 1;
+
+            /* Reset the next 7 bytes.  */
+            if (length < 7)
+                break;
+            ux_utility_memory_set(transfer_request_buffer + 9, 0x00, 7);
+            length -= 7;
+
+            /* Last byte of header is the interface number, here 0.  */
+            if (length < 1)
+                break;
+            *(transfer_request_buffer + 16) = 0x00;
+            length -= 1;
+
+            /* First byte of descriptor is set to 1.  */
+            if (length < 1)
+                break;
+            *(transfer_request_buffer + 17) = 0x01;
+            length -= 1;
+
+            /* Reset the next 8 + 8 + 6 bytes.  */
+            if (length < (8+8+6))
+                break;
+            ux_utility_memory_set(transfer_request_buffer + 18, 0x00, (8 + 8 + 6));
+            length -= 8+8+6;
+
+            /* Set the compatible ID to MTP.  */
+            if (length < 3)
+                break;
+            ux_utility_memory_copy(transfer_request_buffer + 18, "MTP", 3);
+            length -= 3;
+
+            /* We are done here.  */
+            status = UX_SUCCESS;
+            break;
+
+        default :
+            status = UX_ERROR;
+            break;
+
+    }
+    /* Return status to device stack.  */
+    return(status);
+}
+
+```

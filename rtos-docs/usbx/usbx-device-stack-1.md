@@ -29,7 +29,7 @@ The relationship between the USB layers is as follows:
 - Responsive technical support
 - Multiple class support
 - Multiple class instances
-- Integration of classes with ThreadX, FileX, and NetX Duo
+- Integration of classes with ThreadX, FileX and NetX Duo
 - Support for USB devices with multiple configurations
 - Support for USB composite devices
 - Support for USB power management
