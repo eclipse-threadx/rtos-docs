@@ -1,5 +1,4 @@
 ---
-# Mandatory fields.
 title: Chapter 3 - Functional Components of USBX Device Stack
 description: This chapter contains a description of the high performance USBX embedded USB device stack from a functional perspective.
 ---
@@ -11,19 +10,18 @@ This chapter contains a description of the high performance USBX embedded USB de
 ## Execution Overview
 
 USBX for the device is composed of several components.
-
-- Initialization
-- Application interface calls
-- USB Device Classes
-- USB Device Stack
-- Device controller
-- VBUS manager
+- [Initialization](#initialization)
+- [Application interface calls](#application_interface_calls)
+- [USB Device Classes](#usb_device_classes)
+- [USB Device Stack](#usb_device_stack)
+- [USB Device controller](#usb_device_controller)
+- [VBUS manager](#vbus_manager)
 
 The following diagram illustrates the USBX Device stack.
 
-![USBX Device Stack](media/usbx-device-stack/usbx-device-stack.png)
+![USBX Device Stack](./media/usbx-device-stack/usbx-device-stack.png)
 
-### Initialization
+## initialization
 
 In order to activate USBX, the function ***ux_system_initialize*** must be called. This function initializes the memory resources of USBX.
 
@@ -31,7 +29,7 @@ In order to activate USBX device facilities, the function ***ux_device_stack_ini
 
 It is up to the application initialization to activate the USB device controller and one or more USB classes. Contrary to the USB host side, the device side can have only one USB controller driver running at any time. When the classes have been registered to the stack and the device controller(s) initialization function has been called, the bus is active and the stack will reply to bus reset and host enumeration commands.
 
-### Application Interface Calls
+## application_interface_calls
 
 There are two levels of APIs in USBX.
 
@@ -40,30 +38,30 @@ There are two levels of APIs in USBX.
 
 Normally, a USBX application should not have to call any of the USB device stack APIs. Most applications will only access the USB Class APIs.
 
-### USB Device Classes
+## usb_device_classes
 
 The Class APIs are very specific to each USB class. Most of the common APIs for USB classes provided services such as opening/closing a device and reading from or writing to a device.
 
-#### Storage Class
+### Storage Class
 
 The storage class is in charge of answering storage class specific control requests and handling storage class protocol commands. Refer to USB Device Storage Class in Chapter 5 for more information.
 
-#### CDC Class
+### CDC Class
 
 The CDC class is in charge of answering CDC class specific control requests and offering ways to communicate with host through data pipes. Following functionalities are supported now:
 * CDC-ACM: communicate with host as a serial device
 * CDC-ECM: communicate with host as an ethernet device
 Refer to USB Device CDC-ACM Class and USB Device CDC-ECM Class in Chapter 5 for more information.
 
-#### HID Class
+### HID Class
 
 The HID class is in charge of answering the HID class specific control requests and offering ways to communicate host with HID class specific reports. Refer to USB Device HID Class in Chapter 5 for more information.
 
-#### Custom Class
+### Custom Class
 
 For advanced developers, it's possible to create more customized class, to answering customized control requests and handling customized protocol on data pipes. Note such class may also require specific customization on host side, too.
 
-## USB Device Stack
+## usb_device_stack
 The device stack APIs are responsible for the registration of USBX device components such as classes and the device framework.
 
 ### Device Framework
@@ -163,7 +161,7 @@ To support additional languages, simply add the language code double-byte defini
 
 *Developing International Software for Windows 95 and Windows NT, Nadine Kano, Eclipse Foundation Press, Redmond WA*
 
-## Device controller
+## usb_device_controller
 
 The device controller driver (DCD) interoperates USB Device Stack operations to hardware actions. Normally, a USBX application should not have to call device controller APIs, except initialization function. When the device controller initialization function is called, the bus is active and the stack will reply to bus reset and host enumeration commands through device controller driver.
 
@@ -174,7 +172,7 @@ Here are some possible hardware which USB Device Stack can operate on:
 * Reneses chip with USB device controller
 * Other chip with USB device controller, etc.
 
-## VBUS Manager
+## vbus_manager
 
 In most USB device designs, VBUS is not part of the USB Device core but rather connected to an external GPIO, which monitors the line signal.
 

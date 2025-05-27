@@ -51,20 +51,10 @@ Unlike other USBX device implementations, the Pictbridge application does not ne
 
 ```C
 /* Initialize the Pictbridge string components. */
-ux_utility_memory_copy
-    (pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_name,
-    "ExpressLogic",13);
-
-ux_utility_memory_copy
-    (pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_product_name,
-    "EL_Pictbridge_Camera",21);
-
-ux_utility_memory_copy
-    (pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_serial_no, "ABC_123",7);
-
-ux_utility_memory_copy
-    (pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_dpsversions,
-    "1.0 1.1",7);
+ux_utility_memory_copy(pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_name, "ExpressLogic",13);
+ux_utility_memory_copy(pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_product_name, "EL_Pictbridge_Camera",21);
+ux_utility_memory_copy(pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_serial_no, "ABC_123",7);
+ux_utility_memory_copy(pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_dpsversions, "1.0 1.1",7);
 
 pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_specific_version = 0x0100;
 
@@ -78,16 +68,11 @@ if(status != UX_SUCCESS)
 The parameters passed to the pictbridge client are as follows.
 
 ```C
-pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_name
-    : String of Vendor name
-pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_product_name
-    : String of product name
-pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_serial_no
-    : String of serial number
-pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_dpsversions
-    : String of version
-pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_specific_version
-    : Value set to 0x0100;
+pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_name : String of Vendor name
+pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_product_name : String of product name
+pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_serial_no : String of serial number
+pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_dpsversions : String of version
+pictbridge.ux_pictbridge_dpslocal.ux_pictbridge_devinfo_vendor_specific_version : Value set to 0x0100;
 ```
 
 The next step is for the device and the host to synchronize and be ready to exchange information.
@@ -97,8 +82,8 @@ This is done by waiting on an event flag as follows.
 ```C
 /* We should wait for the host and the client to discover one another. */
 status = ux_utility_event_flags_get(&pictbridge.ux_pictbridge_event_flags_group,
-    UX_PICTBRIDGE_EVENT_FLAG_DISCOVERY,TX_AND_CLEAR,
-    &actual_flags, UX_PICTBRIDGE_EVENT_TIMEOUT);
+                                    UX_PICTBRIDGE_EVENT_FLAG_DISCOVERY,TX_AND_CLEAR,
+                                    &actual_flags, UX_PICTBRIDGE_EVENT_TIMEOUT);
 ```
 
 If the state machine is in the **DISCOVERY_COMPLETE** state, the camera side (the DPS client) will gather information regarding the printer and its capabilities.
@@ -107,8 +92,7 @@ If the DPS client is ready to accept a print job, its status will be set to **UX
 
 ```C
 /* Check if the printer is ready for a print job. */
-if (pictbridge.ux_pictbridge_dpsclient.ux_pictbridge_devinfo_newjobok ==
-    UX_PICTBRIDGE_NEW_JOB_TRUE)
+if (pictbridge.ux_pictbridge_dpsclient.ux_pictbridge_devinfo_newjobok == UX_PICTBRIDGE_NEW_JOB_TRUE)
 /* We can print something … */
 ```
 
@@ -122,54 +106,37 @@ jobinfo = &pictbridge.ux_pictbridge_jobinfo;
 jobinfo -> ux_pictbridge_jobinfo_printinfo_start = &printinfo;
 
 /* Set the default values for print job. */
-jobinfo -> ux_pictbridge_jobinfo_quality =
-    UX_PICTBRIDGE_QUALITIES_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_papersize =
-    UX_PICTBRIDGE_PAPER_SIZES_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_papertype =
-    UX_PICTBRIDGE_PAPER_TYPES_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_filetype =
-    UX_PICTBRIDGE_FILE_TYPES_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_dateprint =
-    UX_PICTBRIDGE_DATE_PRINTS_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_filenameprint =
-    UX_PICTBRIDGE_FILE_NAME_PRINTS_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_imageoptimize =
-    UX_PICTBRIDGE_IMAGE_OPTIMIZES_OFF;
-jobinfo -> ux_pictbridge_jobinfo_layout =
-    UX_PICTBRIDGE_LAYOUTS_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_fixedsize =
-    UX_PICTBRIDGE_FIXED_SIZE_DEFAULT;
-jobinfo -> ux_pictbridge_jobinfo_cropping =
-    UX_PICTBRIDGE_CROPPINGS_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_quality = UX_PICTBRIDGE_QUALITIES_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_papersize = UX_PICTBRIDGE_PAPER_SIZES_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_papertype = UX_PICTBRIDGE_PAPER_TYPES_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_filetype = UX_PICTBRIDGE_FILE_TYPES_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_dateprint = UX_PICTBRIDGE_DATE_PRINTS_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_filenameprint = UX_PICTBRIDGE_FILE_NAME_PRINTS_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_imageoptimize = UX_PICTBRIDGE_IMAGE_OPTIMIZES_OFF;
+jobinfo -> ux_pictbridge_jobinfo_layout = UX_PICTBRIDGE_LAYOUTS_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_fixedsize = UX_PICTBRIDGE_FIXED_SIZE_DEFAULT;
+jobinfo -> ux_pictbridge_jobinfo_cropping = UX_PICTBRIDGE_CROPPINGS_DEFAULT;
 
 /* Program the callback function for reading the object data. */
-jobinfo -> ux_pictbridge_jobinfo_object_data_read =
-    ux_demo_object_data_copy;
+jobinfo -> ux_pictbridge_jobinfo_object_data_read = ux_demo_object_data_copy;
 
 /* This is a demo, the fileID is hardwired (1 and 2 for scripts, 3 for photo to be printed. */
-printinfo.ux_pictbridge_printinfo_fileid =
-    UX_PICTBRIDGE_OBJECT_HANDLE_PRINT;
-ux_utility_memory_copy(printinfo.ux_pictbridge_printinfo_filename,
-    "Pictbridge demo file", 20);
-ux_utility_memory_copy(printinfo.ux_pictbridge_printinfo_date, "01/01/2008",
-    10);
+printinfo.ux_pictbridge_printinfo_fileid = UX_PICTBRIDGE_OBJECT_HANDLE_PRINT;
+ux_utility_memory_copy(printinfo.ux_pictbridge_printinfo_filename, "Pictbridge demo file", 20);
+ux_utility_memory_copy(printinfo.ux_pictbridge_printinfo_date, "01/01/2008", 10);
 
 /* Fill in the object info to be printed. First get the pointer to the object container in the job info structure. */
-object = (UX_SLAVE_CLASS_PIMA_OBJECT *) jobinfo ->
-    ux_pictbridge_jobinfo_object;
+object = (UX_SLAVE_CLASS_PIMA_OBJECT *) jobinfo -> ux_pictbridge_jobinfo_object;
 
 /* Store the object format: JPEG picture. */
 object -> ux_device_class_pima_object_format = UX_DEVICE_CLASS_PIMA_OFC_EXIF_JPEG;
 object -> ux_device_class_pima_object_compressed_size = IMAGE_LEN;
 object -> ux_device_class_pima_object_offset = 0;
-object -> ux_device_class_pima_object_handle_id =
-    UX_PICTBRIDGE_OBJECT_HANDLE_PRINT;
+object -> ux_device_class_pima_object_handle_id = UX_PICTBRIDGE_OBJECT_HANDLE_PRINT;
 object -> ux_device_class_pima_object_length = IMAGE_LEN;
 
 /* File name is in Unicode. */
-ux_utility_string_to_unicode("JPEG Image", object ->
-    ux_device_class_pima_object_filename);
+ux_utility_string_to_unicode("JPEG Image", object -> ux_device_class_pima_object_filename);
 
 /* And start the job. */
 status =ux_pictbridge_dpsclient_api_start_job(&pictbridge);
