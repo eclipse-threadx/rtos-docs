@@ -256,6 +256,10 @@ This service creates a subdirectory in the current default directory or in the p
 - **FX_PTR_ERROR** (0x18) Invalid media pointer
 - **FX_INVALID_ATTR** (0x19) Invalid attributes selected.
 - **FX_CALLER_ERROR** (0x20) Caller is not a thread.
+- **FX_INVALID_NAME** (0x0C) New directory name is invalid.
+- **FX_WRITE_PROTECT** (0x23) Specified media is write protected.
+- **FX_ALREADY_CREATED** (0x0B) Specified directory was already created.
+- **FX_INVALID_PATH** (0x0D) Path is invalid.
 
 ### Allowed From
 
