@@ -17,6 +17,16 @@ The Threadx API functions available to the application are as follows.
 - [tx_block_pool_prioritize](#tx_block_pool_prioritize)
 - [tx_block_release](#tx_block_release)
 
+## Byte_Pool_Services
+- [tx_byte_allocate](#tx_byte_allocate)
+- [tx_byte_pool_create](#tx_byte_pool_create)
+- [tx_byte_pool_delete](#tx_byte_pool_delete)
+- [tx_byte_pool_info_get](#tx_byte_pool_info_get)
+- [tx_byte_pool_performance_info_get](#tx_byte_pool_performance_info_get)
+- [tx_byte_pool_performance_system_info_get](#tx_byte_pool_performance_system_info_get)
+- [tx_byte_pool_prioritize](#tx_byte_pool_prioritize)
+- [tx_byte_release](#tx_byte_release)
+
 ## Event_Flags_Services
 - [tx_event_flags_create](#tx_event_flags_create)
 - [tx_event_flags_delete](#tx_event_flags_delete)
