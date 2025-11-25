@@ -116,7 +116,7 @@ UINT tx_block_allocate(
 
 This service allocates a fixed-size memory block from the specified memory pool. The actual size of the memory block is determined during memory pool creation.
 
-> **Important:** *It is important to ensure application code does not write outside the allocated memory block. If this happens, corruption occurs in an adjacent (usually subsequent) memory block. The results are unpredictable and often fatal!*
+> **Important:** *It is important to ensure application code does not write outside the allocated memory block. If this happens, the behavior is undefined. Likewise, if the destination is not large enough, the behavior is undefined. That said, a typical consequence is memory corruption of an adjacent (usually subsequent) memory area. The results are unpredictable and often fatal!*
 
 ### Parameters
 
@@ -251,7 +251,7 @@ UINT tx_block_pool_delete(TX_BLOCK_POOL *pool_ptr);
 
 This service deletes the specified block-memory pool. All threads suspended waiting for a memory block from this pool are resumed and given a **TX_DELETED** return status.
 
-> **Note:** *It is the application's responsibility to manage the memory area associated with the pool, which is available after this service completes. In addition, the application must prevent use of a deleted pool or its former memory blocks.*
+> **Note:** *It is the application's responsibility to manage the memory area associated with the pool, which is available after this service completes. In addition, the application must prevent the use of a deleted pool or its former memory blocks.*
 
 ### Parameters
 
@@ -616,7 +616,7 @@ UINT tx_byte_allocate(
 
 This service allocates the specified number of bytes from the specified memory byte pool.
 
-> **Important:** *It is important to ensure application code does not write outside the allocated memory block. If this happens, corruption occurs in an adjacent (usually subsequent) memory block. The results are unpredictable and often fatal!*
+> **Important:** *It is important to ensure application code does not write outside the allocated memory block. If this happens, the behavior is undefined. Likewise, if the destination is not large enough, the behavior is undefined. That said, a typical consequence is memory corruption of an adjacent (usually subsequent) memory area. The results are unpredictable and often fatal!*
 
 > **Note:** *The performance of this service is a function of the block size and the amount of fragmentation in the pool. Hence, this service should not be used during time-critical threads of execution.*
 
@@ -2673,7 +2673,7 @@ UINT tx_queue_receive(
 
 This service retrieves a message from the specified message queue. The retrieved message is **copied** from the queue into the memory area specified by the destination pointer. That message is then removed from the queue.
 
-> **Important:** *The specified destination memory area must be large enough to hold the message; i.e., the message destination pointed to by* ***destination_ptr*** *must be at least as large as the message size for this queue. Otherwise, if the destination is not large enough, memory corruption occurs in the following memory area.*
+> **Important:** *The specified destination memory area must be large enough to hold the message; i.e., the message destination pointed to by* ***destination_ptr*** *must be at least as large as the message size for this queue. If the destination is not large enough, the behavior is undefined. That said, a typical consequence is memory corruption of an adjacent (usually subsequent) memory area.*
 
 ### Parameters
 
@@ -3545,7 +3545,7 @@ UINT tx_thread_delete(TX_THREAD *thread_ptr);
 
 This service deletes the specified application thread. Since the specified thread must be in a terminated or completed state, this service cannot be called from a thread attempting to delete itself.
 
-> **Note:** *It is the application's responsibility to manage the memory area associated with the thread's stack, which is available after this service completes. In addition, the application must prevent use of a deleted thread.*
+> **Note:** *It is the application's responsibility to manage the memory area associated with the thread's stack, which is available after this service completes. In addition, the application must prevent the use of a deleted thread.*
 
 ### Parameters
 
@@ -3606,7 +3606,7 @@ This service registers a notification callback function that is called whenever 
 ### Parameters
 
 - *thread_ptr*: Pointer to previously created thread.
-- *entry_exit_notify*: Pointer to application's thread entry/exit notification function. The second parameter to the entry/exit notification function designates if an entry or exit is present. The value **TX_THREAD_ENTRY** (0x00) indicates the thread was entered, while the value **TX_THREAD_EXIT** (0x01) indicates the thread was exited. If this value is **TX_NULL**, notification is disabled.
+- *entry_exit_notify*: Pointer to application's thread entry/exit notification function. The second parameter to the entry/exit notification function designates whether an entry or exit is present. The value **TX_THREAD_ENTRY** (0x00) indicates the thread was entered, while the value **TX_THREAD_EXIT** (0x01) indicates the thread was exited. If this value is **TX_NULL**, notification is disabled.
 
 ### Return Values
 
@@ -4424,7 +4424,7 @@ unconditionally suspended. */
 
 ## tx_thread_terminate
 
-Terminates application thread
+Terminates the application thread
 
 ### Prototype
 
@@ -4604,7 +4604,7 @@ ULONG tx_time_get(VOID);
 
 This service returns the contents of the internal system clock. Each timertick increases the internal system clock by one. The system clock is set to zero during initialization and can be changed to a specific value by the service ***tx_time_set***.
 
-> **Note:** *The actual time each timer-tick represents is application specific.*
+> **Note:** *The actual time each timer-tick represents is application-specific.*
 
 ### Parameters
 
