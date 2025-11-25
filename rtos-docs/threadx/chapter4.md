@@ -2173,7 +2173,7 @@ This service creates a message queue that is typically used for interthread comm
 
 - *queue_ptr*: Pointer to a message queue control block.
 - *name_ptr*: Pointer to the name of the message queue.
-- *message_size*: Specifies the size of each message in the queue. Message sizes range from 1 32-bit word to 16 32-bit words. Valid message size options are numerical values from 1 through 16, inclusive.
+- *message_size*: Specifies the size of each message in the queue. Message sizes range from 1 32-bit word to **TX_QUEUE_MESSAGE_MAX_SIZE** 32-bit words. Valid message size options are numerical values from 1 through **TX_QUEUE_MESSAGE_MAX_SIZE**, inclusive. **TX_QUEUE_MESSAGE_MAX_SIZE** is set by default to 16.
 - *queue_start*: Starting address of the message queue. The starting address must be aligned to the size of the ULONG data type.
 - *queue_size*: Total number of bytes available for the message queue.
 
