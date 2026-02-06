@@ -1,3 +1,4 @@
+# This repository has been archived.<br/><br/>Please submit PRs and issues on [rtos-docs-asciidoc](https://github.com/eclipse-threadx/rtos-docs-asciidoc) instead. 
 # What is Eclipse ThreadX?
 
 Eclipse ThreadX is a real time operating system (RTOS) for Internet of Things (IoT) and edge devices powered by microcontroller units (MCUs). Eclipse ThreadX is designed to support most highly constrained devices (battery powered and having less than 64 KB of flash memory).
